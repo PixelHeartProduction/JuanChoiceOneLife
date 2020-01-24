@@ -8,6 +8,6 @@ how to collab:
 
 2: Make sure your Ren'Py default directory is targeted at "C:\Users\Username\Documents\GitHub\"
 
-3: Create you own branch (Avoid using the master branch)
+3: Create you own branch (Avoid using the "master" branch)
 
 4: Start programming!
