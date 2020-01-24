@@ -2,8 +2,11 @@
 
 # The game starts here.
 
-label start:
+label start():
 
-    jump prologue
+    $ Mode = "null"
+
+    jump diffSelect
+
 
     return

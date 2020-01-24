@@ -2,9 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/prologue.rpy", line 403: expected statement.
-    shoe Mary smile
-                   ^
+File "game/difficultyselect.rpy", line 3: screen expects a non-empty block.
+    screen confirmScreen(message, yes_action, no_action):
+                                                         ^
+
+File "game/difficultyselect.rpy", line 5: expected statement.
+    modal True
+              ^
+
+File "game/difficultyselect.rpy", line 7: expected statement.
+    window:
+          ^
+
+File "game/difficultyselect.rpy", line 10: expected statement.
+    frame:
+         ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Jan 21 14:24:58 2020
+Fri Jan 24 12:34:49 2020
