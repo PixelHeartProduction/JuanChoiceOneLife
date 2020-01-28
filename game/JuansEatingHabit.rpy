@@ -98,4 +98,6 @@ label JuansEatingHabit:
 
     "END"
 
+    jump JuansLittleSister
+
     return

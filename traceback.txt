@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'assets/Scenes/Kitchen.jpg'>:
-  File "game/JuansEatingHabit.rpy", line 55, in script
-    scene kitchen with dissolve
-IOError: Couldn't find file 'assets/Scenes/Kitchen.jpg'.
+While loading <'Image' u'assets/Scenes/Hospital.jpg'>:
+  File "game/JuansLittleSister.rpy", line 21, in script
+    scene hospital with dissolve
+IOError: Couldn't find file 'assets/Scenes/Hospital.jpg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/JuansEatingHabit.rpy", line 55, in script
-    scene kitchen with dissolve
+  File "game/JuansLittleSister.rpy", line 21, in script
+    scene hospital with dissolve
   File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\ast.py", line 1389, in execute
     renpy.exports.with_statement(trans, paired)
   File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\exports.py", line 1601, in with_statement
@@ -69,9 +69,9 @@ Full traceback:
     surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
   File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\loader.py", line 576, in load
     raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'assets/Scenes/Kitchen.jpg'.
+IOError: Couldn't find file 'assets/Scenes/Hospital.jpg'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Juan Choice One Life 1.0
-Wed Jan 29 02:00:05 2020
+Wed Jan 29 02:33:31 2020

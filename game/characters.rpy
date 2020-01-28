@@ -5,7 +5,7 @@ define Dog = Character("Dog", color="#f5d769")
 define Girl = Character ("Girl", color="#f569b6")
 define Cathy = Character("Ms. Cathy",color="#fc5d6b")
 define Peter = Character("Peter", color="#bdbbbb")
-define James = Character ("James",color="#f57e16")
+define May = Character ("May",color="#f57e16")
 #=========================Mary=================================
 image Mary neutralleft:
     "assets/Sprites/Mary_Normal.png"
@@ -146,3 +146,11 @@ image Cathy panningBack:
     ypos 1.2
     xalign .75
     linear 1 xalign 0.5
+
+#====================May===========================
+
+image May neutral:
+    "assets/Sprites/May6mo.png"
+    zoom .6
+    xalign .5
+    yalign .5
