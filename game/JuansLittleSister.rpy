@@ -66,6 +66,7 @@ label JuansLittleSister:
             May "Uwaah..."
             if Choice_ch1 == "mama":
                 show Joseph serious
+                show Mary surprised
                 Joseph "You should'nt make your sister cry!"
                 Juan "..."
                 May "listen Juan."
@@ -77,6 +78,7 @@ label JuansLittleSister:
                 Juan "I'm Sorry."
             if Choice_ch1 == "papa":
                 show Mary surprised
+                show Joseph serious
                 Mary "You should'nt make your sister cry!"
                 Juan "..."
                 Joseph "listen Juan."

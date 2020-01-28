@@ -18,6 +18,7 @@ label start():
 
     $ Mode = "null"
     $ Choice_ch1 = "null"
+    $ Choice_ch3 = "null"
 
     jump diffSelect
 

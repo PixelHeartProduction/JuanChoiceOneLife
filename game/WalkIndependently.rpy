@@ -41,7 +41,7 @@ label WalkIndependently:
 
 
         show Mary smile
-        Mary "You did i Juan!"
+        Mary "You did it Juan!"
         show Mary neutral
         Mary "I know you can do it."
         Juan "Yay!"

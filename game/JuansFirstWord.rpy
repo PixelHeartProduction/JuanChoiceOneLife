@@ -40,7 +40,7 @@ label JuansFirstWord:
     Joseph "Well it's a perfect toy for him."
     Mary "Hehe, Sure it is!"
     show Mary neutral
-    Mary "But I Think he treats it more like a friend than a toy."
+    Mary "But I think he treats it more like a friend than a toy."
     Mary "What a lovely little boy."
 
     Juan "*Giggles"

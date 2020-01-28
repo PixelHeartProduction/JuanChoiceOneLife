@@ -64,6 +64,7 @@ label JuansEatingHabit:
 
     menu:
         "Eat everything":
+            $ Choice_ch3 = "healthy"
             "(Juan ate everything and left nothing on his plate.)"
             Juan "Yummy!"
             show Mary smile
@@ -72,6 +73,7 @@ label JuansEatingHabit:
             Joseph "It's really delicious Ma!"
             Juan "Delicious!"
         "Eat banana only":
+            $ Choice_ch3 = "picky"
             "(Juan ate the banana but left the Mashed Potato and Carrot on the plate.)"
             Juan "Yummy!"
             show Mary smile
