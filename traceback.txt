@@ -1,38 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/difficultyselect.rpy", line 8, in script
-    call screen confirm(message="Proceed to play the game?", yes_action=Jump(), no_action=Return())
-  File "renpy/common/000statements.rpy", line 526, in execute_call_screen
-    args, kwargs = a.evaluate()
-  File "game/difficultyselect.rpy", line 8, in <module>
-    call screen confirm(message="Proceed to play the game?", yes_action=Jump(), no_action=Return())
-TypeError: __init__() takes exactly 2 arguments (1 given)
+  File "game/script.rpy", line 8, in script
+    $ Choice.ch1 = "null"
+  File "game/script.rpy", line 8, in <module>
+    $ Choice.ch1 = "null"
+NameError: name 'Choice' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/difficultyselect.rpy", line 8, in script
-    call screen confirm(message="Proceed to play the game?", yes_action=Jump(), no_action=Return())
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\ast.py", line 1949, in execute
-    self.call("execute")
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\ast.py", line 1937, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\statements.py", line 277, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 526, in execute_call_screen
-    args, kwargs = a.evaluate()
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\ast.py", line 188, in evaluate
-    kwargs[k] = renpy.python.py_eval(v, locals=scope)
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\python.py", line 2059, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\python.py", line 2052, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/difficultyselect.rpy", line 8, in <module>
-    call screen confirm(message="Proceed to play the game?", yes_action=Jump(), no_action=Return())
-TypeError: __init__() takes exactly 2 arguments (1 given)
+  File "game/script.rpy", line 8, in script
+    $ Choice.ch1 = "null"
+  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/script.rpy", line 8, in <module>
+    $ Choice.ch1 = "null"
+NameError: name 'Choice' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Juan Choice One Life 1.0
-Fri Jan 24 12:41:26 2020
+Tue Jan 28 22:53:55 2020

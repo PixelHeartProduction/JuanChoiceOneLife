@@ -2,21 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/difficultyselect.rpy", line 3: screen expects a non-empty block.
-    screen confirmScreen(message, yes_action, no_action):
-                                                         ^
-
-File "game/difficultyselect.rpy", line 5: expected statement.
-    modal True
-              ^
-
-File "game/difficultyselect.rpy", line 7: expected statement.
-    window:
-          ^
-
-File "game/difficultyselect.rpy", line 10: expected statement.
-    frame:
-         ^
+File "game/WalkIndependently.rpy", line 105: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    jump JuansEatingHabit
+    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Jan 24 12:34:49 2020
+Wed Jan 29 00:34:09 2020

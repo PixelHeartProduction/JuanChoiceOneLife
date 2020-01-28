@@ -1,4 +1,18 @@
+define Mary = Character("Mary", color="#a669f5")
+define Joseph = Character ("Joseph", color="#adf569")
+define Juan = Character("Juan")
+define Dog = Character("Dog", color="#f5d769")
+define Girl = Character ("Girl", color="#f569b6")
+define Cathy = Character("Ms. Cathy",color="#fc5d6b")
+define Peter = Character("Peter", color="#bdbbbb")
+define James = Character ("James",color="#f57e16")
 #=========================Mary=================================
+image Mary neutralleft:
+    "assets/Sprites/Mary_Normal.png"
+    zoom .15
+    ypos 1.2
+    xpos 0.25
+
 image Mary neutral:
     "assets/Sprites/Mary_Normal.png"
     zoom .15
@@ -24,23 +38,26 @@ image Mary panLeft:
 
 #=========================Joseph==============================
 
-image Joseph neutral:
+image Joseph neutralright:
     "assets/Sprites/Joseph_Normal.png"
     zoom .17
     ypos 1.25
     xpos .75
 
+image Joseph neutral:
+    "assets/Sprites/Joseph_Normal.png"
+    zoom .17
+    ypos 1.25
+
 image Joseph laugh:
     "assets/Sprites/Joseph_Laugh.png"
     zoom .17
     ypos 1.25
-    xpos .75
 
 image Joseph serious:
     "assets/Sprites/Joseph_Serious.png"
     zoom .17
     ypos 1.25
-    xpos .75
 
 #=========================Girl=================================
 
