@@ -5,6 +5,7 @@
 label start():
 
     image transition = "assets/Transitions/TransitionPrologue.png"
+    image kitchen = "assets/Scenes/Kitchen.jpg"
     image daytimeBedroom = "assets/Scenes/BedroomDaytime.jpg"
     image daytimeLivingroom = "assets/Scenes/livingroomdaytime.jpg"
     image daytimeStreet1 = "assets/Scenes/Street1Daytime.jpg"

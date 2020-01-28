@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/WalkIndependently.rpy", line 105: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    jump JuansEatingHabit
-    ^
+File "game/characters.rpy", line 38: expected '=' not found.
+    image Mary neutralRight
+                           ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Wed Jan 29 00:34:09 2020
+Wed Jan 29 01:23:38 2020

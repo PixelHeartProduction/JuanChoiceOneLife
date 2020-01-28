@@ -35,6 +35,17 @@ image Mary panLeft:
     xalign .5
     linear 1 xalign 0.25
 
+image Mary neutralright:
+    "assets/Sprites/Mary_Normal.png"
+    zoom .15
+    ypos 1.2
+    xpos .75
+
+image Mary neutralLeft:
+    "assets/Sprites/Mary_Normal.png"
+    zoom .15
+    ypos 1.2
+    xpos .25
 
 #=========================Joseph==============================
 
@@ -58,6 +69,13 @@ image Joseph serious:
     "assets/Sprites/Joseph_Serious.png"
     zoom .17
     ypos 1.25
+
+image Joseph panLeft:
+    "assets/Sprites/Joseph_Normal.png"
+    zoom .17
+    ypos 1.25
+    xalign .5
+    linear 1 xalign 0.25
 
 #=========================Girl=================================
 
