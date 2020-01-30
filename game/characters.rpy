@@ -6,6 +6,7 @@ define Girl = Character ("Girl", color="#f569b6")
 define Cathy = Character("Ms. Cathy",color="#fc5d6b")
 define Peter = Character("Peter", color="#bdbbbb")
 define May = Character ("May",color="#f57e16")
+define James = Character ("James",color="#fe7e66")
 #=========================Mary=================================
 image Mary neutralleft:
     "assets/Sprites/Mary_Normal.png"

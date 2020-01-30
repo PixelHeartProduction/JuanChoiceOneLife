@@ -285,7 +285,8 @@ screen navigation():
 
             textbutton _("Start") action Start()
 
-            textbutton _("Disaster Mode") action ShowMenu("disasterMenu")
+            if persistent.hardmode:
+                textbutton _("Disaster Mode") action ShowMenu("disasterMenu")
 
         else:
 

@@ -436,7 +436,5 @@ label prologue:
     with Pause(2)
     " "
 
-
-
-
+    $ persistent.hardmode=True
     return

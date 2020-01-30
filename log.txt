@@ -1,36 +1,35 @@
-Wed Jan 29 05:39:47 2020
+Thu Jan 30 19:15:54 2020
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.06s
+Bootstrap to the start of init.init took 0.05s
 Early init took 0.00s
-Loader init took 0.01s
-Loading error handling took 0.03s
-Loading script took 0.81s
+Loader init took 0.02s
+Loading error handling took 0.02s
+Loading script took 0.09s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.10s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.01s
+Running init code took 0.07s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\AceII\\AppData\\Roaming/RenPy/backups\\JuanChoiceOneLife':
-Dump and make backups. took 0.06s
+Dump and make backups. took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.01s
-DPI scale factor: 1.000000
-Creating interface object took 0.11s
+DPI scale factor: 1.250000
+Creating interface object took 0.04s
 Cleaning stores took 0.00s
 Init translation took 0.01s
 Build styles took 0.00s
-Load screen analysis took 0.05s
+Load screen analysis took 0.02s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
 Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.05s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.02s
@@ -38,10 +37,10 @@ Interface start took 0.02s
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Screen sizes: virtual=(1920, 1080) physical=(1386, 780) drawable=(1386, 780)
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
 Vendor: 'NVIDIA Corporation'
-Renderer: 'GeForce GTX 1070 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 441.41'
+Renderer: 'GeForce GTX 1060/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 399.21'
 Display Info: None
 Fixed-function is blacklisted.
 Extensions:
@@ -247,8 +246,6 @@ Extensions:
     GL_EXT_memory_object
     GL_EXT_memory_object_win32
     GL_EXT_multi_draw_arrays
-    GL_EXT_multiview_texture_multisample
-    GL_EXT_multiview_timer_query
     GL_EXT_packed_depth_stencil
     GL_EXT_packed_float
     GL_EXT_packed_pixels
@@ -291,9 +288,7 @@ Extensions:
     GL_EXT_texture_mirror_clamp
     GL_EXT_texture_object
     GL_EXT_texture_sRGB
-    GL_EXT_texture_sRGB_R8
     GL_EXT_texture_sRGB_decode
-    GL_EXT_texture_shadow_lod
     GL_EXT_texture_shared_exponent
     GL_EXT_texture_storage
     GL_EXT_texture_swizzle
@@ -314,16 +309,12 @@ Extensions:
     GL_KHR_parallel_shader_compile
     GL_KHR_robust_buffer_access_behavior
     GL_KHR_robustness
-    GL_KHR_shader_subgroup
     GL_KTX_buffer_region
     GL_NVX_blend_equation_advanced_multi_draw_buffers
     GL_NVX_conditional_render
     GL_NVX_gpu_memory_info
-    GL_NVX_gpu_multicast2
-    GL_NVX_linked_gpu_multicast
     GL_NVX_multigpu_info
     GL_NVX_nvenc_interop
-    GL_NVX_progress_fence
     GL_NV_ES1_1_compatibility
     GL_NV_ES3_1_compatibility
     GL_NV_alpha_to_coverage_dither_control
@@ -362,7 +353,6 @@ Extensions:
     GL_NV_framebuffer_multisample_coverage
     GL_NV_geometry_shader4
     GL_NV_geometry_shader_passthrough
-    GL_NV_gpu_multicast
     GL_NV_gpu_program4
     GL_NV_gpu_program4_1
     GL_NV_gpu_program5
@@ -372,7 +362,6 @@ Extensions:
     GL_NV_half_float
     GL_NV_internalformat_sample_query
     GL_NV_light_max_exponent
-    GL_NV_memory_attachment
     GL_NV_multisample_coverage
     GL_NV_multisample_filter_hint
     GL_NV_occlusion_query
@@ -397,7 +386,6 @@ Extensions:
     GL_NV_shader_atomic_int64
     GL_NV_shader_buffer_load
     GL_NV_shader_storage_buffer_object
-    GL_NV_shader_subgroup_partitioned
     GL_NV_shader_thread_group
     GL_NV_shader_thread_shuffle
     GL_NV_stereo_view_rendering
@@ -425,8 +413,6 @@ Extensions:
     GL_NV_vertex_program3
     GL_NV_viewport_array2
     GL_NV_viewport_swizzle
-    GL_OVR_multiview
-    GL_OVR_multiview2
     GL_S3_s3tc
     GL_SGIS_generate_mipmap
     GL_SGIS_texture_lod
@@ -451,11 +437,11 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 2.23099994659s
+Total time until interface ready: 1.48199987411s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.018667 seconds.
-- Frame drawn at 0.018667 seconds.
-- Frame drawn at 0.025666 seconds.
-- Frame drawn at 0.041667 seconds.
-- 0.041667 seconds to render 5 frames.
+- Frame drawn at 0.016667 seconds.
+- Frame drawn at 0.032667 seconds.
+- Frame drawn at 0.048667 seconds.
+- Frame drawn at 0.065667 seconds.
+- 0.065667 seconds to render 5 frames.

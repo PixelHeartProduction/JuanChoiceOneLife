@@ -93,4 +93,6 @@ label JuansLittleSister:
     show logo JuanChoice with dissolve
     "END"
 
+    jump prologue
+
     return
