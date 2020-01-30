@@ -3,24 +3,6 @@ label prologue:
     $ Choice1 = "undefined"
     $ correct = 0
 
-    image transition = "assets/Transitions/TransitionPrologue.png"
-    image daytimeBedroom = "assets/Scenes/BedroomDaytime.jpg"
-    image daytimeLivingroom = "assets/Scenes/livingroomdaytime.jpg"
-    image daytimeStreet1 = "assets/Scenes/Street1Daytime.jpg"
-    image daytimeStreet2 = "assets/Scenes/Street2Daytime.jpg"
-    image afternoonStreet1 = "assets/Scenes/Street1Afternoon.jpg"
-    image nighttimeLivingRoom = "assets/Scenes/livingroomNighttime.jpg"
-    image nighttimeBedroom = "assets/Scenes/BedroomNighttime.jpg"
-    image classroom = "assets/Scenes/classroom.jpg"
-
-    define Mary = Character("Mary", color="#a669f5")
-    define Joseph = Character ("Joseph", color="#adf569")
-    define Juan = Character("Juan")
-    define Dog = Character("Dog", color="#f5d769")
-    define Girl = Character ("Girl", color="#f569b6")
-    define Cathy = Character("Ms. Cathy",color="#fc5d6b")
-    define Peter = Character("Peter", color="#bdbbbb")
-    define James = Character ("James",color="#f57e16")
 
     stop music
 
@@ -454,7 +436,5 @@ label prologue:
     with Pause(2)
     " "
 
-
-
-
+    $ persistent.hardmode=True
     return
