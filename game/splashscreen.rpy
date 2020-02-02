@@ -2,7 +2,6 @@ image splash1 = "assets/Misc/renpylogopng.jpg"
 image splash2 = "assets/Misc/pixelHeartVer1.jpg"
 
 label splashscreen:
-
     scene black
     with Pause(1)
 
