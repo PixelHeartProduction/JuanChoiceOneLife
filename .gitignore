@@ -1,5 +1,5 @@
-log.txt
-\saves
-saves\persistent
+*.txt
+/saves/
+/saves/persistent
 
 
