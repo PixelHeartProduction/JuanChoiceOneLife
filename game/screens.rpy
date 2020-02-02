@@ -3,9 +3,7 @@
 ################################################################################
 
 init offset = -1
-
-
-################################################################################
+#############################################################
 ## Styles
 ################################################################################
 
@@ -114,6 +112,7 @@ screen say(who, what):
         add SideImage() xalign 0.0 yalign 1.0
 
 init python:
+    import datetime
     config.character_id_prefixes.append('namebox')
 
 style window is default
@@ -345,9 +344,11 @@ style navigation_button_text:
 
 screen main_menu():
 
-    ## This ensures that any other menu screen is replaced.
-    tag menu
+    ###################
 
+    ## This ensures that any other menu screen is replaced.
+
+    tag menu
     style_prefix "main_menu"
 
     add gui.main_menu_background
@@ -360,15 +361,13 @@ screen main_menu():
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
+    window:
+        # tips
+        ypos 0.66
+        background Image(gui.dailyTips,xpos=0.72)
 
-        vbox:
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
-
+        image("assets/Sprites/Juan.png") xpos 0.35 ypos -0.5 zoom 0.7
+        add "dialog"
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -383,10 +382,10 @@ style main_menu_frame:
     background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1.0
+    xalign 0.85
     xoffset -30
     xmaximum 1200
-    yalign 1.0
+    yalign 4
     yoffset -30
 
 style main_menu_text:

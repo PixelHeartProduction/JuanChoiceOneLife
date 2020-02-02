@@ -1,5 +1,5 @@
-log
-game\saves
-game\saves\persistent
+*.txt
+/saves/
+/saves/persistent
 
 

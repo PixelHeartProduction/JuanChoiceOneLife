@@ -85,7 +85,21 @@ define gui.title_text_size = 75
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-
+define gui.dailyTips = renpy.random.choice(["assets/Misc/Tips/tip1.png",
+ "assets/Misc/Tips/tip2.png",
+ "assets/Misc/Tips/tip3.png",
+ "assets/Misc/Tips/tip4.png",
+ "assets/Misc/Tips/tip5.png",
+ "assets/Misc/Tips/tip6.png",
+ "assets/Misc/Tips/tip7.png",
+ "assets/Misc/Tips/tip8.png"])
+define gui.juan_dialogs = renpy.random.choice(["assets/Misc/Dialogbox/dialog1.png",
+ "assets/Misc/Dialogbox/dialog2.png",
+ "assets/Misc/Dialogbox/dialog3.png",
+ "assets/Misc/Dialogbox/dialog4.png",
+ "assets/Misc/Dialogbox/dialog5.png",
+ "assets/Misc/Dialogbox/dialog6.png",
+ "assets/Misc/Dialogbox/dialog7.png"])
 define gui.main_menu_background = renpy.random.choice(["assets/Scenes/Street1Daytime.jpg", "assets/Scenes/Street2Daytime.jpg", "assets/Scenes/classroom.jpg"])
 define gui.game_menu_background = "assets/Scenes/livingroomdaytime.jpg"
 
