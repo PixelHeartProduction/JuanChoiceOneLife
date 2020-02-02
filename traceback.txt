@@ -1,42 +1,60 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-IOError: Couldn't find file 'sample-sound.ogg'.
+After initialization, but before game start.
+  File "game/screens.rpy", line 276, in analyze_screen
+    screen navigation():
+  File "game/screens.rpy", line 276, in analyze
+    screen navigation():
+  File "game/screens.rpy", line 276, in analyze
+    screen navigation():
+  File "game/screens.rpy", line 279, in analyze
+    vbox:
+  File "game/screens.rpy", line 279, in analyze
+    vbox:
+  File "game/screens.rpy", line 292, in analyze
+    if main_menu:
+  File "game/screens.rpy", line 292, in analyze
+    if main_menu:
+  File "game/screens.rpy", line 294, in analyze
+    if persistent.deflt = "a":
+SyntaxError: invalid syntax (game/screens.rpy, line 294)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\ui.py", line 297, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\display\core.py", line 2702, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\display\core.py", line 3380, in interact_core
-    renpy.audio.audio.periodic()
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\audio\audio.py", line 1060, in periodic
-    six.reraise(exc[0], exc[1], exc[2])
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\audio\audio.py", line 1038, in periodic_thread_main
-    periodic_pass()
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\audio\audio.py", line 979, in periodic_pass
-    c.periodic()
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\audio\audio.py", line 457, in periodic
-    topf = load(self.file_prefix + filename + self.file_suffix)
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\audio\audio.py", line 73, in load
-    rv = renpy.loader.load(fn)
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\loader.py", line 576, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'sample-sound.ogg'.
+  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\bootstrap.py", line 316, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\main.py", line 578, in main
+    run(restart)
+  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\main.py", line 86, in run
+    renpy.display.screen.analyze_screens()
+  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\display\screen.py", line 901, in analyze_screens
+    s.ast.analyze_screen()
+  File "game/screens.rpy", line 276, in analyze_screen
+    screen navigation():
+  File "game/screens.rpy", line 276, in analyze
+    screen navigation():
+  File "game/screens.rpy", line 276, in analyze
+    screen navigation():
+  File "game/screens.rpy", line 279, in analyze
+    vbox:
+  File "game/screens.rpy", line 279, in analyze
+    vbox:
+  File "game/screens.rpy", line 292, in analyze
+    if main_menu:
+  File "game/screens.rpy", line 292, in analyze
+    if main_menu:
+  File "game/screens.rpy", line 294, in analyze
+    if persistent.deflt = "a":
+  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\pyanalysis.py", line 533, in is_constant_expr
+    node, literal = ccache.ast_eval_literal(expr)
+  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\pyanalysis.py", line 687, in ast_eval_literal
+    expr = py_compile(expr, 'eval', ast_node=True)
+  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\python.py", line 692, in py_compile
+    raise e
+SyntaxError: invalid syntax (game/screens.rpy, line 294)
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Juan Choice One Life 1.0
-Thu Jan 30 14:21:11 2020
+Sun Feb 02 16:13:03 2020
