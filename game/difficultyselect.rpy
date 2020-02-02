@@ -2,8 +2,11 @@ label diffSelect:
 
     stop music
 
-    "Select game difficulty:"
+    scene classroom with dissolve
+
     menu:
+        "Select game difficulty:"
+        with Pause(1)
         "Story Mode":
             $ Mode = "story"
             jump JuansFirstWord

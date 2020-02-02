@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/characters.rpy", line 38: expected '=' not found.
-    image Mary neutralRight
-                           ^
+File "game/screens.rpy", line 292: u'selected_insensitive' is not a keyword argument or valid child for the textbutton statement.
+    textbutton _("Start") action Start() selected_background bar selected_insensitive
+                                                                                     ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Wed Jan 29 01:23:38 2020
+Sun Feb 02 16:32:29 2020
