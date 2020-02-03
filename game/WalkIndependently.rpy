@@ -13,7 +13,7 @@ label WalkIndependently:
         Juan "Mama!"
         "(Juan tripped.)"
         show Mary surprised
-        Mary "Oh!"
+        Mary "Oh no! Juan, are you okay?"
 
         menu:
             "Cry":
@@ -21,12 +21,17 @@ label WalkIndependently:
                 Juan "Uwaah!..."
                 Mary "OK don't cry now Juan."
                 Juan "Uwaah!...Uwaah!..."
-                "(*Mary picks Juan up and kissed him on his forhead)"
+                "(*Mary picks Juan up and kissed him on his forehead)"
                 "(Immidiately Juan stops crying and looked at Mary)"
+                Mary "You're ok, baby. Did it hurt? Where is the ouchie?"
+                "Juan shows his palms."
+                Mary "Let me give it a big magical healing blow."
+                "Mary blows on Juan's palms"
+                Mary "How's that? A lot better right?"
                 Juan "Mama."
                 show Mary smile
-                Mary "You're doing great Juan!"
-                Mary "We should do it again!"
+                Mary "You're doing great, Juan!"
+                Mary "How about we give it another try? What do you say?"
                 Juan "Yes!"
                 "(Juan tried again for second time and this time he successfully walked towards Mary)"
 
@@ -64,25 +69,28 @@ label WalkIndependently:
         Joseph "Just a little bit more.."
         "(*Juan tripped)"
         show Joseph neutral
-        Joseph "Oh!"
+        Joseph "Oh no! That's okay. Juan, shake it off. You're good."
 
         menu:
             "Cry":
                 Juan "Uwaah!..."
-                Joseph "It's Ok little Juan don't cry now"
+                Joseph "It's Ok little Juan don't cry now. Come on who's my brave little boy?"
                 Juan "Uwaah!...Uwaah!..."
                 "(*Joseph helped Juan stand up and gave him a pat on the head.)"
                 "(Immidiately Juan stops crying and looked at Joseph.)"
-                Juan "Papa."
-                Joseph "See? It's ok little Juan"
-                show Joseph laugh
-                Joseph "We should do it again!"
-                Juan "Yes!"
+                Juan "Papa, it hurt. Hands... hurt."
+                "Juan, shows his dirty hands."
+                "Joseph, blows on it."
+                Joseph "See? It's ok little Juan. That's just a little ouchie. Nothing big right? Right?"
+                Joseph "Who's my big brave boy? Who is?"
+                show Juan laugh
+                Joseph "How about we try it again, huh?"
+                Juan "Okay!"
                 "(Juan tried again for second time and this time he successfully walked towards Joseph)"
             "Stand up":
                 "(Juan was a little bit shaken from the fall.)"
                 "(But then Juan stood up again)"
-                Joseph "Wow Juan I like you determination!"
+                Joseph "Wow, that's amazing. Ma, come here Juan is walking."
                 Juan "Papa!"
                 show Joseph laugh
                 Juan "You sure are my little Juan!"
