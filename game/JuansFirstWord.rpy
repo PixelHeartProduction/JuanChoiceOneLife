@@ -8,9 +8,9 @@ label JuansFirstWord:
     "..."
     Mary "Aww look at his cute little eyes!"
     Mary "He sure looks like you Joseph."
-    Joseph "Haha!, Sure it is."
-    "..."
+    Joseph "Haha!, He looks more like me than me. He's so cute and I'm so happy."
 
+    "..."
     Joseph "Hey Ma look he's waking up!"
 
     scene daytimeLivingroom with dissolve
@@ -22,20 +22,20 @@ label JuansFirstWord:
     "(Baby juan woke up for the first time today.)"
 
     show Mary smile
-    Mary "Good morning our baby boy!"
+    Mary "Good morning our little baby boy! Did you sleep well?"
     show Joseph laugh
-    Joseph "Hey little Juan!"
+    Joseph "Hey little Juan! How are you? How's my little champ?"
     show Mary neutral
-    Mary "Me and daddy bought you a toy!"
-    Joseph "It is the best toy in the world,"
-    Joseph "Best suited for our little boy Juan."
+    Mary "So Juan, daddy and I have a little surprise for you..."
+    Joseph "Mommy and I put a lot of thought into this so we hope you like it, champ."
+    Mary "Here you go."
 
     "(Joseph and Mary handed the toy to Juan.)"
 
     Juan "*Giggles"
 
     show Mary smile
-    Mary "Oh! looks like he likes it Joseph"
+    Mary "Oh! It seems that he likes it, Joseph!"
     show Joseph neutral
     Joseph "Well it's a perfect toy for him."
     Mary "Hehe, Sure it is!"
