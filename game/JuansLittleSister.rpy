@@ -1,5 +1,7 @@
 label JuansLittleSister:
 
+    $ played_with_may = False
+
     stop music
     scene black with dissolve
     scene daytimeLivingroom with dissolve
@@ -33,6 +35,8 @@ label JuansLittleSister:
 
     scene black with dissolve
     scene daytimeBedroom with dissolve
+    show slippers
+    show toys
 
     "(May entered Juan's room carrying a baby.)"
     "(Juan can't help himself but to curiously look at them)"
@@ -46,6 +50,9 @@ label JuansLittleSister:
     Joseph "Go on Juan play with her."
     show May neutral with dissolve
     May "ya.aa."
+    hide Joseph with dissolve
+    hide Mary with dissolve
+    show mode confirm with dissolve
 
     menu:
         "Play with May":
@@ -94,5 +101,14 @@ label JuansLittleSister:
     "END"
 
     jump prologue
+
+    #=====================Screens===========================
+    screen playWithMay():
+        modal True
+        $ potato = Image("assets/Sprites/Items/mashedpotato.png")
+        $ banana = Image("assets/Sprites/Items/bananas.png")
+
+
+
 
     return
