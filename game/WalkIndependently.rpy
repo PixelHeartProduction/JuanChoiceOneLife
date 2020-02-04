@@ -21,16 +21,21 @@ label WalkIndependently:
         Juan "Mama!"
         "(Juan tripped.)"
         show Mary surprised
+        scene livingroomangle1 with dissolve
+        show BabyJuan tripped with dissolve
         Mary "Oh no! Juan, are you okay?"
 
         menu:
             "Cry":
-                show Mary neutral
+                show BabyJuan trippedcrying with dissolve
                 Juan "Uwaah!..."
                 Mary "OK don't cry now Juan."
                 Juan "Uwaah!...Uwaah!..."
+
                 "(*Mary picks Juan up and kissed him on his forehead)"
                 "(Immidiately Juan stops crying and looked at Mary)"
+                scene daytimeLivingroom with dissolve
+                show Mary surprised with dissolve
                 Mary "You're ok, baby. Did it hurt? Where is the ouchie?"
                 "Juan shows his palms."
                 Mary "Let me give it a big magical healing blow."
@@ -41,23 +46,31 @@ label WalkIndependently:
                 Mary "You're doing great, Juan!"
                 Mary "How about we give it another try? What do you say?"
                 Juan "Yes!"
+                scene livingroomangle2 with dissolve
+                show BabyJuan walking with dissolve
+                show Mary kneel with dissolve
                 "(Juan tried again for second time and this time he successfully walked towards Mary)"
 
             "Stand up":
+                scene daytimeLivingroom with dissolve
+                show Mary surprised with dissolve
                 "(Juan was a little bit shaken from the fall.)"
                 "(But then Juan stood up again.)"
                 Mary "Wow! Juan, I know you'll never give up."
                 Juan "Mama!"
                 show Mary neutral
                 Mary "Haha, I'm really proud of you."
+                scene livingroomangle2 with dissolve
+                show BabyJuan walking with dissolve
+                show Mary kneel with dissolve
                 "(Juan tried again for second time and this time he successfully walked towards Mary)"
 
 
-        show Mary smile
         Mary "You did it Juan!"
-        show Mary neutral
         Mary "I know you can do it."
         Juan "Yay!"
+        scene daytimeLivingroom with dissolve
+        show Mary neutral with dissolve
         "*Door bells"
         Joseph "Ma, Juan, I'm home!"
         show Joseph neutralright with easeinright
@@ -76,16 +89,20 @@ label WalkIndependently:
         Joseph "There you go little Juan you can do it!"
         Joseph "Just a little bit more.."
         "(*Juan tripped)"
-        show Joseph neutral
+        scene livingroomangle1 with dissolve
+        show BabyJuan tripped with dissolve
         Joseph "Oh no! That's okay. Juan, shake it off. You're good."
 
         menu:
             "Cry":
+                show BabyJuan trippedcrying with dissolve
                 Juan "Uwaah!..."
                 Joseph "It's Ok little Juan don't cry now. Come on who's my brave little boy?"
                 Juan "Uwaah!...Uwaah!..."
                 "(*Joseph helped Juan stand up and gave him a pat on the head.)"
                 "(Immidiately Juan stops crying and looked at Joseph.)"
+                scene daytimeLivingroom with dissolve
+                show Joseph neutral with dissolve
                 Juan "Papa, it hurt. Hands... hurt."
                 "Juan, shows his dirty hands."
                 "Joseph, blows on it."
@@ -94,19 +111,28 @@ label WalkIndependently:
                 show Joseph laugh
                 Joseph "How about we try it again, huh?"
                 Juan "Okay!"
+                scene livingroomangle2 with dissolve
+                show BabyJuan walking with dissolve
+                show Joseph kneel with dissolve
                 "(Juan tried again for second time and this time he successfully walked towards Joseph)"
             "Stand up":
+                scene daytimeLivingroom with dissolve
+                show Joseph neutral with dissolve
                 "(Juan was a little bit shaken from the fall.)"
                 "(But then Juan stood up again)"
                 Joseph "Wow, that's amazing. Ma, come here Juan is walking."
                 Juan "Papa!"
                 show Joseph laugh
                 Juan "You sure are my little Juan!"
+                scene livingroomangle2 with dissolve
+                show BabyJuan walking with dissolve
+                show Joseph kneel with dissolve
                 "(Juan tried again for second time and this time he successfully walked towards Joseph)"
 
         Joseph "Wow!, You see I know you can do it."
         Juan "Yay!"
-        show Joseph neutral
+        scene daytimeLivingroom with dissolve
+        show Joseph neutral with dissolve
         Joseph "Great Job haha"
         Mary "Juan, Dad, Dinner's Ready!"
         Joseph "Oh it's that time already?"
