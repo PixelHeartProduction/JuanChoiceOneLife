@@ -13,6 +13,9 @@ image logo JuanChoice:
     zoom .7
     yalign .5
 
+image mode confirm:
+    "assets/Misc/confirm.png"
+
 image dialog:
         gui.juan_dialogs
         zoom 1.1
