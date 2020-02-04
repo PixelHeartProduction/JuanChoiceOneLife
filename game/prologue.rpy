@@ -22,48 +22,55 @@ label prologue:
     scene daytimeBedroom with dissolve
     show Mary smile with dissolve
 
-    Mary "You'll be late for school!"
+    Mary "Juan, you'll be late for school! Hurry up, it's your first day."
 
     menu:
         "Wake up":
-            Juan "uugghh.."
+            Juan "uugghh.. What time is it?"
             show Mary neutral
-            Mary "Good morning Juan!"
+            Mary "Good morning, Juan!"
         "Maybe later..":
-            Juan "..maybe..later"
+            Juan "..maybe..later. Five more minutes, Ma..."
             show Mary surprised
-            Mary "No time for that Juan!"
+            Mary "Juan, you need to get up now. You can't be late on your first day of school."
 
-    Mary "Anyway your breakfast is now ready at the kitchen"
+    Mary "Breakfast is in the kitchen. Eat up when you're done here."
     show Mary neutral
-    Mary "And it's your favorite menu hehe"
+    Mary "...and it's your favorite,"
+    "Mary chuckles."
+    Mary "Now, get up and don't forget to make the bed before you go down."
 
-    Juan "Ookay.."
+    Juan "Hmmmmm...Okay.."
+    "Juan stretches in his bed one last time "
 
     scene daytimeLivingroom with dissolve
 
     Juan "(I feel really exited and happy today because it's my first day as a grade 1 student)"
-    Juan "(I haven't really think about anything at all because I want to meet new friends.)"
-    Juan "nom nom nom.."
-    Juan "Oohh! it tastes good!"
+    Juan "(I wonder who I'll meet? I'm really nervous. What if I do something embarrassing?)"
+    Juan "(I hope everything goes well on my first day.)"
+    "Juan continued eating."
+    Juan "Oohh! it tastes really good, Ma!"
 
     show Mary smile with dissolve
     Mary "Of course it's your favourite pancakes."
     show Mary neutral
-    Mary "By the way your dad also liked it as well"
-    Mary "But he already went off earlier"
-    Mary "Must be tough being a Software Engineer"
-    Mary "Anyway Juan you should keep up your grades to be like your dad one day"
-    Mary "You dad's Job might be hard, But being a school drop-out is even-"
+    Mary "By the way your dad also liked it very much. He told me to tell you that he hopes you have a great day at school and that you make him proud."
+    Mary "Must be tough being a Software Engineer, huh? Your dad left very early today"
+    Mary "Anyway Juan you should keep up your grades if you want to be like your dad one day, okay?"
+    Mary "You dad's Job might be hard, But being a school drop-out will be even harder. So Juan, remember your education is the only wealth we could give you that cannot be taken away."
+    Mary "Always remember that you have to work hard now so in the future you could have it easier."
+    Mary "There's this saying, 'if you don't walk today you'll have to run tomorrow.', so always work hard --"
 
-    Juan "I'm off to go now mom love-u!"
+    Juan "Maaa, I'm gonna be late."
+    Mary "Sorry, honey."
+    Juan "I'm off to go now mom love you!"
     Juan "The breakfast was really good by the way."
 
     show Mary surprised
     Mary "But you have not finished your meal at all!"
     Mary "...sigh."
     show Mary smile
-    Mary "Take care Juan!"
+    Mary "Take care, Juan! Have fun at school!"
     play sound "assets/SFX/Door.mp3"
 
     scene black with dissolve
@@ -72,9 +79,9 @@ label prologue:
     scene daytimeStreet1 with dissolve
 
 
-    Juan "Hmm.. come to think of it, I wonder how's Glenn and James doing"
-    Juan "I have not heard of them since we moved town"
-    Juan "I should text with them sometimes."
+    Juan "Hmm... I wonder how's Glenn and James doing"
+    Juan "I have not heard of them since we moved."
+    Juan "I should contact them sometimes and catch up, I kinda miss them."
     "....."
 
     stop music
@@ -83,19 +90,20 @@ label prologue:
     play music "assets/BGM/Lullaby.mp3"
     Juan "huh?."
     Juan "What's happening there?"
-    "(I hastily ran into the scene.)"
+    "(Juan hastily ran into the scene.)"
 
     show Girl crying with dissolve
 
     play sound "assets/SFX/Dog_Bark.mp3"
     Dog "Woof!"
     Girl "Help! somebody.."
-    Juan "(She needs help quickly!)"
+    Girl "Get away!!"
+    Juan "(That little girl needs help quickly! What should I do?)"
 
     menu:
         "Throw a stone to the dog":
             $ Choice1 = "stone"
-            "(I quicky search for something to throw at the dog and find a piece of pebble.)"
+            "(Juan quicky searches for something to throw at the dog and finds a piece of rock.)"
             show Girl surprised
             play sound "assets/SFX/Dog_Bark.mp3"
             Dog "Woof!"
@@ -108,13 +116,13 @@ label prologue:
 
         "Charge towards the dog":
             $ Choice1 = "charge"
-            "(I quicky charge towards the to stop the girl from being bitten)"
+            "(Juan quicky charges towards the dog to stop the girl from getting bitten)"
             play sound "assets/SFX/Dog_Bark.mp3"
             Dog "Woof! Woof!"
             show Girl surprised
             Juan "Arrgghh!"
-            Juan "Halt!"
-            "(I stopped halfway my charge as i saw the dog preparing to charge back at me)"
+            Juan "STOP!"
+            "(Juan charges but stops halfway and saw the dog preparing to charge back at me)"
             Juan "Uhhoh!"
             Dog "woof!"
             "(I quickly ran away but somehow I got the dog away from her.)"
@@ -122,21 +130,21 @@ label prologue:
     scene black with dissolve
     with Pause(1)
 
-    "(After a few minutes the dog finally gave up on me and walks away)"
+    "(After a few minutes the dog finally gave up on me and walks away.)"
 
     scene daytimeStreet2 with dissolve
 
-    Juan "Phew.. finally it's gone."
-    "(I said to myself as i catch my breath.)"
-    Juan "Oh no! I'm late for school better get there quick!."
+    Juan "Phew.. finally that dog's gone."
+    "(Juan says to myself as he catches his breath.)"
+    Juan "Oh no! I'm late for school better get there quickly!."
 
     scene black with dissolve
     with Pause(1)
     scene classroom with dissolve
     play sound "assets/SFX/Door.mp3"
 
-    Juan "I finally arrived at school and goodness,"
-    Juan "I missed my first flag ceremony good thing my first class has not yet started."
+    "Juan arrives at school. He seems to be a little anxious since he missed his first flag ceremony. "
+    "He rushes up to his classroom and thankfully the first class has not yet started."
 
     play sound "assets/SFX/School_Bell.mp3"
     "(Bell Rings.)"
@@ -145,32 +153,33 @@ label prologue:
     show Cathy neutral with easeinleft
 
     "Good morning class, how's everyone doing?"
-    "By the way I'm your new teacher and adviser"
+    Class "Good morning, Teacher!"
+    "By the way I'm your new teacher and adviser."
 
     show Cathy smile
 
-    "My name is Cathy!"
+    "My name is Cathy! You may call me Ms. Cathy or Teacher Cat."
 
     show Cathy neutral
 
-    Cathy "uh-ehm."
-    Cathy "We should begin our class now!"
+    "Ms. Cathy clears her throat."
+    Cathy "How about we start our class!"
     stop music
-    Cathy "And today our subject is Geography!"
+    Cathy "We will start today with a lesson about the Philippines our own country!"
     play music "assets/BGM/FeudalNight.mp3"
 
 # add a "Geography transition image"
 
     show Cathy panningRight
-    Cathy "Our country, The Philippines is located in South East Asia."
+    Cathy "Our country, The Philippines is here in South East Asia."
     show school philippineMap with dissolve
-    Cathy "It's capital city is Manila located in Luzon Island."
-    Cathy "It's comprised 7107 islands!"
+    Cathy "Manila is the name of our Capital City and it is here in the Luzon Island."
+    Cathy "Our country has 7107 islands!"
     show Cathy laugh
-    Cathy "I can't even imagine how many is that!"
+    Cathy "Isn't that a lot."
     show Cathy neutral
-    Cathy "The Philippines is found right in the Equator"
-    Cathy "Which means the weather throughout the year is warm."
+    Cathy "The Philippines is here right in the Equator."
+    Cathy "Which means the weather throughout the year is warm or rainy."
     Cathy "Did you know that the largest eagle is found in the Philippines?"
     show school philippineEagle with dissolve
     Cathy "The Philippine eagle!"
@@ -178,14 +187,14 @@ label prologue:
     Cathy "And it's the National Bird of the Philippines."
     hide school philippineEagle with dissolve
     show Cathy panningBack
-    Cathy "Any way class, you should take notes of what I am saying"
+    Cathy "Class I'm gonna need you to write down all of the things I write donw on the board okay?"
     show Cathy smile
     Cathy "Because it's quiz time!"
 
     show Cathy neutral
     Cathy "Hmm.. let's see..."
     Cathy "You there young lad!"
-    Juan "(What Me!?)"
+    Juan "(What Me!? Is she calling me?)"
     Juan "Uhm.."
     show Cathy laugh
     Cathy "Whats your name?"
@@ -200,20 +209,17 @@ label prologue:
     menu:
         "7108":
             show Cathy sad
-            Cathy "Wrong!"
-            Cathy "But close."
+            Cathy "Good guess you're really close, dear!"
         "7107":
             $ correct +=1
             show Cathy smile
-            Cathy "Correct!"
-            Cathy "That's an easy one."
+            Cathy "That's amazing, Juan! Great job!"
         "1234":
             show Cathy sad
-            Cathy "Wrong!"
-            Cathy "You're not even close."
+            Cathy "Awwe, good try, Juan but I guess we're looking for a different number."
 
     show Cathy neutral
-    Cathy "Question #2: Where is the Philippines located at?"
+    Cathy "Question #2: Where in Asia is the Philippines located?"
     menu:
         "South East Asia":
             $ correct +=1
@@ -222,12 +228,10 @@ label prologue:
             Cathy "Good Job!"
         "East Asia":
             show Cathy sad
-            Cathy "Wrong!"
-            Cathy "Did you really take notes?"
+            Cathy "You're quite close but you just missed a word."
         "South Asia":
             show Cathy sad
-            Cathy "Wrong!"
-            Cathy "Did you really take notes?"
+            Cathy "Quite near, Juan. I'm gonna need you to listen better next time okay?"
 
     show Cathy neutral
     Cathy "Question #3: What is the National Bird of the Philippines?"
@@ -239,12 +243,11 @@ label prologue:
             Cathy "Good Job!"
         "Maya":
             show Cathy sad
-            Cathy "Wrong!"
-            Cathy "It is not the national bird"
+            Cathy "Wrong."
+            Cathy "It is not the national bird, Juan."
         "Manok":
             show Cathy sad
-            Cathy "Wrong!"
-            Cathy "Definitely Not!"
+            Cathy "Definitely Not, Juan."
 
     show Cathy smile
     Cathy "Okay that's it!"
