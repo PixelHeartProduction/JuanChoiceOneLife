@@ -37,11 +37,11 @@ label JuansFirstWord:
     show Mary smile
     Mary "Oh! It seems that he likes it, Joseph!"
     show Joseph neutral
-    Joseph "Well it's a perfect toy for him."
-    Mary "Hehe, Sure it is!"
+    Joseph "Well I think it's perfect for him."
+    Mary "It does seem so."
     show Mary neutral
-    Mary "But I think he treats it more like a friend than a toy."
     Mary "What a lovely little boy."
+    Joseph "Our lovely little boy, hon."
 
     Juan "*Giggles"
     Juan "..."
@@ -53,20 +53,21 @@ label JuansFirstWord:
     Joseph "Ma!"
     Joseph "I think he's about to say his first word!"
     show Mary surprised
-    Mary "Ohh! i'm really excited!"
+    Mary "Ohh, Really?! I'm really excited!"
     Mary "I've been waiting this for 10 months!"
+    "Mary and Joseph tries guiding Juan on his first words."
 
     Juan "a..a.."
     menu:
         "mama":
             $ Choice_ch1 = "mama"
             play music "assets/BGM/SayIt.mp3"
-            Mary "Can you believe that Joseph!"
+            Mary "Can you believe that Joseph?! He said 'Mama'. "
             show Mary smile
             Mary "He said Mama!"
             show Joseph laugh
             Joseph "Yay! I can't believe it he's learning so fast!"
-            Joseph "I'm really proud of him."
+            Joseph "I'm really proud of him. He really is an amazing boy."
             Juan "*Cries"
             show Mary surprised
             Mary "Oh! I forgot about his food."
@@ -77,10 +78,10 @@ label JuansFirstWord:
             $ Choice_ch1 = "papa"
             play music "assets/BGM/SayIt.mp3"
             show Joseph laugh
-            Joseph "Ma!, he said Papa!"
+            Joseph "Ma!, he said Papa! Did you hear it? He said 'Papa' he called me."
             show Mary smile
             Mary "Wow! I can't believe it."
-            Joseph "He's really growing so fast!"
+            Joseph "He's really growing so fast! He even learned how to call you already."
             show Mary neutral
             Mary "I'm really proud of him."
             Juan "*Cries"

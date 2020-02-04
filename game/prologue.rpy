@@ -412,7 +412,7 @@ label prologue:
     Juan "Goodness this is not really 'That' hard."
     Juan "It's quite alright. A lot of new questions though. Maybe this is preparation for the future topics we will be discussing in class."
     "..."
-    "(After Juab finished his homework, he starts replying to Glenn's message)"
+    "(After Juan finished his homework, he starts replying to Glenn's message)"
 
     Juan "Glenn,  I really miss hanging out with you and James."
     Juan "I'm really excited for your upcoming visit here. I hope that you stay long so we could play games like we used to."
@@ -433,24 +433,14 @@ label prologue:
 
     Juan "If I didn't,"
     Juan "I wouldn't have gotten late on my first day of school, Or got my uniform dirty."
-    Juan "Haha ..It is not a big deal really because after all.."
 
     scene black with dissolve
     with Pause(1)
 
-    Juan "It's my Choice,"
-    Juan "It's my Life."
-
-    show logo JuanChoice with dissolve
-    with Pause(2)
-
-    "Juan Choice, One Life"
-
-    "Prologue END."
+    "END."
 
     scene black with dissolve
     with Pause(2)
-    " "
 
     $ persistent.hardmode=True
     return
