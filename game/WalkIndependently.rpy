@@ -36,11 +36,15 @@ label WalkIndependently:
                 "(Immidiately Juan stops crying and looked at Mary)"
                 scene daytimeLivingroom with dissolve
                 show Mary surprised with dissolve
+                "(*Mary picks Juan up and kisses him on his forehead)"
+                "(Immediately Juan stops crying and looks at Mary)"
+
                 Mary "You're ok, baby. Did it hurt? Where is the ouchie?"
                 "Juan shows his palms."
-                Mary "Let me give it a big magical healing blow."
-                "Mary blows on Juan's palms"
+                Mary "Let me give it a big magical healing kiss."
+                "Mary kisses Juan's palms"
                 Mary "How's that? A lot better right?"
+                "Juan nods"
                 Juan "Mama."
                 show Mary smile
                 Mary "You're doing great, Juan!"
@@ -49,6 +53,7 @@ label WalkIndependently:
                 scene livingroomangle2 with dissolve
                 show BabyJuan walking with dissolve
                 show Mary kneel with dissolve
+
                 "(Juan tried again for second time and this time he successfully walked towards Mary)"
 
             "Stand up":
@@ -56,14 +61,16 @@ label WalkIndependently:
                 show Mary surprised with dissolve
                 "(Juan was a little bit shaken from the fall.)"
                 "(But then Juan stood up again.)"
-                Mary "Wow! Juan, I know you'll never give up."
+                Mary "Wow! That's my brave little boy!"
                 Juan "Mama!"
                 show Mary neutral
                 Mary "Haha, I'm really proud of you."
                 scene livingroomangle2 with dissolve
                 show BabyJuan walking with dissolve
                 show Mary kneel with dissolve
-                "(Juan tried again for second time and this time he successfully walked towards Mary)"
+                Mary "Haha, I'm really proud of you. You were so brave. You tripped but you got up on your own. That's my amazing little boy."
+                "(Juan successfully walks towards Mary)"
+
 
 
         Mary "You did it Juan!"
