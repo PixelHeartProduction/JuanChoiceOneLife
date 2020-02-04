@@ -258,7 +258,7 @@ label prologue:
     "(Bell Rings.)"
 
     Cathy "Oh it's that time already!"
-    Cathy "Ok kids it's lunch time, hope you learn alot today from our class!"
+    Cathy "Ok kids it's lunch time, hope you learned a lot today from our class!"
 
     stop music
     hide Cathy neutral
