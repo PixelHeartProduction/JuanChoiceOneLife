@@ -98,9 +98,10 @@ label JuansFirstWord:
     "(And so, Juan finally said his first word)"
 
     if Choice_ch1 == "papa":
-        "Daddy's boy perk unlocked!"
+        $ renpy.notify("Daddy's boy perk unlocked!")
     if Choice_ch1 == "mama":
-        "Mama's boy perk unlocked!"
+        $ renpy.notify("Mama's boy perk unlocked!")
+
 
     jump WalkIndependently
 
