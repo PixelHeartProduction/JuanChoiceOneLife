@@ -725,12 +725,12 @@ screen preferences():
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
-                vbox:
-                    style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
+                #vbox:
+                    #style_prefix "radio"
+                    #label _("Rollback Side")
+                    #textbutton _("Disable") action Preference("rollback side", "disable")
+                    #textbutton _("Left") action Preference("rollback side", "left")
+                    #textbutton _("Right") action Preference("rollback side", "right")
 
                 vbox:
                     style_prefix "check"
@@ -751,12 +751,15 @@ screen preferences():
                 vbox:
 
                     label _("Text Speed")
-
-                    bar value Preference("text speed")
-
+                    hbox:
+                        text("- ")
+                        bar value Preference("text speed")
+                        text(" +")
                     label _("Auto-Forward Time")
-
-                    bar value Preference("auto-forward time")
+                    hbox:
+                        text("- ")
+                        bar value Preference("auto-forward time")
+                        text(" +")
 
                 vbox:
 
@@ -764,27 +767,31 @@ screen preferences():
                         label _("Music Volume")
 
                         hbox:
+                            text("- ")
                             bar value Preference("music volume")
+                            text(" +")
 
                     if config.has_sound:
 
                         label _("Sound Volume")
 
                         hbox:
+                            text("- ")
                             bar value Preference("sound volume")
+                            text(" +")
 
-                            if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
+                            #if config.sample_sound:
+                                #textbutton _("Test") action Play("sound", config.sample_sound)
 
 
-                    if config.has_voice:
-                        label _("Voice Volume")
+                    #if config.has_voice:
+                        #label _("Voice Volume")
 
-                        hbox:
-                            bar value Preference("voice volume")
+                        #hbox:
+                            #bar value Preference("voice volume")
 
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
+                            #if config.sample_voice:
+                                #textbutton _("Test") action Play("voice", config.sample_voice)
 
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
@@ -1053,9 +1060,9 @@ screen mouse_help():
         label _("Right Click")
         text _("Accesses the game menu.")
 
-    hbox:
-        label _("Mouse Wheel Up\nClick Rollback Side")
-        text _("Rolls back to earlier dialogue.")
+    #hbox:
+        #label _("Mouse Wheel Up\nClick Rollback Side")
+        #text _("Rolls back to earlier dialogue.")
 
     hbox:
         label _("Mouse Wheel Down")

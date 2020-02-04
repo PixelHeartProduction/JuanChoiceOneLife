@@ -51,8 +51,6 @@ label JuansLittleSister:
 
     scene black with dissolve
     scene daytimeBedroom with dissolve
-    show slippers
-    show toys
 
     "(May entered Juan's room carrying a baby.)"
     "(Juan can't help himself but to curiously look at them)"
@@ -69,52 +67,55 @@ label JuansLittleSister:
     hide Joseph with dissolve
     hide Mary with dissolve
     show mode confirm with dissolve
+    call screen playWithMay with dissolve
+    hide mode confirm with dissolve
+    show Mary neutralLeft
+    show Joseph neutralright
 
-    menu:
-        "Play with May":
+    if played_with_may:
+        scene black with dissolve
+        "(Juan is then alone with May.)"
+        scene daytimeLivingroom with dissolve
+        show Joseph neutralright with dissolve
+        show Mary neutralLeft with dissolve
+        May "*Laughs out loud."
+        show Mary smile
+        Mary "He's gonna be a good older brother, isn't he?"
+        Joseph "Definitely! Our little Juan is very mature for his age don't you think?"
+        Joseph "Ahh..our little Juan how getting big already he is."
+        Mary "Hehe, Sure he is! I'm so happy seeing our little family like this."
+        scene black with dissolve
+    else:
+        "..."
+        May "Uwaah..."
+        if Choice_ch1 == "mama":
+            show Joseph serious
+            show Mary surprised
+            Joseph "You shouldn't make your sister cry!"
+            Juan "..."
+            Mary "Listen, Juan"
+            Mary "You're a big brother now."
+            Mary "You have to take care of your sister okay? You're the big brother, no matter what happens you are all May has."
+            Mary "May, is going to rely on you because you're older ok? I thought you wanted to be just like Superman?"
+            "(Mary said in a very calm voice.)"
+            Juan "Ok."
             scene black with dissolve
-            "(Juan is then alone with May.)"
-            scene daytimeLivingroom with dissolve
-            show Joseph neutralright with dissolve
-            show Mary neutralLeft with dissolve
-            May "*Laughs out loud."
-            show Mary smile
-            Mary "He's gonna be a good older brother, isn't he?"
-            Joseph "Definitely! Our little Juan is very mature for his age don't you think?"
-            Joseph "Ahh..our little Juan how getting big already he is."
-            Mary "Hehe, Sure he is! I'm so happy seeing our little family like this."
+            Juan "I'm Sorry."
+
+        if Choice_ch1 == "papa":
+            show Mary surprised
+            show Joseph serious
+            Mary "You should'nt make your sister cry!"
+            Juan "..."
+            Joseph "listen Juan."
+            Joseph "You're a big brother now."
+            Joseph "You have to take care of your sister okay? You're the big brother, no matter what happens you are all May has."
+            Joseph "May, is going to rely on you because you're older ok? I thought you wanted to be just like Superman?"
+            "(Joseph said in a very calm voice.)"
+            Juan "Ok."
             scene black with dissolve
+            Juan "I'm Sorry."
 
-        "Be jealous":
-            "..."
-            May "Uwaah..."
-            if Choice_ch1 == "mama":
-                show Joseph serious
-                show Mary surprised
-                Joseph "You shouldn't make your sister cry!"
-                Juan "..."
-                Mary "Listen, Juan"
-                Mary "You're a big brother now."
-                Mary "You have to take care of your sister okay? You're the big brother, no matter what happens you are all May has."
-                Mary "May, is going to rely on you because you're older ok? I thought you wanted to be just like Superman?"
-                "(Mary said in a very calm voice.)"
-                Juan "Ok."
-                scene black with dissolve
-                Juan "I'm Sorry."
-
-            if Choice_ch1 == "papa":
-                show Mary surprised
-                show Joseph serious
-                Mary "You should'nt make your sister cry!"
-                Juan "..."
-                Joseph "listen Juan."
-                Joseph "You're a big brother now."
-                Joseph "You have to take care of your sister okay? You're the big brother, no matter what happens you are all May has."
-                Joseph "May, is going to rely on you because you're older ok? I thought you wanted to be just like Superman?"
-                "(Joseph said in a very calm voice.)"
-                Juan "Ok."
-                scene black with dissolve
-                Juan "I'm Sorry."
 
 
     show logo JuanChoice with dissolve
@@ -125,8 +126,15 @@ label JuansLittleSister:
     #=====================Screens===========================
     screen playWithMay():
         modal True
-        $ potato = Image("assets/Sprites/Items/mashedpotato.png")
-        $ banana = Image("assets/Sprites/Items/bananas.png")
+        $ slipper = Image("assets/Sprites/Items/slippers.png")
+        $ toy = Image("assets/Sprites/Items/toys.png")
+
+        hbox xalign 0.5:
+            text(Text("Play with may.",size=50))
+        hbox xpos 0.3 ypos 800:
+            imagebutton idle Transform(slipper, zoom=0.5) action [SetVariable("played_with_may", False),Return()]
+        hbox xpos 0.5 ypos 600:
+            imagebutton idle Transform(toy, zoom=0.5) action [SetVariable("played_with_may", True),Return()]
 
 
 
