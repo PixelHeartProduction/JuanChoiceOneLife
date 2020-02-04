@@ -2,6 +2,9 @@ label JuansEatingHabit:
     stop music
 
     scene black with dissolve
+    show text("{size=60}Juan's eating habit{/size}") with dissolve
+    with Pause(2)
+    hide text with dissolve
 
     play music "assets/BGM/HelloHowAreYou.mp3"
 
@@ -78,6 +81,7 @@ label JuansEatingHabit:
 
     if food_eaten < 3:
         $ Choice_ch3 = "picky"
+        $ renpy.notify("Picky kid perk unlocked!")
         "(Juan ate some of the food and leave everything on the plate.)"
         Juan "Yummy!"
         show Mary smile
@@ -92,6 +96,7 @@ label JuansEatingHabit:
 
     else:
         $ Choice_ch3 = "healthy"
+        $ renpy.notify("Healthy kid perk unlocked!")
         "(Juan ate everything and left nothing on his plate.)"
         Juan "Yummy!"
         show Mary smile
@@ -110,10 +115,8 @@ label JuansEatingHabit:
     show Joseph neutral
     Joseph "Anyway we should do this again next time."
     Juan "Yay!"
-
+    "(And so little Juan is really happy after playing with Joseph)"
     scene black with dissolve
-
-    "END"
 
     jump JuansLittleSister
 

@@ -2,13 +2,18 @@ label JuansFirstWord:
 
     stop music
 
+
     scene black with dissolve
+
+    show text("{size=60}Juan's first word{/size}") with dissolve
+    with Pause(2)
+    hide text with dissolve
 
     play music "assets/BGM/HelloHowAreYou.mp3"
     "..."
     Mary "Aww look at his cute little eyes!"
     Mary "He sure looks like you Joseph."
-    Joseph "Haha!, He looks more like me than me. He's so cute and I'm so happy."
+    Joseph "Haha!, He really looks like me. He's so cute and I'm so happy."
 
     "..."
     Joseph "Hey Ma look he's waking up!"
@@ -63,6 +68,7 @@ label JuansFirstWord:
     hide mode confirm with dissolve
 
     if Choice_ch1 == "mama":
+        $ renpy.notify("Mama's boy perk unlocked!")
         play music "assets/BGM/SayIt.mp3"
         Mary "Can you believe that Joseph!"
         show Mary smile
@@ -78,6 +84,7 @@ label JuansFirstWord:
         Juan "Mama! Mama!"
 
     if Choice_ch1 == "papa":
+        $ renpy.notify("Daddy's boy perk unlocked!")
         play music "assets/BGM/SayIt.mp3"
         show Joseph laugh
         Joseph "Ma!, he said Papa!"
@@ -96,11 +103,6 @@ label JuansFirstWord:
     scene black with dissolve
 
     "(And so, Juan finally said his first word)"
-
-    if Choice_ch1 == "papa":
-        $ renpy.notify("Daddy's boy perk unlocked!")
-    if Choice_ch1 == "mama":
-        $ renpy.notify("Mama's boy perk unlocked!")
 
 
     jump WalkIndependently

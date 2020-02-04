@@ -3,7 +3,15 @@ label WalkIndependently:
     stop music
     play music "assets/BGM/Ramune.mp3"
     scene black with dissolve
-    "1 Year Later."
+
+    show text("{size=60}Walk independently{/size}") with dissolve
+    with Pause(2)
+    hide text with dissolve
+
+    show text("{size=40}1 year later.{/size}") with dissolve
+    with Pause(2)
+    hide text with dissolve
+
     scene daytimeLivingroom with dissolve
 
     if Choice_ch1 == "mama":
@@ -83,7 +91,7 @@ label WalkIndependently:
                 "Joseph, blows on it."
                 Joseph "See? It's ok little Juan. That's just a little ouchie. Nothing big right? Right?"
                 Joseph "Who's my big brave boy? Who is?"
-                show Juan laugh
+                show Joseph laugh
                 Joseph "How about we try it again, huh?"
                 Juan "Okay!"
                 "(Juan tried again for second time and this time he successfully walked towards Joseph)"
@@ -109,5 +117,4 @@ label WalkIndependently:
         Mary "Really?, Our little boy is growing so fast"
 
     scene black with dissolve
-    "End"
     jump JuansEatingHabit

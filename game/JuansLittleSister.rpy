@@ -4,6 +4,9 @@ label JuansLittleSister:
 
     stop music
     scene black with dissolve
+    show text("{size=60}Juan's little sister{/size}") with dissolve
+    with Pause(2)
+    hide text with dissolve
     scene daytimeLivingroom with dissolve
 
     Juan "This is really fun!"
