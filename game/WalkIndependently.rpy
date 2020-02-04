@@ -21,28 +21,29 @@ label WalkIndependently:
                 Juan "Uwaah!..."
                 Mary "OK don't cry now Juan."
                 Juan "Uwaah!...Uwaah!..."
-                "(*Mary picks Juan up and kissed him on his forehead)"
-                "(Immidiately Juan stops crying and looked at Mary)"
+                "(*Mary picks Juan up and kisses him on his forehead)"
+                "(Immediately Juan stops crying and looks at Mary)"
                 Mary "You're ok, baby. Did it hurt? Where is the ouchie?"
                 "Juan shows his palms."
-                Mary "Let me give it a big magical healing blow."
-                "Mary blows on Juan's palms"
+                Mary "Let me give it a big magical healing kiss."
+                "Mary kisses Juan's palms"
                 Mary "How's that? A lot better right?"
+                "Juan nods"
                 Juan "Mama."
                 show Mary smile
                 Mary "You're doing great, Juan!"
                 Mary "How about we give it another try? What do you say?"
-                Juan "Yes!"
+                Juan "Okay!!"
                 "(Juan tried again for second time and this time he successfully walked towards Mary)"
 
             "Stand up":
                 "(Juan was a little bit shaken from the fall.)"
                 "(But then Juan stood up again.)"
-                Mary "Wow! Juan, I know you'll never give up."
+                Mary "Wow! That's my brave little boy!"
                 Juan "Mama!"
                 show Mary neutral
-                Mary "Haha, I'm really proud of you."
-                "(Juan tried again for second time and this time he successfully walked towards Mary)"
+                Mary "Haha, I'm really proud of you. You were so brave. You tripped but you got up on your own. That's my amazing little boy."
+                "(Juan successfully walks towards Mary)"
 
 
         show Mary smile
@@ -94,7 +95,7 @@ label WalkIndependently:
                 Juan "Papa!"
                 show Joseph laugh
                 Juan "You sure are my little Juan!"
-                "(Juan tried again for second time and this time he successfully walked towards Joseph)"
+                "(Juan successfully walks towards Joseph)"
 
         Joseph "Wow!, You see I know you can do it."
         Juan "Yay!"
