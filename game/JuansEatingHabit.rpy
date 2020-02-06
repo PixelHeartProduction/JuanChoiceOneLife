@@ -147,7 +147,7 @@ label JuansEatingHabit:
         $ eaten = "not yet"
 
         hbox xalign 0.5:
-            text(Text("Eat",size=50))
+            text(Text("Juan is hungry, Juan should eat his food.",size=50))
         hbox xpos 650 ypos 250:
             if carrot_selected == False:
                 imagebutton idle Transform(carrot, zoom=0.6) action [SetVariable("carrot_selected", True),SetVariable("food_eaten", food_eaten + 1)]

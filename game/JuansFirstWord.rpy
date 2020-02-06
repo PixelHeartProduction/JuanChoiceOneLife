@@ -111,18 +111,23 @@ label JuansFirstWord:
 
     screen mamaorpapa():
      modal True
+     $ instruction = Image ("assets/Misc/ch1instruction.png")
      $ mary = Image("assets/Sprites/Mary_Smile.png", ypos = 0.115,xpos=50,zoom=2)
      $ joseph = Image("assets/Sprites/Joseph_Laugh.png", ypos = 80,xpos=5,zoom=2)
+     $ mary_highlighted = im.MatrixColor(mary,im.matrix.brightness(0.2),ypos = 0.115,xpos=50,zoom=2)
+     $ joseph_highlighted = im.MatrixColor(joseph,im.matrix.brightness(0.2),ypos = 80,xpos=5,zoom=2)
 
      text("Baby Juan's first word is:") size 60 xpos 0.3 ypos 30
 
+     hbox xalign 0.5 yalign 0.5:
+         image(instruction)
      hbox xalign 0.5 yalign 0 spacing 600:
-        imagebutton idle Transform(mary, zoom=0.15) action [SetVariable("Choice_ch1", "mama"),Return()]
-        imagebutton idle Transform(joseph, zoom=0.17) action [SetVariable("Choice_ch1", "papa"),Return()]
+        imagebutton idle Transform(mary, zoom=0.15) hover Transform(mary_highlighted, zoom=0.15) action [SetVariable("Choice_ch1", "mama"),Return()]
+        imagebutton idle Transform(joseph, zoom=0.17) hover Transform(joseph_highlighted, zoom=0.17) action [SetVariable("Choice_ch1", "papa"),Return()]
 
      hbox xalign 0.5 yalign 0 spacing 600:
-        text("Mama") ypos 350 xpos -80 size 70 bold True
-        text("Papa") ypos 350 xpos 0 size 70 bold True
+        text("Mama") ypos 800 xpos -80 size 70 bold True
+        text("Papa") ypos 800 xpos 0 size 70 bold True
 
 
     return

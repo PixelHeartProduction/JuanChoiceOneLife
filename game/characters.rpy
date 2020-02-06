@@ -23,6 +23,10 @@ image BabyJuan walking:
     zoom 0.28
     ypos 600
     xpos 860
+
+image BabyJuan standing:
+    "assets/Sprites/Items/BabyJuan_Standing.png"
+    zoom 1.1
 #=========================Mary=================================
 image Mary kneel:
     "assets/Sprites/Mary_Kneel.png"
