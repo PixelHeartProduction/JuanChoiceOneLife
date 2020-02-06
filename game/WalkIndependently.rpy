@@ -1,5 +1,7 @@
 label WalkIndependently:
 
+    $ cry_or_stand = "null"
+
     stop music
     play music "assets/BGM/Ramune.mp3"
     scene black with dissolve
@@ -25,51 +27,56 @@ label WalkIndependently:
         show BabyJuan tripped with dissolve
         Mary "Oh no! Juan, are you okay?"
 
-        menu:
-            "Cry":
-                show BabyJuan trippedcrying with dissolve
-                Juan "Uwaah!..."
-                Mary "OK don't cry now Juan."
-                Juan "Uwaah!...Uwaah!..."
+        show mode confirm with dissolve
+        call screen standorcry with dissolve
+        hide mode confirm with dissolve
 
-                "(*Mary picks Juan up and kissed him on his forehead)"
-                "(Immidiately Juan stops crying and looked at Mary)"
-                scene daytimeLivingroom with dissolve
-                show Mary surprised with dissolve
-                "(*Mary picks Juan up and kisses him on his forehead)"
-                "(Immediately Juan stops crying and looks at Mary)"
+        if cry_or_stand == "cry":
+            show BabyJuan trippedcrying with dissolve
+            Juan "Uwaah!..."
+            Mary "OK don't cry now Juan."
+            Juan "Uwaah!...Uwaah!..."
 
-                Mary "You're ok, baby. Did it hurt? Where is the ouchie?"
-                "Juan shows his palms."
-                Mary "Let me give it a big magical healing kiss."
-                "Mary kisses Juan's palms"
-                Mary "How's that? A lot better right?"
-                "Juan nods"
-                Juan "Mama."
-                show Mary smile
-                Mary "You're doing great, Juan!"
-                Mary "How about we give it another try? What do you say?"
-                Juan "Yes!"
-                scene livingroomangle2 with dissolve
-                show BabyJuan walking with dissolve
-                show Mary kneel with dissolve
+            "(*Mary picks Juan up and kissed him on his forehead)"
+            "(Immidiately Juan stops crying and looked at Mary)"
+            scene daytimeLivingroom with dissolve
+            show Mary surprised with dissolve
+            "(*Mary picks Juan up and kisses him on his forehead)"
+            "(Immediately Juan stops crying and looks at Mary)"
 
-                "(Juan tried again for second time and this time he successfully walked towards Mary)"
+            Mary "You're ok, baby. Did it hurt? Where is the ouchie?"
+            "Juan shows his palms."
+            Mary "Let me give it a big magical healing kiss."
+            "Mary kisses Juan's palms"
+            Mary "How's that? A lot better right?"
+            "Juan nods"
+            Juan "Mama."
+            show Mary smile
+            Mary "You're doing great, Juan!"
+            Mary "How about we give it another try? What do you say?"
+            Juan "Yes!"
+            scene livingroomangle2 with dissolve
+            show BabyJuan walking with dissolve
+            show Mary kneel with dissolve
 
-            "Stand up":
-                scene daytimeLivingroom with dissolve
-                show Mary surprised with dissolve
-                "(Juan was a little bit shaken from the fall.)"
-                "(But then Juan stood up again.)"
-                Mary "Wow! That's my brave little boy!"
-                Juan "Mama!"
-                show Mary neutral
-                Mary "Haha, I'm really proud of you."
-                scene livingroomangle2 with dissolve
-                show BabyJuan walking with dissolve
-                show Mary kneel with dissolve
-                Mary "Haha, I'm really proud of you. You were so brave. You tripped but you got up on your own. That's my amazing little boy."
-                "(Juan successfully walks towards Mary)"
+            "(Juan tried again for second time and this time he successfully walked towards Mary)"
+
+        if cry_or_stand == "stand":
+
+            "(Juan was a little bit shaken from the fall.)"
+            show BabyJuan standing with dissolve
+            "(But then Juan stood up again.)"
+            scene daytimeLivingroom with dissolve
+            show Mary smile with dissolve
+            Mary "Wow! That's my brave little boy!"
+            Juan "Mama!"
+            show Mary neutral
+            Mary "Haha, I'm really proud of you."
+            scene livingroomangle2 with dissolve
+            show BabyJuan walking with dissolve
+            show Mary kneel with dissolve
+            Mary "Haha, I'm really proud of you. You were so brave. You tripped but you got up on your own. That's my amazing little boy."
+            "(Juan successfully walks towards Mary)"
 
 
 
@@ -100,41 +107,45 @@ label WalkIndependently:
         show BabyJuan tripped with dissolve
         Joseph "Oh no! That's okay. Juan, shake it off. You're good."
 
-        menu:
-            "Cry":
-                show BabyJuan trippedcrying with dissolve
-                Juan "Uwaah!..."
-                Joseph "It's Ok little Juan don't cry now. Come on who's my brave little boy?"
-                Juan "Uwaah!...Uwaah!..."
-                "(*Joseph helped Juan stand up and gave him a pat on the head.)"
-                "(Immidiately Juan stops crying and looked at Joseph.)"
-                scene daytimeLivingroom with dissolve
-                show Joseph neutral with dissolve
-                Juan "Papa, it hurt. Hands... hurt."
-                "Juan, shows his dirty hands."
-                "Joseph, blows on it."
-                Joseph "See? It's ok little Juan. That's just a little ouchie. Nothing big right? Right?"
-                Joseph "Who's my big brave boy? Who is?"
-                show Joseph laugh
-                Joseph "How about we try it again, huh?"
-                Juan "Okay!"
-                scene livingroomangle2 with dissolve
-                show BabyJuan walking with dissolve
-                show Joseph kneel with dissolve
-                "(Juan tried again for second time and this time he successfully walked towards Joseph)"
-            "Stand up":
-                scene daytimeLivingroom with dissolve
-                show Joseph neutral with dissolve
-                "(Juan was a little bit shaken from the fall.)"
-                "(But then Juan stood up again)"
-                Joseph "Wow, that's amazing. Ma, come here Juan is walking."
-                Juan "Papa!"
-                show Joseph laugh
-                Juan "You sure are my little Juan!"
-                scene livingroomangle2 with dissolve
-                show BabyJuan walking with dissolve
-                show Joseph kneel with dissolve
-                "(Juan tried again for second time and this time he successfully walked towards Joseph)"
+        show mode confirm with dissolve
+        call screen standorcry with dissolve
+        hide mode confirm with dissolve
+
+        if cry_or_stand == "cry":
+            show BabyJuan trippedcrying with dissolve
+            Juan "Uwaah!..."
+            Joseph "It's Ok little Juan don't cry now. Come on who's my brave little boy?"
+            Juan "Uwaah!...Uwaah!..."
+            "(*Joseph helped Juan stand up and gave him a pat on the head.)"
+            "(Immidiately Juan stops crying and looked at Joseph.)"
+            scene daytimeLivingroom with dissolve
+            show Joseph neutral with dissolve
+            Juan "Papa, it hurt. Hands... hurt."
+            "Juan, shows his dirty hands."
+            "Joseph, blows on it."
+            Joseph "See? It's ok little Juan. That's just a little ouchie. Nothing big right? Right?"
+            Joseph "Who's my big brave boy? Who is?"
+            show Joseph laugh
+            Joseph "How about we try it again, huh?"
+            Juan "Okay!"
+            scene livingroomangle2 with dissolve
+            show BabyJuan walking with dissolve
+            show Joseph kneel with dissolve
+            "(Juan tried again for second time and this time he successfully walked towards Joseph)"
+        if cry_or_stand == "stand":
+            "(Juan was a little bit shaken from the fall.)"
+            show BabyJuan standing with dissolve
+            "(But then Juan stood up again)"
+            scene daytimeLivingroom with dissolve
+            show Joseph neutral with dissolve
+            Joseph "Wow, that's amazing. Ma, come here Juan is walking."
+            Juan "Papa!"
+            show Joseph laugh
+            Juan "You sure are my little Juan!"
+            scene livingroomangle2 with dissolve
+            show BabyJuan walking with dissolve
+            show Joseph kneel with dissolve
+            "(Juan tried again for second time and this time he successfully walked towards Joseph)"
 
         Joseph "Wow!, You see I know you can do it."
         Juan "Yay!"
@@ -151,3 +162,22 @@ label WalkIndependently:
 
     scene black with dissolve
     jump JuansEatingHabit
+#============================screens============================
+
+    screen standorcry():
+        modal True
+        $ standup = Image("assets/Sprites/Items/BabyJuan_Standing.png")
+        $ standup_selected = im.MatrixColor(standup,im.matrix.brightness(0.2))
+        $ cry = Image("assets/Sprites/Items/Babycry.png")
+        $ cry_selected = im.MatrixColor(cry,im.matrix.brightness(0.2))
+
+        hbox xalign 0.5:
+            text(Text("Juan tripped what would Juan do?.",size=50))
+
+        hbox xalign 0.5 yalign 0.3 spacing 800:
+            vbox:
+                imagebutton idle Transform(cry, zoom=0.3) hover Transform(cry_selected, zoom=0.3) action [SetVariable("cry_or_stand", "cry"),Return()]
+                text(Text("Cry",size=50))
+            vbox:
+                imagebutton idle Transform(standup, zoom=0.6) hover Transform(standup_selected, zoom=0.6) action [SetVariable("cry_or_stand", "stand"),Return()]
+                text(Text("Stand up",size=50))
