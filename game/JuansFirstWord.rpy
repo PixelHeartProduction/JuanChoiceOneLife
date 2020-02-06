@@ -111,7 +111,7 @@ label JuansFirstWord:
 
     screen mamaorpapa():
      modal True
-     $ instruction = Image ("assets/Misc/ch1instruction.png")
+     $ arrows = Image ("assets/Misc/arrows.png")
      $ mary = Image("assets/Sprites/Mary_Smile.png", ypos = 0.115,xpos=50,zoom=2)
      $ joseph = Image("assets/Sprites/Joseph_Laugh.png", ypos = 80,xpos=5,zoom=2)
      $ mary_highlighted = im.MatrixColor(mary,im.matrix.brightness(0.2),ypos = 0.115,xpos=50,zoom=2)
@@ -120,7 +120,8 @@ label JuansFirstWord:
      text("Baby Juan's first word is:") size 60 xpos 0.3 ypos 30
 
      hbox xalign 0.5 yalign 0.5:
-         image(instruction)
+         vbox:
+            image(arrows)
      hbox xalign 0.5 yalign 0 spacing 600:
         imagebutton idle Transform(mary, zoom=0.15) hover Transform(mary_highlighted, zoom=0.15) action [SetVariable("Choice_ch1", "mama"),Return()]
         imagebutton idle Transform(joseph, zoom=0.17) hover Transform(joseph_highlighted, zoom=0.17) action [SetVariable("Choice_ch1", "papa"),Return()]
