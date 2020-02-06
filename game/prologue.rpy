@@ -269,63 +269,71 @@ label prologue:
 
     Juan "Ah!, finally it's lunch time."
     Juan "I wonder what mom prepared in my lunch box...yay!"
-    Juan "It's pork chop."
-    "(while I'm about to eat my lunch a boy approaches me with his lunch box...)"
+    Juan "It's pork chop. I'm so happy. Mom really knows what I want."
+    "(while Juan was about to eat his lunch a boy approaches him with his lunch box...)"
     show Peter sad with dissolve
     with Pause(1)
-    "Um.."
-    "Hi, I really like your lunch..."
-    Juan "(I know from his eyes that he wants some of my lunch)"
+    Peter "Hi, I'm Peter what's your name?"
+    Juan "I'm Juan, nice to meet you."
+    Peter "Ohhh, you're the boy from class earlier. I think you're really brave for trying to answer teacher Cathy's questions."
+    "Peter sits down and joins Juan."
+
+    "Juan notices that Peter sat down and did not bring out any food."
+    Juan "(Should I ask him?)"
+    Juan "Why aren't you eating?"
+    Peter "I think my mom forgot to pack my lunch this morning."
+    Juan "Ohhh..."
+    Juan "(What should I do?)"
     menu:
         "Give him some of my pork chop":
             "(Without hesitation i game him some of my pork chop)"
-        "Offer him to join you in lunch":
-            "(I don't really want to waste my delicious food.)"
-            "(But I offered him to join me with my lunch.)"
+        "Offer to help him tell the teacher he doesn't have food":
+            "(Juan and Peter goes to Ms. Cathy to tell her about the situation.)"
     show Peter smile
-    "Thanks!"
+    Peter "Thanks, Juan!"
+    Juan "You're welcome!"
     show Peter neutral
-    "My name is Peter by the way"
-    Juan "Hi Peter, I'm Juan nice to meet you!"
-    "(as we greeted each other I noticed from his backpack a picture of my favorite game.)"
+    Juan "(as we greeted each other I noticed from his backpack a picture of my favorite game.)"
     Juan "Wow! Peter do you play Sword Style Online?"
     show Peter smile
-    Peter "yeah! I love playing it because my Big brother taught me."
-    Peter "and he's level is really high."
+    Peter "Yeah! I love playing it. My Big brother taught me how. He showed me all the cool different characters and I just became a big fan of it."
+    Peter "and my brother's level is really high so I get to see how to play it."
     show Peter neutral
-    Juan "Really! I wanna play with you sometime, add me my username is NoobMaster96."
+    Juan "Really! I wanna play with you sometime, add me on the game? My username is NoobMaster96."
     show Peter smile
-    Peter "Sure, I want you to see my super rare items, hehehe."
+    Peter "Sure, I would really like to show you my super rare items."
+    "Peter laughs."
     Juan "Awesome!"
 
-    "(Peter and I talked alot about our favorite game troughout lunch time)"
-    "(And before i knew.)"
-    "(I made a friend.)"
+    Juan "(Peter and I talked a lot about our favorite game troughout lunch time. I didn't know that we had a lot of things in common.)"
+    Juan "(And before I even knew it.)"
+    Juan "(I made a friend.)"
 
     play sound "assets/SFX/School_Bell.mp3"
     "(Bell Rings.)"
     show Peter neutral
 
     Peter "Oof. lunch time already over!?"
-    Peter "Oh man..., well talk to you later Juan!"
+    Peter "Oh man..., well, talk to you later, Juan!"
     Juan "Sure!"
 
     stop music
     scene black with dissolve
     with Pause(1)
 
-    "After our lunch Peter returned to his seat and we wait for our afternoon class."
+    Juan "After our lunch Peter returned to his seat and we waited for our afternoon class."
+    "Juan thought it was reallt nice being able to make a friend. He was really happy that he somehow found someone who had the same interests as he did."
     "..."
     play sound "assets/SFX/School_Bell.mp3"
     "(Bell Rings.)"
 
-    "The bell rings and my exausted face turned into a smile."
+    "The school bell rings and Juan's exhausted face flipped into a smile."
 
     scene afternoonStreet1 with dissolve
     play music "assets/BGM/Ramune.mp3"
 
-    Juan "(It's finally dismissal but that's not where the suffering ends)"
-    Juan "(Unfortunately our teachers had left us a tonne of homeworks)"
+    Juan "(It's finally time to go hgome but that's not where the day ends)"
+    Juan "(Unfortunately our teachers had left us a ton of homeworks)"
 
     show Peter neutral with dissolve
 
@@ -339,56 +347,57 @@ label prologue:
     Peter "See ya!"
     hide Peter smile with dissolve
     "..."
-    "(And so Peter and I said goodbye to each other as we part ways to go home.)"
-    "(While i'm walking to my house, something suddenly vibrated in my backpack.)"
+    "(And so Peter and Juan said goodbye to each other as they parted ways to go home.)"
+    "(While Juan was walking to his house, something suddenly vibrated in his backpack.)"
 
     play sound "assets/SFX/PhoneRing.mp3"
     "Ring Ring."
 
-    "(I quickly opened my backpack and grabbed my mobile phone.)"
+    "(Juan quickly opens his backpack and grabbed his mobile phone.)"
     Juan "Oh, a message from James!, hmmm let me see..."
     James "Hi Juan, how are you doing? Glenn and I are doing great!"
-    James "But ofcourse it's better with you here."
+    James "But of course it would be better with you here."
     James "Actually this summer we've convinced our mom and dad to pay you a visit there."
-    James "I heard that the amusement park in there have really fun rollercoasters"
-    James "And the Oceanarium have dolphins and sharks as well!?."
-    James "Anyways always take care of yourself"
-    James "Because i heard that the people there are really arrogant and grumpy."
-    James "Atleast that's what granny told me hahaha."
+    James "I heard that the amusement park there has some really fun rollercoasters."
+    James "And the Oceanarium has dolphins and sharks as well!?. That's so cool!"
+    James "Anyways always take care of yourself!"
+    James "Because I heard that the people there are really arrogant and grumpy."
+    James "At least that's what granny told me hahaha."
     James "-James"
 
     Juan "A message from James!"
-    Juan "I was actually planning to text them later."
-    Juan "But it's not the time to reply now I should go home first."
+    Juan "I was actually planning on texting them later."
+    Juan "But it's not the time to reply now I should get home first."
 
     scene black with dissolve
     with Pause(1)
 
     Juan "Man! what a day."
     Juan "Alot of things happened."
-    Juan "Actually my uniform is dirty now from the chasing this morning."
-    "(With all said, I finally arrived home and greeted my parents.)"
+    Juan "Actually my uniform is dirty now from what happened this morning."
+    "(With all said, Juan finally arrives home and greets his parents.)"
 
     play sound "assets/SFX/Door.mp3"
     scene nighttimeLivingRoom with dissolve
     with Pause (1)
 
     show Mary smile with dissolve
-    Mary "Welcome home Juan!"
-    Juan "Hi mom."
+    Mary "Welcome home, Juan!"
+    Juan "Hi, mom."
+
     show Mary panLeft
     show Joseph neutral with easeinright
-    Joseph "Hey lil'Juan how's the day?"
-    Juan "Hi dad."
-    Juan "I made a new friend in school!"
-    Joseph "Oh really!, you sure had alot of fun I can tell."
-    Mary "By the way Juan I bought you a present!"
-    Juan "Really!?, What is it a new manga?"
+    Joseph "Hey lil'Juan, how was school today? Did you do good on your first day like I did?"
+    Juan "Hi, dad, you're home!"
+    Juan "Guess what! I made a new friend in school!"
+    Joseph "Oh really!, you seem to have had a lot of fun, I can tell."
+    Mary "By the way Juan, I bought you a present!"
+    Juan "Really!?, What is it a new manga? What is it? What is it?"
     Mary "Not really."
     show Mary smile
-    Mary "An alarm clock you sleepyhead."
-    Juan "gee..thanks."
-    Mary "Anyway dinners ready!"
+    Mary "We bought you an alarm clock you sleepyhead."
+    Juan "Really? I thought it was the new volume of the manga I really liked. Anyways... thanks."
+    Mary "Rub that sour face off because dinner's ready!"
     show Joseph laugh
     Joseph "Yay!"
 
@@ -399,16 +408,20 @@ label prologue:
     scene nighttimeBedroom with dissolve
     with Pause(1)
 
-    "(After the dinner I've started doing my homework)"
-    Juan "goodness it's not really 'That' hard."
-    Juan "hard maybe because our teachers just wanted to pre-ignite our minds for what's up ahead in our school subjects."
+    "(After the dinner Juan started doing his homework)"
+    Juan "Goodness this is not really 'That' hard."
+    Juan "It's quite alright. A lot of new questions though. Maybe this is preparation for the future topics we will be discussing in class."
     "..."
-    "(After i've finished my homework, I replied to Glenn's message)"
-    "(and said that i'm really looking forward for their visit here in my new town.)"
+    "(After Juan finished his homework, he starts replying to Glenn's message)"
+
+    Juan "Glenn,  I really miss hanging out with you and James."
+    Juan "I'm really excited for your upcoming visit here. I hope that you stay long so we could play games like we used to."
+    Juan "I really wanna visit the amusement park and the oceanarium with you guys. Mom said that the shark they had there was almost 10 feet long."
+    Juan "I'm really excited to see you guys. Visit soon. Take care!"
 
     Juan "Anyway."
     Juan "Come to think of it"
-    Juan "Why did I saved that girl who's about to get attacked by a dog?"
+    Juan "Why did I save that girl who's about to get attacked by that dog?"
 
     if Choice1 == "stone":
         Juan "I did trew a stone at the dog"
@@ -418,26 +431,16 @@ label prologue:
         Juan "I did charge towards the dog to shoo it away."
         Juan "But then I got scared as well and the dog chased me."
 
-    Juan "Otherwise,"
-    Juan "I wouldn't get late at my first day of school, Or get my uniform dirty."
-    Juan "Haha ..It was not a big deal really because after all.."
+    Juan "If I didn't,"
+    Juan "I wouldn't have gotten late on my first day of school, Or got my uniform dirty."
 
     scene black with dissolve
     with Pause(1)
 
-    Juan "It's my Choice,"
-    Juan "It's my Life."
-
-    show logo JuanChoice with dissolve
-    with Pause(2)
-
-    "Juan Choice, One Life"
-
-    "Prologue END."
+    "END."
 
     scene black with dissolve
     with Pause(2)
-    " "
 
     $ persistent.hardmode=True
     return
