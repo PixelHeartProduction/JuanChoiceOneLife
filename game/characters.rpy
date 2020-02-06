@@ -7,7 +7,29 @@ define Cathy = Character("Ms. Cathy",color="#fc5d6b")
 define Peter = Character("Peter", color="#bdbbbb")
 define May = Character ("May",color="#f57e16")
 define James = Character ("James",color="#fe7e66")
+#=========================Juan=================================
+image BabyJuan tripped:
+    "assets/Sprites/BabyJuan_Tripped.png"
+    zoom 0.25
+    ypos 0.8
+
+image BabyJuan trippedcrying:
+    "assets/Sprites/BabyJuan_Crying.png"
+    zoom 0.25
+    ypos 0.8
+
+image BabyJuan walking:
+    "assets/Sprites/BabyJuan_Walking.png"
+    zoom 0.28
+    ypos 600
+    xpos 860
 #=========================Mary=================================
+image Mary kneel:
+    "assets/Sprites/Mary_Kneel.png"
+    zoom 0.28
+    xpos 1150
+    ypos 900
+
 image Mary neutralleft:
     "assets/Sprites/Mary_Normal.png"
     zoom .15
@@ -49,6 +71,12 @@ image Mary neutralLeft:
     xpos .25
 
 #=========================Joseph==============================
+image Joseph kneel:
+    "assets/Sprites/Joseph_Kneel.png"
+    zoom 0.28
+    xpos 1150
+    ypos 900
+
 
 image Joseph neutralright:
     "assets/Sprites/Joseph_Normal.png"

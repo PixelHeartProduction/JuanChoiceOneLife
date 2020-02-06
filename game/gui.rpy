@@ -21,7 +21,7 @@ init python:
 ## Colors ######################################################################
 ##
 ## The colors of text in the interface.
-
+define config.hard_rollback_limit = 0
 ## An accent color used throughout the interface to label and highlight text.
 define gui.accent_color = '#0099cc'
 

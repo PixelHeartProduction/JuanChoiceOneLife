@@ -9,3 +9,6 @@
     image nighttimeLivingRoom = "assets/Scenes/livingroomNighttime.jpg"
     image nighttimeBedroom = "assets/Scenes/BedroomNighttime.jpg"
     image classroom = "assets/Scenes/classroom.jpg"
+    image table = "assets/Scenes/foodplate.jpg"
+    image livingroomangle1 = "assets/Scenes/livingroomangle1.png"
+    image livingroomangle2 = "assets/Scenes/livingroomangle2.jpg"
