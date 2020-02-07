@@ -124,8 +124,7 @@ label JuansLittleSister:
     show logo JuanChoice with dissolve
     "END"
 
-    jump prologue
-
+    jump JuansFirstDay
     #=====================Screens===========================
     screen playWithMay():
         modal True
