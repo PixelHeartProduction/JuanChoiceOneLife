@@ -443,4 +443,23 @@ label prologue:
     with Pause(2)
 
     $ persistent.hardmode=True
+
+
+
+    #=====================Screens===========================
+    screen playWithMay():
+        modal True
+        $ slipper = Image("assets/Sprites/Items/slippers.png")
+        $ toy = Image("assets/Sprites/Items/toys.png")
+
+        hbox xalign 0.5:
+            text(Text("Play with may.",size=50))
+        hbox xpos 0.3 ypos 800:
+            imagebutton idle Transform(slipper, zoom=0.5) action [SetVariable("played_with_may", False),Return()]
+        hbox xpos 0.5 ypos 600:
+            imagebutton idle Transform(toy, zoom=0.5) action [SetVariable("played_with_may", True),Return()]
+
+
+
+
     return
