@@ -7,6 +7,7 @@ define Cathy = Character("Ms. Cathy",color="#fc5d6b")
 define Peter = Character("Peter", color="#bdbbbb")
 define May = Character ("May",color="#f57e16")
 define James = Character ("James",color="#fe7e66")
+define Class = Character ("Class",color="#a17c26")
 #=========================Juan=================================
 image BabyJuan tripped:
     "assets/Sprites/BabyJuan_Tripped.png"
