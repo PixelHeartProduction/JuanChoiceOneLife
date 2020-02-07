@@ -92,7 +92,7 @@ label prologue:
     Juan "What's happening there?"
     "(Juan hastily ran into the scene.)"
 
-    show Girl crying with dissolve
+    scene dogscene with dissolve
 
     play sound "assets/SFX/Dog_Bark.mp3"
     Dog "Woof!"
@@ -104,6 +104,7 @@ label prologue:
         "Throw a stone to the dog":
             $ Choice1 = "stone"
             "(Juan quicky searches for something to throw at the dog and finds a piece of rock.)"
+            scene daytimeStreet1 with dissolve
             show Girl surprised
             play sound "assets/SFX/Dog_Bark.mp3"
             Dog "Woof!"
@@ -119,6 +120,7 @@ label prologue:
             "(Juan quicky charges towards the dog to stop the girl from getting bitten)"
             play sound "assets/SFX/Dog_Bark.mp3"
             Dog "Woof! Woof!"
+            scene daytimeStreet1 with dissolve
             show Girl surprised
             Juan "Arrgghh!"
             Juan "STOP!"
@@ -439,5 +441,7 @@ label prologue:
     with Pause(2)
     " "
 
-    $ persistent.hardmode=True
+#=====================screens===========================
+
+
     return
