@@ -2,6 +2,7 @@ label prologue:
 
     $ Choice1 = "undefined"
     $ correct = 0
+    $ askOrNot = "null"
 
 
     stop music
@@ -294,32 +295,40 @@ label prologue:
     Juan "You're welcome!"
     show Peter neutral
     Juan "(as we greeted each other I noticed from his backpack a picture of my favorite game.)"
-    Juan "Wow! Peter do you play Sword Style Online?"
-    show Peter smile
-    Peter "Yeah! I love playing it. My Big brother taught me how. He showed me all the cool different characters and I just became a big fan of it."
-    Peter "and my brother's level is really high so I get to see how to play it."
-    show Peter neutral
-    Juan "Really! I wanna play with you sometime, add me on the game? My username is NoobMaster96."
-    show Peter smile
-    Peter "Sure, I would really like to show you my super rare items."
-    "Peter laughs."
-    Juan "Awesome!"
 
-    Juan "(Peter and I talked a lot about our favorite game troughout lunch time. I didn't know that we had a lot of things in common.)"
-    Juan "(And before I even knew it.)"
-    Juan "(I made a friend.)"
+    show mode confirm with dissolve
+    call screen AskSwordStyleScreen with dissolve
+    hide mode confirm with dissolve
+    if askOrNot == "Ask":
+        Juan "Wow! Peter do you play Sword Style Online?"
+        show Peter smile
+        Peter "Yeah! I love playing it. My Big brother taught me how. He showed me all the cool different characters and I just became a big fan of it."
+        Peter "and my brother's level is really high so I get to see how to play it."
+        show Peter neutral
+        Juan "Really! I wanna play with you sometime, add me on the game? My username is NoobMaster96."
+        show Peter smile
+        Peter "Sure, I would really like to show you my super rare items."
+        "Peter laughs."
+        Juan "Awesome!"
 
-    play sound "assets/SFX/School_Bell.mp3"
-    "(Bell Rings.)"
-    show Peter neutral
+        Juan "(Peter and I talked a lot about our favorite game troughout lunch time. I didn't know that we had a lot of things in common.)"
+        Juan "(And before I even knew it.)"
+        Juan "(I made a friend.)"
 
-    Peter "Oof. lunch time already over!?"
-    Peter "Oh man..., well, talk to you later, Juan!"
-    Juan "Sure!"
+        play sound "assets/SFX/School_Bell.mp3"
+        "(Bell Rings.)"
+        show Peter neutral
 
-    stop music
-    scene black with dissolve
-    with Pause(1)
+        Peter "Oof. lunch time already over!?"
+        Peter "Oh man..., well, talk to you later, Juan!"
+        Juan "Sure!"
+
+        stop music
+        scene black with dissolve
+        with Pause(1)
+
+    if askOrNot == "Say nothing":
+        "Juan says nothing."
 
     Juan "After our lunch Peter returned to his seat and we waited for our afternoon class."
     "Juan thought it was reallt nice being able to make a friend. He was really happy that he somehow found someone who had the same interests as he did."
@@ -353,6 +362,9 @@ label prologue:
     play sound "assets/SFX/PhoneRing.mp3"
     "Ring Ring."
 
+
+    # == New choices 
+    
     "(Juan quickly opens his backpack and grabbed his mobile phone.)"
     Juan "Oh, a message from James!, hmmm let me see..."
     James "Hi Juan, how are you doing? Glenn and I are doing great!"
@@ -447,19 +459,15 @@ label prologue:
 
 
     #=====================Screens===========================
-    screen playWithMay():
+    screen AskSwordStyleScreen():
         modal True
-        $ slipper = Image("assets/Sprites/Items/slippers.png")
-        $ toy = Image("assets/Sprites/Items/toys.png")
+        text("What should Juan do?") size 60 xpos 0.3 ypos 30
 
-        hbox xalign 0.5:
-            text(Text("Play with may.",size=50))
-        hbox xpos 0.3 ypos 800:
-            imagebutton idle Transform(slipper, zoom=0.5) action [SetVariable("played_with_may", False),Return()]
-        hbox xpos 0.5 ypos 600:
-            imagebutton idle Transform(toy, zoom=0.5) action [SetVariable("played_with_may", True),Return()]
+        hbox xalign 0.5 yalign 0 spacing 600:
+            vbox:
+                textbutton ("Ask him about the picture") ypos 500 xpos 0  action [SetVariable("askOrNot", "Ask"),Return()]
+                
+            vbox:
+                textbutton ("Say nothing") ypos 500 xpos -80  action [SetVariable("askOrNot", "Say nothing"),Return()]
+                
 
-
-
-
-    return
