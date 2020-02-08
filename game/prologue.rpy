@@ -353,7 +353,7 @@ label prologue:
     scene afternoonStreet1 with dissolve
     play music "assets/BGM/Ramune.mp3"
 
-    Juan "(It's finally time to go hgome but that's not where the day ends)"
+    Juan "(It's finally time to go home but that's not where the day ends)"
     Juan "(Unfortunately our teachers had left us a ton of homeworks)"
 
     show Peter neutral with dissolve
