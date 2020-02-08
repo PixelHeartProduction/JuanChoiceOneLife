@@ -3,6 +3,9 @@ label prologue:
     $ Choice1 = "undefined"
     $ correct = 0
     $ askOrNot = "null"
+    $ FoodChoice = "null"
+    $ PuloChoice = "null"
+    $ LocationChoice = "null"
 
 
     stop music
@@ -205,34 +208,38 @@ label prologue:
     Juan "Yes Ma'am!"
     Cathy "Ok, no cheating young man!"
     show Cathy laugh
-    Cathy "Question #1: How many islands are there in the Philippines?"
-    $ correct = 0
-    menu:
-        "7108":
-            show Cathy sad
-            Cathy "Good guess you're really close, dear!"
-        "7107":
-            $ correct +=1
-            show Cathy smile
-            Cathy "That's amazing, Juan! Great job!"
-        "1234":
-            show Cathy sad
-            Cathy "Awwe, good try, Juan but I guess we're looking for a different number."
 
-    show Cathy neutral
-    Cathy "Question #2: Where in Asia is the Philippines located?"
-    menu:
-        "South East Asia":
-            $ correct +=1
-            show Cathy smile
-            Cathy "Correct!"
-            Cathy "Good Job!"
-        "East Asia":
-            show Cathy sad
-            Cathy "You're quite close but you just missed a word."
-        "South Asia":
-            show Cathy sad
-            Cathy "Quite near, Juan. I'm gonna need you to listen better next time okay?"
+    $ correct = 0
+    show mode confirm with dissolve
+    call screen PuloScreen with dissolve
+    hide mode confirm with dissolve
+    
+    if PuloChoice == "2000":
+        show Cathy sad
+        Cathy "Good guess you're really close, dear!"
+    if PuloChoice == "7107":
+        $ correct +=1
+        show Cathy smile
+        Cathy "That's amazing, Juan! Great job!"
+    if PuloChoice == "1234":
+        show Cathy sad
+        Cathy "Awwe, good try, Juan but I guess we're looking for a different number."
+
+    show mode confirm with dissolve
+    call screen LocationScreen with dissolve
+    hide mode confirm with dissolve
+    
+    if LocationChoice == "South East Asia":
+        $ correct +=1
+        show Cathy smile
+        Cathy "Correct!"
+        Cathy "Good Job!"
+    if LocationChoice == "North East Asia":
+        show Cathy sad
+        Cathy "You're quite close but you just missed a word."
+    if LocationChoice == "Central Asia":
+        show Cathy sad
+        Cathy "Quite near, Juan. I'm gonna need you to listen better next time okay?"
 
     show Cathy neutral
     Cathy "Question #3: What is the National Bird of the Philippines?"
@@ -285,11 +292,16 @@ label prologue:
     Peter "I think my mom forgot to pack my lunch this morning."
     Juan "Ohhh..."
     Juan "(What should I do?)"
-    menu:
-        "Give him some of my pork chop":
-            "(Without hesitation i game him some of my pork chop)"
-        "Offer to help him tell the teacher he doesn't have food":
-            "(Juan and Peter goes to Ms. Cathy to tell her about the situation.)"
+
+    show mode confirm with dissolve
+    call screen FoodChoiceScreen with dissolve
+    hide mode confirm with dissolve
+
+    if FoodChoice == "Give":
+        "(Without hesitation i game him some of my pork chop)"
+    if FoodChoice == "Report":
+        "(Juan and Peter goes to Ms. Cathy to tell her about the situation.)"
+
     show Peter smile
     Peter "Thanks, Juan!"
     Juan "You're welcome!"
@@ -466,8 +478,44 @@ label prologue:
         hbox xalign 0.5 yalign 0 spacing 600:
             vbox:
                 textbutton ("Ask him about the picture") ypos 500 xpos 0  action [SetVariable("askOrNot", "Ask"),Return()]
-                
             vbox:
                 textbutton ("Say nothing") ypos 500 xpos -80  action [SetVariable("askOrNot", "Say nothing"),Return()]
+
+    screen FoodChoiceScreen():
+        modal True
+        text("What should Juan do?") size 60 xpos 0.3 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 600:
+            vbox:
+                textbutton ("Give him some of my pork chop") ypos 500 xpos 0  action [SetVariable("FoodChoice", "Give"),Return()]
+            vbox:
+                textbutton ("Tell the teacher Peter doesn't have food") ypos 500 xpos -80  action [SetVariable("FoodChoice", "Report"),Return()]
+
+    screen PuloScreen():
+        modal True
+        text("How many Islands are there in the Philippines?") size 60 xpos 0.3 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 600:
+            vbox:
+                textbutton ("7107") ypos 500 xpos 0  action [SetVariable("PuloChoice", "7107"),Return()]
+            vbox:
+                textbutton ("2000") ypos 500 xpos -40  action [SetVariable("PuloChoice", "2000"),Return()]
+            vbox:
+                textbutton ("1234") ypos 500 xpos -80  action [SetVariable("PuloChoice", "1234"),Return()]
+    
+    screen LocationScreen():
+        modal True
+        text("How many Islands are there in the Philippines?") size 60 xpos 0.3 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 600:
+            vbox:
+                textbutton ("South East Asia") ypos 500 xpos 0  action [SetVariable("LocationChoice", "South East Asia"),Return()]
+            vbox:
+                textbutton ("North East Asia") ypos 500 xpos -40  action [SetVariable("LocationChoice", "North West Asia"),Return()]
+            vbox:
+                textbutton ("Central Asia") ypos 500 xpos -80  action [SetVariable("LocationChoice", "Central Asia"),Return()]
+
+                
+
                 
 
