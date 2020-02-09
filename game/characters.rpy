@@ -1,6 +1,3 @@
-define Mary = Character("Mary", color="#a669f5")
-define Joseph = Character ("Joseph", color="#adf569")
-define Juan = Character("Juan")
 define Dog = Character("Dog", color="#f5d769")
 define Girl = Character ("Girl", color="#f569b6")
 define Cathy = Character("Ms. Cathy",color="#fc5d6b")
@@ -8,7 +5,15 @@ define Peter = Character("Peter", color="#bdbbbb")
 define May = Character ("May",color="#f57e16")
 define James = Character ("James",color="#fe7e66")
 define Class = Character ("Class",color="#a17c26")
+
+define none = Character(None,what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5)
+
+
 #=========================Juan=================================
+define Juan_left = Character("Juan",what_xalign=0.30, what_text_align=0.0)
+define Juan_center = Character("Juan", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5)
+define Juan_right = Character("Juan", what_xalign=0.60, what_text_align=1.0,who_xpos=925,who_text_align=1.0)
+
 image BabyJuan tripped:
     "assets/Sprites/BabyJuan_Tripped.png"
     zoom 0.25
@@ -29,6 +34,10 @@ image BabyJuan standing:
     "assets/Sprites/Items/BabyJuan_Standing.png"
     zoom 1.1
 #=========================Mary=================================
+define Mary_left = Character("Mary", what_xalign=0.30, what_text_align=0.0, color="#a669f5")
+define Mary_right = Character("Mary", what_xalign=0.60, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#a669f5")
+define Mary_center = Character("Mary", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#a669f5")
+
 image Mary kneel:
     "assets/Sprites/Mary_Kneel.png"
     zoom 0.28
@@ -76,6 +85,9 @@ image Mary neutralLeft:
     xpos .25
 
 #=========================Joseph==============================
+define Joseph_left = Character ("Joseph", what_xalign=0.0, what_text_align=0.0, color="#adf569")
+define Joseph_center = Character("Joseph", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#adf569")
+define Joseph_right = Character("Joseph", what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#adf569")
 image Joseph kneel:
     "assets/Sprites/Joseph_Kneel.png"
     zoom 0.28
