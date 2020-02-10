@@ -1,6 +1,10 @@
 label JuansFirstDay:
 
     $ correct = 0
+    $ askOrNot = "null"
+    $ FoodChoice = "null"
+    $ PuloChoice = "null"
+    $ LocationChoice = "null"
     $ help_girl = "null"
 
 
@@ -205,34 +209,37 @@ label JuansFirstDay:
     Juan_center "Yes Ma'am!"
     Cathy_center "Ok, no cheating young man!"
     show Cathy laugh
-    Cathy_center "Question #1: How many islands are there in the Philippines?"
     $ correct = 0
-    menu:
-        "7108":
-            show Cathy sad
-            Cathy "Good guess you're really close, dear!"
-        "7107":
-            $ correct +=1
-            show Cathy smile
-            Cathy "That's amazing, Juan! Great job!"
-        "1234":
-            show Cathy sad
-            Cathy "Awwe, good try, Juan but I guess we're looking for a different number."
+    show mode confirm with dissolve
+    call screen PuloScreen with dissolve
+    hide mode confirm with dissolve
+    
+    if PuloChoice == "2000":
+        show Cathy sad
+        Cathy "Good guess you're really close, dear!"
+    if PuloChoice == "7107":
+        $ correct +=1
+        show Cathy smile
+        Cathy "That's amazing, Juan! Great job!"
+    if PuloChoice == "1234":
+        show Cathy sad
+        Cathy "Awwe, good try, Juan but I guess we're looking for a different number."
 
-    show Cathy neutral
-    Cathy "Question #2: Where in Asia is the Philippines located?"
-    menu:
-        "South East Asia":
-            $ correct +=1
-            show Cathy smile
-            Cathy "Correct!"
-            Cathy "Good Job!"
-        "East Asia":
-            show Cathy sad
-            Cathy "You're quite close but you just missed a word."
-        "South Asia":
-            show Cathy sad
-            Cathy "Quite near, Juan. I'm gonna need you to listen better next time okay?"
+    show mode confirm with dissolve
+    call screen LocationScreen with dissolve
+    hide mode confirm with dissolve
+    
+    if LocationChoice == "South East Asia":
+        $ correct +=1
+        show Cathy smile
+        Cathy "Correct!"
+        Cathy "Good Job!"
+    if LocationChoice == "North East Asia":
+        show Cathy sad
+        Cathy "You're quite close but you just missed a word."
+    if LocationChoice == "Central Asia":
+        show Cathy sad
+        Cathy "Quite near, Juan. I'm gonna need you to listen better next time okay?"
 
     show Cathy neutral
     Cathy "Question #3: What is the National Bird of the Philippines?"
@@ -285,42 +292,55 @@ label JuansFirstDay:
     Peter "I think my mom forgot to pack my lunch this morning."
     Juan "Ohhh..."
     Juan "(What should I do?)"
-    menu:
-        "Give him some of my pork chop":
-            "(Without hesitation i game him some of my pork chop)"
-        "Offer to help him tell the teacher he doesn't have food":
-            "(Juan and Peter goes to Ms. Cathy to tell her about the situation.)"
+
+    show mode confirm with dissolve
+    call screen FoodChoiceScreen with dissolve
+    hide mode confirm with dissolve
+
+    if FoodChoice == "Give":
+        "(Without hesitation i game him some of my pork chop)"
+    if FoodChoice == "Report":
+        "(Juan and Peter goes to Ms. Cathy to tell her about the situation.)"
+
     show Peter smile
     Peter "Thanks, Juan!"
     Juan "You're welcome!"
     show Peter neutral
     Juan "(as we greeted each other I noticed from his backpack a picture of my favorite game.)"
-    Juan "Wow! Peter do you play Sword Style Online?"
-    show Peter smile
-    Peter "Yeah! I love playing it. My Big brother taught me how. He showed me all the cool different characters and I just became a big fan of it."
-    Peter "and my brother's level is really high so I get to see how to play it."
-    show Peter neutral
-    Juan "Really! I wanna play with you sometime, add me on the game? My username is NoobMaster96."
-    show Peter smile
-    Peter "Sure, I would really like to show you my super rare items."
-    "Peter laughs."
-    Juan "Awesome!"
 
-    Juan "(Peter and I talked a lot about our favorite game troughout lunch time. I didn't know that we had a lot of things in common.)"
-    Juan "(And before I even knew it.)"
-    Juan "(I made a friend.)"
+    show mode confirm with dissolve
+    call screen AskSwordStyleScreen with dissolve
+    hide mode confirm with dissolve
+    if askOrNot == "Ask":
+        Juan "Wow! Peter do you play Sword Style Online?"
+        show Peter smile
+        Peter "Yeah! I love playing it. My Big brother taught me how. He showed me all the cool different characters and I just became a big fan of it."
+        Peter "and my brother's level is really high so I get to see how to play it."
+        show Peter neutral
+        Juan "Really! I wanna play with you sometime, add me on the game? My username is NoobMaster96."
+        show Peter smile
+        Peter "Sure, I would really like to show you my super rare items."
+        "Peter laughs."
+        Juan "Awesome!"
 
-    play sound "assets/SFX/School_Bell.mp3"
-    "(Bell Rings.)"
-    show Peter neutral
+        Juan "(Peter and I talked a lot about our favorite game troughout lunch time. I didn't know that we had a lot of things in common.)"
+        Juan "(And before I even knew it.)"
+        Juan "(I made a friend.)"
 
-    Peter "Oof. lunch time already over!?"
-    Peter "Oh man..., well, talk to you later, Juan!"
-    Juan "Sure!"
+        play sound "assets/SFX/School_Bell.mp3"
+        "(Bell Rings.)"
+        show Peter neutral
 
-    stop music
-    scene black with dissolve
-    with Pause(1)
+        Peter "Oof. lunch time already over!?"
+        Peter "Oh man..., well, talk to you later, Juan!"
+        Juan "Sure!"
+
+        stop music
+        scene black with dissolve
+        with Pause(1)
+
+    if askOrNot == "Say nothing":
+        "Juan says nothing."
 
     Juan "After our lunch Peter returned to his seat and we waited for our afternoon class."
     "Juan thought it was reallt nice being able to make a friend. He was really happy that he somehow found someone who had the same interests as he did."
@@ -333,7 +353,7 @@ label JuansFirstDay:
     scene afternoonStreet1 with dissolve
     play music "assets/BGM/Ramune.mp3"
 
-    Juan "(It's finally time to go hgome but that's not where the day ends)"
+    Juan "(It's finally time to go home but that's not where the day ends)"
     Juan "(Unfortunately our teachers had left us a ton of homeworks)"
 
     show Peter neutral with dissolve
@@ -354,6 +374,9 @@ label JuansFirstDay:
     play sound "assets/SFX/PhoneRing.mp3"
     "Ring Ring."
 
+
+    # == New choices 
+    
     "(Juan quickly opens his backpack and grabbed his mobile phone.)"
     Juan "Oh, a message from James!, hmmm let me see..."
     James "Hi Juan, how are you doing? Glenn and I are doing great!"
@@ -442,6 +465,59 @@ label JuansFirstDay:
 
     scene black with dissolve
     with Pause(2)
+
+    $ persistent.hardmode=True
+
+
+
+    #=====================Screens===========================
+    screen AskSwordStyleScreen():
+        modal True
+        text("What should Juan do?") size 60 xpos 0.3 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 600:
+            vbox:
+                textbutton ("Ask him about the picture") ypos 500 xpos 0  action [SetVariable("askOrNot", "Ask"),Return()]
+            vbox:
+                textbutton ("Say nothing") ypos 500 xpos -80  action [SetVariable("askOrNot", "Say nothing"),Return()]
+
+    screen FoodChoiceScreen():
+        modal True
+        text("What should Juan do?") size 60 xpos 0.3 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 600:
+            vbox:
+                textbutton ("Give him some of my pork chop") ypos 500 xpos 0  action [SetVariable("FoodChoice", "Give"),Return()]
+            vbox:
+                textbutton ("Tell the teacher Peter doesn't have food") ypos 500 xpos -80  action [SetVariable("FoodChoice", "Report"),Return()]
+
+    screen PuloScreen():
+        modal True
+        text("How many Islands are there in the Philippines?") size 60 xpos 0.3 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 600:
+            vbox:
+                textbutton ("7107") ypos 500 xpos 0  action [SetVariable("PuloChoice", "7107"),Return()]
+            vbox:
+                textbutton ("2000") ypos 500 xpos -40  action [SetVariable("PuloChoice", "2000"),Return()]
+            vbox:
+                textbutton ("1234") ypos 500 xpos -80  action [SetVariable("PuloChoice", "1234"),Return()]
+    
+    screen LocationScreen():
+        modal True
+        text("How many Islands are there in the Philippines?") size 60 xpos 0.3 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 600:
+            vbox:
+                textbutton ("South East Asia") ypos 500 xpos 0  action [SetVariable("LocationChoice", "South East Asia"),Return()]
+            vbox:
+                textbutton ("North East Asia") ypos 500 xpos -40  action [SetVariable("LocationChoice", "North West Asia"),Return()]
+            vbox:
+                textbutton ("Central Asia") ypos 500 xpos -80  action [SetVariable("LocationChoice", "Central Asia"),Return()]
+
+                
+
+                
 
 #=====================Screens===========================
     screen chargeorstone():
