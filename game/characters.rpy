@@ -1,9 +1,7 @@
-define Dog = Character("Dog", color="#f5d769")
-define Girl = Character ("Girl", color="#f569b6")
-define Cathy = Character("Ms. Cathy",color="#fc5d6b")
-define Peter = Character("Peter", color="#bdbbbb")
-define James = Character ("James",color="#fe7e66")
-define Class = Character ("Class",color="#a17c26")
+define Cathy_center = Character("Ms. Cathy",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#fc5d6b")
+define Peter_center = Character("Peter",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#bdbbbb")
+define James_center = Character ("James",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#fe7e66")
+define Class_center = Character ("Class",what_xalign=0.5, what_text_align=0.5,who_xpos=535,color="#a17c26")
 
 define none = Character(None,what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5)
 
@@ -127,7 +125,9 @@ image Joseph panLeft:
     linear 0.5 xalign 0.25
 
 #=========================Girl=================================
-
+define Girl_left = Character ("Girl",what_xalign=0.30, what_text_align=0.0, color="#f569b6")
+define Girl_center = Character ("Girl",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#f569b6")
+define Girl_right = Character ("Girl", what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#f569b6")
 image Girl crying:
     "assets/Sprites/Girl_Crying.png"
     zoom .19
@@ -207,3 +207,8 @@ image May neutral:
     zoom .6
     xalign .5
     yalign .5
+
+#=====================Dog===========================
+define Dog_left = Character("Dog",what_xalign=0.30, what_text_align=0.0, color="#f5d769")
+define Dog_center = Character("Dog",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#f5d769")
+define Dog_right = Character("Dog",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#f5d769")

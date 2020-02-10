@@ -85,7 +85,7 @@ label JuansLittleSister:
         show Mary smile
         Mary_left "He's gonna be a good older brother, isn't he?"
         Joseph_right "Definitely! Our little Juan is very mature for his age don't you think?"
-        Josep_right "Ahh..our little Juan how getting big already he is."
+        Joseph_right "Ahh..our little Juan how getting big already he is."
         Mary_left "Hehe, Sure he is! I'm so happy seeing our little family like this."
         scene black with dissolve
     else:

@@ -25,51 +25,51 @@ label JuansFirstDay:
 
     menu:
         "Wake up":
-            Juan "uugghh.. What time is it?"
+            Juan_center "uugghh.. What time is it?"
             show Mary neutral
-            Mary "Good morning, Juan!"
+            Mary_center "Good morning, Juan!"
         "Maybe later..":
-            Juan "..maybe..later. Five more minutes, Ma..."
+            Juan_center "..maybe..later. Five more minutes, Ma..."
             show Mary surprised
-            Mary "Juan, you need to get up now. You can't be late on your first day of school."
+            Mary_center "Juan, you need to get up now. You can't be late on your first day of school."
 
-    Mary "Breakfast is in the kitchen. Eat up when you're done here."
+    Mary_center "Breakfast is in the kitchen. Eat up when you're done here."
     show Mary neutral
-    Mary "...and it's your favorite,"
-    "Mary chuckles."
-    Mary "Now, get up and don't forget to make the bed before you go down."
+    Mary_center "...and it's your favorite,"
+    none "Mary chuckles."
+    Mary_center "Now, get up and don't forget to make the bed before you go down."
 
-    Juan "Hmmmmm...Okay.."
-    "Juan stretches in his bed one last time "
+    Juan_center "Hmmmmm...Okay.."
+    none "Juan stretches in his bed one last time "
 
     scene daytimeLivingroom with dissolve
 
-    Juan "(I feel really exited and happy today because it's my first day as a grade 1 student)"
-    Juan "(I wonder who I'll meet? I'm really nervous. What if I do something embarrassing?)"
-    Juan "(I hope everything goes well on my first day.)"
-    "Juan continued eating."
-    Juan "Oohh! it tastes really good, Ma!"
+    Juan_center "(I feel really exited and happy today because it's my first day as a grade 1 student)"
+    Juan_center "(I wonder who I'll meet? I'm really nervous. What if I do something embarrassing?)"
+    Juan_center "(I hope everything goes well on my first day.)"
+    none "Juan continued eating."
+    Juan_center "Oohh! it tastes really good, Ma!"
 
     show Mary smile with dissolve
-    Mary "Of course it's your favourite pancakes."
+    Mary_center "Of course it's your favourite pancakes."
     show Mary neutral
-    Mary "By the way your dad also liked it very much. He told me to tell you that he hopes you have a great day at school and that you make him proud."
-    Mary "Must be tough being a Software Engineer, huh? Your dad left very early today"
-    Mary "Anyway Juan you should keep up your grades if you want to be like your dad one day, okay?"
-    Mary "You dad's Job might be hard, But being a school drop-out will be even harder. So Juan, remember your education is the only wealth we could give you that cannot be taken away."
-    Mary "Always remember that you have to work hard now so in the future you could have it easier."
-    Mary "There's this saying, 'if you don't walk today you'll have to run tomorrow.', so always work hard --"
+    Mary_center "By the way your dad also liked it very much. He told me to tell you that he hopes you have a great day at school and that you make him proud."
+    Mary_center "Must be tough being a Software Engineer, huh? Your dad left very early today"
+    Mary_center "Anyway Juan you should keep up your grades if you want to be like your dad one day, okay?"
+    Mary_center "You dad's Job might be hard, But being a school drop-out will be even harder. So Juan, remember your education is the only wealth we could give you that cannot be taken away."
+    Mary_center "Always remember that you have to work hard now so in the future you could have it easier."
+    Mary_center "There's this saying, 'if you don't walk today you'll have to run tomorrow.', so always work hard --"
 
-    Juan "Maaa, I'm gonna be late."
-    Mary "Sorry, honey."
-    Juan "I'm off to go now mom love you!"
-    Juan "The breakfast was really good by the way."
+    Juan_center "Maaa, I'm gonna be late."
+    Mary_center "Sorry, honey."
+    Juan_center "I'm off to go now mom love you!"
+    Juan_center "The breakfast was really good by the way."
 
     show Mary surprised
-    Mary "But you have not finished your meal at all!"
-    Mary "...sigh."
+    Mary_center "But you have not finished your meal at all!"
+    Mary_center "...sigh."
     show Mary smile
-    Mary "Take care, Juan! Have fun at school!"
+    Mary_center "Take care, Juan! Have fun at school!"
     play sound "assets/SFX/Door.mp3"
 
     scene black with dissolve
@@ -78,134 +78,134 @@ label JuansFirstDay:
     scene daytimeStreet1 with dissolve
 
 
-    Juan "Hmm... I wonder how's Glenn and James doing"
-    Juan "I have not heard of them since we moved."
-    Juan "I should contact them sometimes and catch up, I kinda miss them."
-    "....."
+    Juan_center "Hmm... I wonder how's Glenn and James doing"
+    Juan_center "I have not heard of them since we moved."
+    Juan_center "I should contact them sometimes and catch up, I kinda miss them."
+    none "....."
 
     stop music
     play sound "assets/SFX/Dog_Bark.mp3"
-    "Woof Woof!"
+    none "Woof Woof!"
     play music "assets/BGM/Lullaby.mp3"
-    Juan "huh?."
-    Juan "What's happening there?"
-    "(Juan hastily ran into the scene.)"
+    Juan_center "huh?."
+    Juan_center "What's happening there?"
+    none "(Juan hastily ran into the scene.)"
 
     scene dogscene with dissolve
 
     play sound "assets/SFX/Dog_Bark.mp3"
-    Dog "Woof!"
-    Girl "Help! somebody.."
-    Girl "Get away!!"
-    Juan "(That little girl needs help quickly! What should I do?)"
+    Dog_left "Woof!"
+    Girl_right "Help! somebody.."
+    Girl_right "Get away!!"
+    Juan_center "(That little girl needs help quickly! What should I do?)"
 
     show mode confirm with dissolve
     call screen chargeorstone with dissolve
     hide mode confirm with dissolve
 
     if help_girl == "stone":
-            "(Juan quicky searches for something to throw at the dog and finds a piece of rock.)"
+            none "(Juan quicky searches for something to throw at the dog and finds a piece of rock.)"
             scene daytimeStreet1 with dissolve
             show Girl surprised
             play sound "assets/SFX/Dog_Bark.mp3"
-            Dog "Woof!"
-            Juan "Did it work?"
-            "(The dog somehow got distracted but seems to be angy at me now.)"
-            Dog "Grrr!."
-            Juan "Uhhoh!"
-            Dog "woof!"
-            "(I Quickly ran away but the dog chased me.)"
+            Dog_center "Woof!"
+            Juan_center "Did it work?"
+            none "(The dog somehow got distracted but seems to be angy at me now.)"
+            Dog_center "Grrr!."
+            Juan_center "Uhhoh!"
+            Dog_center "woof!"
+            none "(I Quickly ran away but the dog chased me.)"
     if help_girl == "charge":
-            "(Juan quicky charges towards the dog to stop the girl from getting bitten)"
+            none "(Juan quicky charges towards the dog to stop the girl from getting bitten)"
             play sound "assets/SFX/Dog_Bark.mp3"
-            Dog "Woof! Woof!"
+            Dog_center "Woof! Woof!"
             scene daytimeStreet1 with dissolve
             show Girl surprised
-            Juan "Arrgghh!"
-            Juan "STOP!"
-            "(Juan charges but stops halfway and saw the dog preparing to charge back at me)"
-            Juan "Uhhoh!"
-            Dog "woof!"
-            "(I quickly ran away but somehow I got the dog away from her.)"
+            Juan_center "Arrgghh!"
+            Juan_center "STOP!"
+            none "(Juan charges but stops halfway and saw the dog preparing to charge back at me)"
+            Juan_center "Uhhoh!"
+            Dog_center "woof!"
+            none "(I quickly ran away but somehow I got the dog away from her.)"
 
     scene black with dissolve
     with Pause(1)
 
-    "(After a few minutes the dog finally gave up on me and walks away.)"
+    none "(After a few minutes the dog finally gave up on me and walks away.)"
 
     scene daytimeStreet2 with dissolve
 
-    Juan "Phew.. finally that dog's gone."
-    "(Juan says to myself as he catches his breath.)"
-    Juan "Oh no! I'm late for school better get there quickly!."
+    Juan_center "Phew.. finally that dog's gone."
+    none "(Juan says to myself as he catches his breath.)"
+    Juan_center "Oh no! I'm late for school better get there quickly!."
 
     scene black with dissolve
     with Pause(1)
     scene classroom with dissolve
     play sound "assets/SFX/Door.mp3"
 
-    "Juan arrives at school. He seems to be a little anxious since he missed his first flag ceremony. "
-    "He rushes up to his classroom and thankfully the first class has not yet started."
+    none "Juan arrives at school. He seems to be a little anxious since he missed his first flag ceremony. "
+    none "He rushes up to his classroom and thankfully the first class has not yet started."
 
     play sound "assets/SFX/School_Bell.mp3"
-    "(Bell Rings.)"
+    none "(Bell Rings.)"
     play sound "assets/SFX/Door.mp3"
 
     show Cathy neutral with easeinleft
 
-    "Good morning class, how's everyone doing?"
-    Class "Good morning, Teacher!"
-    "By the way I'm your new teacher and adviser."
+    none "Good morning class, how's everyone doing?"
+    Class_center "Good morning, Teacher!"
+    none "By the way I'm your new teacher and adviser."
 
     show Cathy smile
 
-    "My name is Cathy! You may call me Ms. Cathy or Teacher Cat."
+    none "My name is Cathy! You may call me Ms. Cathy or Teacher Cat."
 
     show Cathy neutral
 
-    "Ms. Cathy clears her throat."
-    Cathy "How about we start our class!"
+    none "Ms. Cathy clears her throat."
+    Cathy_center "How about we start our class!"
     stop music
-    Cathy "We will start today with a lesson about the Philippines our own country!"
+    Cathy_none "We will start today with a lesson about the Philippines our own country!"
     play music "assets/BGM/FeudalNight.mp3"
 
 # add a "Geography transition image"
 
     show Cathy panningRight
-    Cathy "Our country, The Philippines is here in South East Asia."
+    Cathy_right "Our country, The Philippines is here in South East Asia."
     show school philippineMap with dissolve
-    Cathy "Manila is the name of our Capital City and it is here in the Luzon Island."
-    Cathy "Our country has 7107 islands!"
+    Cathy_right "Manila is the name of our Capital City and it is here in the Luzon Island."
+    Cathy_right "Our country has 7107 islands!"
     show Cathy laugh
-    Cathy "Isn't that a lot."
+    Cathy_right "Isn't that a lot."
     show Cathy neutral
-    Cathy "The Philippines is here right in the Equator."
-    Cathy "Which means the weather throughout the year is warm or rainy."
-    Cathy "Did you know that the largest eagle is found in the Philippines?"
+    Cathy_right "The Philippines is here right in the Equator."
+    Cathy_right "Which means the weather throughout the year is warm or rainy."
+    Cathy_right "Did you know that the largest eagle is found in the Philippines?"
     show school philippineEagle with dissolve
-    Cathy "The Philippine eagle!"
-    Cathy "Also known as the monkey-eating eagle"
-    Cathy "And it's the National Bird of the Philippines."
+    Cathy_right "The Philippine eagle!"
+    Cathy_right "Also known as the monkey-eating eagle"
+    Cathy_right "And it's the National Bird of the Philippines."
     hide school philippineEagle with dissolve
     show Cathy panningBack
-    Cathy "Class I'm gonna need you to write down all of the things I write donw on the board okay?"
+    Cathy_center "Class I'm gonna need you to write down all of the things I write donw on the board okay?"
     show Cathy smile
-    Cathy "Because it's quiz time!"
+    Cathy_center "Because it's quiz time!"
 
     show Cathy neutral
-    Cathy "Hmm.. let's see..."
-    Cathy "You there young lad!"
-    Juan "(What Me!? Is she calling me?)"
-    Juan "Uhm.."
+    Cathy_center "Hmm.. let's see..."
+    Cathy_center "You there young lad!"
+    Juan_center "(What Me!? Is she calling me?)"
+    Juan_center "Uhm.."
     show Cathy laugh
-    Cathy "Whats your name?"
-    Juan "Juan C. Bautista"
+    Cathy_center "Whats your name?"
+    Juan_center "Juan C. Bautista"
     show Cathy neutral
-    Cathy "Okay Juan are you ready for your quiz?"
-    Juan "Yes Ma'am!"
-    Cathy "Ok, no cheating young man!"
+    Cathy_center "Okay Juan are you ready for your quiz?"
+    Juan_center "Yes Ma'am!"
+    Cathy_center "Ok, no cheating young man!"
     show Cathy laugh
-    Cathy "Question #1: How many islands are there in the Philippines?"
+    Cathy_center "Question #1: How many islands are there in the Philippines?"
     $ correct = 0
     menu:
         "7108":
