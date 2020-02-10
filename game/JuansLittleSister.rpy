@@ -9,64 +9,64 @@ label JuansLittleSister:
     hide text with dissolve
     scene daytimeLivingroom with dissolve
 
-    Juan "This is really fun!"
-    "(Juan said as he happily play with his toys.)"
+    Juan_center "This is really fun!"
+    none "(Juan said as he happily play with his toys.)"
     show Mary neutralLeft with easeinright
     show Joseph neutralright with easeinright
     play music "assets/BGM/SayIt.mp3"
 
-    Mary "Honey, I'm really nervous. How do you think he'll react?"
-    Joseph "I'm sure he'll be happy to hear the news. I'll bet he will be jumping with joy once we tell him."
-    Joseph "I know this might be a lot to take in but he's a big boy now. I'm sure he'll handle it well."
-    Mary "I'm just really nervous, but I hope you're right."
+    Mary_left "Honey, I'm really nervous. How do you think he'll react?"
+    Joseph_right "I'm sure he'll be happy to hear the news. I'll bet he will be jumping with joy once we tell him."
+    Joseph_right "I know this might be a lot to take in but he's a big boy now. I'm sure he'll handle it well."
+    Mary_left "I'm just really nervous, but I hope you're right."
 
-    Mary "Juan, we have something we want to talk to talk you about. I'm gonna need you to listen well okay?"
-    Joseph "Your mom and I have thought about this."
-    Joseph "and I guess now it's coming true."
-    Mary "Juan, you're gonna have a little sister."
-    Juan "A little sister?"
-    Joseph "Yeah, a little sister. Someone smaller than you."
-    Mary "Now Juan, when she gets here, you're gonna be a big brother."
-    Juan "What's a big brother?"
-    Joseph "A big brother is someone who protects and loves their little sisters and brothers."
-    Mary "Yes, and a big brother also teaches them what's right and wrong. Kinda like Superman."
-    Juan "I'm gonna be like Superman?"
-    Mary "Yes, baby. Are you excited to be a big brother?"
-    Juan "Yes, I'm gonna be the best big brother!"
+    Mary_left "Juan, we have something we want to talk to talk you about. I'm gonna need you to listen well okay?"
+    Joseph_right "Your mom and I have thought about this."
+    Joseph_right "and I guess now it's coming true."
+    Mary_left "Juan, you're gonna have a little sister."
+    Juan_center "A little sister?"
+    Joseph_right "Yeah, a little sister. Someone smaller than you."
+    Mary_left "Now Juan, when she gets here, you're gonna be a big brother."
+    Juan_center "What's a big brother?"
+    Joseph_right "A big brother is someone who protects and loves their little sisters and brothers."
+    Mary_left "Yes, and a big brother also teaches them what's right and wrong. Kinda like Superman."
+    Juan_center "I'm gonna be like Superman?"
+    Mary_left "Yes, baby. Are you excited to be a big brother?"
+    Juan_center "Yes, I'm gonna be the best big brother!"
 
-    Joseph "I told you he'd be great."
-    Mary "Thank you, Hon. You really know how to make me feel better."
+    Joseph_right "I told you he'd be great."
+    Mary_left "Thank you, Hon. You really know how to make me feel better."
 
     scene black with dissolve
-    "(Few months later, Mary is brought to hospital due to her childbirth.)"
-    "(The family is feeling very nervous about what is about to happen.)"
+    none "(Few months later, Mary is brought to hospital due to her childbirth.)"
+    none "(The family is feeling very nervous about what is about to happen.)"
     scene hospital with dissolve
 
-    "(*Mary screaming in the background.)"
+    none "(*Mary screaming in the background.)"
     show Joseph neutral with dissolve
-    Juan "Dad, what's happening to mom? Dad, the doctors are really scary. What are they doing to mom? Are they hurting her?"
-    "(Juan said while he's crying)"
-    Joseph "Little Juan, Mom is giving birth. The doctors ae helping her bring your sister to the world."
-    Joseph "She is a little hurt but you know,"
-    Joseph "Juan, after this she will be so happy."
-    Juan "Why?"
-    Joseph "Because you will be a big brother. And when mom sees you with your little sister, she's going to be really happy."
+    Juan_center "Dad, what's happening to mom? Dad, the doctors are really scary. What are they doing to mom? Are they hurting her?"
+    none "(Juan said while he's crying)"
+    Joseph_center "Little Juan, Mom is giving birth. The doctors ae helping her bring your sister to the world."
+    Joseph_center "She is a little hurt but you know,"
+    Joseph_center "Juan, after this she will be so happy."
+    Juan_center "Why?"
+    Joseph_center "Because you will be a big brother. And when mom sees you with your little sister, she's going to be really happy."
 
     scene black with dissolve
     scene daytimeBedroom with dissolve
 
-    "(May entered Juan's room carrying a baby.)"
-    "(Juan can't help himself but to curiously look at them)"
+    none "(May entered Juan's room carrying a baby.)"
+    none "(Juan can't help himself but to curiously look at them)"
 
     show Joseph neutralright with dissolve
     show Mary neutralLeft with dissolve
 
-    Joseph "Little Juan, Do you want to meet your little sister? She's very small."
-    Juan "..."
-    Mary "Juan, Go meet your little sister May. She's waiting for you."
-    Joseph "Go on Juan play with her, be careful with her ok?"
+    Joseph_right "Little Juan, Do you want to meet your little sister? She's very small."
+    Juan_center "..."
+    Mary_left "Juan, Go meet your little sister May. She's waiting for you."
+    Joseph_right "Go on Juan play with her, be careful with her ok?"
     show May neutral with dissolve
-    May "ya.aa."
+    May_center "ya.aa."
     hide Joseph with dissolve
     hide Mary with dissolve
     show mode confirm with dissolve
@@ -77,52 +77,52 @@ label JuansLittleSister:
 
     if played_with_may:
         scene black with dissolve
-        "(Juan is then alone with May.)"
+        none "(Juan is then alone with May.)"
         scene daytimeLivingroom with dissolve
         show Joseph neutralright with dissolve
         show Mary neutralLeft with dissolve
-        May "*Laughs out loud."
+        May_center "*Laughs out loud."
         show Mary smile
-        Mary "He's gonna be a good older brother, isn't he?"
-        Joseph "Definitely! Our little Juan is very mature for his age don't you think?"
-        Joseph "Ahh..our little Juan how getting big already he is."
-        Mary "Hehe, Sure he is! I'm so happy seeing our little family like this."
+        Mary_left "He's gonna be a good older brother, isn't he?"
+        Joseph_right "Definitely! Our little Juan is very mature for his age don't you think?"
+        Joseph_right "Ahh..our little Juan how getting big already he is."
+        Mary_left "Hehe, Sure he is! I'm so happy seeing our little family like this."
         scene black with dissolve
     else:
-        "..."
-        May "Uwaah..."
+        none "..."
+        May_center "Uwaah..."
         if Choice_ch1 == "mama":
             show Joseph serious
             show Mary surprised
-            Joseph "You shouldn't make your sister cry!"
-            Juan "..."
-            Mary "Listen, Juan"
-            Mary "You're a big brother now."
-            Mary "You have to take care of your sister okay? You're the big brother, no matter what happens you are all May has."
-            Mary "May, is going to rely on you because you're older ok? I thought you wanted to be just like Superman?"
-            "(Mary said in a very calm voice.)"
-            Juan "Ok."
+            Joseph_right "You shouldn't make your sister cry!"
+            Juan_center "..."
+            Mary_left "Listen, Juan"
+            Mary_left "You're a big brother now."
+            Mary_left "You have to take care of your sister okay? You're the big brother, no matter what happens you are all May has."
+            Mary_left "May, is going to rely on you because you're older ok? I thought you wanted to be just like Superman?"
+            none  "(Mary said in a very calm voice.)"
+            Juan_center "Ok."
             scene black with dissolve
-            Juan "I'm Sorry."
+            Juan_center "I'm Sorry."
 
         if Choice_ch1 == "papa":
             show Mary surprised
             show Joseph serious
-            Mary "You should'nt make your sister cry!"
-            Juan "..."
-            Joseph "listen Juan."
-            Joseph "You're a big brother now."
-            Joseph "You have to take care of your sister okay? You're the big brother, no matter what happens you are all May has."
-            Joseph "May, is going to rely on you because you're older ok? I thought you wanted to be just like Superman?"
-            "(Joseph said in a very calm voice.)"
-            Juan "Ok."
+            Mary_left "You should'nt make your sister cry!"
+            Juan_center "..."
+            Joseph_right "listen Juan."
+            Joseph_right "You're a big brother now."
+            Joseph_right "You have to take care of your sister okay? You're the big brother, no matter what happens you are all May has."
+            Joseph_right "May, is going to rely on you because you're older ok? I thought you wanted to be just like Superman?"
+            none "(Joseph said in a very calm voice.)"
+            Juan_center "Ok."
             scene black with dissolve
-            Juan "I'm Sorry."
+            Juan_center "I'm Sorry."
 
 
 
     show logo JuanChoice with dissolve
-    "END"
+    with Pause(2)
 
     jump JuansFirstDay
     #=====================Screens===========================

@@ -366,7 +366,7 @@ screen main_menu():
         ypos 0.66
         background Image(gui.dailyTips,xpos=0.72)
 
-        image("assets/Sprites/Juan.png") xpos 0.35 ypos -0.5 zoom 0.7
+        image("assets/Sprites/Juan.png") xpos 0.35 ypos -50 zoom 0.5
         add "dialog"
 
 style main_menu_frame is empty

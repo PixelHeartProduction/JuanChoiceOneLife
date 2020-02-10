@@ -1,14 +1,15 @@
-define Mary = Character("Mary", color="#a669f5")
-define Joseph = Character ("Joseph", color="#adf569")
-define Juan = Character("Juan")
-define Dog = Character("Dog", color="#f5d769")
-define Girl = Character ("Girl", color="#f569b6")
-define Cathy = Character("Ms. Cathy",color="#fc5d6b")
-define Peter = Character("Peter", color="#bdbbbb")
-define May = Character ("May",color="#f57e16")
-define James = Character ("James",color="#fe7e66")
-define Class = Character ("Class",color="#fe7e66")
+define Peter_center = Character("Peter",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#bdbbbb")
+define James_center = Character ("James",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#fe7e66")
+define Class_center = Character ("Class",what_xalign=0.5, what_text_align=0.5,who_xpos=535,color="#a17c26")
+
+define none = Character(None,what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5)
+
+
 #=========================Juan=================================
+define Juan_left = Character("Juan",what_xalign=0.30, what_text_align=0.0)
+define Juan_center = Character("Juan", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5)
+define Juan_right = Character("Juan", what_xalign=0.60, what_text_align=1.0,who_xpos=925,who_text_align=1.0)
+
 image BabyJuan tripped:
     "assets/Sprites/BabyJuan_Tripped.png"
     zoom 0.25
@@ -29,6 +30,10 @@ image BabyJuan standing:
     "assets/Sprites/Items/BabyJuan_Standing.png"
     zoom 1.1
 #=========================Mary=================================
+define Mary_left = Character("Mary", what_xalign=0.30, what_text_align=0.0, color="#a669f5")
+define Mary_right = Character("Mary", what_xalign=0.60, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#a669f5")
+define Mary_center = Character("Mary", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#a669f5")
+
 image Mary kneel:
     "assets/Sprites/Mary_Kneel.png"
     zoom 0.28
@@ -37,51 +42,58 @@ image Mary kneel:
 
 image Mary neutralleft:
     "assets/Sprites/Mary_Normal.png"
-    zoom .15
+    zoom .32
     ypos 1.2
     xpos 0.25
 
 image Mary neutral:
     "assets/Sprites/Mary_Normal.png"
-    zoom .15
+    zoom .32
     ypos 1.2
 
 image Mary smile:
     "assets/Sprites/Mary_Smile.png"
-    zoom .15
+    zoom .32
     ypos 1.2
 
 image Mary surprised:
     "assets/Sprites/Mary_Surprised.png"
-    zoom .15
+    zoom .32
     ypos 1.2
 
 image Mary panLeft:
     "assets/Sprites/Mary_Normal.png"
-    zoom .15
+    zoom .32
     ypos 1.2
     xalign .5
-    linear 1 xalign 0.25
+    linear 0.5 xalign 0.25
 
 image Mary neutralright:
     "assets/Sprites/Mary_Normal.png"
-    zoom .15
+    zoom .32
     ypos 1.2
     xpos .75
 
 image Mary neutralLeft:
     "assets/Sprites/Mary_Normal.png"
-    zoom .15
+    zoom .32
     ypos 1.2
     xpos .25
 
 #=========================Joseph==============================
+define Joseph_left = Character ("Joseph", what_xalign=0.30, what_text_align=0.0, color="#adf569")
+define Joseph_center = Character("Joseph", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#adf569")
+define Joseph_right = Character("Joseph", what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#adf569")
 image Joseph kneel:
     "assets/Sprites/Joseph_Kneel.png"
     zoom 0.28
     xpos 1150
     ypos 900
 
+image Joseph talking:
+    "assets/Sprites/Joseph_Talking.png"
+    zoom .17
+    ypos 1.25
 
 image Joseph neutralright:
     "assets/Sprites/Joseph_Normal.png"
@@ -109,10 +121,12 @@ image Joseph panLeft:
     zoom .17
     ypos 1.25
     xalign .5
-    linear 1 xalign 0.25
+    linear 0.5 xalign 0.25
 
 #=========================Girl=================================
-
+define Girl_left = Character ("Girl",what_xalign=0.30, what_text_align=0.0, color="#f569b6")
+define Girl_center = Character ("Girl",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#f569b6")
+define Girl_right = Character ("Girl", what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#f569b6")
 image Girl crying:
     "assets/Sprites/Girl_Crying.png"
     zoom .19
@@ -146,6 +160,9 @@ image Peter sad:
     ypos 1.2
 
 #=========================Cathy=================================
+define Cathy_left = Character("Ms. Cathy",what_xalign=0.30, what_text_align=0.0,color="#fc5d6b")
+define Cathy_center = Character("Ms. Cathy",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#fc5d6b")
+define Cathy_right = Character("Ms. Cathy",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#fc5d6b")
 
 image Cathy neutral:
     "assets/Sprites/Cathy_Normal.png"
@@ -183,8 +200,17 @@ image Cathy panningBack:
 
 #====================May===========================
 
+define May_left = Character ("May",color="#f57e16")
+define May_center = Character("May", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#f57e16")
+define May_right = Character("May", what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#f57e16")
+
 image May neutral:
     "assets/Sprites/May6mo.png"
     zoom .6
     xalign .5
     yalign .5
+
+#=====================Dog===========================
+define Dog_left = Character("Dog",what_xalign=0.30, what_text_align=0.0, color="#f5d769")
+define Dog_center = Character("Dog",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#f5d769")
+define Dog_right = Character("Dog",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#f5d769")

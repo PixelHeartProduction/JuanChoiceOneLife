@@ -10,65 +10,67 @@ label JuansEatingHabit:
 
     scene daytimeBedroom with dissolve
     show Joseph laugh
-    Joseph "Ok little Juan here I go!"
-    Joseph "A,B,C,D,E,F - "
+    Joseph_center "Ok little Juan here I go!"
+    Joseph_center "A,B,C,D,E,F - "
     show mode confirm with dissolve
     call screen ABCD with dissolve
     hide mode confirm with dissolve
 
     if alphabet_selected == "G":
-        Joseph "Great!"
-        Joseph "I think you're ready for school now. Don't you think so too, little Juan? Huh? Huh?"
-        Juan "Hehe"
-        Joseph "Haha just kidding"
-        Joseph "But you're really good!"
+        Joseph_center "Great!"
+        Joseph_center "I think you're ready for school now. Don't you think so too, little Juan? Huh? Huh?"
+        Juan_center "Hehe"
+        Joseph_center "Haha just kidding"
+        Joseph_center "But you're really good!"
     else:
         show Joseph neutral
-        Joseph "Haha nice try."
-        Joseph "But i can see you're trying your best"
-        "Juan chuckles."
-        Joseph "Okay let's do it again.."
-        Juan "Yeah!"
+        Joseph_center "Haha nice try."
+        Joseph_center "But i can see you're trying your best"
+        none "Juan chuckles."
+        Joseph_center "Okay let's do it again.."
+        Juan_center "Yeah!"
 
-    "(While Joseph and Juan were spending time together learning the Alphabet.)"
-    "(Mary comes in from the kitchen and called Joseph and Juan)"
+    none "(While Joseph and Juan were spending time together learning the Alphabet.)"
+    none "(Mary comes in from the kitchen and called Joseph and Juan)"
 
     show Mary neutralright with easeinright
     show Joseph panLeft
-    Mary "Dad, Juan, come on it's lunch time!"
-    Joseph "Great job, little Juan!"
-    Juan "Yay!"
-    Joseph "Ok Juan we should do more later, ok big champ?"
-    Joseph "But first we should have lunch. Get a little food in Juan's little tummy."
+    Mary_right "Dad, Juan, come on it's lunch time!"
+    Joseph_left "Great job, little Juan!"
+    Juan_center "Yay!"
+    Joseph_left "Ok Juan we should do more later, ok big champ?"
+    Joseph_left "But first we should have lunch. Get a little food in Juan's little tummy."
     show Mary surprised
-    Mary "Remember Juan you should never skip any meals throughout the day. Food gives you energy."
-    Joseph "Yes Juan, Skipping meals is bad for you."
-    Mary "Especially for your young body, you're quite vulnerable to any micro-nutrient deficiencies."
-    Juan "Yes mom!."
+    Mary_right "Remember Juan you should never skip any meals throughout the day. Food gives you energy."
+    show Joseph talking with dissolve
+    Joseph_left "Yes Juan, Skipping meals is bad for you."
+    show Joseph neutral with dissolve
+    Mary_right "Especially for your young body, you're quite vulnerable to any micro-nutrient deficiencies."
+    Juan_center "Yes mom!."
     show Mary smile
-    Mary "Anyways let's go eat now."
+    Mary_right "Anyways let's go eat now."
 
     scene black with dissolve
-    "(And so, the family went to the dining table and get lunch together.)"
+    none "(And so, the family went to the dining table and get lunch together.)"
     scene kitchen with dissolve
 
     show Joseph neutralright with dissolve
     show Mary neutralLeft with dissolve
-    Mary "Ok before we eat, let's give our thanks prayer to Papa Jesus."
-    Juan "Okay!"
-    Joseph "Okay!"
-    "(The family closed their eyes and pray as they give thanks for their wonderful food.)"
-    Mary "Amen."
-    Joseph "Amen."
-    Juan "Amen."
+    Mary_left "Ok before we eat, let's give our thanks prayer to Papa Jesus."
+    Juan_center "Okay!"
+    Joseph_right "Okay!"
+    none "(The family closed their eyes and pray as they give thanks for their wonderful food.)"
+    Mary_left "Amen."
+    Joseph_right "Amen."
+    Juan_center "Amen."
     show Mary smile
-    Mary "Let's eat!"
-    Juan "Yay!"
+    Mary_left "Let's eat!"
+    Juan_center "Yay!"
     scene table with dissolve
-    Mary "Here's for you Juan."
+    Mary_center "Here's for you Juan."
 
-    Mary "Carrots, Mashed Potato and Banana"
-    Joseph "Wow! this taste really good!"
+    Mary_center "Carrots, Mashed Potato and Banana"
+    Joseph_center "Wow! this taste really good!"
 
     show mode confirm with dissolve
     call screen FoodPlate with dissolve
@@ -80,39 +82,39 @@ label JuansEatingHabit:
     if food_eaten < 3:
         $ Choice_ch3 = "picky"
         $ renpy.notify("Picky kid perk unlocked!")
-        "(Juan ate some of the food and leave everything on the plate.)"
-        Juan "Yummy!"
+        none "(Juan ate some of the food and leave everything on the plate.)"
+        Juan_center "Yummy!"
         show Mary smile
-        Mary "Glad you liked it!"
+        Mary_left "Glad you liked it!"
         show Mary surprised
-        Mary "But your plate seems like it's not done yet Juan."
+        Mary_left "But your plate seems like it's not done yet Juan."
         show Joseph laugh
-        Joseph "It's really delicious Ma!"
-        Juan "I don't like those food Mom."
+        Joseph_right "It's really delicious Ma!"
+        Juan_center "I don't like those food Mom."
         show Mary smile
-        Mary "Oh well, hahaha."
+        Mary_left "Oh well, hahaha."
 
     else:
         $ Choice_ch3 = "healthy"
         $ renpy.notify("Healthy kid perk unlocked!")
-        "(Juan ate everything and left nothing on his plate.)"
-        Juan "Yummy!"
+        none "(Juan ate everything and left nothing on his plate.)"
+        Juan_center "Yummy!"
         show Mary smile
-        Mary "Glad you liked it!"
+        Mary_left "Glad you liked it!"
         show Joseph laugh
-        Joseph "It's really delicious Ma!"
-        Juan "Delicious!"
+        Joseph_right "It's really delicious Ma!"
+        Juan_center "Delicious!"
 
     scene black with dissolve
-    "(After lunch Joseph and Juan went back to play)"
+    none "(After lunch Joseph and Juan went back to play)"
     scene daytimeBedroom with dissolve
     show Joseph laugh with dissolve
-    "Joseph laughs"
-    Juan "Hahaha dad that's really cool!"
+    none "Joseph laughs"
+    Juan_center "Hahaha dad that's really cool!"
     show Joseph neutral
-    Joseph "Anyway we should do this again next time."
-    Juan "Yay!"
-    "(And so little Juan is really happy after playing with Joseph)"
+    Joseph_center "Anyway we should do this again next time."
+    Juan_center "Yay!"
+    none "(And so little Juan is really happy after playing with Joseph)"
     scene black with dissolve
 
     jump JuansLittleSister
