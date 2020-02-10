@@ -48,7 +48,7 @@ label JuansLittleSister:
     show Joseph neutral with dissolve
     Juan_center "Dad, what's happening to mom? Dad, the doctors are really scary. What are they doing to mom? Are they hurting her?"
     none "(Juan said while he's crying)"
-    Joseph_center "Little Juan, Mom is giving birth. The doctors ae helping her bring your sister to the world."
+    Joseph_center "Little Juan, Mom is giving birth. The doctors are helping her bring your sister to the world."
     Joseph_center "She is a little hurt but you know,"
     Joseph_center "Juan, after this she will be so happy."
     Juan_center "Why?"

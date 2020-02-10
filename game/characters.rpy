@@ -34,6 +34,10 @@ define Mary_left = Character("Mary", what_xalign=0.30, what_text_align=0.0, colo
 define Mary_right = Character("Mary", what_xalign=0.60, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#a669f5")
 define Mary_center = Character("Mary", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#a669f5")
 
+image Mary talking:
+    "assets/Sprites/Mary_Talking.png"
+    zoom .32
+    ypos 1.2
 image Mary kneel:
     "assets/Sprites/Mary_Kneel.png"
     zoom 0.28

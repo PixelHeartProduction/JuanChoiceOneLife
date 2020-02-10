@@ -18,7 +18,7 @@ label JuansFirstDay:
         with Pause (5)
 
     if played_with_may == False:
-        show text("{size=40}Joseph and Mary are really happy that \nJuan finally embraced his new role as a big brother now{/size}") with dissolve
+        show text("{size=40}Joseph and Mary are really happy that \nJuan finally embraced his new role as a big brother now.{/size}") with dissolve
         with Pause (5)
 
     show text("{size=40}Juan is now 5 years old.{/size}") with dissolve
@@ -36,9 +36,9 @@ label JuansFirstDay:
     scene daytimeLivingroom with dissolve
 
     scene black with dissolve
-    play music "assets/BGM/HelloHowAreYou.mp3"
 
     none "..."
+    play music "assets/BGM/ghost.mp3"
     none "'.....hey wake up you sleepy head.'"
     none "(it's the first sound I hear as I wake up in my bed.)"
 
