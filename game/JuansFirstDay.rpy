@@ -5,6 +5,7 @@ label JuansFirstDay:
     $ FoodChoice = "null"
     $ PuloChoice = "null"
     $ LocationChoice = "null"
+    $ NationalBirdChoice = "null"
     $ help_girl = "null"
 
 
@@ -210,6 +211,8 @@ label JuansFirstDay:
     Cathy_center "Ok, no cheating young man!"
     show Cathy laugh
     $ correct = 0
+    show Cathy neutral
+    Cathy_center "Question #1: How many Islands are there in the Philippines?"
     show mode confirm with dissolve
     call screen PuloScreen with dissolve
     hide mode confirm with dissolve
@@ -225,6 +228,9 @@ label JuansFirstDay:
         show Cathy sad
         Cathy_center "Awwe, good try, Juan but I guess we're looking for a different number."
 
+    show Cathy neutral
+    Cathy_center "Question #2: Where is the Philippines located at?"
+
     show mode confirm with dissolve
     call screen LocationScreen with dissolve
     hide mode confirm with dissolve
@@ -236,26 +242,30 @@ label JuansFirstDay:
         Cathy_center "Good Job!"
     if LocationChoice == "North East Asia":
         show Cathy sad
-        Cathy "You're quite close but you just missed a word."
+        Cathy_center "You're quite close but you just missed a word."
     if LocationChoice == "Central Asia":
         show Cathy sad
         Cathy_center "Quite near, Juan. I'm gonna need you to listen better next time okay?"
 
     show Cathy neutral
     Cathy_center "Question #3: What is the National Bird of the Philippines?"
-    menu:
-        "Philippine Eagle":
-            $ correct +=1
-            show Cathy smile
-            Cathy_center "Correct!"
-            Cathy_center "Good Job!"
-        "Maya":
-            show Cathy sad
-            Cathy_center "Wrong."
-            Cathy_center "It is not the national bird, Juan."
-        "Manok":
-            show Cathy sad
-            Cathy_center "Definitely Not, Juan."
+
+    show mode confirm with dissolve
+    call screen NationalBird with dissolve
+    hide mode confirm with dissolve
+
+    if NationalBirdChoice == "eagle":
+        $ correct +=1
+        show Cathy smile
+        Cathy_center "Correct!"
+        Cathy_center "Good Job!"
+    if NationalBirdChoice == "maya":
+        show Cathy sad
+        Cathy_center "Wrong."
+        Cathy_center "It is not the national bird, Juan."
+    if NationalBirdChoice == "manok":
+        show Cathy sad
+        Cathy_center "Definitely Not, Juan."
 
     show Cathy smile
     Cathy_center "Okay that's it!"
@@ -493,27 +503,41 @@ label JuansFirstDay:
 
     screen PuloScreen():
         modal True
-        text("How many Islands are there in the Philippines?") size 60 xpos 0.3 ypos 30
+        text("How many Islands are there in the Philippines?") size 50 xpos 0.2 ypos 30
 
-        hbox xalign 0.5 yalign 0 spacing 600:
+        hbox xalign 0.5 yalign 0 spacing 300:
             vbox:
-                textbutton ("7107") ypos 500 xpos 0  action [SetVariable("PuloChoice", "7107"),Return()]
+                textbutton (Text("7107",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("PuloChoice", "7107"),Return()]
             vbox:
-                textbutton ("2000") ypos 500 xpos -40  action [SetVariable("PuloChoice", "2000"),Return()]
+                textbutton (Text("2000",size=50,bold=True)) ypos 500 xpos -40  action [SetVariable("PuloChoice", "2000"),Return()]
             vbox:
-                textbutton ("1234") ypos 500 xpos -80  action [SetVariable("PuloChoice", "1234"),Return()]
+                textbutton (Text("1234",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("PuloChoice", "1234"),Return()]
     
     screen LocationScreen():
         modal True
-        text("How many Islands are there in the Philippines?") size 60 xpos 0.3 ypos 30
+        text("Where is the Philippines located at?") size 60 xpos 0.25 ypos 30
 
-        hbox xalign 0.5 yalign 0 spacing 600:
+        hbox xalign 0.5 yalign 0 spacing 200:
             vbox:
-                textbutton ("South East Asia") ypos 500 xpos 0  action [SetVariable("LocationChoice", "South East Asia"),Return()]
+                textbutton (Text("South East Asia",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("LocationChoice", "South East Asia"),Return()]
             vbox:
-                textbutton ("North East Asia") ypos 500 xpos -40  action [SetVariable("LocationChoice", "North West Asia"),Return()]
+                textbutton (Text("North East Asia",size=50,bold=True)) ypos 500 xpos -40  action [SetVariable("LocationChoice", "North East Asia"),Return()]
             vbox:
-                textbutton ("Central Asia") ypos 500 xpos -80  action [SetVariable("LocationChoice", "Central Asia"),Return()]
+                textbutton (Text("Central Asia",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("LocationChoice", "Central Asia"),Return()]
+
+    screen NationalBird():
+        modal True
+
+        $ eagle = Image("assets/Misc/Philippine_eagle.png")
+        $ maya = Image("assets/Sprites/Items/maya.jpg")
+        $ manok = Image("assets/Sprites/Items/manok.jpg")
+
+        text("What is the National Bird of the Philippines?") size 60 xpos 0.17 ypos 30
+
+        hbox xalign 0.5 yalign 0.5 spacing 200:
+            imagebutton idle Transform(maya,zoom=0.20) action [SetVariable("NationalBirdChoice", "maya"),Return()]
+            imagebutton idle Transform(eagle) action [SetVariable("NationalBirdChoice", "eagle"),Return()]
+            imagebutton idle Transform(manok,zoom=0.8) action [SetVariable("NationalBirdChoice", "manok"),Return()]
 
     screen chargeorstone():
         modal True
@@ -524,7 +548,7 @@ label JuansFirstDay:
         $ stone_selected = im.MatrixColor(stone,im.matrix.brightness(0.2))
 
         hbox xalign 0.5:
-            text(Text("The girl needs help what should I do?",size=50))
+            text("The girl needs help, What should I do?") size 60 xpos 0 ypos 30
         hbox xpos 575 ypos 585:
             imagebutton idle Transform(dog) hover Transform(dog_selected) action [SetVariable("help_girl", "charge"),Return()]
         hbox xpos 1500 ypos 800:
