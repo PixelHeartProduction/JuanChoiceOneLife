@@ -123,9 +123,10 @@ label WalkIndependently:
             Juan_center "Papa, it hurt. Hands... hurt."
             none "Juan, shows his dirty hands."
             none "Joseph, blows on it."
+            show Joseph talking with dissolve
             Joseph_center "See? It's ok little Juan. That's just a little ouchie. Nothing big right? Right?"
             Joseph_center "Who's my big brave boy? Who is?"
-            show Joseph laugh
+            show Joseph laugh with dissolve
             Joseph_center "How about we try it again, huh?"
             Juan_center "Okay!"
             scene livingroomangle2 with dissolve
@@ -154,6 +155,7 @@ label WalkIndependently:
         Joseph_center "Great Job haha"
         Mary_right "Juan, Dad, Dinner's Ready!"
         Joseph_center "Oh it's that time already?"
+        show Joseph talking with dissolve
         Joseph_center "Ok little Juan Ma's waiting for us"
         Juan_center "Yes!"
         scene black with dissolve

@@ -33,6 +33,7 @@ label JuansFirstWord:
     Joseph_right "Hey little Juan! How are you? How's my little champ?"
     show Mary neutral
     Mary_left "So Juan, daddy and I have a little surprise for you..."
+    show Joseph talking with dissolve
     Joseph_right "Mommy and I put a lot of thought into this so we hope you like it, champ."
     Mary_left "Here you go."
 
@@ -42,7 +43,7 @@ label JuansFirstWord:
 
     show Mary smile
     Mary_left "Oh! It seems that he likes it, Joseph!"
-    show Joseph neutral
+    show Joseph neutral with dissolve
     Joseph_right "Well I think it's perfect for him."
     Mary_left "It does seem so."
     show Mary neutral
@@ -114,10 +115,10 @@ label JuansFirstWord:
     screen mamaorpapa():
      modal True
      $ arrows = Image ("assets/Misc/arrows.png")
-     $ mary = Image("assets/Sprites/Mary_Smile.png", ypos = 0.115,xpos=50,zoom=2)
-     $ joseph = Image("assets/Sprites/Joseph_Laugh.png", ypos = 80,xpos=5,zoom=2)
-     $ mary_highlighted = im.MatrixColor(mary,im.matrix.brightness(0.2),ypos = 0.115,xpos=50,zoom=2)
-     $ joseph_highlighted = im.MatrixColor(joseph,im.matrix.brightness(0.2),ypos = 80,xpos=5,zoom=2)
+     $ mary = Image("assets/Sprites/Mary_Smile.png", ypos = 0.115,xpos=15,zoom=2)
+     $ joseph = Image("assets/Sprites/Joseph_Laugh.png", ypos = 80,xpos=-25,zoom=2)
+     $ mary_highlighted = im.MatrixColor(mary,im.matrix.brightness(0.2),ypos = 0.115,xpos=15,zoom=2)
+     $ joseph_highlighted = im.MatrixColor(joseph,im.matrix.brightness(0.2),ypos = 80,xpos=-25,zoom=2)
 
      text("Baby Juan's first word is:") size 60 xpos 0.3 ypos 30
 
@@ -125,10 +126,10 @@ label JuansFirstWord:
          vbox:
             image(arrows)
      hbox xalign 0.5 yalign 0 spacing 600:
-        imagebutton idle Transform(mary, zoom=0.15) hover Transform(mary_highlighted, zoom=0.15) action [SetVariable("Choice_ch1", "mama"),Return()]
+        imagebutton idle Transform(mary, zoom=0.32) hover Transform(mary_highlighted, zoom=0.32) action [SetVariable("Choice_ch1", "mama"),Return()]
         imagebutton idle Transform(joseph, zoom=0.17) hover Transform(joseph_highlighted, zoom=0.17) action [SetVariable("Choice_ch1", "papa"),Return()]
 
-     hbox xalign 0.5 yalign 0 spacing 600:
+     hbox xalign 0.55 yalign 0 spacing 600:
         text("Mama") ypos 800 xpos -80 size 70 bold True
         text("Papa") ypos 800 xpos 0 size 70 bold True
 

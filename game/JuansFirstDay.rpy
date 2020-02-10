@@ -14,14 +14,14 @@ label JuansFirstDay:
     scene black with dissolve
     play music "assets/BGM/HelloHowAreYou.mp3"
 
-    "..."
-    "'.....hey wake up you sleepy head.'"
-    "(it's the first sound I hear as I wake up in my bed.)"
+    none "..."
+    none "'.....hey wake up you sleepy head.'"
+    none "(it's the first sound I hear as I wake up in my bed.)"
 
     scene daytimeBedroom with dissolve
     show Mary smile with dissolve
 
-    Mary "Juan, you'll be late for school! Hurry up, it's your first day."
+    Mary_center "Juan, you'll be late for school! Hurry up, it's your first day."
 
     menu:
         "Wake up":
