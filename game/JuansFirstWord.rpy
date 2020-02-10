@@ -4,10 +4,12 @@ label JuansFirstWord:
 
 
     scene black with dissolve
-
+    scene trans_livingroom with dissolve
+    show mode confirm with dissolve
     show text("{size=60}Juan's first word{/size}") with dissolve
     with Pause(2)
     hide text with dissolve
+    scene black with dissolve
 
     play music "assets/BGM/HelloHowAreYou.mp3"
     none "..."

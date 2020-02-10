@@ -5,11 +5,12 @@ label WalkIndependently:
     stop music
     play music "assets/BGM/Ramune.mp3"
     scene black with dissolve
-
+    scene trans_bedroom with dissolve
+    show mode confirm with dissolve
     show text("{size=60}Walk independently{/size}") with dissolve
     with Pause(2)
     hide text with dissolve
-
+    scene black with dissolve
     show text("{size=40}1 year later.{/size}") with dissolve
     with Pause(2)
     hide text with dissolve

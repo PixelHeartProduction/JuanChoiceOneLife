@@ -6,11 +6,30 @@ label JuansFirstDay:
     $ PuloChoice = "null"
     $ LocationChoice = "null"
     $ NationalBirdChoice = "null"
+    $ WakeupChoice = "null"
     $ help_girl = "null"
 
 
-    stop music
     scene black with dissolve
+    show text("{size=40}3 years have passed.{/size}") with dissolve
+    with Pause (2)
+    if played_with_may == True:
+        show text("{size=40}Joseph and Mary are really happy that \nJuan and May are getting along together.{/size}") with dissolve
+        with Pause (5)
+
+    if played_with_may == False:
+        show text("{size=40}Joseph and Mary are really happy that \nJuan finally embraced his new role as a big brother now{/size}") with dissolve
+        with Pause (5)
+
+    show text("{size=40}Juan is now 5 years old.{/size}") with dissolve
+    with Pause (3)
+    show text("{size=40}And he is now ready for his first day of school.{/size}") with dissolve
+    with Pause (2.5)
+
+    stop music fadeout 2.0
+    scene black with dissolve
+    scene trans_school with dissolve
+    show mode confirm with dissolve
     show text("{size=60}Juan's first day{/size}") with dissolve
     with Pause(2)
     hide text with dissolve
@@ -28,15 +47,18 @@ label JuansFirstDay:
 
     Mary_center "Juan, you'll be late for school! Hurry up, it's your first day."
 
-    menu:
-        "Wake up":
-            Juan_center "uugghh.. What time is it?"
-            show Mary neutral
-            Mary_center "Good morning, Juan!"
-        "Maybe later..":
-            Juan_center "..maybe..later. Five more minutes, Ma..."
-            show Mary surprised
-            Mary_center "Juan, you need to get up now. You can't be late on your first day of school."
+    show mode confirm with dissolve
+    call screen wakeorsleep with dissolve
+    hide mode confirm with dissolve
+
+    if WakeupChoice == "wake":
+        Juan_center "uugghh.. What time is it?"
+        show Mary neutral
+        Mary_center "Good morning, Juan!"
+    if WakeupChoice == "later":
+        Juan_center "..maybe..later. Five more minutes, Ma..."
+        show Mary surprised
+        Mary_center "Juan, you need to get up now. You can't be late on your first day of school."
 
     Mary_center "Breakfast is in the kitchen. Eat up when you're done here."
     show Mary neutral
@@ -319,7 +341,7 @@ label JuansFirstDay:
     Juan_center "(as we greeted each other I noticed from his backpack a picture of my favorite game.)"
 
     show mode confirm with dissolve
-    call screen AskSwordStyleScreen with dissolve
+    call screen AskSwordStyleScreens with dissolve
     hide mode confirm with dissolve
     if askOrNot == "Ask":
         Juan_center "Wow! Peter do you play Sword Style Online?"
@@ -481,25 +503,44 @@ label JuansFirstDay:
 
 
     #=====================Screens===========================
-    screen AskSwordStyleScreen():
+    screen AskSwordStyleScreens():
         modal True
-        text("What should Juan do?") size 60 xpos 0.3 ypos 30
 
-        hbox xalign 0.5 yalign 0 spacing 600:
-            vbox:
-                textbutton ("Ask him about the picture") ypos 500 xpos 0  action [SetVariable("askOrNot", "Ask"),Return()]
-            vbox:
-                textbutton ("Say nothing") ypos 500 xpos -80  action [SetVariable("askOrNot", "Say nothing"),Return()]
+        $ point = Image("assets/Sprites/Items/icon_pointbag.png")
+        $ point_selected = im.MatrixColor(point,im.matrix.brightness(0.2))
+        $ silent = Image("assets/Sprites/Items/icon_quiet.png")
+        $ silent_selected = im.MatrixColor(silent,im.matrix.brightness(0.2))
+
+        hbox xalign 0.5:
+            text(Text("Juan knows the picture from the backpack but what would he do?",size=50,ypos=30))
+
+        
+        hbox xalign 0.5 yalign 0.3 spacing 600:
+            vbox xpos 0.3 ypos 70:
+                imagebutton idle Transform(point, zoom=.7) hover Transform(point_selected, zoom=.7) action [SetVariable("askOrNot", "Ask"),Return()]
+                text(Text("Ask him about the picture",size=40)) xpos -100
+            vbox xpos -50 ypos 100:
+                imagebutton idle Transform(silent, zoom=1) hover Transform(silent_selected, zoom=1) action [SetVariable("askOrNot", "Say nothing"),Return()]
+                text(Text("Say nothing",size=40)) xpos 0
 
     screen FoodChoiceScreen():
         modal True
-        text("What should Juan do?") size 60 xpos 0.3 ypos 30
+        $ givefood = Image("assets/Sprites/Items/icon_givelunch.png")
+        $ givefood_selected = im.MatrixColor(givefood,im.matrix.brightness(0.2))
+        $ report = Image("assets/Sprites/Items/icon_tellteacher.png")
+        $ report_selected = im.MatrixColor(report,im.matrix.brightness(0.2))
 
-        hbox xalign 0.5 yalign 0 spacing 600:
-            vbox:
-                textbutton ("Give him some of my pork chop") ypos 500 xpos 0  action [SetVariable("FoodChoice", "Give"),Return()]
-            vbox:
-                textbutton ("Tell the teacher Peter doesn't have food") ypos 500 xpos -80  action [SetVariable("FoodChoice", "Report"),Return()]
+        hbox xalign 0.5:
+            text(Text("Peter's mom forgot his lunch, What should i do?",size=50,ypos=30))
+            
+        hbox xalign 0.5 yalign 0.3 spacing 600:
+            vbox xpos 0.5 ypos 70:
+                imagebutton idle Transform(givefood, zoom=.7) hover Transform(givefood_selected, zoom=.7) action [SetVariable("FoodChoice", "Give"),Return()]
+                text(Text("Give him some of my pork chop",size=40)) xpos -100
+            vbox xpos -50:
+                imagebutton idle Transform(report, zoom=.7) hover Transform(report_selected, zoom=.7) action [SetVariable("FoodChoice", "Report"),Return()]
+                text(Text("Tell the teacher Peter doesn't have food",size=40)) xpos 0
+
 
     screen PuloScreen():
         modal True
@@ -554,6 +595,22 @@ label JuansFirstDay:
         hbox xpos 1500 ypos 800:
             imagebutton idle Transform(stone, zoom=0.08) hover Transform(stone_selected, zoom=0.08) action [SetVariable("help_girl", "stone"),Return()] 
 
+    screen wakeorsleep():
+        modal True
+        $ sleep = Image("assets/Sprites/Items/icon_sleep.png")
+        $ sleep_selected = im.MatrixColor(sleep,im.matrix.brightness(0.2))
+        $ wake = Image("assets/Sprites/Items/icon_wakeup.png")
+        $ wake_selected = im.MatrixColor(wake,im.matrix.brightness(0.2))
 
+        hbox xalign 0.5:
+            text(Text("Juan still sleepy but he needs to go to school.",size=50))
+
+        hbox xalign 0.5 yalign 0.3 spacing 800:
+            vbox:
+                imagebutton idle Transform(sleep, zoom=1) hover Transform(sleep_selected, zoom=1) action [SetVariable("WakeupChoice", "later"),Return()]
+                text(Text("Maybe later..",size=50)) xpos 0.14
+            vbox:
+                imagebutton idle Transform(wake, zoom=1) hover Transform(wake_selected, zoom=1) action [SetVariable("WakeupChoice", "wake"),Return()]
+                text(Text("Wake up",size=50)) xpos 0.2
 
     return
