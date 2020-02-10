@@ -16,4 +16,11 @@
     image livingroomangle1 = "assets/Scenes/livingroomangle1.png"
     image livingroomangle2 = "assets/Scenes/livingroomangle2.jpg"
     image dogscene = "assets/Scenes/dogscene.jpg"
-    
+
+
+#================Transitions======================
+    image trans_livingroom = im.MatrixColor("assets/Scenes/livingroomdaytime.jpg",im.matrix.brightness(-0.2))
+    image trans_bedroom = im.MatrixColor("assets/Scenes/BedroomDaytime.jpg",im.matrix.brightness(-0.2))
+    image trans_plate = im.MatrixColor("assets/Scenes/foodplate.jpg",im.matrix.brightness(-0.2))
+    image trans_hospital = im.MatrixColor("assets/Scenes/Hospital.jpg",im.matrix.brightness(-0.2))
+    image trans_school = im.MatrixColor("assets/Scenes/classroom.jpg",im.matrix.brightness(-0.2))

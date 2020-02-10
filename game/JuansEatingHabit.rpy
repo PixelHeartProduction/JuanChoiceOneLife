@@ -2,6 +2,8 @@ label JuansEatingHabit:
     stop music
 
     scene black with dissolve
+    scene trans_plate with dissolve
+    show mode confirm with dissolve
     show text("{size=60}Juan's eating habit{/size}") with dissolve
     with Pause(2)
     hide text with dissolve

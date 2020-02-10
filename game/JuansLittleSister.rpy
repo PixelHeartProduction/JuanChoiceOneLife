@@ -4,6 +4,8 @@ label JuansLittleSister:
 
     stop music
     scene black with dissolve
+    scene trans_hospital with dissolve
+    show mode confirm with dissolve
     show text("{size=60}Juan's little sister{/size}") with dissolve
     with Pause(2)
     hide text with dissolve
@@ -122,7 +124,7 @@ label JuansLittleSister:
 
 
     show logo JuanChoice with dissolve
-    with Pause(2)
+    with Pause(3)
 
     jump JuansFirstDay
     #=====================Screens===========================
