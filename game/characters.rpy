@@ -1,4 +1,3 @@
-define Cathy_center = Character("Ms. Cathy",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#fc5d6b")
 define Peter_center = Character("Peter",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#bdbbbb")
 define James_center = Character ("James",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#fe7e66")
 define Class_center = Character ("Class",what_xalign=0.5, what_text_align=0.5,who_xpos=535,color="#a17c26")
@@ -161,6 +160,9 @@ image Peter sad:
     ypos 1.2
 
 #=========================Cathy=================================
+define Cathy_left = Character("Ms. Cathy",what_xalign=0.30, what_text_align=0.0,color="#fc5d6b")
+define Cathy_center = Character("Ms. Cathy",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#fc5d6b")
+define Cathy_right = Character("Ms. Cathy",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#fc5d6b")
 
 image Cathy neutral:
     "assets/Sprites/Cathy_Normal.png"
