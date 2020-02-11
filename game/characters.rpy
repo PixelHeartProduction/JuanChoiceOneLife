@@ -39,6 +39,11 @@ image Juan smile1:
     zoom 0.33
     ypos 1.2
 
+image Juan smile2:
+    "assets/Sprites/Juan_SmileEyesOpen.png"
+    zoom 0.33
+    ypos 1.2
+
 image Juan panLeft:
     "assets/Sprites/Juan.png"
     zoom 0.33
@@ -46,11 +51,36 @@ image Juan panLeft:
     xalign .5
     linear 0.5 xalign 0.25
 
+image Juan panLCenter:
+    "assets/Sprites/Juan.png"
+    zoom 0.33
+    ypos 1.2
+    xalign .25
+    linear 0.5 xalign 0.5
+
+image Juan panRCenter:
+    "assets/Sprites/Juan.png"
+    zoom 0.33
+    ypos 1.2
+    xalign .75
+    linear 0.5 xalign 0.5
+
 image Juan neutralLeft:
     "assets/Sprites/Juan.png"
     zoom 0.33
     ypos 1.2
     xpos 0.25
+
+image Juan neutralRight:
+    "assets/Sprites/Juan.png"
+    zoom 0.33
+    ypos 1.2
+    xpos 0.75
+
+image Juan confident:
+    "assets/Sprites/Juan_Confident.png"
+    zoom 0.33
+    ypos 1.2
 
 #=========================Mary=================================
 define Mary_left = Character("Mary", what_xalign=0.30, what_text_align=0.0, color="#a669f5")
@@ -184,7 +214,10 @@ image Girl smile:
     ypos 1.2
 
 #=========================Peter=================================
+define Peter_left = Character("Peter",what_xalign=0.30, what_text_align=0.0, color="#bdbbbb")
 define Peter_center = Character("Peter",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#bdbbbb")
+define Peter_right = Character("Peter",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#bdbbbb")
+
 image Peter neutral:
     "assets/Sprites/Peter_Normal.png"
     zoom .19
@@ -199,6 +232,18 @@ image Peter sad:
     "assets/Sprites/Peter_Sad.png"
     zoom .19
     ypos 1.2
+
+image Peter sadRight:
+    "assets/Sprites/Peter_Sad.png"
+    zoom .19
+    ypos 1.2
+    xpos 0.75
+
+image Peter neutralRight:
+    "assets/Sprites/Peter_Normal.png"
+    zoom .19
+    ypos 1.2
+    xpos 0.75
 
 #=========================Cathy=================================
 define Cathy_left = Character("Ms. Cathy",what_xalign=0.30, what_text_align=0.0,color="#fc5d6b")

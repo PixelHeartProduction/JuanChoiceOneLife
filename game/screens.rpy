@@ -311,7 +311,8 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu() selected_background bar
 
-        textbutton _("About") action ShowMenu("about") selected_background bar
+        if main_menu:
+            textbutton _("About") action ShowMenu("about") selected_background bar
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
