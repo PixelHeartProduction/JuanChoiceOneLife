@@ -55,6 +55,10 @@ define config.has_voice = True
 define config.sample_sound = "sample-sound.ogg"
 define config.sample_voice = "sample-voice.ogg"
 
+define sfx_click1 = "assets/SFX/click1.mp3"
+define sfx_click2 = "assets/SFX/click2.mp3"
+define sfx_mode = "assets/SFX/mode.mp3"
+
 
 ## Uncomment the following line to set an audio file that will be played while
 ## the player is at the main menu. This file will continue playing into the

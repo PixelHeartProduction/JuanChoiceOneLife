@@ -292,9 +292,9 @@ define May_right = Character("May", what_xalign=0.6, what_text_align=1.0,who_xpo
 
 image May neutral:
     "assets/Sprites/May6mo.png"
-    zoom .6
+    zoom .12
     xalign .5
-    yalign .5
+    yalign .54
 
 #=====================Dog===========================
 define Dog_left = Character("Dog",what_xalign=0.30, what_text_align=0.0, color="#f5d769")
