@@ -18,10 +18,10 @@ label JuansFirstDay:
         with Pause (5)
 
     if played_with_may == False:
-        show text("{size=40}Joseph and Mary are really happy that \nJuan finally embraced his new role as a big brother now{/size}") with dissolve
+        show text("{size=40}Joseph and Mary are really happy that \nJuan finally embraced his new role as a big brother now.{/size}") with dissolve
         with Pause (5)
 
-    show text("{size=40}Juan is now 5 years old.{/size}") with dissolve
+    show text("{size=40}Juan is now 7 years old.{/size}") with dissolve
     with Pause (3)
     show text("{size=40}And he is now ready for his first day of school.{/size}") with dissolve
     with Pause (2.5)
@@ -36,9 +36,9 @@ label JuansFirstDay:
     scene daytimeLivingroom with dissolve
 
     scene black with dissolve
-    play music "assets/BGM/HelloHowAreYou.mp3"
 
     none "..."
+    play music "assets/BGM/ghost.mp3"
     none "'.....hey wake up you sleepy head.'"
     none "(it's the first sound I hear as I wake up in my bed.)"
 
@@ -53,48 +53,56 @@ label JuansFirstDay:
 
     if WakeupChoice == "wake":
         Juan_center "uugghh.. What time is it?"
-        show Mary neutral
-        Mary_center "Good morning, Juan!"
+        show Juan neutralLeft with dissolve
+        show Mary panRight
+        Mary_right "Good morning, Juan!"
     if WakeupChoice == "later":
-        Juan_center "..maybe..later. Five more minutes, Ma..."
+        show Juan neutralLeft with dissolve
+        show Mary panRight
+        Juan_left "..maybe..later. Five more minutes, Ma..."
         show Mary surprised
-        Mary_center "Juan, you need to get up now. You can't be late on your first day of school."
+        Mary_right "Juan, you need to get up now. You can't be late on your first day of school."
 
-    Mary_center "Breakfast is in the kitchen. Eat up when you're done here."
+    Mary_right "Breakfast is in the kitchen. Eat up when you're done here."
     show Mary neutral
-    Mary_center "...and it's your favorite,"
+    Mary_right "...and it's your favorite,"
     none "Mary chuckles."
-    Mary_center "Now, get up and don't forget to make the bed before you go down."
+    Mary_right "Now, get up and don't forget to make the bed before you go down."
 
-    Juan_center "Hmmmmm...Okay.."
+    Juan_left "Hmmmmm...Okay.."
     none "Juan stretches in his bed one last time "
 
-    scene daytimeLivingroom with dissolve
+    scene kitchen with dissolve
 
     Juan_center "(I feel really exited and happy today because it's my first day as a grade 1 student)"
     Juan_center "(I wonder who I'll meet? I'm really nervous. What if I do something embarrassing?)"
     Juan_center "(I hope everything goes well on my first day.)"
+    show Juan neutral with dissolve
     none "Juan continued eating."
+    show Juan smile1
     Juan_center "Oohh! it tastes really good, Ma!"
 
-    show Mary smile with dissolve
-    Mary_center "Of course it's your favourite pancakes."
+    show Mary neutralright with dissolve
+    show Juan panLeft
+    show Mary smile
+    Mary_right "Of course it's your favourite pancakes."
     show Mary neutral
-    Mary_center "By the way your dad also liked it very much. He told me to tell you that he hopes you have a great day at school and that you make him proud."
-    Mary_center "Must be tough being a Software Engineer, huh? Your dad left very early today"
-    Mary_center "Anyway Juan you should keep up your grades if you want to be like your dad one day, okay?"
-    Mary_center "You dad's Job might be hard, But being a school drop-out will be even harder. So Juan, remember your education is the only wealth we could give you that cannot be taken away."
-    Mary_center "Always remember that you have to work hard now so in the future you could have it easier."
-    Mary_center "There's this saying, 'if you don't walk today you'll have to run tomorrow.', so always work hard --"
+    Mary_right "By the way your dad also liked it very much. He told me to tell you that he hopes you have a great day at school and that you make him proud."
+    Mary_right "Must be tough being a Software Engineer, huh? Your dad left very early today"
+    Mary_right "Anyway Juan you should keep up your grades if you want to be like your dad one day, okay?"
+    Mary_right "You dad's Job might be hard, But being a school drop-out will be even harder. So Juan, remember your education is the only wealth we could give you that cannot be taken away."
+    Mary_right "Always remember that you have to work hard now so in the future you could have it easier."
+    Mary_right "There's this saying, 'if you don't walk today you'll have to run tomorrow.', so always work hard --"
 
-    Juan_center "Maaa, I'm gonna be late."
-    Mary_center "Sorry, honey."
-    Juan_center "I'm off to go now mom love you!"
-    Juan_center "The breakfast was really good by the way."
+    Juan_left "Maaa, I'm gonna be late."
+    Mary_right "Sorry, honey."
+    Juan_left "I'm off to go now mom love you!"
+    Juan_left "The breakfast was really good by the way."
+    hide Juan neutral with moveoutleft
 
     show Mary surprised
-    Mary_center "But you have not finished your meal at all!"
-    Mary_center "...sigh."
+    Mary_right"But you have not finished your meal at all!"
+    Mary_right "...sigh."
     show Mary smile
     Mary_center "Take care, Juan! Have fun at school!"
     play sound "assets/SFX/Door.mp3"
@@ -104,7 +112,7 @@ label JuansFirstDay:
 
     scene daytimeStreet1 with dissolve
 
-
+    show Juan neutral with dissolve
     Juan_center "Hmm... I wonder how's Glenn and James doing"
     Juan_center "I have not heard of them since we moved."
     Juan_center "I should contact them sometimes and catch up, I kinda miss them."
@@ -133,13 +141,15 @@ label JuansFirstDay:
     if help_girl == "stone":
             none "(Juan quicky searches for something to throw at the dog and finds a piece of rock.)"
             scene daytimeStreet1 with dissolve
-            show Girl surprised
+            show Girl cryingright with dissolve
+            show Juan neutralLeft
             play sound "assets/SFX/Dog_Bark.mp3"
             Dog_center "Woof!"
-            Juan_center "Did it work?"
+            Juan_left "Did it work?"
+            show Girl surprised
             none "(The dog somehow got distracted but seems to be angy at me now.)"
             Dog_center "Grrr!."
-            Juan_center "Uhhoh!"
+            Juan_left "Uhhoh!"
             Dog_center "woof!"
             none "(I Quickly ran away but the dog chased me.)"
     if help_girl == "charge":
@@ -147,11 +157,13 @@ label JuansFirstDay:
             play sound "assets/SFX/Dog_Bark.mp3"
             Dog_center "Woof! Woof!"
             scene daytimeStreet1 with dissolve
+            show Girl cryingright with dissolve
+            show Juan neutralLeft
+            Juan_left "Arrgghh!"
+            Juan_left "STOP!"
             show Girl surprised
-            Juan_center "Arrgghh!"
-            Juan_center "STOP!"
             none "(Juan charges but stops halfway and saw the dog preparing to charge back at me)"
-            Juan_center "Uhhoh!"
+            Juan_left "Uhhoh!"
             Dog_center "woof!"
             none "(I quickly ran away but somehow I got the dog away from her.)"
 
@@ -162,6 +174,7 @@ label JuansFirstDay:
 
     scene daytimeStreet2 with dissolve
 
+    show Juan neutral with dissolve
     Juan_center "Phew.. finally that dog's gone."
     none "(Juan says to myself as he catches his breath.)"
     Juan_center "Oh no! I'm late for school better get there quickly!."
@@ -307,23 +320,26 @@ label JuansFirstDay:
     scene classroom with dissolve
     play music "assets/BGM/Deadman.mp3"
 
+    show Juan neutral with dissolve
+    show Juan confident with dissolve
     Juan_center "Ah!, finally it's lunch time."
     Juan_center "I wonder what mom prepared in my lunch box...yay!"
     Juan_center "It's pork chop. I'm so happy. Mom really knows what I want."
     none "(while Juan was about to eat his lunch a boy approaches him with his lunch box...)"
-    show Peter sad with dissolve
+    show Peter sadRight with easeinright
+    show Juan panLeft with dissolve
     with Pause(1)
-    Peter_center "Hi, I'm Peter what's your name?"
-    Juan_center "I'm Juan, nice to meet you."
-    Peter_center "Ohhh, you're the boy from class earlier. I think you're really brave for trying to answer teacher Cathy's questions."
+    Peter_right "Hi, I'm Peter what's your name?"
+    Juan_left "I'm Juan, nice to meet you."
+    Peter_right "Ohhh, you're the boy from class earlier. I think you're really brave for trying to answer teacher Cathy's questions."
     none "Peter sits down and joins Juan."
 
     none "Juan notices that Peter sat down and did not bring out any food."
-    Juan_center "(Should I ask him?)"
-    Juan_center "Why aren't you eating?"
-    Peter_center "I think my mom forgot to pack my lunch this morning."
-    Juan_center "Ohhh..."
-    Juan_center "(What should I do?)"
+    Juan_left "(Should I ask him?)"
+    Juan_left "Why aren't you eating?"
+    Peter_right "I think my mom forgot to pack my lunch this morning."
+    Juan_left "Ohhh..."
+    Juan_left "(What should I do?)"
 
     show mode confirm with dissolve
     call screen FoodChoiceScreen with dissolve
@@ -335,37 +351,42 @@ label JuansFirstDay:
         none "(Juan and Peter goes to Ms. Cathy to tell her about the situation.)"
 
     show Peter smile
-    Peter_center "Thanks, Juan!"
-    Juan_center "You're welcome!"
+    Peter_right "Thanks, Juan!"
+    show Juan smile2
+    Juan_left "You're welcome!"
     show Peter neutral
-    Juan_center "(as we greeted each other I noticed from his backpack a picture of my favorite game.)"
+    Juan_left "(as we greeted each other I noticed from his backpack a picture of my favorite game.)"
 
     show mode confirm with dissolve
     call screen AskSwordStyleScreens with dissolve
     hide mode confirm with dissolve
+    show Juan neutral
     if askOrNot == "Ask":
-        Juan_center "Wow! Peter do you play Sword Style Online?"
+        show Juan smile2
+        Juan_left "Wow! Peter do you play Sword Style Online?"
         show Peter smile
-        Peter_center "Yeah! I love playing it. My Big brother taught me how. He showed me all the cool different characters and I just became a big fan of it."
-        Peter_center "and my brother's level is really high so I get to see how to play it."
+        Peter_right "Yeah! I love playing it. My Big brother taught me how. He showed me all the cool different characters and I just became a big fan of it."
+        Peter_right "and my brother's level is really high so I get to see how to play it."
         show Peter neutral
-        Juan_center "Really! I wanna play with you sometime, add me on the game? My username is NoobMaster96."
+        Juan_left "Really! I wanna play with you sometime, add me on the game? My username is NoobMaster96."
         show Peter smile
-        Peter_center "Sure, I would really like to show you my super rare items."
+        Peter_right "Sure, I would really like to show you my super rare items."
         none "Peter laughs."
-        Juan_center "Awesome!"
+        show Juan smile1
+        Juan_left "Awesome!"
 
-        Juan_center "(Peter and I talked a lot about our favorite game troughout lunch time. I didn't know that we had a lot of things in common.)"
-        Juan_center "(And before I even knew it.)"
-        Juan_center "(I made a friend.)"
+        Juan_left "(Peter and I talked a lot about our favorite game troughout lunch time. I didn't know that we had a lot of things in common.)"
+        Juan_left "(And before I even knew it.)"
+        Juan_left "(I made a friend.)"
 
         play sound "assets/SFX/School_Bell.mp3"
         none "(Bell Rings.)"
+        show Juan neutral
         show Peter neutral
 
-        Peter_center "Oof. lunch time already over!?"
-        Peter_center "Oh man..., well, talk to you later, Juan!"
-        Juan_center "Sure!"
+        Peter_right "Oof. lunch time already over!?"
+        Peter_right "Oh man..., well, talk to you later, Juan!"
+        Juan_left "Sure!"
 
         stop music
         scene black with dissolve
@@ -374,8 +395,8 @@ label JuansFirstDay:
     if askOrNot == "Say nothing":
         none "Juan says nothing."
 
-    Juan_center "After our lunch Peter returned to his seat and we waited for our afternoon class."
-    none "Juan thought it was reallt nice being able to make a friend. He was really happy that he somehow found someone who had the same interests as he did."
+    none "After our lunch Peter returned to his seat and we waited for our afternoon class."
+    none "Juan thought it was really nice being able to make a friend. He was really happy that he somehow found someone who had the same interests as he did."
     none "..."
     play sound "assets/SFX/School_Bell.mp3"
     none "(Bell Rings.)"
@@ -384,22 +405,24 @@ label JuansFirstDay:
 
     scene afternoonStreet1 with dissolve
     play music "assets/BGM/Ramune.mp3"
-
     Juan_center "(It's finally time to go home but that's not where the day ends)"
     Juan_center "(Unfortunately our teachers had left us a ton of homeworks)"
 
-    show Peter neutral with dissolve
+    show Juan neutralLeft with dissolve
+    show Peter neutralRight with dissolve
 
-    Peter_center "Better get home quick,"
-    Peter_center "I want to finish all of my homework so I can play video games longer."
+    Peter_right "Better get home quick,"
+    Peter_right "I want to finish all of my homework so I can play video games longer."
 
-    Juan_center "Yeah."
-    Juan_center "Too bad our teachers already gave us some homeworks even though it's just the very start of the school year."
-    Juan_center "Anyways, see you tommorow Peter!"
+    Juan_left "Yeah."
+    Juan_left "Too bad our teachers already gave us some homeworks even though it's just the very start of the school year."
+    show Juan smile1
+    Juan_left "Anyways, see you tommorow Peter!"
     show Peter smile
-    Peter_center "See ya!"
+    Peter_right "See ya!"
     hide Peter smile with dissolve
     none "..."
+    show Juan panLCenter
     none "(And so Peter and Juan said goodbye to each other as they parted ways to go home.)"
     none "(While Juan was walking to his house, something suddenly vibrated in his backpack.)"
 
@@ -410,7 +433,9 @@ label JuansFirstDay:
     # == New choices 
     
     "(Juan quickly opens his backpack and grabbed his mobile phone.)"
+    show Juan smile2
     Juan_center "Oh, a message from James!, hmmm let me see..."
+    show Juan neutral
     James_center "Hi Juan, how are you doing? Glenn and I are doing great!"
     James_center "But of course it would be better with you here."
     James_center "Actually this summer we've convinced our mom and dad to pay you a visit there."
@@ -421,13 +446,16 @@ label JuansFirstDay:
     James_center "At least that's what granny told me hahaha."
     James_center "-James"
 
+    show Juan smile2
     Juan_center "A message from James!"
     Juan_center "I was actually planning on texting them later."
+    show Juan neutral
     Juan_center "But it's not the time to reply now I should get home first."
 
     scene black with dissolve
     with Pause(1)
 
+    
     Juan_center "Man! what a day."
     Juan_center "Alot of things happened."
     Juan_center "Actually my uniform is dirty now from what happened this morning."
@@ -437,21 +465,28 @@ label JuansFirstDay:
     scene nighttimeLivingRoom with dissolve
     with Pause (1)
 
-    show Mary smile with dissolve
-    Mary_center "Welcome home, Juan!"
-    Juan_center "Hi, mom."
+    show Mary neutralLeft with dissolve
+    show Juan neutralRight with dissolve
+    Mary_left "Welcome home, Juan!"
+    Juan_right "Hi, mom."
 
-    show Mary panLeft
+    show Juan panRCenter
     show Joseph neutralright with easeinright
     Joseph_right "Hey lil'Juan, how was school today? Did you do good on your first day like I did?"
+    show Juan smile2
     Juan_center "Hi, dad, you're home!"
+    show Juan smile1
     Juan_center "Guess what! I made a new friend in school!"
     Joseph_right "Oh really!, you seem to have had a lot of fun, I can tell."
+    show Juan neutral
+    show Mary talking with dissolve
     Mary_left "By the way Juan, I bought you a present!"
+    show Juan smile2
     Juan_center "Really!?, What is it a new manga? What is it? What is it?"
     Mary_left "Not really."
-    show Mary smile
+    show Mary smile with dissolve
     Mary_left "We bought you an alarm clock you sleepyhead."
+    show Juan neutral
     Juan_center "Really? I thought it was the new volume of the manga I really liked. Anyways... thanks."
     Mary_left "Rub that sour face off because dinner's ready!"
     show Joseph laugh
@@ -465,6 +500,7 @@ label JuansFirstDay:
     with Pause(1)
 
     none "(After the dinner Juan started doing his homework)"
+    show Juan neutral with dissolve
     Juan_center "Goodness this is not really 'That' hard."
     Juan_center "It's quite alright. A lot of new questions though. Maybe this is preparation for the future topics we will be discussing in class."
     none "..."

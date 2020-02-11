@@ -43,6 +43,7 @@ label JuansEatingHabit:
     Joseph_left "Ok Juan we should do more later, ok big champ?"
     Joseph_left "But first we should have lunch. Get a little food in Juan's little tummy."
     show Mary surprised
+    show Mary talking with dissolve
     Mary_right "Remember Juan you should never skip any meals throughout the day. Food gives you energy."
     show Joseph talking with dissolve
     Joseph_left "Yes Juan, Skipping meals is bad for you."
@@ -50,6 +51,7 @@ label JuansEatingHabit:
     Mary_right "Especially for your young body, you're quite vulnerable to any micro-nutrient deficiencies."
     Juan_center "Yes mom!."
     show Mary smile
+    show Mary smile with dissolve
     Mary_right "Anyways let's go eat now."
 
     scene black with dissolve
