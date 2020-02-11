@@ -311,7 +311,7 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu() selected_background bar
 
-        # textbutton _("About") action ShowMenu("about")
+        textbutton _("About") action ShowMenu("about") selected_background bar
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -546,14 +546,29 @@ screen about():
 
         vbox:
 
-            label "[config.name!t]"
-            text _("Version [config.version!t]\n")
+            label "{size=60}[config.name!t]{/size}\n"
+            text _("Version Pre-Alpha [config.version!t]")
 
             ## gui.about is usually set in options.rpy.
             if gui.about:
-                text "[gui.about!t]\n"
+                text "By {a=https://www.pixelheartproduction.com/}Pixel Heart Production{/a}\n\n"
+            
+            vbox:
+                label "Albert De Leon Jr."
+                text " Producer, Programmer, Graphic Designer\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+                label "Kim Farley Arellano"
+                text " Assc. Producer, Game Designer, Graphic Designer\n"
+
+                label "Justine Allen Manuel"
+                text " Assc. Producer, Writer, Scene Director\n"
+
+                label "Mark Lester Hermano"
+                text " Documents, Concepts\n\n"
+
+            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only]")
+
+            #text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 ## This is redefined in options.rpy to add text to the about screen.

@@ -21,7 +21,7 @@ label JuansFirstDay:
         show text("{size=40}Joseph and Mary are really happy that \nJuan finally embraced his new role as a big brother now.{/size}") with dissolve
         with Pause (5)
 
-    show text("{size=40}Juan is now 5 years old.{/size}") with dissolve
+    show text("{size=40}Juan is now 7 years old.{/size}") with dissolve
     with Pause (3)
     show text("{size=40}And he is now ready for his first day of school.{/size}") with dissolve
     with Pause (2.5)
@@ -53,48 +53,56 @@ label JuansFirstDay:
 
     if WakeupChoice == "wake":
         Juan_center "uugghh.. What time is it?"
-        show Mary neutral
-        Mary_center "Good morning, Juan!"
+        show Juan neutralLeft with dissolve
+        show Mary panRight
+        Mary_right "Good morning, Juan!"
     if WakeupChoice == "later":
-        Juan_center "..maybe..later. Five more minutes, Ma..."
+        show Juan neutralLeft with dissolve
+        show Mary panRight
+        Juan_left "..maybe..later. Five more minutes, Ma..."
         show Mary surprised
-        Mary_center "Juan, you need to get up now. You can't be late on your first day of school."
+        Mary_right "Juan, you need to get up now. You can't be late on your first day of school."
 
-    Mary_center "Breakfast is in the kitchen. Eat up when you're done here."
+    Mary_right "Breakfast is in the kitchen. Eat up when you're done here."
     show Mary neutral
-    Mary_center "...and it's your favorite,"
+    Mary_right "...and it's your favorite,"
     none "Mary chuckles."
-    Mary_center "Now, get up and don't forget to make the bed before you go down."
+    Mary_right "Now, get up and don't forget to make the bed before you go down."
 
-    Juan_center "Hmmmmm...Okay.."
+    Juan_left "Hmmmmm...Okay.."
     none "Juan stretches in his bed one last time "
 
-    scene daytimeLivingroom with dissolve
+    scene kitchen with dissolve
 
     Juan_center "(I feel really exited and happy today because it's my first day as a grade 1 student)"
     Juan_center "(I wonder who I'll meet? I'm really nervous. What if I do something embarrassing?)"
     Juan_center "(I hope everything goes well on my first day.)"
+    show Juan neutral with dissolve
     none "Juan continued eating."
+    show Juan smile1
     Juan_center "Oohh! it tastes really good, Ma!"
 
-    show Mary smile with dissolve
-    Mary_center "Of course it's your favourite pancakes."
+    show Mary neutralright with dissolve
+    show Juan panLeft
+    show Mary smile
+    Mary_right "Of course it's your favourite pancakes."
     show Mary neutral
-    Mary_center "By the way your dad also liked it very much. He told me to tell you that he hopes you have a great day at school and that you make him proud."
-    Mary_center "Must be tough being a Software Engineer, huh? Your dad left very early today"
-    Mary_center "Anyway Juan you should keep up your grades if you want to be like your dad one day, okay?"
-    Mary_center "You dad's Job might be hard, But being a school drop-out will be even harder. So Juan, remember your education is the only wealth we could give you that cannot be taken away."
-    Mary_center "Always remember that you have to work hard now so in the future you could have it easier."
-    Mary_center "There's this saying, 'if you don't walk today you'll have to run tomorrow.', so always work hard --"
+    Mary_right "By the way your dad also liked it very much. He told me to tell you that he hopes you have a great day at school and that you make him proud."
+    Mary_right "Must be tough being a Software Engineer, huh? Your dad left very early today"
+    Mary_right "Anyway Juan you should keep up your grades if you want to be like your dad one day, okay?"
+    Mary_right "You dad's Job might be hard, But being a school drop-out will be even harder. So Juan, remember your education is the only wealth we could give you that cannot be taken away."
+    Mary_right "Always remember that you have to work hard now so in the future you could have it easier."
+    Mary_right "There's this saying, 'if you don't walk today you'll have to run tomorrow.', so always work hard --"
 
-    Juan_center "Maaa, I'm gonna be late."
-    Mary_center "Sorry, honey."
-    Juan_center "I'm off to go now mom love you!"
-    Juan_center "The breakfast was really good by the way."
+    Juan_left "Maaa, I'm gonna be late."
+    Mary_right "Sorry, honey."
+    Juan_left "I'm off to go now mom love you!"
+    Juan_left "The breakfast was really good by the way."
+    hide Juan neutral with moveoutleft
 
     show Mary surprised
-    Mary_center "But you have not finished your meal at all!"
-    Mary_center "...sigh."
+    Mary_right"But you have not finished your meal at all!"
+    Mary_right "...sigh."
     show Mary smile
     Mary_center "Take care, Juan! Have fun at school!"
     play sound "assets/SFX/Door.mp3"
@@ -104,7 +112,7 @@ label JuansFirstDay:
 
     scene daytimeStreet1 with dissolve
 
-
+    show Juan neutral with dissolve
     Juan_center "Hmm... I wonder how's Glenn and James doing"
     Juan_center "I have not heard of them since we moved."
     Juan_center "I should contact them sometimes and catch up, I kinda miss them."
@@ -133,13 +141,15 @@ label JuansFirstDay:
     if help_girl == "stone":
             none "(Juan quicky searches for something to throw at the dog and finds a piece of rock.)"
             scene daytimeStreet1 with dissolve
-            show Girl surprised
+            show Girl cryingright with dissolve
+            show Juan neutralLeft
             play sound "assets/SFX/Dog_Bark.mp3"
             Dog_center "Woof!"
-            Juan_center "Did it work?"
+            Juan_left "Did it work?"
+            show Girl surprised
             none "(The dog somehow got distracted but seems to be angy at me now.)"
             Dog_center "Grrr!."
-            Juan_center "Uhhoh!"
+            Juan_left "Uhhoh!"
             Dog_center "woof!"
             none "(I Quickly ran away but the dog chased me.)"
     if help_girl == "charge":
@@ -147,11 +157,13 @@ label JuansFirstDay:
             play sound "assets/SFX/Dog_Bark.mp3"
             Dog_center "Woof! Woof!"
             scene daytimeStreet1 with dissolve
+            show Girl cryingright with dissolve
+            show Juan neutralLeft
+            Juan_left "Arrgghh!"
+            Juan_left "STOP!"
             show Girl surprised
-            Juan_center "Arrgghh!"
-            Juan_center "STOP!"
             none "(Juan charges but stops halfway and saw the dog preparing to charge back at me)"
-            Juan_center "Uhhoh!"
+            Juan_left "Uhhoh!"
             Dog_center "woof!"
             none "(I quickly ran away but somehow I got the dog away from her.)"
 
@@ -162,6 +174,7 @@ label JuansFirstDay:
 
     scene daytimeStreet2 with dissolve
 
+    show Juan neutral with dissolve
     Juan_center "Phew.. finally that dog's gone."
     none "(Juan says to myself as he catches his breath.)"
     Juan_center "Oh no! I'm late for school better get there quickly!."

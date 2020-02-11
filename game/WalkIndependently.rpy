@@ -47,12 +47,13 @@ label WalkIndependently:
 
             Mary_center "You're ok, baby. Did it hurt? Where is the ouchie?"
             none "Juan shows his palms."
+            show Mary talking with dissolve
             Mary_center "Let me give it a big magical healing kiss."
             none "Mary kisses Juan's palms"
             Mary_center "How's that? A lot better right?"
             none "Juan nods"
             Juan_center "Mama."
-            show Mary smile
+            show Mary smile with dissolve
             Mary_center "You're doing great, Juan!"
             Mary_center "How about we give it another try? What do you say?"
             Juan_center "Yes!"
