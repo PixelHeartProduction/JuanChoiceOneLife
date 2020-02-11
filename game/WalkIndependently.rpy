@@ -182,5 +182,5 @@ label WalkIndependently:
                 imagebutton idle Transform(cry, zoom=0.3) hover Transform(cry_selected, zoom=0.3) action [SetVariable("cry_or_stand", "cry"),Return()]
                 text(Text("Cry",size=50))
             vbox:
-                imagebutton idle Transform(standup, zoom=0.6) hover Transform(standup_selected, zoom=0.6) action [SetVariable("cry_or_stand", "stand"),Return()]
+                imagebutton idle Transform(standup, zoom=0.15) hover Transform(standup_selected, zoom=0.15) action [SetVariable("cry_or_stand", "stand"),Return()]
                 text(Text("Stand up",size=50))
