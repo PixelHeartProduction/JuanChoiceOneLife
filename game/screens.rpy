@@ -240,11 +240,11 @@ screen quick_menu():
             yalign 1.0
 
             #textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("History") action ShowMenu('history') activate_sound sfx_mode
+            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True) activate_sound sfx_mode
+            textbutton _("Auto") action Preference("auto-forward", "toggle") activate_sound sfx_mode
+            textbutton _("Save") action ShowMenu('save') activate_sound sfx_mode
+            textbutton _("Prefs") action ShowMenu('preferences') activate_sound sfx_mode
 
 init python:
     config.overlay_screens.append("quick_menu")
@@ -288,42 +288,42 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start() selected_background bar
+            textbutton _("Start") action Start() selected_background bar activate_sound sfx_click1
 
             if persistent.hardmode:
-                textbutton _("Disaster Mode") action ShowMenu("disasterMenu") selected_background Image(bar,xpos = -0.25, ypos = -0.2)
-
+                textbutton _("Disaster Mode") action ShowMenu("disasterMenu") selected_background Image(bar,xpos = -0.25, ypos = -0.2) activate_sound sfx_click1
+ 
         else:
 
-            textbutton _("History") action ShowMenu("history") selected_background bar
+            textbutton _("History") action ShowMenu("history") selected_background bar activate_sound sfx_click1
 
-            textbutton _("Save") action ShowMenu("save") selected_background bar
+            textbutton _("Save") action ShowMenu("save") selected_background bar activate_sound sfx_click1
 
-        textbutton _("Load") action ShowMenu("load") selected_background bar
+        textbutton _("Load") action ShowMenu("load") selected_background bar activate_sound sfx_click1
 
-        textbutton _("Settings") action ShowMenu("preferences") selected_background bar
+        textbutton _("Settings") action ShowMenu("preferences") selected_background bar activate_sound sfx_click1
 
         if _in_replay:
 
-            textbutton _("End Replay") action EndReplay(confirm=True) selected_background bar
+            textbutton _("End Replay") action EndReplay(confirm=True) selected_background bar activate_sound sfx_click1
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu() selected_background bar
+            textbutton _("Main Menu") action MainMenu() selected_background bar activate_sound sfx_click1
 
         if main_menu:
-            textbutton _("About") action ShowMenu("about") selected_background bar
+            textbutton _("About") action ShowMenu("about") selected_background bar activate_sound sfx_click1
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help") selected_background bar
+            textbutton _("Help") action ShowMenu("help") selected_background bar activate_sound sfx_click1
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu) selected_background bar
+            textbutton _("Quit") action Quit(confirm=not main_menu) selected_background bar activate_sound sfx_click1
 
 
 style navigation_button is gui_button
@@ -364,11 +364,19 @@ screen main_menu():
 
     window:
         # tips
-        ypos 0.66
+        if renpy.variant("pc"):
+            ypos 0.66
+        if renpy.variant("mobile"):
+            ypos 0.7
+        if renpy.variant("tablet"):
+            ypos 0.66
         background Image(gui.dailyTips,xpos=0.72)
 
         image("assets/Sprites/Juan.png") xpos 0.35 ypos -50 zoom 0.5
-        add "dialog"
+        if renpy.variant("pc"):
+            add "dialog"
+        if renpy.variant("mobile"):
+            add "dialog" ypos -400
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -464,7 +472,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("Return"):
+    textbutton _("Return") activate_sound sfx_click1:
         style "return_button"
 
         action Return()
@@ -547,7 +555,9 @@ screen about():
 
         vbox:
 
-            label "{size=60}[config.name!t]{/size}\n"
+            $ logo = Image("assets/Misc/JuanCHoiceLogo.png")
+            #label "{size=60}[config.name!t]{/size}\n"
+            image(logo) zoom 0.5
             text _("Version Pre-Alpha [config.version!t]")
 
             ## gui.about is usually set in options.rpy.
@@ -738,8 +748,8 @@ screen preferences():
                     vbox:
                         style_prefix "radio"
                         label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        textbutton _("Window") action Preference("display", "window") activate_sound sfx_click2
+                        textbutton _("Fullscreen") action Preference("display", "fullscreen") activate_sound sfx_click2
 
                 #vbox:
                     #style_prefix "radio"
@@ -751,9 +761,9 @@ screen preferences():
                 vbox:
                     style_prefix "check"
                     label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    textbutton _("Unseen Text") action Preference("skip", "toggle") activate_sound sfx_click2
+                    textbutton _("After Choices") action Preference("after choices", "toggle") activate_sound sfx_click2
+                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle")) activate_sound sfx_click2
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
@@ -812,7 +822,7 @@ screen preferences():
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
 
-                        textbutton _("Mute All"):
+                        textbutton _("Mute All") activate_sound sfx_click2:
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
 

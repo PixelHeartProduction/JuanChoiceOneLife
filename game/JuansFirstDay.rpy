@@ -104,7 +104,7 @@ label JuansFirstDay:
     Mary_right"But you have not finished your meal at all!"
     Mary_right "...sigh."
     show Mary smile
-    Mary_center "Take care, Juan! Have fun at school!"
+    Mary_right "Take care, Juan! Have fun at school!"
     play sound "assets/SFX/Door.mp3"
 
     scene black with dissolve

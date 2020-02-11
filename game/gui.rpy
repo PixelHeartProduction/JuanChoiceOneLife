@@ -55,13 +55,13 @@ define gui.interface_text_color = '#ffffff'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "assets/Fonts/Roboto/Roboto-Medium.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "assets/Fonts/Sriracha/Sriracha-Regular.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "assets/Fonts/Roboto/Roboto-Black.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
@@ -119,6 +119,8 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
+#define gui.name_xpos = 360
+
 define gui.name_xpos = 360
 define gui.name_ypos = 0
 
@@ -448,7 +450,7 @@ init python:
 
         ## Adjust the location of the textbox.
         gui.textbox_height = 360
-        gui.name_xpos = 120
+        gui.name_xpos = 330
         gui.text_xpos = 135
         gui.text_width = 1650
 
