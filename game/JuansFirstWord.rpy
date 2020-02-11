@@ -4,10 +4,12 @@ label JuansFirstWord:
 
 
     scene black with dissolve
-
+    scene trans_livingroom with dissolve
+    show mode confirm with dissolve
     show text("{size=60}Juan's first word{/size}") with dissolve
     with Pause(2)
     hide text with dissolve
+    scene black with dissolve
 
     play music "assets/BGM/HelloHowAreYou.mp3"
     none "..."
@@ -31,8 +33,9 @@ label JuansFirstWord:
     Mary_left "Good morning our little baby boy! Did you sleep well?"
     show Joseph laugh
     Joseph_right "Hey little Juan! How are you? How's my little champ?"
-    show Mary neutral
+    show Mary talking with dissolve
     Mary_left "So Juan, daddy and I have a little surprise for you..."
+    show Mary neutral with dissolve
     show Joseph talking with dissolve
     Joseph_right "Mommy and I put a lot of thought into this so we hope you like it, champ."
     Mary_left "Here you go."
@@ -124,7 +127,11 @@ label JuansFirstWord:
 
      hbox xalign 0.5 yalign 0.5:
          vbox:
-            image(arrows)
+            if renpy.variant("pc"):
+                text("Click to make choice") size 50 ypos -100
+            if renpy.variant("mobile"):
+                text("Tap to make choice") size 50 ypos -100
+            image(arrows) xalign 0.5
      hbox xalign 0.5 yalign 0 spacing 600:
         imagebutton idle Transform(mary, zoom=0.32) hover Transform(mary_highlighted, zoom=0.32) action [SetVariable("Choice_ch1", "mama"),Return()]
         imagebutton idle Transform(joseph, zoom=0.17) hover Transform(joseph_highlighted, zoom=0.17) action [SetVariable("Choice_ch1", "papa"),Return()]

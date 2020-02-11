@@ -5,11 +5,12 @@ label WalkIndependently:
     stop music
     play music "assets/BGM/Ramune.mp3"
     scene black with dissolve
-
+    scene trans_bedroom with dissolve
+    show mode confirm with dissolve
     show text("{size=60}Walk independently{/size}") with dissolve
     with Pause(2)
     hide text with dissolve
-
+    scene black with dissolve
     show text("{size=40}1 year later.{/size}") with dissolve
     with Pause(2)
     hide text with dissolve
@@ -46,12 +47,13 @@ label WalkIndependently:
 
             Mary_center "You're ok, baby. Did it hurt? Where is the ouchie?"
             none "Juan shows his palms."
+            show Mary talking with dissolve
             Mary_center "Let me give it a big magical healing kiss."
             none "Mary kisses Juan's palms"
             Mary_center "How's that? A lot better right?"
             none "Juan nods"
             Juan_center "Mama."
-            show Mary smile
+            show Mary smile with dissolve
             Mary_center "You're doing great, Juan!"
             Mary_center "How about we give it another try? What do you say?"
             Juan_center "Yes!"
@@ -181,5 +183,5 @@ label WalkIndependently:
                 imagebutton idle Transform(cry, zoom=0.3) hover Transform(cry_selected, zoom=0.3) action [SetVariable("cry_or_stand", "cry"),Return()]
                 text(Text("Cry",size=50))
             vbox:
-                imagebutton idle Transform(standup, zoom=0.6) hover Transform(standup_selected, zoom=0.6) action [SetVariable("cry_or_stand", "stand"),Return()]
+                imagebutton idle Transform(standup, zoom=0.15) hover Transform(standup_selected, zoom=0.15) action [SetVariable("cry_or_stand", "stand"),Return()]
                 text(Text("Stand up",size=50))
