@@ -355,7 +355,7 @@ label JuansFirstDay:
     show Juan smile2
     Juan_left "You're welcome!"
     show Peter neutral
-    Juan_right "(as we greeted each other I noticed from his backpack a picture of my favorite game.)"
+    Juan_left "(as we greeted each other I noticed from his backpack a picture of my favorite game.)"
 
     show mode confirm with dissolve
     call screen AskSwordStyleScreens with dissolve
