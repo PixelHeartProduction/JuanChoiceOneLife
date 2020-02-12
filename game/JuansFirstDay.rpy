@@ -212,10 +212,10 @@ label JuansFirstDay:
 # add a "Geography transition image"
 
     show Cathy panningRight
-    Cathy_right "Our country, The Philippines is here in South East Asia."
+    Cathy_right "Our country, The Philippines is here in {color=#adf569}South East Asia{/color}."
     show school philippineMap with dissolve
     Cathy_right "Manila is the name of our Capital City and it is here in the Luzon Island."
-    Cathy_right "Our country has 7107 islands!"
+    Cathy_right "Our country has {color=#adf569}7107{/color} islands!"
     show Cathy laugh
     Cathy_right "Isn't that a lot."
     show Cathy neutral
@@ -223,7 +223,7 @@ label JuansFirstDay:
     Cathy_right "Which means the weather throughout the year is warm or rainy."
     Cathy_right "Did you know that the largest eagle is found in the Philippines?"
     show school philippineEagle with dissolve
-    Cathy_right "The Philippine eagle!"
+    Cathy_right "The {color=#adf569}Philippine{/color} eagle!"
     Cathy_right "Also known as the monkey-eating eagle"
     Cathy_right "And it's the National Bird of the Philippines."
     hide school philippineEagle with dissolve
