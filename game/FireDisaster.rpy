@@ -60,6 +60,24 @@ label FireDisaster:
         "The lesson finished and Juan does not know anything about it."
 
     "The school day ends and Juan heads home."
+
+    "As Juan heads home he sees his family outside."
+
+    Juan_left "Mom, why are you outside?"
+    Mary_right "Juan, you're home. There is a black out. The whole city has no electricity, Juan."
+    Juan_left "Ohhh, so what are we gonna do?"
+    Mary_right "Well, let's hope the electricity comes back before nightfall, or it's gonna be a long night for us tonight."
+
+    "The Bautista Family waited until dusk."
+    "When the sun started to set and it seemed like the electricity wasn't coming back anytime soon. They started lighting up candles."
+
+    Joseph_left "Juan, can you hold these candles and help me place them on some parts of the house?"
+    Juan_right "Sure, dad."
+
+    "Juan and Joseph started placing candles and had them standing inside used pots and pans."
+    "While Joseph was lighting the candles Juan watched him strike the match to make fire."
+
+    
     
 
     
