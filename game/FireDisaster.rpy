@@ -34,11 +34,13 @@ label FireDisaster:
         Cathy_center "what we should do next."
         Cathy_center "If we're inside our houses in case of fire. Always cover your mouth and nose with a cloth."
         Cathy_center "If the cloth is wet then much better."
-        Cathy_center ""
+        
 
     if ListenChoice == "Chat":
         "The whole lesson with Ms. Cathy Passed by without Juan and Peter noticing."
         "The lesson finished and Juan does not know anything about it."
+
+    "The school day ends and Juan heads home."
 
 
 
