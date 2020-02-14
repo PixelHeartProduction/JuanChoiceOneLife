@@ -2,6 +2,12 @@ label FireDisaster:
 
     $ ListenChoice == "null"
 
+    Mary_left "Juan, wake up. It's time for school."
+    Juan_right "(Groans)"
+    Mary_left "Are you feeling ok?"
+
+
+
     scene classroom with dissolve
     "Today at school Juan and his classmates were to learn about fire safety."
 
@@ -41,6 +47,10 @@ label FireDisaster:
         "The lesson finished and Juan does not know anything about it."
 
     "The school day ends and Juan heads home."
+    
+
+    
+
 
 
 
@@ -52,6 +62,16 @@ label FireDisaster:
     screen ListenChoiceScreen():
         modal True
         text("Should Juan listen to the lesson or start chatting with Peter instead?") size 60 xpos 0.25 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 200:
+            vbox:
+                textbutton (Text("Listen to the teacher.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("ListenChoice", "Listen"),Return()]
+            vbox:
+                textbutton (Text("Chat with Peter.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("ListenChoice", "Chat"),Return()]
+    
+    screen LieChoiceScreen():
+        modal True
+        text("?") size 60 xpos 0.25 ypos 30
 
         hbox xalign 0.5 yalign 0 spacing 200:
             vbox:
