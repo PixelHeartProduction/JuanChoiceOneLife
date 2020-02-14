@@ -1,11 +1,24 @@
 label FireDisaster:
 
     $ ListenChoice == "null"
+    $ LieChoice == "null"
 
     Mary_left "Juan, wake up. It's time for school."
     Juan_right "(Groans)"
     Mary_left "Are you feeling ok?"
 
+    show mode confirm with dissolve
+    call screen LieChoiceScreen with dissolve
+    hide mode confirm with dissolve
+
+    if LieChoice == "Lie":
+        Juan_right "I'm not feeling well, Mom. Can I not go to school?"
+        Mary_left "Really? Okay then, rest well, Juan. I'll bring you food."
+    
+    if LieChoice == "getUp":
+        Juan_right "I'm okay, Mom."
+
+        "Juan gets up and gets ready for school."
 
 
     scene classroom with dissolve
@@ -71,12 +84,12 @@ label FireDisaster:
     
     screen LieChoiceScreen():
         modal True
-        text("?") size 60 xpos 0.25 ypos 30
+        text("Should I tell Mom I'm not feeling good??") size 60 xpos 0.25 ypos 30
 
         hbox xalign 0.5 yalign 0 spacing 200:
             vbox:
-                textbutton (Text("Listen to the teacher.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("ListenChoice", "Listen"),Return()]
+                textbutton (Text("I'm not feeling good, mom.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("LieChoice", "Lie"),Return()]
             vbox:
-                textbutton (Text("Chat with Peter.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("ListenChoice", "Chat"),Return()]
+                textbutton (Text("Get up.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("LieChoice", "getUp"),Return()]
 
 
