@@ -3,6 +3,7 @@ label FireDisaster:
     $ ListenChoice == "null"
     $ LieChoice == "null"
 
+    show Mary_center with dissolve
     Mary_left "Juan, wake up. It's time for school."
     Juan_right "(Groans)"
     Mary_left "Are you feeling ok?"
@@ -30,7 +31,7 @@ label FireDisaster:
     Cathy_center "Let's talk about how to prevent fire first."
     Cathy_center "As young people we all know that we should not play with fire, or anything that could cause it."
 
-    "Juan sees Peter not listening to Ms. Cathy."
+    none "Juan sees Peter not listening to Ms. Cathy."
 
     show mode confirm with dissolve
     call screen ListenChoiceScreen with dissolve
