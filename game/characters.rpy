@@ -91,6 +91,7 @@ image Mary talking:
     "assets/Sprites/Mary_Talking.png"
     zoom .32
     ypos 1.2
+    
 image Mary kneel:
     "assets/Sprites/Mary_Kneel.png"
     zoom 0.28

@@ -223,7 +223,7 @@ label JuansFirstDay:
     Cathy_right "Which means the weather throughout the year is warm or rainy."
     Cathy_right "Did you know that the largest eagle is found in the Philippines?"
     show school philippineEagle with dissolve
-    Cathy_right "The {color=#adf569}Philippine{/color} eagle!"
+    Cathy_right "The {color=#adf569}Philippine eagle{/color}!"
     Cathy_right "Also known as the monkey-eating eagle"
     Cathy_right "And it's the National Bird of the Philippines."
     hide school philippineEagle with dissolve

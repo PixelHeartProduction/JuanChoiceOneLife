@@ -130,15 +130,18 @@ label JuansLittleSister:
     #=====================Screens===========================
     screen playWithMay():
         modal True
-        $ slipper = Image("assets/Sprites/Items/slippers.png")
+        $ psp = Image("assets/Sprites/Items/psp.png")
         $ toy = Image("assets/Sprites/Items/toys.png")
 
-        hbox xalign 0.5:
-            text(Text("Play with may.",size=50))
-        hbox xpos 0.3 ypos 800:
-            imagebutton idle Transform(slipper, zoom=0.5) action [SetVariable("played_with_may", False),Return()]
-        hbox xpos 0.5 ypos 600:
+        vbox xalign 0.5:
+            text(Text("Mary and Joseph wants Juan to play with May.",size=50))
+            text(Text("(Select between {color=#ffa500}Toys{/color} or {color=#5DFF31}Video games{/color})",size=40, xpos=180,ypos=30))
+        vbox xpos 0.1 ypos 430:
+            imagebutton idle Transform(psp, zoom=0.8) action [SetVariable("played_with_may", False),Return()]
+            text("Play alone") xpos 50 ypos -20 color "#5DFF31"
+        vbox xpos 0.6 ypos 600:
             imagebutton idle Transform(toy, zoom=0.5) action [SetVariable("played_with_may", True),Return()]
+            text("Play with may") xpos 100 color "#ffa500"
 
 
 
