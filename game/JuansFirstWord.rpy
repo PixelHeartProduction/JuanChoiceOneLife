@@ -33,9 +33,7 @@ label JuansFirstWord:
     Mary_left "Good morning our little baby boy! Did you sleep well?"
     show Joseph laugh
     Joseph_right "Hey little Juan! How are you? How's my little champ?"
-    show Mary talking with dissolve
     Mary_left "So Juan, daddy and I have a little surprise for you..."
-    show Mary neutral with dissolve
     show Joseph talking with dissolve
     Joseph_right "Mommy and I put a lot of thought into this so we hope you like it, champ."
     Mary_left "Here you go."
