@@ -30,26 +30,39 @@ label JuansFirstWord:
     none "(Baby juan woke up for the first time today.)"
 
     show Mary smile
+    show Joseph out with dissolve
     Mary_left "Good morning our little baby boy! Did you sleep well?"
-    show Joseph laugh
+    show Joseph laugh with dissolve
+    show Mary out with dissolve
     Joseph_right "Hey little Juan! How are you? How's my little champ?"
+    show Joseph out with dissolve
+    show Mary smile with dissolve
     Mary_left "So Juan, daddy and I have a little surprise for you..."
     show Joseph talking with dissolve
+    show Mary out with dissolve
     Joseph_right "Mommy and I put a lot of thought into this so we hope you like it, champ."
+    show Joseph out with dissolve
+    show Mary smile with dissolve
     Mary_left "Here you go."
-
+    show Mary out with dissolve
     none "(Joseph and Mary handed the toy to Juan.)"
 
     Juan_center "*Giggles"
 
-    show Mary smile
+    show Mary smile with dissolve
     Mary_left "Oh! It seems that he likes it, Joseph!"
+    show Mary out with dissolve
     show Joseph neutral with dissolve
     Joseph_right "Well I think it's perfect for him."
+    show Joseph out with dissolve
+    show Mary smile with dissolve
     Mary_left "It does seem so."
     show Mary neutral
     Mary_left "What a lovely little boy."
+    show Mary out with dissolve
+    show Joseph neutral with dissolve
     Joseph_right "Our lovely little boy, hon."
+    show Joseph out with dissolve
 
     Juan_center "*Giggles"
     Juan_center "..."
@@ -57,12 +70,14 @@ label JuansFirstWord:
 
     stop music
 
-    show Joseph serious
+    show Joseph serious with dissolve
     Joseph_right "Ma!"
     Joseph_right "I think he's about to say his first word!"
-    show Mary surprised
+    show Joseph out with dissolve
+    show Mary surprised with dissolve
     Mary_left "Ohh, Really?! I'm really excited!"
     Mary_left "I've been waiting this for 10 months!"
+    show Mary out with dissolve
     none "Mary and Joseph tries guiding Juan on his first words."
 
     Juan_center "a..a.."
@@ -77,31 +92,41 @@ label JuansFirstWord:
         Mary_left "Can you believe that Joseph?! He said 'Mama'. "
         show Mary smile
         Mary_left "He said Mama!"
-        show Joseph laugh
+        show Mary out with dissolve
+        show Joseph laugh with dissolve
         Joseph_right "Yay! I can't believe it he's learning so fast!"
         Joseph_right "I'm really proud of him. He really is an amazing boy."
+        show Joseph out with dissolve
         Juan_center "*Cries"
-        show Mary surprised
+        show Mary surprised with dissolve
         Mary_left "Oh! I forgot about his food."
         show Mary smile
         Mary_left "I'll go get it."
+        show Mary out with dissolve
         Juan_center "Mama! Mama!"
 
     if Choice_ch1 == "papa":
         $ renpy.notify("Daddy's boy perk unlocked!")
         play music "assets/BGM/SayIt.mp3"
-        show Joseph laugh
+        show Joseph laugh with dissolve
         Joseph_right "Ma!, he said Papa! Did you hear it? He said 'Papa' he called me."
-        show Mary smile
+        show Joseph out with dissolve
+        show Mary smile with dissolve
         Mary_left "Wow! I can't believe it."
+        show Mary out with dissolve
+        show Joseph laugh with dissolve
         Joseph_right "He's really growing so fast! He even learned how to call you already."
-        show Mary neutral
+        show Joseph out with dissolve
+        show Mary neutral with dissolve
         Mary_left "I'm really proud of him."
+        show Mary out with dissolve
         Juan_center "*Cries"
-        show Mary surprised
+        show Mary surprised with dissolve
         Mary_left "Oh! I forgot about his food."
-        show Joseph neutral
+        show Mary out with dissolve
+        show Joseph neutral with dissolve
         Joseph_right "Ok!, I'll go get it!"
+        show Joseph out with dissolve
         Juan_center "Dada! Dada!"
 
     scene black with dissolve
