@@ -8,6 +8,7 @@ label JuansFirstDay:
     $ NationalBirdChoice = "null"
     $ WakeupChoice = "null"
     $ help_girl = "null"
+    $ TextChoice = "null"
 
 
     scene black with dissolve
@@ -430,27 +431,35 @@ label JuansFirstDay:
     none "Ring Ring."
 
 
-    # == New choices 
-    
-    "(Juan quickly opens his backpack and grabbed his mobile phone.)"
-    show Juan smile2
-    Juan_center "Oh, a message from James!, hmmm let me see..."
-    show Juan neutral
-    James_center "Hi Juan, how are you doing? Glenn and I are doing great!"
-    James_center "But of course it would be better with you here."
-    James_center "Actually this summer we've convinced our mom and dad to pay you a visit there."
-    James_center "I heard that the amusement park there has some really fun rollercoasters."
-    James_center "And the Oceanarium has dolphins and sharks as well!?. That's so cool!"
-    James_center "Anyways always take care of yourself!"
-    James_center "Because I heard that the people there are really arrogant and grumpy."
-    James_center "At least that's what granny told me hahaha."
-    James_center "-James"
+    show mode confirm with dissolve
+    call screen TextChoiceScreen with dissolve
+    hide mode confirm with dissolve
 
-    show Juan smile2
-    Juan_center "A message from James!"
-    Juan_center "I was actually planning on texting them later."
-    show Juan neutral
-    Juan_center "But it's not the time to reply now I should get home first."
+    if TextChoice == "Answer":
+        "(Juan quickly opens his backpack and grabbed his mobile phone.)"
+        show Juan smile2
+        Juan_center "Oh, a message from James!, hmmm let me see..."
+        show Juan neutral
+        James_center "Hi Juan, how are you doing? Glenn and I are doing great!"
+        James_center "But of course it would be better with you here."
+        James_center "Actually this summer we've convinced our mom and dad to pay you a visit there."
+        James_center "I heard that the amusement park there has some really fun rollercoasters."
+        James_center "And the Oceanarium has dolphins and sharks as well!?. That's so cool!"
+        James_center "Anyways always take care of yourself!"
+        James_center "Because I heard that the people there are really arrogant and grumpy."
+        James_center "At least that's what granny told me hahaha."
+        James_center "-James"
+
+        "Just then Juan didn't notice the car passing by."
+        "(Beep! Beep!)"
+        Juan "Oh no! I'm sorry."
+
+        "Juan then puts his phone away and continues to walk home."
+
+        
+    if TextChoice == "Ignore":
+        "Juan, ignored it for now and planned to answer it when he gets home."
+
 
     scene black with dissolve
     with Pause(1)
@@ -506,7 +515,25 @@ label JuansFirstDay:
     none "..."
     none "(After Juan finished his homework, he starts replying to Glenn's message)"
 
-    Juan_center "Glenn,  I really miss hanging out with you and James."
+    if TextChoice == "Ignore":
+        "(Juan remembered someone sent him a text.)"
+        show Juan smile2
+        Juan_center "Oh, a message from James!, hmmm let me see..."
+        show Juan neutral
+        James_center "Hi Juan, how are you doing? Glenn and I are doing great!"
+        James_center "But of course it would be better with you here."
+        James_center "Actually this summer we've convinced our mom and dad to pay you a visit there."
+        James_center "I heard that the amusement park there has some really fun rollercoasters."
+        James_center "And the Oceanarium has dolphins and sharks as well!?. That's so cool!"
+        James_center "Anyways always take care of yourself!"
+        James_center "Because I heard that the people there are really arrogant and grumpy."
+        James_center "At least that's what granny told me hahaha."
+        James_center "-James"
+
+    if TextChoice == "Answer":
+        Juan "Ohh I remember Juan sent me a text I should really text back."
+
+    Juan_center "Glenn, I really miss hanging out with you and James."
     Juan_center "I'm really excited for your upcoming visit here. I hope that you stay long so we could play games like we used to."
     Juan_center "I really wanna visit the amusement park and the oceanarium with you guys. Mom said that the shark they had there was almost 10 feet long."
     Juan_center "I'm really excited to see you guys. Visit soon. Take care!"
@@ -530,6 +557,7 @@ label JuansFirstDay:
     with Pause(1)
 
     none "END."
+    jump FireDisaster
 
     scene black with dissolve
     with Pause(2)
@@ -648,5 +676,15 @@ label JuansFirstDay:
             vbox:
                 imagebutton idle Transform(wake, zoom=1) hover Transform(wake_selected, zoom=1) action [SetVariable("WakeupChoice", "wake"),Return()]
                 text(Text("Wake up",size=50)) xpos 0.2
+
+    screen TextChoiceScreen():
+        modal True
+        text("Should Juan answer the phone while walking?") size 60 xpos 0.25 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 200:
+            vbox:
+                textbutton (Text("Answer",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("TextChoice", "Answer"),Return()]
+            vbox:
+                textbutton (Text("It can wait.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("TextChoice", "Ignore"),Return()]
 
     return

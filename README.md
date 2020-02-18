@@ -1,5 +1,7 @@
 A Video Game made by PixelheartProduction
 
+![](game/images/screenshot.png)
+
 NOTE -Before starting download the "Github Desktop and Ren'Py game engine"
 
 how to collab:
