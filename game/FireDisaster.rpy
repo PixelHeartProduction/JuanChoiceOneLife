@@ -3,6 +3,7 @@ label FireDisaster:
     $ ListenChoice == "null"
     $ LieChoice == "null"
     $ MatchChoice = "null"
+    $ SmallFireChoice = "null"
 
     show Mary_center with dissolve
     Mary_left "Juan, wake up. It's time for school."
@@ -109,8 +110,12 @@ label FireDisaster:
         none "Juan drops the lit match."
 
         none "The small rug caught on fire."
-        
-            
+    
+    if MatchChoice == "Leave": 
+        none "Juan heads to the living room with the `"
+
+
+
 
     
 
@@ -151,5 +156,15 @@ label FireDisaster:
                 textbutton (Text("Try to light one of the matches.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("MatchChoice", "Light"),Return()]
             vbox:
                 textbutton (Text("Go to the living room.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("MatchChoice", "Leave"),Return()]
+
+    screen SmallFireChoiceScreen():
+        modal True
+        text("What should Juan do?") size 60 xpos 0.25 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 200:
+            vbox:
+                textbutton (Text("Fix it yourself?.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("SmallFireChoice", "Deal"),Return()]
+            vbox:
+                textbutton (Text("Call Dad.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("SmallFireChoice", "CallDad"),Return()]
 
 
