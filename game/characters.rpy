@@ -209,28 +209,32 @@ image Joseph panLeft:
     xalign .5
     linear 0.5 xalign 0.25
 
-#=========================Girl=================================
+#=========================Alice=================================
 define Girl_left = Character ("Girl",what_xalign=0.30, what_text_align=0.0, color="#f569b6")
 define Girl_center = Character ("Girl",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#f569b6")
 define Girl_right = Character ("Girl", what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#f569b6")
 
-image Girl cryingright:
+define Alice_left = Character ("Alice",what_xalign=0.30, what_text_align=0.0, color="#f569b6")
+define Alice_center = Character ("Alice",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#f569b6")
+define Alice_right = Character ("Alice", what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#f569b6")
+
+image Alice cryingright:
     "assets/Sprites/Girl_Crying.png"
     zoom .19
     ypos 1.2
     xpos 0.75
 
-image Girl crying:
+image Alice crying:
     "assets/Sprites/Girl_Crying.png"
     zoom .19
     ypos 1.2
 
-image Girl surprised:
+image Alice surprised:
     "assets/Sprites/Girl_Surprised.png"
     zoom .19
     ypos 1.2
 
-image Girl smile:
+image Alice smile:
     "assets/Sprites/Girl_Smile.png"
     zoom .19
     ypos 1.2
