@@ -94,7 +94,7 @@ label JuansLittleSister:
         none "..."
         May_center "Uwaah..."
         if Choice_ch1 == "mama":
-            show Joseph serious
+            show Joseph angry with dissolve
             show Mary surprised
             Joseph_right "You shouldn't make your sister cry!"
             Juan_center "..."
@@ -108,7 +108,7 @@ label JuansLittleSister:
             Juan_center "I'm Sorry."
 
         if Choice_ch1 == "papa":
-            show Mary surprised
+            show Mary angry with dissolve
             show Joseph serious
             Mary_left "You should'nt make your sister cry!"
             Juan_center "..."

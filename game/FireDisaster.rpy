@@ -1,7 +1,7 @@
 label FireDisaster:
 
-    $ ListenChoice == "null"
-    $ LieChoice == "null"
+    $ ListenChoice = "null"
+    $ LieChoice = "null"
 
     show Mary_center with dissolve
     Mary_left "Juan, wake up. It's time for school."

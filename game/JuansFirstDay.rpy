@@ -148,11 +148,21 @@ label JuansFirstDay:
             Dog_center "Woof!"
             Juan_left "Did it work?"
             show Girl surprised
-            none "(The dog somehow got distracted but seems to be angy at me now.)"
-            Dog_center "Grrr!."
-            Juan_left "Uhhoh!"
-            Dog_center "woof!"
-            none "(I Quickly ran away but the dog chased me.)"
+            none "(The dog got scared of the stone and ran away.)"
+            show Juan phew with dissolve
+            Juan_left "Phew."
+            show Juan neutral with dissolve
+            Juan_left "Are you hurt?"
+            Girl_right "Uhmm..I'm okay"
+            show Girl smile
+            Girl_right "Thank you very much!"
+            Juan_left "Thank goodness.."
+            show Girl surprised
+            Juan_left "Oh no! I'm late for school better get there quickly!."
+            Juan_left "Bye!"
+            hide Juan neutral with moveoutleft
+
+
     if help_girl == "charge":
             none "(Juan quicky charges towards the dog to stop the girl from getting bitten)"
             play sound "assets/SFX/Dog_Bark.mp3"
@@ -167,18 +177,18 @@ label JuansFirstDay:
             Juan_left "Uhhoh!"
             Dog_center "woof!"
             none "(I quickly ran away but somehow I got the dog away from her.)"
+            scene black with dissolve
+            with Pause(1)
 
-    scene black with dissolve
-    with Pause(1)
+            none "(After a few minutes the dog finally gave up on me and walks away.)"
 
-    none "(After a few minutes the dog finally gave up on me and walks away.)"
+            scene daytimeStreet2 with dissolve
 
-    scene daytimeStreet2 with dissolve
-
-    show Juan neutral with dissolve
-    Juan_center "Phew.. finally that dog's gone."
-    none "(Juan says to myself as he catches his breath.)"
-    Juan_center "Oh no! I'm late for school better get there quickly!."
+            show Juan phew with dissolve
+            Juan_center "Phew.. finally that dog's gone."
+            show Juan tired with dissolve
+            none "(Juan says to myself as he catches his breath.)"
+            Juan_center "Oh no! I'm late for school better get there quickly!."
 
     scene black with dissolve
     with Pause(1)
@@ -452,7 +462,7 @@ label JuansFirstDay:
 
         "Just then Juan didn't notice the car passing by."
         "(Beep! Beep!)"
-        Juan "Oh no! I'm sorry."
+        Juan_center "Oh no! I'm sorry."
 
         "Juan then puts his phone away and continues to walk home."
 
@@ -531,7 +541,7 @@ label JuansFirstDay:
         James_center "-James"
 
     if TextChoice == "Answer":
-        Juan "Ohh I remember Juan sent me a text I should really text back."
+        Juan_center "Ohh I remember Juan sent me a text I should really text back."
 
     Juan_center "Glenn, I really miss hanging out with you and James."
     Juan_center "I'm really excited for your upcoming visit here. I hope that you stay long so we could play games like we used to."
@@ -654,10 +664,12 @@ label JuansFirstDay:
 
         hbox xalign 0.5:
             text("The girl needs help, What should I do?") size 60 xpos 0 ypos 30
-        hbox xpos 575 ypos 585:
+        vbox xpos 575 ypos 585:
             imagebutton idle Transform(dog) hover Transform(dog_selected) action [SetVariable("help_girl", "charge"),Return()]
-        hbox xpos 1500 ypos 800:
-            imagebutton idle Transform(stone, zoom=0.08) hover Transform(stone_selected, zoom=0.08) action [SetVariable("help_girl", "stone"),Return()] 
+            text("Scare the dog")
+        vbox xpos 1500 ypos 800:
+            imagebutton idle Transform(stone, zoom=0.08) hover Transform(stone_selected, zoom=0.08) action [SetVariable("help_girl", "stone"),Return()]
+            text("Throw a rock") xpos -50
 
     screen wakeorsleep():
         modal True
