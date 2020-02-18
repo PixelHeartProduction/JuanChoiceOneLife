@@ -110,9 +110,11 @@ label FireDisaster:
         none "Juan drops the lit match."
 
         none "The small rug caught on fire."
+        
     
     if MatchChoice == "Leave": 
-        none "Juan heads to the living room with the `"
+        none "Juan heads to the living room with his family."
+
 
 
 
