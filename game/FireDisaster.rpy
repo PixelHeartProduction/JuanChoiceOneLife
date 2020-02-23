@@ -110,6 +110,21 @@ label FireDisaster:
         none "Juan drops the lit match."
 
         none "The small rug caught on fire."
+
+        show mode confirm with dissolve
+        call screen SmallFireChoiceScreen with dissolve
+        hide mode confirm with dissolve
+
+        if SmallFireChoice == "Deal":
+        
+        if SmallFireChoice == "CallDad":
+            Juan_left "Dad!!!"
+            #Joseph comes running!
+            Joseph_right "Juan, come here!"
+            Juan_left "I'm sorry, dad!"
+            none "Joseph tries hard to put out the fire with a wet cloth."
+
+            Juan_left "I'm sorry, dad."
         
     
     if MatchChoice == "Leave": 
