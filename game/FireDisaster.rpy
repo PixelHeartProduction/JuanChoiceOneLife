@@ -33,8 +33,8 @@ label FireDisaster:
         Cathy_center "Okay class. Today we will be talking about what to do in case of fire and most importantly."
         Cathy_center "how to prevent it."
 
-        Cathy_center "Let's talk about how to prevent fire first."
-        Cathy_center "As young people we all know that we should not play with fire, or anything that could cause it."
+        Cathy_center "To teach you about these important topics we have a special guest"
+        Cathy_center "Greet warmly our Fireman Matthew."
 
         none "Juan sees Peter not listening to Ms. Cathy."
 
@@ -43,7 +43,8 @@ label FireDisaster:
         hide mode confirm with dissolve
 
         if ListenChoice == "Listen":
-        #----Show pictures of the following. 
+        #----Show pictures of the following.  Also Cathy will be changed to fireman matthew
+            
             Cathy_center "Like matches."
             Cathy_center "Candles"
             Cathy_center "Stoves"
@@ -116,6 +117,20 @@ label FireDisaster:
         hide mode confirm with dissolve
 
         if SmallFireChoice == "Deal":
+            Juan_left "What should I do?"
+
+            show mode confirm with dissolve
+            call screen SmallFireDealChoiceScreen with dissolve
+            hide mode confirm with dissolve
+
+            if DealChoices == "Fan":
+                Juan_left "Ok, I will fan out the flames."
+                none "The fire escalates instead of getting blown out."
+                none "Juan starts to panic."
+
+            if DealChoices == "Rug":
+                Juan_left "Ok, I will cover the fire with a wet rug."
+                none "The wet rug "
         
         if SmallFireChoice == "CallDad":
             Juan_left "Dad!!!"
@@ -180,8 +195,18 @@ label FireDisaster:
 
         hbox xalign 0.5 yalign 0 spacing 200:
             vbox:
-                textbutton (Text("Fix it yourself?.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("SmallFireChoice", "Deal"),Return()]
+                textbutton (Text("Fix it yourself.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("SmallFireChoice", "Deal"),Return()]
             vbox:
                 textbutton (Text("Call Dad.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("SmallFireChoice", "CallDad"),Return()]
+
+    screen SmallFireDealChoiceScreen():
+        modal True
+        text("What should Juan do with the small fire?") size 60 xpos 0.25 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 200:
+            vbox:
+                textbutton (Text("Blow out the fire with the fan.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("DealChoices", "Fan"),Return()]
+            vbox:
+                textbutton (Text("Use the wet rug.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("DealChoices", "Rug"),Return()]
 
 
