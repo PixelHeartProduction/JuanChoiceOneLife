@@ -8,7 +8,7 @@
     image afternoonStreet1 = "assets/Scenes/Street1Afternoon.jpg"
     image nighttimeLivingRoom = "assets/Scenes/livingroomNighttime.jpg"
     image nighttimeBedroom = "assets/Scenes/BedroomNighttime.jpg"
-    image classroom = "assets/Scenes/classroom.jpg"
+    image classroom = "assets/Scenes/classroom.png"
 
 #=============custom=============================
 
