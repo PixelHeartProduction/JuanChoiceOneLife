@@ -133,7 +133,7 @@ label JuansFirstDay:
     Dog_left "Woof!"
     Girl_right "Help! somebody.."
     Girl_right "Get away!!"
-    Juan_center "(That little girl needs help quickly! What should I do?)"
+    Juan_center "(That girl needs help quickly! What should I do?)"
 
     show mode confirm with dissolve
     call screen chargeorstone with dissolve
@@ -142,51 +142,75 @@ label JuansFirstDay:
     if help_girl == "stone":
             none "(Juan quicky searches for something to throw at the dog and finds a piece of rock.)"
             scene daytimeStreet1 with dissolve
-            show Girl cryingright with dissolve
+            show Alice cryingright with dissolve
             show Juan neutralLeft
             play sound "assets/SFX/Dog_Bark.mp3"
             Dog_center "Woof!"
             Juan_left "Did it work?"
-            show Girl surprised
-            none "(The dog somehow got distracted but seems to be angy at me now.)"
-            Dog_center "Grrr!."
-            Juan_left "Uhhoh!"
-            Dog_center "woof!"
-            none "(I Quickly ran away but the dog chased me.)"
+            show Alice surprised
+            none "(The dog got scared of the stone and ran away.)"
+            show Juan phew with dissolve
+            Juan_left "Phew."
+            show Juan neutral with dissolve
+            Juan_left "Are you hurt?"
+            Girl_right "Uhmm..I'm okay"
+            show Alice smile
+            Girl_right "Thank you very much!"
+            Juan_left "Thank goodness.."
+            none "(As Juan is relieved that she is okay, Juan noticed that she wears the same uniform from his school.)"
+            Juan_left "Are from the same school as mine?"
+            Girl_right "Yes!, I'm from the same school."
+            Girl_right "My name is Alice!"
+            $ renpy.notify("New friend: Alice!")
+            $ Alice_unlock = True
+            show Juan smile1 with dissolve
+            Juan_left "I'm Juan, nice to meet you!"
+            show Juan neutral with dissolve
+            show Alice surprised
+            Juan_left "Oh no! we're late for school better get there quickly!."
+            Alice_right "Oh! I almost forgot!"
+            Juan_left "Let's go."
+
+
     if help_girl == "charge":
             none "(Juan quicky charges towards the dog to stop the girl from getting bitten)"
             play sound "assets/SFX/Dog_Bark.mp3"
             Dog_center "Woof! Woof!"
-            scene daytimeStreet1 with dissolve
-            show Girl cryingright with dissolve
-            show Juan neutralLeft
-            Juan_left "Arrgghh!"
-            Juan_left "STOP!"
-            show Girl surprised
+            Juan_center "Arrgghh!"
+            Juan_center "STOP!"
             none "(Juan charges but stops halfway and saw the dog preparing to charge back at me)"
-            Juan_left "Uhhoh!"
+            Juan_center "Uhhoh!"
+            scene street1closer with dissolve
+            show image("assets/Sprites/Juan_Chased.png") with dissolve
+            with Pause (1)
+            hide image("assets/Sprites/Juan_Chased.png") with dissolve
+            show image(Transform(im.Flip("assets/Sprites/Juan_Chased.png", horizontal=True) ,zoom=0.5,xpos=0.4,ypos=0.45)) with dissolve
             Dog_center "woof!"
             none "(I quickly ran away but somehow I got the dog away from her.)"
+            scene black with dissolve
+            with Pause(1)
 
-    scene black with dissolve
-    with Pause(1)
+            none "(After a few minutes the dog finally gave up on me and walks away.)"
 
-    none "(After a few minutes the dog finally gave up on me and walks away.)"
+            scene daytimeStreet2 with dissolve
 
-    scene daytimeStreet2 with dissolve
-
-    show Juan neutral with dissolve
-    Juan_center "Phew.. finally that dog's gone."
-    none "(Juan says to myself as he catches his breath.)"
-    Juan_center "Oh no! I'm late for school better get there quickly!."
+            show Juan phew with dissolve
+            Juan_center "Phew.. finally that dog's gone."
+            show Juan tired with dissolve
+            none "(Juan says to myself as he catches his breath.)"
+            Juan_center "Oh no! I'm late for school better get there quickly!."
 
     scene black with dissolve
     with Pause(1)
     scene classroom with dissolve
     play sound "assets/SFX/Door.mp3"
 
-    none "Juan arrives at school. He seems to be a little anxious since he missed his first flag ceremony. "
-    none "He rushes up to his classroom and thankfully the first class has not yet started."
+    if Alice_unlock:
+        none "Alice and Juan arrives at school. Both seems to be a little anxious since they missed their first flag ceremony. "
+        none "They rushes up to their classroom and thankfully the first class has not yet started."
+    else:
+        none "Juan arrives at school. He seems to be a little anxious since he missed his first flag ceremony. "
+        none "He rushes up to his classroom and thankfully the first class has not yet started."
 
     play sound "assets/SFX/School_Bell.mp3"
     none "(Bell Rings.)"
@@ -213,10 +237,10 @@ label JuansFirstDay:
 # add a "Geography transition image"
 
     show Cathy panningRight
-    Cathy_right "Our country, The Philippines is here in South East Asia."
+    Cathy_right "Our country, The Philippines is here in {color=#adf569}South East Asia{/color}."
     show school philippineMap with dissolve
     Cathy_right "Manila is the name of our Capital City and it is here in the Luzon Island."
-    Cathy_right "Our country has 7107 islands!"
+    Cathy_right "Our country has {color=#adf569}7107{/color} islands!"
     show Cathy laugh
     Cathy_right "Isn't that a lot."
     show Cathy neutral
@@ -224,12 +248,12 @@ label JuansFirstDay:
     Cathy_right "Which means the weather throughout the year is warm or rainy."
     Cathy_right "Did you know that the largest eagle is found in the Philippines?"
     show school philippineEagle with dissolve
-    Cathy_right "The Philippine eagle!"
+    Cathy_right "The {color=#adf569}Philippine Eagle{/color}!"
     Cathy_right "Also known as the monkey-eating eagle"
     Cathy_right "And it's the National Bird of the Philippines."
     hide school philippineEagle with dissolve
     show Cathy panningBack
-    Cathy_center "Class I'm gonna need you to write down all of the things I write donw on the board okay?"
+    Cathy_center "Class I'm gonna need you to write down all of the things I write down on the board okay?"
     show Cathy smile
     Cathy_center "Because it's quiz time!"
 
@@ -249,6 +273,8 @@ label JuansFirstDay:
     $ correct = 0
     show Cathy neutral
     Cathy_center "Question #1: How many Islands are there in the Philippines?"
+    if Alice_unlock:
+        Alice_center "(Hey Juan, I remember it's {color=#adf569}7107{/color})"
     show mode confirm with dissolve
     call screen PuloScreen with dissolve
     hide mode confirm with dissolve
@@ -266,6 +292,8 @@ label JuansFirstDay:
 
     show Cathy neutral
     Cathy_center "Question #2: Where is the Philippines located at?"
+    if Alice_unlock:
+        Alice_center "(I think it's {color=#adf569}South East Asia{/color})"
 
     show mode confirm with dissolve
     call screen LocationScreen with dissolve
@@ -285,6 +313,8 @@ label JuansFirstDay:
 
     show Cathy neutral
     Cathy_center "Question #3: What is the National Bird of the Philippines?"
+    if Alice_unlock:
+        Alice_center "(It's the {color=#adf569}Philippine Eagle{/color} Juan!)"
 
     show mode confirm with dissolve
     call screen NationalBird with dissolve
@@ -378,6 +408,8 @@ label JuansFirstDay:
 
         Juan_left "(Peter and I talked a lot about our favorite game troughout lunch time. I didn't know that we had a lot of things in common.)"
         Juan_left "(And before I even knew it.)"
+        $ Peter_unlock = True
+        $ renpy.notify("New friend: Peter!")
         Juan_left "(I made a friend.)"
 
         play sound "assets/SFX/School_Bell.mp3"
@@ -397,7 +429,8 @@ label JuansFirstDay:
         none "Juan says nothing."
 
     none "After our lunch Peter returned to his seat and we waited for our afternoon class."
-    none "Juan thought it was really nice being able to make a friend. He was really happy that he somehow found someone who had the same interests as he did."
+    if Peter_unlock:
+        none "Juan thought it was really nice being able to make a friend. He was really happy that he somehow found someone who had the same interests as he did."
     none "..."
     play sound "assets/SFX/School_Bell.mp3"
     none "(Bell Rings.)"
@@ -409,23 +442,30 @@ label JuansFirstDay:
     Juan_center "(It's finally time to go home but that's not where the day ends)"
     Juan_center "(Unfortunately our teachers had left us a ton of homeworks)"
 
-    show Juan neutralLeft with dissolve
-    show Peter neutralRight with dissolve
+    if Peter_unlock:
+        show Juan neutralLeft with dissolve
+        show Peter neutralRight with dissolve
 
-    Peter_right "Better get home quick,"
-    Peter_right "I want to finish all of my homework so I can play video games longer."
+        Peter_right "Better get home quick,"
+        Peter_right "I want to finish all of my homework so I can play video games longer."
 
-    Juan_left "Yeah."
-    Juan_left "Too bad our teachers already gave us some homeworks even though it's just the very start of the school year."
-    show Juan smile1
-    Juan_left "Anyways, see you tommorow Peter!"
-    show Peter smile
-    Peter_right "See ya!"
-    hide Peter smile with dissolve
-    none "..."
-    show Juan panLCenter
-    none "(And so Peter and Juan said goodbye to each other as they parted ways to go home.)"
-    none "(While Juan was walking to his house, something suddenly vibrated in his backpack.)"
+        Juan_left "Yeah."
+        Juan_left "Too bad our teachers already gave us some homeworks even though it's just the very start of the school year."
+        show Juan smile1
+        Juan_left "Anyways, see you tommorow Peter!"
+        show Peter smile
+        Peter_right "See ya!"
+        hide Peter smile with dissolve
+        none "..."
+        show Juan panLCenter
+        none "(And so Peter and Juan said goodbye to each other as they parted ways to go home.)"
+        none "(While Juan was walking to his house, something suddenly vibrated in his backpack.)"
+    else:
+        show Juan neutral with dissolve
+        Juan_center "Better get home quick!"
+        Juan_center "Too bad our teachers already gave us some homeworks even though it's just the very start of the school year."
+        none "..."
+        none "(While Juan was walking to his house, something suddenly vibrated in his backpack.)"
 
     play sound "assets/SFX/PhoneRing.mp3"
     none "Ring Ring."
@@ -450,11 +490,12 @@ label JuansFirstDay:
         James_center "At least that's what granny told me hahaha."
         James_center "-James"
 
-        "Just then Juan didn't notice the car passing by."
-        "(Beep! Beep!)"
-        Juan "Oh no! I'm sorry."
+        none "Just then Juan didn't notice the car passing by."
+        play sound "assets/SFX/Carhorn.mp3"
+        none "(Beep! Beep!)"
+        Juan_center "Oh no! I'm sorry."
 
-        "Juan then puts his phone away and continues to walk home."
+        none "Juan then puts his phone away and continues to walk home."
 
         
     if TextChoice == "Ignore":
@@ -484,9 +525,12 @@ label JuansFirstDay:
     Joseph_right "Hey lil'Juan, how was school today? Did you do good on your first day like I did?"
     show Juan smile2
     Juan_center "Hi, dad, you're home!"
-    show Juan smile1
-    Juan_center "Guess what! I made a new friend in school!"
-    Joseph_right "Oh really!, you seem to have had a lot of fun, I can tell."
+    if Alice_unlock or Peter_unlock:
+        show Juan smile1
+        Juan_center "Guess what! I made a new friend in school!"
+        Joseph_right "Oh really!, you seem to have had a lot of fun, I can tell."
+    else:
+        Juan_center "It was great!"
     show Juan neutral
     show Mary talking with dissolve
     Mary_left "By the way Juan, I bought you a present!"
@@ -513,7 +557,7 @@ label JuansFirstDay:
     Juan_center "Goodness this is not really 'That' hard."
     Juan_center "It's quite alright. A lot of new questions though. Maybe this is preparation for the future topics we will be discussing in class."
     none "..."
-    none "(After Juan finished his homework, he starts replying to Glenn's message)"
+    none "(After Juan finished his homework, he starts replying to James's message)"
 
     if TextChoice == "Ignore":
         "(Juan remembered someone sent him a text.)"
@@ -531,28 +575,47 @@ label JuansFirstDay:
         James_center "-James"
 
     if TextChoice == "Answer":
-        Juan "Ohh I remember Juan sent me a text I should really text back."
+        Juan_center "Ohh I remember Juan sent me a text I should really text back."
 
-    Juan_center "Glenn, I really miss hanging out with you and James."
+    Juan_center "James, I really miss hanging out with you and Glenn."
     Juan_center "I'm really excited for your upcoming visit here. I hope that you stay long so we could play games like we used to."
     Juan_center "I really wanna visit the amusement park and the oceanarium with you guys. Mom said that the shark they had there was almost 10 feet long."
     Juan_center "I'm really excited to see you guys. Visit soon. Take care!"
 
     Juan_center "Anyway."
     Juan_center "Come to think of it"
-    Juan_center "Why did I save that girl who's about to get attacked by that dog?"
 
     if help_girl == "stone":
-        Juan_center "I did trew a stone at the dog"
-        Juan_center "But then the dog chased me instead."
+        Juan_center "Alot of things happed today."
+        Juan_center "I met new friends!"
+        Juan_center "Like Alice"
+        if Peter_unlock:
+            show Juan smile1
+            Juan_center "and Peter!"
 
     if help_girl == "charge":
+        Juan_center "Why did I save that girl who's about to get attacked by that dog?"
         Juan_center "I did charge towards the dog to shoo it away."
         Juan_center "But then I got scared as well and the dog chased me."
+        Juan_center "If I didn't,"
+        Juan_center "I wouldn't have gotten late on my first day of school, Or got my uniform dirty."
+    
+    if correct == 3:
+        show Juan smile1
+        Juan_center "Also I got a perfect score in my quiz today!"
+        if Alice_unlock:
+            show Juan neutral
+            Juan_center "Well I guess it's because Alice helped me answering those questions."
 
-    Juan_center "If I didn't,"
-    Juan_center "I wouldn't have gotten late on my first day of school, Or got my uniform dirty."
+    if Peter_unlock:
+        Juan_center "I'm also looking forward playing video games with Peter."
+        show Juan smile2
+        Juan_center "Haha!, can't wait to show him my fast farming skills!"
 
+    show Juan neutral
+    Juan_center "*yawn"
+    Juan_center "It's getting late now better get to sleep so i can wake up earlier!"
+    Juan_center "Good night!"
     scene black with dissolve
     with Pause(1)
 
@@ -654,10 +717,12 @@ label JuansFirstDay:
 
         hbox xalign 0.5:
             text("The girl needs help, What should I do?") size 60 xpos 0 ypos 30
-        hbox xpos 575 ypos 585:
+        vbox xpos 575 ypos 585:
             imagebutton idle Transform(dog) hover Transform(dog_selected) action [SetVariable("help_girl", "charge"),Return()]
-        hbox xpos 1500 ypos 800:
-            imagebutton idle Transform(stone, zoom=0.08) hover Transform(stone_selected, zoom=0.08) action [SetVariable("help_girl", "stone"),Return()] 
+            text("Scare the dog")
+        vbox xpos 1500 ypos 800:
+            imagebutton idle Transform(stone, zoom=0.08) hover Transform(stone_selected, zoom=0.08) action [SetVariable("help_girl", "stone"),Return()]
+            text("Throw a rock") xpos -50
 
     screen wakeorsleep():
         modal True
@@ -679,12 +744,20 @@ label JuansFirstDay:
 
     screen TextChoiceScreen():
         modal True
-        text("Should Juan answer the phone while walking?") size 60 xpos 0.25 ypos 30
+        $ answer = Image("assets/Sprites/Items/Phone_Answer.png")
+        $ answer_selected = im.MatrixColor(answer,im.matrix.brightness(0.2))
+        $ ignore = Image("assets/Sprites/Items/Phone_Ignore.png")
+        $ ignore_selected = im.MatrixColor(ignore,im.matrix.brightness(0.2))
 
-        hbox xalign 0.5 yalign 0 spacing 200:
+        hbox xalign 0.5:
+            text(Text("Should Juan answer his phone while walking?.",size=50))
+
+        hbox xalign 0.5 yalign 0.3 spacing 800:
             vbox:
-                textbutton (Text("Answer",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("TextChoice", "Answer"),Return()]
+                imagebutton idle Transform(answer, zoom=1) hover Transform(answer_selected, zoom=1) action [SetVariable("TextChoice", "Answer"),Return()]
+                text(Text("Answer now",size=50)) xpos 0
             vbox:
-                textbutton (Text("It can wait.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("TextChoice", "Ignore"),Return()]
+                imagebutton idle Transform(ignore, zoom=1) hover Transform(ignore_selected, zoom=1) action [SetVariable("TextChoice", "Ignore"),Return()]
+                text(Text("It could wait.",size=50)) xpos 0.1
 
     return

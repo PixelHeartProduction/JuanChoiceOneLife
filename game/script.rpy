@@ -8,6 +8,9 @@ label start():
     $ Mode = "null"
     $ Choice_ch1 = "null"
     $ Choice_ch3 = "null"
+    #==============Character Unlocks==============
+    $ Peter_unlock = False
+    $ Alice_unlock = False
     #=============Minor choices===================
     $ food_eaten = 0
     $ alphabet_selected = "null"

@@ -94,7 +94,7 @@ label JuansLittleSister:
         none "..."
         May_center "Uwaah..."
         if Choice_ch1 == "mama":
-            show Joseph serious
+            show Joseph angry with dissolve
             show Mary surprised
             Joseph_right "You shouldn't make your sister cry!"
             Juan_center "..."
@@ -108,7 +108,7 @@ label JuansLittleSister:
             Juan_center "I'm Sorry."
 
         if Choice_ch1 == "papa":
-            show Mary surprised
+            show Mary angry with dissolve
             show Joseph serious
             Mary_left "You should'nt make your sister cry!"
             Juan_center "..."
@@ -130,15 +130,18 @@ label JuansLittleSister:
     #=====================Screens===========================
     screen playWithMay():
         modal True
-        $ slipper = Image("assets/Sprites/Items/slippers.png")
+        $ psp = Image("assets/Sprites/Items/psp.png")
         $ toy = Image("assets/Sprites/Items/toys.png")
 
-        hbox xalign 0.5:
-            text(Text("Play with may.",size=50))
-        hbox xpos 0.3 ypos 800:
-            imagebutton idle Transform(slipper, zoom=0.5) action [SetVariable("played_with_may", False),Return()]
-        hbox xpos 0.5 ypos 600:
+        vbox xalign 0.5:
+            text(Text("Mary and Joseph wants Juan to play with May.",size=50))
+            text(Text("(Select between {color=#ffa500}Toys{/color} or {color=#5DFF31}Video games{/color})",size=40, xpos=180,ypos=30))
+        vbox xpos 0.1 ypos 430:
+            imagebutton idle Transform(psp, zoom=0.8) action [SetVariable("played_with_may", False),Return()]
+            text("Play alone") xpos 50 ypos -20 color "#5DFF31"
+        vbox xpos 0.6 ypos 600:
             imagebutton idle Transform(toy, zoom=0.5) action [SetVariable("played_with_may", True),Return()]
+            text("Play with may") xpos 100 color "#ffa500"
 
 
 

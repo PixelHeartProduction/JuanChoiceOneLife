@@ -16,6 +16,7 @@
     image livingroomangle1 = "assets/Scenes/livingroomangle1.png"
     image livingroomangle2 = "assets/Scenes/livingroomangle2.jpg"
     image dogscene = "assets/Scenes/dogscene.jpg"
+    image street1closer = "assets/Scenes/Street1DaytimeCloseup.png"
 
 
 #================Transitions======================
