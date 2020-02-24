@@ -43,7 +43,7 @@ label FireDisaster:
         hide mode confirm with dissolve
 
         if ListenChoice == "Listen":
-        #----Show pictures of the following.  Also Cathy will be changed to fireman matthew
+        #----Show pictures of the following.  Also Cathy will be changed to fireman Rey
             
             Cathy_center "Like matches."
             Cathy_center "Candles"
@@ -130,7 +130,17 @@ label FireDisaster:
 
             if DealChoices == "Rug":
                 Juan_left "Ok, I will cover the fire with a wet rug."
-                none "The wet rug "
+                none "The wet cloth put out the fire."
+                Juan_left "Whoo! That was close."
+
+                none "Joseph rushes into the room."
+                show Joseph seriousRight with dissolve
+
+                Joseph_right "What happened here?!"
+                
+                Juan_left "I'm sorry dad, I tried lighting a match and I got burned and the rug..."
+                none "Juan starts to cry."
+
         
         if SmallFireChoice == "CallDad":
             Juan_left "Dad!!!"
@@ -140,11 +150,16 @@ label FireDisaster:
             none "Joseph tries hard to put out the fire with a wet cloth."
 
             Juan_left "I'm sorry, dad."
+
         
     
     if MatchChoice == "Leave": 
         none "Juan heads to the living room with his family."
+        
 
+
+    if MatchChoice == "Light" && SmallFireChoice == "Deal" && DealChoices == "Fan":
+        none "The fire Juan caused continues to escalate and Juan is crying in the corner."
 
 
 
@@ -207,6 +222,6 @@ label FireDisaster:
             vbox:
                 textbutton (Text("Blow out the fire with the fan.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("DealChoices", "Fan"),Return()]
             vbox:
-                textbutton (Text("Use the wet rug.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("DealChoices", "Rug"),Return()]
+                textbutton (Text("Use the wet cloth.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("DealChoices", "Rug"),Return()]
 
 
