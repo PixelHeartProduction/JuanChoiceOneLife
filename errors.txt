@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/WalkIndependently.rpy", line 168: end of line expected.
-    hbox: xalign 0.5 yalign 0.3:
-          ^
+File "game/FireDisaster.rpy", line 108: expected statement.
+    sene black with dissolve
+               ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Thu Feb 06 19:51:04 2020
+Tue Feb 25 16:54:09 2020
