@@ -5,6 +5,11 @@ label FireDisaster:
     $ MatchChoice = "null"
     $ SmallFireChoice = "null"
     $ DealChoices = "null"
+    $ AnswerReyChoices = "null"
+    $ FollowChoices = "null"
+    $ CoverChoices = "null"
+    $ HelpChoices = "null"
+
 
     stop music fadeout 2.0
     scene black with dissolve
@@ -246,11 +251,64 @@ label FireDisaster:
     hide mode confirm with dissolve
 
     if FollowChoices == "Follow":
+        none "Juan follows Mary."
+        none "As they are going outside they stop."
+
+        show mode confirm with dissolve
+        call screen CoverChoiceScreen with dissolve
+        hide mode confirm with dissolve
+
+        if CoverChoices == "Cover":
+            none "Juan grabs the cloth."
+            Juan_left "Mom, use this! (Handing the cloth to Mary)"
+            Mary_right "Good job, Juan. Come on let's go."
+            
+        none "The Bautista Family continued heading out the burning house."
+
         
     if FollowChoices == "Freeze":
+        none "Juan freezes in his place panicking."
+        Mary_left "Joseph can you grab Juan. We need to get outside fast!"
+        Joseph_right "Yes, take May and your bag. Let's go!"
 
 
+    if CoverChoices == "Run":
+        none "As the Bautista family got outside they had breathed in enough smoke to make them feel dizzy and start coughing."
+
+    Joseph_right "I need to put out the fire. Save as much as we can!"
+
+    show mode confirm with dissolve
+    call screen HelpChoiceScreen with dissolve
+    hide mode confirm with dissolve
+
+    if HelpChoices == "Help":
+        none "Juan runs to the hose at the front yard, far from the burning house."
+        Juan_left "Dad, use the hose!"
+        Joseph_right "Great thinking, son."
+        Juan_left "(I still need to help)"
     
+    if HelpChoices == "Stay":
+        none "Juan stays put and lets his parent handle the situation as he looks after May."
+        Juan_center "I need to help."
+        none "Juan thinks."
+
+    show mode confirm with dissolve
+    call screen StayChoiceScreen with dissolve
+    hide mode confirm with dissolve
+
+    if StayChoices == "Call":
+        none "Juan Grabs his mom's bag and looks for a phone."
+        Juan_center "Where is the fire station's number?"
+        Juan_center "Sir, there is a fire in my house. Please come help us. Please!!"
+
+    if StayChoices == "Neighbors":
+        none "Juan grabs his sister May and goes to the neighbors and calls for help!"
+        Juan_center "Please help us. Our house is on fire. Please!"
+        none "Juan shouts loud enough and wakes up the neighbors."
+        
+        #Neighbor "OH no! We'll be right there!"
+        
+
 
 
 
@@ -331,5 +389,35 @@ label FireDisaster:
                 textbutton (Text("Follow Mom.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("FollowChoices", "Follow"),Return()]
             vbox:
                 textbutton (Text("Freeze in Place.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("FollowChoices", "Freeze"),Return()]
+
+    screen CoverChoiceScreen():
+        modal True
+        text("Juan spots clean cloth by the table.") size 60 xpos 0.25 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 200:
+            vbox:
+                textbutton (Text("Use cloths to help cover from the smoke.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("CoverChoices", "Cover"),Return()]
+            vbox:
+                textbutton (Text("Continue running outside.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("CoverChoices", "Run"),Return()]
+                
+     screen HelpChoiceScreen():
+        modal True
+        text("Joseph is going to try to put out the fire, what does Juan do?") size 60 xpos 0.25 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 200:
+            vbox:
+                textbutton (Text("Open the hose outside the house and help Dad.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("HelpChoices", "Help"),Return()]
+            vbox:
+                textbutton (Text("Stay put.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("HelpChoices", "Stay"),Return()]
+    
+    screen StayChoiceScreen():
+        modal True
+        text("What can Juan do to help?") size 60 xpos 0.25 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 200:
+            vbox:
+                textbutton (Text("Get mom's phone and call the fire station",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("StayChoices", "Call"),Return()]
+            vbox:
+                textbutton (Text("Ask neighbors for help.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("StayChoices", "Neighbors"),Return()]
 
 
