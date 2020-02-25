@@ -92,6 +92,11 @@ image Juan confident:
     zoom 0.33
     ypos 1.2
 
+image Juan nervous:
+    "assets/Sprites/Juan_Nervous.png"
+    zoom 0.33
+    ypos 1.2
+
 #=========================Mary=================================
 define Mary_left = Character("Mary", what_xalign=0.30, what_text_align=0.0, color="#a669f5")
 define Mary_right = Character("Mary", what_xalign=0.60, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#a669f5")
@@ -326,3 +331,31 @@ image May neutral:
 define Dog_left = Character("Dog",what_xalign=0.30, what_text_align=0.0, color="#f5d769")
 define Dog_center = Character("Dog",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#f5d769")
 define Dog_right = Character("Dog",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#f5d769")
+#=====================Matthew============================
+define Matthew_left = Character("Matthew",what_xalign=0.30, what_text_align=0.0, color="#FF3600")
+define Matthew_center = Character("Matthew",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#FF3600")
+define Matthew_right = Character("Matthew",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#FF3600")
+
+image Matthew neutral:
+    "assets/Sprites/FireFighterRey_Normal.png"
+    zoom .35
+    ypos 1.16
+
+image Matthew talking:
+    "assets/Sprites/FireFighterRey_Talking.png"
+    zoom .35
+    ypos 1.16
+
+image Matthew panLeft:
+    "assets/Sprites/FireFighterRey_Normal.png"
+    zoom .35
+    ypos 1.16
+    xpos 0.5
+    linear 1 xalign 0.25
+
+image Matthew panLCenter:
+    "assets/Sprites/FireFighterRey_Normal.png"
+    zoom .35
+    ypos 1.16
+    xpos 0.25
+    linear 1 xalign 0.5

@@ -619,7 +619,6 @@ label JuansFirstDay:
     scene black with dissolve
     with Pause(1)
 
-    none "END."
     jump FireDisaster
 
     scene black with dissolve
