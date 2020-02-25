@@ -317,7 +317,11 @@ label FireDisaster:
 
     
     
-    
+    none "The night went on and soon enough the fire was completely put out."
+    Joseph_right "Thank you so much for helping me and my family."
+    Mary_right "We are very sorry for the trouble my family caused the whole neighborhood."
+
+    none "And with that the Bautista family survived the housefire."
 
 
 
