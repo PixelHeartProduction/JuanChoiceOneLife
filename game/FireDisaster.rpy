@@ -190,6 +190,7 @@ label FireDisaster:
             #Joseph comes running!
             show Joseph neutralright with easeinright
             show Juan panLeft
+            show Juan nervous
             Joseph_right "Juan, come here!"
             Juan_left "I'm sorry, dad!"
             none "Joseph tries hard to put out the fire with a wet cloth."
@@ -203,7 +204,7 @@ label FireDisaster:
         
 
 
-    if MatchChoice == "Light" && SmallFireChoice == "Deal" && DealChoices == "Fan":
+    if MatchChoice == "Light" and SmallFireChoice == "Deal" and DealChoices == "Fan":
         none "The fire Juan caused continues to escalate and Juan is crying in the corner."
 
 
