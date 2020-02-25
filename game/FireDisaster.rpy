@@ -301,13 +301,23 @@ label FireDisaster:
         Juan_center "Where is the fire station's number?"
         Juan_center "Sir, there is a fire in my house. Please come help us. Please!!"
 
+        
+
     if StayChoices == "Neighbors":
         none "Juan grabs his sister May and goes to the neighbors and calls for help!"
         Juan_center "Please help us. Our house is on fire. Please!"
         none "Juan shouts loud enough and wakes up the neighbors."
+        none "Soon the fire fighters arrive and help put out the fire."
+        Rey_left "Juan, it's a good choice to immediately call the Fire station."
         
         #Neighbor "OH no! We'll be right there!"
-        
+        none "The neighbors helped the Bautista Family contain and have the fire under control."
+        none "Soon the fire fighters arrive and help put out the fire."
+        Rey_left "Juan, it's a good choice to ask the neighbors for help. You helped out your parents a lot."
+
+    
+    
+    
 
 
 
