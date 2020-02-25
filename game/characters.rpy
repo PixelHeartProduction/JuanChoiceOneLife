@@ -337,6 +337,7 @@ image May3 cryLeft:
 define Dog_left = Character("Dog",what_xalign=0.30, what_text_align=0.0, color="#f5d769")
 define Dog_center = Character("Dog",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#f5d769")
 define Dog_right = Character("Dog",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#f5d769")
+
 #=====================Rey============================
 define Rey_left = Character("Rey",what_xalign=0.30, what_text_align=0.0, color="#FF3600")
 define Rey_center = Character("Rey",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#FF3600")
