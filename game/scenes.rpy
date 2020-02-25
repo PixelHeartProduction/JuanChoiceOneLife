@@ -11,6 +11,7 @@
     image afternoonBrownoutLivingRoom = "assets/Scenes/livingroomAfternoonBrownout.jpg"
     image nighttimeBedroom = "assets/Scenes/BedroomNighttime.jpg"
     image classroom = "assets/Scenes/classroom.png"
+    image housefire = "assets/Scenes/housefire.jpg"
 
 #=============custom=============================
 
