@@ -44,6 +44,36 @@ image toys:
     ypos 850
     xpos 0.6
 
+image fire matches:
+    "assets/Misc/matches.png"
+    zoom 0.5
+    ypos 650
+    xpos 0.5
+
+image fire candle:
+    "assets/Misc/candle.png"
+    zoom 0.7
+    ypos 650
+    xpos 0.5
+
+image fire lighter:
+    "assets/Misc/lighter.png"
+    zoom 0.7
+    ypos 650
+    xpos 0.5
+
+image fire stove:
+    "assets/Misc/stove.png"
+    zoom 0.5
+    ypos 650
+    xpos 0.5
+
+image fire socket:
+    "assets/Misc/sockets.png"
+    zoom 0.5
+    ypos 650
+    xpos 0.5
+
 image dialog:
         gui.juan_dialogs
         zoom 1.1
