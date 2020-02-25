@@ -73,7 +73,7 @@ label FireDisaster:
             show fire lighter with dissolve
             Cathy_center "lighters"
             show fire socket with dissolve
-            Rey_left "Elecrical sockets or switches."
+            Rey_left "Electrical sockets or switches."
 
             Rey_left "All of these things can cause fire. So it would be best to ask mommy or daddy to keep them safe ok?"
             hide fire with dissolve
@@ -86,7 +86,30 @@ label FireDisaster:
             Rey_center "what we should do next."
             Rey_center "If we're inside our houses in case of fire. Always cover your mouth and nose with a cloth."
             Rey_center "If the cloth is wet then much better."
-            
+
+            Rey_center "If somehow our clothes catch on fire. What would be the best thing to do? Does anyone know?"
+
+            show mode confirm with dissolve
+            call screen AnswerReyScreen with dissolve
+            hide mode confirm with dissolve
+
+            if AnswerReyChoices == "Pass":
+                Rey_center "No one?"
+                Rey_center "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll. This way we could prevent the fire from getting bigger or burning even hotter."
+            if AnswerReyChoices == "Cry":
+                Juan_left "Cry?"
+                Rey_right "Crying won't help actually"
+                Rey_right "Anyone else?"
+                Rey_right "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll."
+                Rey_right "This way we could prevent the fire from getting bigger or burning even hotter."
+            if AnswerReyChoices == "SLR":
+                Juan_left "To Stop, Lie Down and Roll Over?"
+                Rey_right "Very good! Someone did their homework."
+                Class_center "(Claps)"
+                Rey_right "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll."
+                Rey_right "This way we could prevent the fire from getting bigger or burning even hotter."
+
+            Rey_center "Just remember class when we encounter fire, we have to remain calm, because the more we panic the more we are in danger."
 
         if ListenChoice == "Chat":
             none "The whole lesson with Ms. Cathy Passed by without Juan and Peter noticing."
@@ -201,13 +224,30 @@ label FireDisaster:
     
     if MatchChoice == "Leave": 
         none "Juan heads to the living room with his family."
-        
+        none "The night went on and the Bautista Family fell asleep beside each other in the living room."
+        Juan_center "(What is that smell?)"
+        none "Juan starts to toss and turn in his sleep"
+        none "Smoke started billowing into the Bautista Household."
+        none "Juan wakes up and sees the smoke."
 
+        Juan_center "Dad, wake up look! Dad!!"
+        Joseph_right "Oh no!"
+        Joseph_right "Mary, wake up, take May and Juan outside."
 
     if MatchChoice == "Light" and SmallFireChoice == "Deal" and DealChoices == "Fan":
         none "The fire Juan caused continues to escalate and Juan is crying in the corner."
+        Joseph_right "Oh no!"
+        Joseph_right "Mary, take May and Juan outside."
 
+    Mary_center "Juan, follow me!"
 
+    show mode confirm with dissolve
+    call screen FollowChoiceScreen with dissolve
+    hide mode confirm with dissolve
+
+    if FollowChoices == "Follow":
+        
+    if FollowChoices == "Freeze":
 
 
     
@@ -269,5 +309,27 @@ label FireDisaster:
                 textbutton (Text("Blow out the fire with the fan.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("DealChoices", "Fan"),Return()]
             vbox:
                 textbutton (Text("Use the wet cloth.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("DealChoices", "Rug"),Return()]
+    
+    screen AnswerReyScreen():
+        modal True
+        text("What is the answer?") size 60 xpos 0.25 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 200:
+            vbox:
+                textbutton (Text("Stop, Lie Down, Roll Over",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("AnswerReyChoices", "SLR"),Return()]
+            vbox:
+                textbutton (Text("Don't Answer.",size=50,bold=True)) ypos 500 xpos -40  action [SetVariable("AnswerReyChoices", "Pass"),Return()]
+            vbox:
+                textbutton (Text("Cry.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("AnswerReyChoices", "Cry"),Return()]
+
+    screen FollowChoiceScreen():
+        modal True
+        text("Juan follow me!") size 60 xpos 0.25 ypos 30
+
+        hbox xalign 0.5 yalign 0 spacing 200:
+            vbox:
+                textbutton (Text("Follow Mom.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("FollowChoices", "Follow"),Return()]
+            vbox:
+                textbutton (Text("Freeze in Place.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("FollowChoices", "Freeze"),Return()]
 
 
