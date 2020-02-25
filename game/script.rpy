@@ -17,6 +17,7 @@ label start():
     $ banana_selected = False
     $ carrot_selected = False
     $ potato_selected = False
+    #================Disaster Mode=================
 
 
     jump diffSelect
