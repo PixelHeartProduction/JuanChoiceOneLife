@@ -331,29 +331,30 @@ image May neutral:
 define Dog_left = Character("Dog",what_xalign=0.30, what_text_align=0.0, color="#f5d769")
 define Dog_center = Character("Dog",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#f5d769")
 define Dog_right = Character("Dog",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#f5d769")
-#=====================Matthew============================
-define Matthew_left = Character("Matthew",what_xalign=0.30, what_text_align=0.0, color="#FF3600")
-define Matthew_center = Character("Matthew",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#FF3600")
-define Matthew_right = Character("Matthew",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#FF3600")
 
-image Matthew neutral:
+#=====================Rey============================
+define Rey_left = Character("Rey",what_xalign=0.30, what_text_align=0.0, color="#FF3600")
+define Rey_center = Character("Rey",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#FF3600")
+define Rey_right = Character("Rey",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#FF3600")
+
+image Rey neutral:
     "assets/Sprites/FireFighterRey_Normal.png"
     zoom .35
     ypos 1.16
 
-image Matthew talking:
+image Rey talking:
     "assets/Sprites/FireFighterRey_Talking.png"
     zoom .35
     ypos 1.16
 
-image Matthew panLeft:
+image Rey panLeft:
     "assets/Sprites/FireFighterRey_Normal.png"
     zoom .35
     ypos 1.16
     xpos 0.5
     linear 1 xalign 0.25
 
-image Matthew panLCenter:
+image Rey panLCenter:
     "assets/Sprites/FireFighterRey_Normal.png"
     zoom .35
     ypos 1.16

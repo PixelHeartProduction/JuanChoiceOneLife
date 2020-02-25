@@ -49,9 +49,9 @@ label FireDisaster:
 
         Cathy_center "To teach you about these important topics we have a special guest"
         show Cathy smile
-        Cathy_center "Greet warmly our Fireman Matthew."
+        Cathy_center "Greet warmly our Fireman Rey."
         show Cathy panningRight
-        show Matthew neutral with dissolve
+        show Rey neutral with dissolve
         none "Juan sees Peter not listening to Ms. Cathy."
         hide Cathy with dissolve
 
@@ -62,30 +62,30 @@ label FireDisaster:
         if ListenChoice == "Listen":
         #----Show pictures of the following.  Also Cathy will be changed to fireman Rey
             
-            show Matthew panLeft
+            show Rey panLeft
             show fire matches with dissolve
-            Matthew_left  "Like matches."
-            show Matthew talking with dissolve
+            Rey_left  "Like matches."
+            show Rey talking with dissolve
             show fire candle with dissolve
-            Matthew_left  "Candles"
+            Rey_left  "Candles"
             show fire stove with dissolve
-            Matthew_left  "Stoves"
+            Rey_left  "Stoves"
             show fire lighter with dissolve
             Cathy_center "lighters"
             show fire socket with dissolve
-            Matthew_left "Elecrical sockets or switches."
+            Rey_left "Elecrical sockets or switches."
 
-            Matthew_left "All of these things can cause fire. So it would be best to ask mommy or daddy to keep them safe ok?"
+            Rey_left "All of these things can cause fire. So it would be best to ask mommy or daddy to keep them safe ok?"
             hide fire with dissolve
-            show Matthew panLCenter with dissolve
-            Class_center "Yes, Mr. Matthew."
+            show Rey panLCenter with dissolve
+            Class_center "Yes, Mr. Rey."
 
-            Matthew_center "Now, what should we do in case of fire?"
-            show Matthew talking with dissolve
-            Matthew_center "Firstly, we should remain calm. When we are afraid our brains don't work well and we don't know"
-            Matthew_center "what we should do next."
-            Matthew_center "If we're inside our houses in case of fire. Always cover your mouth and nose with a cloth."
-            Matthew_center "If the cloth is wet then much better."
+            Rey_center "Now, what should we do in case of fire?"
+            show Rey talking with dissolve
+            Rey_center "Firstly, we should remain calm. When we are afraid our brains don't work well and we don't know"
+            Rey_center "what we should do next."
+            Rey_center "If we're inside our houses in case of fire. Always cover your mouth and nose with a cloth."
+            Rey_center "If the cloth is wet then much better."
             
 
         if ListenChoice == "Chat":
