@@ -9,6 +9,7 @@ label FireDisaster:
     $ FollowChoices = "null"
     $ CoverChoices = "null"
     $ HelpChoices = "null"
+    $ StayChoices = "null"
 
 
     stop music fadeout 2.0
@@ -300,15 +301,15 @@ label FireDisaster:
         none "Juan Grabs his mom's bag and looks for a phone."
         Juan_center "Where is the fire station's number?"
         Juan_center "Sir, there is a fire in my house. Please come help us. Please!!"
-
+        none "Soon the fire fighters arrive and help put out the fire."
+        Rey_left "Juan, it's a good choice to immediately call the Fire station."
         
 
     if StayChoices == "Neighbors":
         none "Juan grabs his sister May and goes to the neighbors and calls for help!"
         Juan_center "Please help us. Our house is on fire. Please!"
         none "Juan shouts loud enough and wakes up the neighbors."
-        none "Soon the fire fighters arrive and help put out the fire."
-        Rey_left "Juan, it's a good choice to immediately call the Fire station."
+        
         
         #Neighbor "OH no! We'll be right there!"
         none "The neighbors helped the Bautista Family contain and have the fire under control."
@@ -323,11 +324,28 @@ label FireDisaster:
 
     none "And with that the Bautista family survived the housefire."
 
+    none "While the mbulance examined the health of the Baustista Family."
 
 
+    if MatchChoice == "Light" and SmallFireChoice == "Deal" and DealChoices == "Fan":
+        Joseph_right "Juan,"
+        none "Juan flinches afraid of what is gonnna happen."
+        Joseph_right "No one is angry at you, Juan. We know that you did not want what happened."
+        Juan_left "(Nods)"
+        Joseph_right "But because of what happened we expect that you learned from your mistakes. Never play with anything dangerous."
+        Juan_left "Yes, Dad. I'm really really sorry."
 
+    if FollowChoices == "Follow":
+        Joseph_right "It's very good that at times like that you remained calm and followed your mom."
+    
+    if HelpChoices == "Help":
+        Joseph_right "It's also good that you tried your best in helping in putting out the fire."
+    
+    if StayChoices == "Call":
+        Joseph_right "Calling the Fire Station was very smart too. How did you know the number of the Fire Station?"
 
-
+    if StayChoices == "Neighbors":
+        Joseph_right "Great job on asking the neighbors for help, Juan. You really helped us out a lot."
 
     #=====================Screens===========================
 
@@ -414,7 +432,7 @@ label FireDisaster:
             vbox:
                 textbutton (Text("Continue running outside.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("CoverChoices", "Run"),Return()]
                 
-     screen HelpChoiceScreen():
+    screen HelpChoiceScreen():
         modal True
         text("Joseph is going to try to put out the fire, what does Juan do?") size 60 xpos 0.25 ypos 30
 
