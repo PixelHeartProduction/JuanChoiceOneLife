@@ -348,7 +348,7 @@ label FireDisaster:
 
         hbox xalign 0.5 yalign 0 spacing 200:
             vbox:
-                textbutton (Text("I'm not feeling good, mom.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("LieChoice", "Lie"),Return()]
+                textbutton (Text("I'm not feeling good, mommy.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("LieChoice", "Lie"),Return()]
             vbox:
                 textbutton (Text("Get up.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("LieChoice", "getUp"),Return()]
 
