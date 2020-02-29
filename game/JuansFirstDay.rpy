@@ -709,15 +709,15 @@ label JuansFirstDay:
     screen chargeorstone():
         modal True
 
-        $ dog = Image("assets/Sprites/dog.png")
+        $ stick = Image("assets/Sprites/Items/stick.png")
         $ stone = Image("assets/Sprites/Items/stone.png")
-        $ dog_selected = im.MatrixColor(dog,im.matrix.brightness(0.2))
+        $ stick_selected = im.MatrixColor(stick,im.matrix.brightness(0.2))
         $ stone_selected = im.MatrixColor(stone,im.matrix.brightness(0.2))
 
         hbox xalign 0.5:
             text("The girl needs help, What should I do?") size 60 xpos 0 ypos 30
         vbox xpos 575 ypos 585:
-            imagebutton idle Transform(dog) hover Transform(dog_selected) action [SetVariable("help_girl", "charge"),Return()]
+            imagebutton idle Transform(stick) hover Transform(stick_selected) action [SetVariable("help_girl", "charge"),Return()]
             text("Scare the dog")
         vbox xpos 1500 ypos 800:
             imagebutton idle Transform(stone, zoom=0.08) hover Transform(stone_selected, zoom=0.08) action [SetVariable("help_girl", "stone"),Return()]

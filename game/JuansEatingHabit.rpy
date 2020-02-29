@@ -132,7 +132,7 @@ label JuansEatingHabit:
         $ G = Text("G",size=200, bold=True, color="#ee82ee")
         $ P = Text("P",size=200, bold=True, color="#5DFF31")
         text("{color=#ff0000}A{/color} {color=#ffa500}B{/color} {color=#ffff00}C{/color} {color=#008000}D{/color} {color=#0000ff}E{/color} {color=#ee82ee}F{/color} -?") size 90 xpos 0.32 ypos 30 bold True
-        text("(Which Alphabet letter is next?)") size 40 xpos 0.35 ypos 140
+        text("(Which Alphabet is next?)") size 40 xpos 0.35 ypos 140
         hbox xalign 0.5 yalign 0 spacing 200:
             textbutton (A) ypos 300 action [SetVariable("alphabet_selected", "A"),Return()]
             textbutton (G) ypos 300 action [SetVariable("alphabet_selected", "G"),Return()]
@@ -142,8 +142,8 @@ label JuansEatingHabit:
 
     screen FoodPlate():
         modal True
-        $ Done= Text("Done",size=100, bold=True)
-        $ AllDone= Text("Done",size=100, bold=True, color="#FFEC31")
+        $ Done= Text("Done",size=100, bold=True, xpos=70, ypos=25 , color="#808080")
+        $ AllDone= Text("Done",size=100, bold=True,xpos=70,ypos=25 , color="#0066ff")
         $ potato = Image("assets/Sprites/Items/mashedpotato.png")
         $ banana = Image("assets/Sprites/Items/bananas.png")
         $ carrot = Image("assets/Sprites/Items/carrots.png")
@@ -152,7 +152,7 @@ label JuansEatingHabit:
         vbox xalign 0.5:
             text(Text("Juan is hungry, Juan should eat his food.",size=50))
             if renpy.variant("pc") and not food_eaten >= 3:
-                text(Text("(Click a food to eat.)",size=40,xpos=0.7, ypos=100))
+                text(Text("(Click one or more food to eat.)",size=40,xpos=0.4, ypos=100))
             if renpy.variant("mobile") and not food_eaten >= 3:
                 text(Text("(Tap a food to eat.)",size=40,xpos=0.75,ypos=100))
         hbox xpos 650 ypos 250:
@@ -170,9 +170,9 @@ label JuansEatingHabit:
 
         hbox:
             if food_eaten >= 3:
-                textbutton (AllDone) xpos 1500 action Return()
+                textbutton (AllDone) background Image("assets/Misc/paperbutton.png") xpos 1500 action Return()
             elif food_eaten >=1:
-                textbutton (Done) xpos 1500 action Return()
+                textbutton (Done) background Image("assets/Misc/paperbutton.png") xpos 1500 action Return()
 
 
     return
