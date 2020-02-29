@@ -20,6 +20,7 @@ label JuansEatingHabit:
 
     if alphabet_selected == "G":
         Joseph_center "Great!"
+        Joseph_center "The correct answer is letter G."
         Joseph_center "I think you're ready for school now. Don't you think so too, little Juan? Huh? Huh?"
         Juan_center "Hehe"
         Joseph_center "Haha just kidding"
@@ -27,6 +28,7 @@ label JuansEatingHabit:
     else:
         show Joseph neutral
         Joseph_center "Haha nice try."
+        Joseph_center "The correct answer is letter G."
         Joseph_center "But i can see you're trying your best"
         none "Juan chuckles."
         Joseph_center "Okay let's do it again.."
