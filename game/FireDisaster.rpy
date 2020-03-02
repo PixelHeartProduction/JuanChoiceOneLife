@@ -218,6 +218,7 @@ label FireDisaster:
             Juan_center "Dad!!!"
             #Joseph comes running!
             show Joseph neutralright with easeinright
+            show Joseph serious with dissolve
             show Juan panLeft
             show Juan nervous
             Joseph_right "Juan, come here!"
@@ -229,16 +230,23 @@ label FireDisaster:
         
     
     if MatchChoice == "Leave": 
+        scene black with dissolve
         none "Juan heads to the living room with his family."
         none "The night went on and the Bautista Family fell asleep beside each other in the living room."
         Juan_center "(What is that smell?)"
         none "Juan starts to toss and turn in his sleep"
         none "Smoke started billowing into the Bautista Household."
+        scene kitchenBrownout with dissolve
+        show Juan neutral with dissolve
         none "Juan wakes up and sees the smoke."
 
+        show Juan nervous with dissolve
         Juan_center "Dad, wake up look! Dad!!"
+        show Joseph neutralright with dissolve
         Joseph_right "Oh no!"
+        show Joseph serious with dissolve
         Joseph_right "Mary, wake up, take May and Juan outside."
+        hide Joseph with dissolve
 
     if MatchChoice == "Light" and SmallFireChoice == "Deal" and DealChoices == "Fan":
         none "The fire Juan caused continues to escalate and Juan is crying in the corner."
@@ -283,7 +291,11 @@ label FireDisaster:
     hide mode confirm with dissolve
 
     if HelpChoices == "Help":
+        scene black with dissolve
         none "Juan runs to the hose at the front yard, far from the burning house."
+        scene housefire with dissolve
+        show Joseph neutralleft with dissolve
+        show Juan neutralRight with dissolve
         Juan_left "Dad, use the hose!"
         Joseph_right "Great thinking, son."
         Juan_left "(I still need to help)"
@@ -302,22 +314,28 @@ label FireDisaster:
         Juan_center "Where is the fire station's number?"
         Juan_center "Sir, there is a fire in my house. Please come help us. Please!!"
         none "Soon the fire fighters arrive and help put out the fire."
+        show Rey neutralleft with easeinleft
+        show Rey talking with dissolve
         Rey_left "Juan, it's a good choice to immediately call the Fire station."
         
 
     if StayChoices == "Neighbors":
         none "Juan grabs his sister May and goes to the neighbors and calls for help!"
+        scene afternoonStreet1 with dissolve
+        show Juan nervous with dissolve
         Juan_center "Please help us. Our house is on fire. Please!"
         none "Juan shouts loud enough and wakes up the neighbors."
         
         
-        #Neighbor "OH no! We'll be right there!"
+        Neighbor_center "OH no! We'll be right there!"
         none "The neighbors helped the Bautista Family contain and have the fire under control."
         none "Soon the fire fighters arrive and help put out the fire."
+        show Rey neutralleft with easeinleft
+        show Rey talking with dissolve
         Rey_left "Juan, it's a good choice to ask the neighbors for help. You helped out your parents a lot."
 
     
-    
+    scene black with dissolve
     none "The night went on and soon enough the fire was completely put out."
     Joseph_right "Thank you so much for helping me and my family."
     Mary_right "We are very sorry for the trouble my family caused the whole neighborhood."
