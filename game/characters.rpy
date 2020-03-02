@@ -40,6 +40,11 @@ image Juan phew:
     zoom 0.33
     ypos 1.2
 
+image Juan crying:
+    "assets/Sprites/Juan_Crying.png"
+    zoom 0.33
+    ypos 1.2
+
 image Juan tired:
     "assets/Sprites/Juan_Tired.png"
     zoom 0.33

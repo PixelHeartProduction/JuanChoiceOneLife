@@ -203,14 +203,15 @@ label FireDisaster:
             if DealChoices == "Rug":
                 Juan_left "Ok, I will cover the fire with a wet rug."
                 none "The wet cloth put out the fire."
-                Juan_left "Whoo! That was close."
+                Juan_center "Whoo! That was close."
 
                 none "Joseph rushes into the room."
-                show Joseph seriousRight with dissolve
+                show Joseph neutralright with easeinright
+                show Joseph serious with dissolve
 
                 Joseph_right "What happened here?!"
-                
-                Juan_left "I'm sorry dad, I tried lighting a match and I got burned and the rug..."
+                show Juan crying with dissolve
+                Juan_center "I'm sorry dad, I tried lighting a match and I got burned and the rug..."
                 none "Juan starts to cry."
 
         
@@ -282,7 +283,11 @@ label FireDisaster:
 
 
     if CoverChoices == "Run":
+        scene housefire with dissolve
         none "As the Bautista family got outside they had breathed in enough smoke to make them feel dizzy and start coughing."
+        scene housefire with dissolve
+        show Juan neutralLeft with dissolve
+        show Joseph serious
 
     Joseph_right "I need to put out the fire. Save as much as we can!"
 
@@ -294,8 +299,9 @@ label FireDisaster:
         scene black with dissolve
         none "Juan runs to the hose at the front yard, far from the burning house."
         scene housefire with dissolve
-        show Joseph neutralleft with dissolve
-        show Juan neutralRight with dissolve
+        show Joseph neutralright with dissolve
+        show Joseph serious
+        show Juan neutralLeft with dissolve
         Juan_left "Dad, use the hose!"
         Joseph_right "Great thinking, son."
         Juan_left "(I still need to help)"
@@ -337,12 +343,16 @@ label FireDisaster:
     
     scene black with dissolve
     none "The night went on and soon enough the fire was completely put out."
+    scene afternoonStreet1 with dissolve
+    show Joseph neutralright with dissolve
+    show Mary neutralleft with dissolve
+    show Joseph serious
+    show Mary surprised
     Joseph_right "Thank you so much for helping me and my family."
-    Mary_right "We are very sorry for the trouble my family caused the whole neighborhood."
-
+    Mary_left "We are very sorry for the trouble my family caused the whole neighborhood."
     none "And with that the Bautista family survived the housefire."
 
-    none "While the mbulance examined the health of the Baustista Family."
+    none "While the ambulance examined the health of the Baustista Family."
 
 
     if MatchChoice == "Light" and SmallFireChoice == "Deal" and DealChoices == "Fan":
@@ -364,6 +374,8 @@ label FireDisaster:
 
     if StayChoices == "Neighbors":
         Joseph_right "Great job on asking the neighbors for help, Juan. You really helped us out a lot."
+    
+    scene black with dissolve
 
     #=====================Screens===========================
 
