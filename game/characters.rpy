@@ -1,5 +1,6 @@
 define James_center = Character ("James",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#fe7e66")
 define Class_center = Character ("Class",what_xalign=0.5, what_text_align=0.5,who_xpos=535,color="#a17c26")
+define Neighbor_center = Character ("Neighbor",what_xalign=0.5, what_text_align=0.5,who_xpos=535,color="#a17c26")
 
 define none = Character(None,what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5)
 
@@ -192,6 +193,12 @@ image Joseph neutralright:
     ypos 1.25
     xpos .75
 
+image Joseph neutralleft:
+    "assets/Sprites/Joseph_Normal.png"
+    zoom .17
+    ypos 1.25
+    xpos .25
+
 image Joseph neutral:
     "assets/Sprites/Joseph_Normal.png"
     zoom .17
@@ -327,6 +334,12 @@ image May neutral:
     xalign .5
     yalign .54
 
+image May3 cryLeft:
+    "assets/Sprites/May3_Cry.png"
+    zoom .13
+    xalign .25
+    yalign 1.4
+
 #=====================Dog===========================
 define Dog_left = Character("Dog",what_xalign=0.30, what_text_align=0.0, color="#f5d769")
 define Dog_center = Character("Dog",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#f5d769")
@@ -341,6 +354,18 @@ image Rey neutral:
     "assets/Sprites/FireFighterRey_Normal.png"
     zoom .35
     ypos 1.16
+
+image Rey neutralright:
+    "assets/Sprites/FireFighterRey_Normal.png"
+    zoom .35
+    ypos 1.16
+    xpos 0.75
+
+image Rey neutralleft:
+    "assets/Sprites/FireFighterRey_Normal.png"
+    zoom .35
+    ypos 1.16
+    xpos 0.25
 
 image Rey talking:
     "assets/Sprites/FireFighterRey_Talking.png"

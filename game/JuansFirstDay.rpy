@@ -136,7 +136,7 @@ label JuansFirstDay:
     Juan_center "(That girl needs help quickly! What should I do?)"
 
     show mode confirm with dissolve
-    call screen chargeorstone with dissolve
+    call screen stickorstone with dissolve
     hide mode confirm with dissolve
 
     if help_girl == "stone":
@@ -172,8 +172,8 @@ label JuansFirstDay:
             Juan_left "Let's go."
 
 
-    if help_girl == "charge":
-            none "(Juan quicky charges towards the dog to stop the girl from getting bitten)"
+    if help_girl == "stick":
+            none "(Juan quicky pickup a stick and charges towards the dog to stop the girl from getting bitten)"
             play sound "assets/SFX/Dog_Bark.mp3"
             Dog_center "Woof! Woof!"
             Juan_center "Arrgghh!"
@@ -279,14 +279,14 @@ label JuansFirstDay:
     call screen PuloScreen with dissolve
     hide mode confirm with dissolve
     
-    if PuloChoice == "2000":
+    if PuloChoice == "7108":
         show Cathy sad
         Cathy_center "Good guess you're really close, dear!"
     if PuloChoice == "7107":
         $ correct +=1
         show Cathy smile
         Cathy_center "That's amazing, Juan! Great job!"
-    if PuloChoice == "1234":
+    if PuloChoice == "7100":
         show Cathy sad
         Cathy_center "Awwe, good try, Juan but I guess we're looking for a different number."
 
@@ -593,7 +593,7 @@ label JuansFirstDay:
             show Juan smile1
             Juan_center "and Peter!"
 
-    if help_girl == "charge":
+    if help_girl == "stick":
         Juan_center "Why did I save that girl who's about to get attacked by that dog?"
         Juan_center "I did charge towards the dog to shoo it away."
         Juan_center "But then I got scared as well and the dog chased me."
@@ -665,32 +665,43 @@ label JuansFirstDay:
                 text(Text("Give him some of my pork chop",size=40)) xpos -100
             vbox xpos -50:
                 imagebutton idle Transform(report, zoom=.7) hover Transform(report_selected, zoom=.7) action [SetVariable("FoodChoice", "Report"),Return()]
-                text(Text("Tell the teacher Peter doesn't have food",size=40)) xpos 0
+                text(Text("Tell the teacher Peter doesn't have food",size=40)) xpos -100
 
 
     screen PuloScreen():
         modal True
-        text("How many Islands are there in the Philippines?") size 50 xpos 0.2 ypos 30
 
-        hbox xalign 0.5 yalign 0 spacing 300:
-            vbox:
-                textbutton (Text("7107",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("PuloChoice", "7107"),Return()]
-            vbox:
-                textbutton (Text("2000",size=50,bold=True)) ypos 500 xpos -40  action [SetVariable("PuloChoice", "2000"),Return()]
-            vbox:
-                textbutton (Text("1234",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("PuloChoice", "1234"),Return()]
+        image(Transform("assets/Misc/notebook.png",zoom=1.7)) xalign 0.5 yalign 0.5
+
+        vbox xalign 0.4 yalign 0.05 spacing 50:
+            text("Quiz #1") size 50 xpos 0.2 ypos 30 color "#080808"
+            text("1.) How many Islands are there \n in the Philippines?") size 50 xpos 0.2 ypos 30 color "#080808"
+
+            vbox xalign 0.3 ypos 80 spacing 80:
+                vbox:
+                    textbutton (Text("A.) 7107",size=50,color="#080808")) action [SetVariable("PuloChoice", "7107"),Return()]
+                vbox:
+                    textbutton (Text("B.) 7100",size=50,color="#080808")) action [SetVariable("PuloChoice", "7100"),Return()]
+                vbox:
+                    textbutton (Text("C.) 7108",size=50,color="#080808")) action [SetVariable("PuloChoice", "7108"),Return()]
     
     screen LocationScreen():
         modal True
-        text("Where is the Philippines located at?") size 60 xpos 0.25 ypos 30
+    
+        image(Transform("assets/Misc/notebook.png",zoom=1.7)) xalign 0.5 yalign 0.5
 
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("South East Asia",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("LocationChoice", "South East Asia"),Return()]
-            vbox:
-                textbutton (Text("North East Asia",size=50,bold=True)) ypos 500 xpos -40  action [SetVariable("LocationChoice", "North East Asia"),Return()]
-            vbox:
-                textbutton (Text("Central Asia",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("LocationChoice", "Central Asia"),Return()]
+        vbox xalign 0.4 yalign 0.05 spacing 50:
+            text("Quiz #1") size 50 xpos 0.2 ypos 30 color "#080808"
+            text("2.) Where is the Philippines \n located at?") size 50 xpos 0.2 ypos 30 color "#080808"
+
+            vbox xalign 0.7 ypos 80 spacing 80:
+                vbox:
+                    textbutton (Text("A.) South East Asia",size=50,color="#080808")) action [SetVariable("LocationChoice", "South East Asia"),Return()]
+                vbox:
+                    textbutton (Text("B.) North East Asia",size=50,color="#080808")) action [SetVariable("LocationChoice", "North East Asia"),Return()]
+                vbox:
+                    textbutton (Text("C.) Central Asia",size=50,color="#080808")) action [SetVariable("LocationChoice", "Central Asia"),Return()]
+    
 
     screen NationalBird():
         modal True
@@ -699,26 +710,39 @@ label JuansFirstDay:
         $ maya = Image("assets/Sprites/Items/maya.jpg")
         $ manok = Image("assets/Sprites/Items/manok.jpg")
 
-        text("What is the National Bird of the Philippines?") size 60 xpos 0.17 ypos 30
+        image(Transform("assets/Misc/notebook.png",zoom=1.7)) xalign 0.5 yalign 0.5
 
-        hbox xalign 0.5 yalign 0.5 spacing 200:
-            imagebutton idle Transform(maya,zoom=0.20) action [SetVariable("NationalBirdChoice", "maya"),Return()]
-            imagebutton idle Transform(eagle) action [SetVariable("NationalBirdChoice", "eagle"),Return()]
-            imagebutton idle Transform(manok,zoom=0.8) action [SetVariable("NationalBirdChoice", "manok"),Return()]
+        vbox xalign 0.4 yalign 0.05 spacing 50:
+            text("Quiz #1") size 50 xpos 0.2 ypos 30 color "#080808"
+            text("3.) What is the National Bird \n of the Philippines?") size 50 xpos 0.2 ypos 30 color "#080808"
 
-    screen chargeorstone():
+            vbox xalign 0.3 ypos 20 spacing 80:
+                hbox:
+                    textbutton (Text("A.)",size=50,color="#080808"))
+                    imagebutton idle Transform(maya,zoom=0.10) action [SetVariable("NationalBirdChoice", "maya"),Return()]
+                hbox:
+                    textbutton (Text("B.)",size=50,color="#080808"))
+                    imagebutton idle Transform(eagle,zoom=0.45) action [SetVariable("NationalBirdChoice", "eagle"),Return()]
+                hbox:
+                    textbutton (Text("C.)",size=50,color="#080808"))
+                    imagebutton idle Transform(manok,zoom=0.4) action [SetVariable("NationalBirdChoice", "manok"),Return()]
+
+
+
+    screen stickorstone():
         modal True
 
-        $ dog = Image("assets/Sprites/dog.png")
+        $ stick = Image("assets/Sprites/Items/stick.png")
         $ stone = Image("assets/Sprites/Items/stone.png")
-        $ dog_selected = im.MatrixColor(dog,im.matrix.brightness(0.2))
+        $ stick_selected = im.MatrixColor(stick,im.matrix.brightness(0.2))
         $ stone_selected = im.MatrixColor(stone,im.matrix.brightness(0.2))
 
-        hbox xalign 0.5:
+        vbox xalign 0.5:
             text("The girl needs help, What should I do?") size 60 xpos 0 ypos 30
-        vbox xpos 575 ypos 585:
-            imagebutton idle Transform(dog) hover Transform(dog_selected) action [SetVariable("help_girl", "charge"),Return()]
-            text("Scare the dog")
+            text("(I need something that will scare the dog away.)") size 40 xpos 80 ypos 50
+        vbox xpos 250 ypos 785:
+            imagebutton idle Transform(stick, zoom=0.2) hover Transform(stick_selected, zoom=0.2) action [SetVariable("help_girl", "stick"),Return()]
+            text("Use a stick")
         vbox xpos 1500 ypos 800:
             imagebutton idle Transform(stone, zoom=0.08) hover Transform(stone_selected, zoom=0.08) action [SetVariable("help_girl", "stone"),Return()]
             text("Throw a rock") xpos -50

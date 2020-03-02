@@ -11,7 +11,7 @@ label WalkIndependently:
     with Pause(2)
     hide text with dissolve
     scene black with dissolve
-    show text("{size=40}1 year later.{/size}") with dissolve
+    show text("{size=40}a month later.{/size}") with dissolve
     with Pause(2)
     hide text with dissolve
 
