@@ -212,6 +212,7 @@ label FireDisaster:
                 
                 Juan_left "I'm sorry dad, I tried lighting a match and I got burned and the rug..."
                 none "Juan starts to cry."
+                Joseph_right: "It's okay, Juan."
 
         
         if SmallFireChoice == "CallDad":
@@ -229,7 +230,13 @@ label FireDisaster:
 
         
     
-    if MatchChoice == "Leave": 
+        
+
+    if MatchChoice == "Light" and SmallFireChoice == "Deal" and DealChoices == "Fan":
+        none "The fire Juan caused continues to escalate and Juan is crying in the corner."
+        Joseph_right "Oh no!"
+        Joseph_right "Mary, take May and Juan outside."
+    else:
         scene black with dissolve
         none "Juan heads to the living room with his family."
         none "The night went on and the Bautista Family fell asleep beside each other in the living room."
@@ -247,11 +254,6 @@ label FireDisaster:
         show Joseph serious with dissolve
         Joseph_right "Mary, wake up, take May and Juan outside."
         hide Joseph with dissolve
-
-    if MatchChoice == "Light" and SmallFireChoice == "Deal" and DealChoices == "Fan":
-        none "The fire Juan caused continues to escalate and Juan is crying in the corner."
-        Joseph_right "Oh no!"
-        Joseph_right "Mary, take May and Juan outside."
 
     Mary_center "Juan, follow me!"
 
