@@ -189,21 +189,23 @@ label FireDisaster:
 
 
         if SmallFireChoice == "Deal":
-            Juan_left "What should I do?"
+            Juan_center "What should I do?"
 
             show mode confirm with dissolve
             call screen SmallFireDealChoiceScreen with dissolve
             hide mode confirm with dissolve
 
             if DealChoices == "Fan":
-                Juan_left "Ok, I will fan out the flames."
+                Juan_center "Ok, I will fan out the flames."
                 none "The fire escalates instead of getting blown out."
                 none "Juan starts to panic."
 
             if DealChoices == "Rug":
-                Juan_left "Ok, I will cover the fire with a wet rug."
+                Juan_center "Ok, I will cover the fire with a wet rug."
                 none "The wet cloth put out the fire."
                 Juan_center "Whoo! That was close."
+                stop music
+                play music "assets/BGM/Ghost.mp3"
 
                 none "Joseph rushes into the room."
                 show Joseph neutralright with easeinright
@@ -213,7 +215,7 @@ label FireDisaster:
                 show Juan crying with dissolve
                 Juan_center "I'm sorry dad, I tried lighting a match and I got burned and the rug..."
                 none "Juan starts to cry."
-                Joseph_right: "It's okay, Juan."
+                Joseph_right "It's okay, Juan."
 
         
         if SmallFireChoice == "CallDad":
@@ -224,45 +226,56 @@ label FireDisaster:
             show Juan panLeft
             show Juan nervous
             Joseph_right "Juan, come here!"
-            Juan_left "I'm sorry, dad!"
+            Juan_center "I'm sorry, dad!"
             none "Joseph tries hard to put out the fire with a wet cloth."
 
-            Juan_left "I'm sorry, dad."
+            stop music
+            play music "assets/BGM/Ghost.mp3"
+
 
         
     
         
 
     if MatchChoice == "Light" and SmallFireChoice == "Deal" and DealChoices == "Fan":
+        scene black with dissolve
         none "The fire Juan caused continues to escalate and Juan is crying in the corner."
+        scene kitchenFire with dissolve
+        show Juan nervous with dissolve
+        show Joseph neutralright with easeinright
+        show Joseph serious
         Joseph_right "Oh no!"
         Joseph_right "Mary, take May and Juan outside."
+
     else:
         scene black with dissolve
+        stop music
         none "Juan heads to the living room with his family."
         none "The night went on and the Bautista Family fell asleep beside each other in the living room."
         Juan_center "(What is that smell?)"
         none "Juan starts to toss and turn in his sleep"
         none "Smoke started billowing into the Bautista Household."
-        scene kitchenBrownout with dissolve
+        scene kitchenFire with dissolve
         show Juan neutral with dissolve
         none "Juan wakes up and sees the smoke."
-
+        play music "assets/BGM/Plume.mp3"
         show Juan nervous with dissolve
         Juan_center "Dad, wake up look! Dad!!"
         show Joseph neutralright with dissolve
-        Joseph_right "Oh no!"
+        Joseph_right "Oh no, what's happening?!"
         show Joseph serious with dissolve
-        Joseph_right "Mary, wake up, take May and Juan outside."
-        hide Joseph with dissolve
+        Joseph_right "Mary!, wake up, take May and Juan outside."
 
-    Mary_center "Juan, follow me!"
+    show Mary neutralLeft with easeinleft
+    show Mary surprised
+    Mary_left "Juan, follow me!"
 
     show mode confirm with dissolve
     call screen FollowChoiceScreen with dissolve
     hide mode confirm with dissolve
 
     if FollowChoices == "Follow":
+        hide Joseph with dissolve
         none "Juan follows Mary."
         none "As they are going outside they stop."
 
@@ -273,7 +286,7 @@ label FireDisaster:
         if CoverChoices == "Cover":
             none "Juan grabs the cloth."
             Juan_left "Mom, use this! (Handing the cloth to Mary)"
-            Mary_right "Good job, Juan. Come on let's go."
+            Mary_left "Good job, Juan. Come on let's go."
             
         none "The Bautista Family continued heading out the burning house."
 
@@ -291,6 +304,11 @@ label FireDisaster:
         show Juan neutralLeft with dissolve
         show Joseph serious
 
+    scene black with dissolve
+    scene housefire with dissolve
+    show Joseph neutralright with dissolve
+    show Joseph serious
+    show Juan neutralLeft with dissolve
     Joseph_right "I need to put out the fire. Save as much as we can!"
 
     show mode confirm with dissolve
@@ -298,18 +316,17 @@ label FireDisaster:
     hide mode confirm with dissolve
 
     if HelpChoices == "Help":
-        scene black with dissolve
         none "Juan runs to the hose at the front yard, far from the burning house."
-        scene housefire with dissolve
-        show Joseph neutralright with dissolve
-        show Joseph serious
-        show Juan neutralLeft with dissolve
         Juan_left "Dad, use the hose!"
         Joseph_right "Great thinking, son."
-        Juan_left "(I still need to help)"
+        hide Joseph with dissolve
+        show Juan panLCenter
+        Juan_center "(I still need to help)"
     
     if HelpChoices == "Stay":
         none "Juan stays put and lets his parent handle the situation as he looks after May."
+        hide Joseph with dissolve
+        show Juan panLCenter
         Juan_center "I need to help."
         none "Juan thinks."
 
@@ -329,7 +346,7 @@ label FireDisaster:
 
     if StayChoices == "Neighbors":
         none "Juan grabs his sister May and goes to the neighbors and calls for help!"
-        scene afternoonStreet1 with dissolve
+        scene nighttimeStreet1 with dissolve
         show Juan nervous with dissolve
         Juan_center "Please help us. Our house is on fire. Please!"
         none "Juan shouts loud enough and wakes up the neighbors."
@@ -344,12 +361,14 @@ label FireDisaster:
 
     
     scene black with dissolve
+    stop music
     none "The night went on and soon enough the fire was completely put out."
-    scene afternoonStreet1 with dissolve
+    scene nighttimeStreet1 with dissolve
     show Joseph neutralright with dissolve
     show Mary neutralleft with dissolve
     show Joseph serious
     show Mary surprised
+    play music "assets/BGM/SayIt.mp3"
     Joseph_right "Thank you so much for helping me and my family."
     Mary_left "We are very sorry for the trouble my family caused the whole neighborhood."
     none "And with that the Bautista family survived the housefire."
@@ -361,9 +380,9 @@ label FireDisaster:
         Joseph_right "Juan,"
         none "Juan flinches afraid of what is gonnna happen."
         Joseph_right "No one is angry at you, Juan. We know that you did not want what happened."
-        Juan_left "(Nods)"
+        Juan_center "(Nods)"
         Joseph_right "But because of what happened we expect that you learned from your mistakes. Never play with anything dangerous."
-        Juan_left "Yes, Dad. I'm really really sorry."
+        Juan_center "Yes, Dad. I'm really really sorry."
 
     if FollowChoices == "Follow":
         Joseph_right "It's very good that at times like that you remained calm and followed your mom."
