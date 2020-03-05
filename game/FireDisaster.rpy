@@ -403,6 +403,8 @@ label FireDisaster:
 
     screen ListenChoiceScreen():
         modal True
+
+        $ 
         text("Should Juan listen to the lesson or start chatting with Peter instead?") size 60 xpos 0.25 ypos 30
 
         hbox xalign 0.5 yalign 0 spacing 200:
@@ -413,13 +415,31 @@ label FireDisaster:
     
     screen LieChoiceScreen():
         modal True
-        text("Should I tell Mom I'm not feeling good??") size 60 xpos 0.25 ypos 30
 
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("I'm not feeling good, mommy.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("LieChoice", "Lie"),Return()]
-            vbox:
-                textbutton (Text("Get up.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("LieChoice", "getUp"),Return()]
+        $ wakeUp = Image("assets/Sprites/Items/icon_wakeup.png")
+        $ wakeUp_selected = im.MatrixColor(wakeUp,im.matrix.brightness(0.2))
+        $ sick = Image("assets/Sprites/Items/icon_sick.png")
+        $ sick_selected = im.MatrixColor(sick,im.matrix.brightness(0.2))
+
+        # text("Should I tell Mom I'm not feeling good??") size 60 xpos 0.25 ypos 30
+
+        # hbox xalign 0.5 yalign 0 spacing 200:
+        #     vbox:
+        #         textbutton (Text("I'm not feeling good, mommy.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("LieChoice", "Lie"),Return()]
+        #     vbox:
+        #         textbutton (Text("Get up.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("LieChoice", "getUp"),Return()]
+
+        hbox xalign 0.5:
+            text(Text("Should I tell I'm not feeling good?",size=50,ypos=30))
+
+        
+        hbox xalign 0.5 yalign 0.3 spacing 600:
+            vbox xpos 0.3 ypos 70:
+                imagebutton idle Transform(sick, zoom=.9) hover Transform(sick_selected, zoom=.9) action [SetVariable("LieChoice", "Lie"),Return()]
+                text(Text("I'm not feeling good, mom",size=40)) xpos -50
+            vbox xpos -50 ypos 100:
+                imagebutton idle Transform(wakeUp, zoom=.9) hover Transform(wakeUp_selected, zoom=.9) action [SetVariable("LieChoice", "getUp"),Return()]
+                text(Text("Get up.",size=40)) xpos 100
 
     screen MatchesChoiceScreen():
         modal True
