@@ -11,7 +11,6 @@ label FireDisaster:
     $ HelpChoices = "null"
     $ StayChoices = "null"
 
-
     stop music fadeout 2.0
     scene black with dissolve
     scene trans_house with dissolve
@@ -31,7 +30,14 @@ label FireDisaster:
     Mary_left "Are you feeling ok?"
 
     show mode confirm with dissolve
-    call screen LieChoiceScreen with dissolve
+
+    $ MainQuestion = "Should I tell I'm not feeling good?"
+    $ ChoiceText1="I'm not feeling good,\n mom."
+    $ ChoiceText2="Get up."
+    $ Icon1 = Image("assets/Sprites/Items/icon_sick.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_wakeup.png")
+    call screen DualOptionScreen(MainQuestion,"LieChoice",Icon1,ChoiceText1,"Lie",Icon2,ChoiceText2,"getUp") with dissolve
+
     hide mode confirm with dissolve
 
     if LieChoice == "Lie":
@@ -62,7 +68,14 @@ label FireDisaster:
         hide Cathy with dissolve
 
         show mode confirm with dissolve
-        call screen ListenChoiceScreen with dissolve
+
+        $ ListenChoiceQuestion = "Should Juan listen to the lesson or start chatting with Peter instead?"
+        $ ListenChoiceText1="Listen to the teacher"
+        $ ListenChoiceText2="Chat with Peter"
+        $ firemanRey = Image("assets/Sprites/Items/icon_firemanRey.png")
+        $ chatWithPeter = Image("assets/Sprites/Items/icon_talktopeter.png")
+        call screen DualOptionScreen(ListenChoiceQuestion,"ListenChoice",firemanRey,ListenChoiceText1,"Listen",chatWithPeter,ListenChoiceText2,"Chat") with dissolve
+
         hide mode confirm with dissolve
 
         if ListenChoice == "Listen":
@@ -96,7 +109,14 @@ label FireDisaster:
             Rey_center "If somehow our clothes catch on fire. What would be the best thing to do? Does anyone know?"
 
             show mode confirm with dissolve
-            call screen AnswerReyScreen with dissolve
+
+            $ testTitle = "Fire Disaster Prevention"
+            $ testQuestion = "What is the best thing to do\n if our clothes catched\n on fire?"
+            $ ans1 = "A.) Stop, Lie Down,\n Roll Over"
+            $ ans2 = "B.) Don't Answer."
+            $ ans3 = "C.) Cry"
+            call screen TriOptionTestpaperScreen(testTitle ,testQuestion,"AnswerReyChoices",ans1,ans2,ans3,"SLR","Pass","Cry") with dissolve
+            
             hide mode confirm with dissolve
 
             if AnswerReyChoices == "Pass":
@@ -104,16 +124,16 @@ label FireDisaster:
                 Rey_center "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll. This way we could prevent the fire from getting bigger or burning even hotter."
             if AnswerReyChoices == "Cry":
                 Juan_left "Cry?"
-                Rey_right "Crying won't help actually"
-                Rey_right "Anyone else?"
-                Rey_right "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll."
-                Rey_right "This way we could prevent the fire from getting bigger or burning even hotter."
+                Rey_center  "Crying won't help actually"
+                Rey_center  "Anyone else?"
+                Rey_center  "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll."
+                Rey_center  "This way we could prevent the fire from getting bigger or burning even hotter."
             if AnswerReyChoices == "SLR":
-                Juan_left "To Stop, Lie Down and Roll Over?"
-                Rey_right "Very good! Someone did their homework."
+                Rey_center  "To Stop, Lie Down and Roll Over?"
+                Rey_center"Very good! Someone did their homework."
                 Class_center "(Claps)"
-                Rey_right "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll."
-                Rey_right "This way we could prevent the fire from getting bigger or burning even hotter."
+                Rey_center  "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll."
+                Rey_center  "This way we could prevent the fire from getting bigger or burning even hotter."
 
             Rey_center "Just remember class when we encounter fire, we have to remain calm, because the more we panic the more we are in danger."
 
@@ -331,7 +351,14 @@ label FireDisaster:
         none "Juan thinks."
 
     show mode confirm with dissolve
-    call screen StayChoiceScreen with dissolve
+
+    $ ListenChoiceQuestion = "What can Juan do to help?"
+    $ ListenChoiceText1="Get mom's phone and\n call the fire station"
+    $ ListenChoiceText2="Ask neighbors for help"
+    $ Icon1 = Image("assets/Sprites/Items/icon_callFireDept.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_callNeighbors.png")
+    call screen DualOptionScreen(ListenChoiceQuestion,"StayChoices",Icon1,ListenChoiceText1,"Call",Icon2,ListenChoiceText2,"Neighbors") with dissolve
+
     hide mode confirm with dissolve
 
     if StayChoices == "Call":
@@ -400,47 +427,6 @@ label FireDisaster:
 
     #=====================Screens===========================
 
-
-    screen ListenChoiceScreen():
-        modal True
-
-        $ 
-        text("Should Juan listen to the lesson or start chatting with Peter instead?") size 60 xpos 0.25 ypos 30
-
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Listen to the teacher.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("ListenChoice", "Listen"),Return()]
-            vbox:
-                textbutton (Text("Chat with Peter.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("ListenChoice", "Chat"),Return()]
-    
-    screen LieChoiceScreen():
-        modal True
-
-        $ wakeUp = Image("assets/Sprites/Items/icon_wakeup.png")
-        $ wakeUp_selected = im.MatrixColor(wakeUp,im.matrix.brightness(0.2))
-        $ sick = Image("assets/Sprites/Items/icon_sick.png")
-        $ sick_selected = im.MatrixColor(sick,im.matrix.brightness(0.2))
-
-        # text("Should I tell Mom I'm not feeling good??") size 60 xpos 0.25 ypos 30
-
-        # hbox xalign 0.5 yalign 0 spacing 200:
-        #     vbox:
-        #         textbutton (Text("I'm not feeling good, mommy.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("LieChoice", "Lie"),Return()]
-        #     vbox:
-        #         textbutton (Text("Get up.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("LieChoice", "getUp"),Return()]
-
-        hbox xalign 0.5:
-            text(Text("Should I tell I'm not feeling good?",size=50,ypos=30))
-
-        
-        hbox xalign 0.5 yalign 0.3 spacing 600:
-            vbox xpos 0.3 ypos 70:
-                imagebutton idle Transform(sick, zoom=.9) hover Transform(sick_selected, zoom=.9) action [SetVariable("LieChoice", "Lie"),Return()]
-                text(Text("I'm not feeling good, mom",size=40)) xpos -50
-            vbox xpos -50 ypos 100:
-                imagebutton idle Transform(wakeUp, zoom=.9) hover Transform(wakeUp_selected, zoom=.9) action [SetVariable("LieChoice", "getUp"),Return()]
-                text(Text("Get up.",size=40)) xpos 100
-
     screen MatchesChoiceScreen():
         modal True
         text("What should Juan do?") size 60 xpos 0.25 ypos 30
@@ -470,18 +456,6 @@ label FireDisaster:
                 textbutton (Text("Blow out the fire with the fan.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("DealChoices", "Fan"),Return()]
             vbox:
                 textbutton (Text("Use the wet cloth.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("DealChoices", "Rug"),Return()]
-    
-    screen AnswerReyScreen():
-        modal True
-        text("What is the answer?") size 60 xpos 0.25 ypos 30
-
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Stop, Lie Down, Roll Over",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("AnswerReyChoices", "SLR"),Return()]
-            vbox:
-                textbutton (Text("Don't Answer.",size=50,bold=True)) ypos 500 xpos -40  action [SetVariable("AnswerReyChoices", "Pass"),Return()]
-            vbox:
-                textbutton (Text("Cry.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("AnswerReyChoices", "Cry"),Return()]
 
     screen FollowChoiceScreen():
         modal True
@@ -522,5 +496,6 @@ label FireDisaster:
                 textbutton (Text("Get mom's phone and call the fire station",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("StayChoices", "Call"),Return()]
             vbox:
                 textbutton (Text("Ask neighbors for help.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("StayChoices", "Neighbors"),Return()]
+
 
 
