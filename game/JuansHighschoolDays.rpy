@@ -1,4 +1,4 @@
-label HighschoolDays
+label HighschoolDays:
 
 
 none "After a few years...\n Juan Starts his high school life."

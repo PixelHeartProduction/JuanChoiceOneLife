@@ -212,7 +212,7 @@ label FireDisaster:
                 
                 Juan_left "I'm sorry dad, I tried lighting a match and I got burned and the rug..."
                 none "Juan starts to cry."
-                Joseph_right: "It's okay, Juan."
+                Joseph_right "It's okay, Juan."
 
         
         if SmallFireChoice == "CallDad":
