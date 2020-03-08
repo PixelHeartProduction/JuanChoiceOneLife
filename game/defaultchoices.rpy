@@ -19,7 +19,7 @@
 
 
     screen TriOptionTestpaperScreen(testTitle,testQuestion,variable,ans1,ans2,ans3,val1,val2,val3):
-        modal True
+        modal True  
     
         image(Transform("assets/Misc/notebook.png",zoom=1.7)) xalign 0.5 yalign 0.5
 

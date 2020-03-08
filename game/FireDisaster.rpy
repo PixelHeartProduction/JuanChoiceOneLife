@@ -44,7 +44,9 @@ label FireDisaster:
         Juan_right "I'm not feeling well, Mom. Can I not go to school?"
         Mary_left "Really? Okay then, rest well, Juan. I'll bring you food."
         scene black with dissolve
+        scene daytimeLivingroom with dissolve
         none "Juan, stayed in his room the whole day and played on his phone."
+        none "Halfway throughout the day the whole city experienced electrical shortage."
 
     
     if LieChoice == "getUp":
@@ -158,9 +160,9 @@ label FireDisaster:
         none "The Bautista Family waited until dusk."
 
     
-
+    scene afternoonBrownoutLivingRoom with dissolve
     none "When the sun started to set and it seemed like the electricity wasn't coming back anytime soon. They started lighting up candles."
-
+    scene  black with dissolve
     scene kitchenBrownout with dissolve
 
     show Joseph neutralright with dissolve
@@ -174,7 +176,6 @@ label FireDisaster:
     Joseph_right "Mary, do you have May with you? Let's just stay in the living room for now."
     
     hide Joseph neutral with moveoutright
-    #joseph leaves
 
     none "Juan looks at the box of matches on the kitchen counter."
 
@@ -223,10 +224,11 @@ label FireDisaster:
             if DealChoices == "Rug":
                 Juan_center "Ok, I will cover the fire with a wet rug."
                 none "The wet cloth put out the fire."
+                show Juan phew with dissolve
                 Juan_center "Whoo! That was close."
                 stop music
                 play music "assets/BGM/Ghost.mp3"
-
+                show Juan sad with dissolve
                 none "Joseph rushes into the room."
                 show Joseph neutralright with easeinright
                 show Joseph serious with dissolve
@@ -263,8 +265,8 @@ label FireDisaster:
         scene kitchenFire with dissolve
         show Juan nervous with dissolve
         show Joseph neutralright with easeinright
-        show Joseph serious
         Joseph_right "Oh no!"
+        show Joseph serious
         Joseph_right "Mary, take May and Juan outside."
 
     else:
@@ -296,8 +298,10 @@ label FireDisaster:
 
     if FollowChoices == "Follow":
         hide Joseph with dissolve
+        scene black with dissolve
         none "Juan follows Mary."
         none "As they are going outside they stop."
+        scene nighttimeLivingRoom with dissolve
 
         show mode confirm with dissolve
         call screen CoverChoiceScreen with dissolve
@@ -305,7 +309,9 @@ label FireDisaster:
 
         if CoverChoices == "Cover":
             none "Juan grabs the cloth."
-            Juan_left "Mom, use this! (Handing the cloth to Mary)"
+            show Mary neutralLeft with dissolve
+            show Juan neutralRight with dissolve
+            Juan_right "Mom, use this! (Handing the cloth to Mary)"
             Mary_left "Good job, Juan. Come on let's go."
             
         none "The Bautista Family continued heading out the burning house."
@@ -327,9 +333,9 @@ label FireDisaster:
     scene black with dissolve
     scene housefire with dissolve
     show Joseph neutralright with dissolve
-    show Joseph serious
     show Juan neutralLeft with dissolve
     Joseph_right "I need to put out the fire. Save as much as we can!"
+    show Joseph serious
 
     show mode confirm with dissolve
     call screen HelpChoiceScreen with dissolve
@@ -393,10 +399,10 @@ label FireDisaster:
     scene nighttimeStreet1 with dissolve
     show Joseph neutralright with dissolve
     show Mary neutralleft with dissolve
-    show Joseph serious
-    show Mary surprised
     play music "assets/BGM/SayIt.mp3"
     Joseph_right "Thank you so much for helping me and my family."
+    show Joseph serious
+    show Mary surprised
     Mary_left "We are very sorry for the trouble my family caused the whole neighborhood."
     none "And with that the Bautista family survived the housefire."
 
@@ -425,17 +431,25 @@ label FireDisaster:
     
     scene black with dissolve
 
-    #=====================Screens===========================
+    #=====================Custom Screens===========================
 
     screen MatchesChoiceScreen():
         modal True
-        text("What should Juan do?") size 60 xpos 0.25 ypos 30
 
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Try to light one of the matches.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("MatchChoice", "Light"),Return()]
-            vbox:
-                textbutton (Text("Go to the living room.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("MatchChoice", "Leave"),Return()]
+        $ match = Image("assets/Misc/matches.png")
+        $ arrow = Image("assets/Sprites/Items/blueArrow.png")
+        $ match_selected = im.MatrixColor(match,im.matrix.brightness(0.2))
+        $ arrow_selected = im.MatrixColor(arrow,im.matrix.brightness(0.2))
+
+ 
+        vbox xalign 0.5:
+            text("Should Juan play with the matches?") size 60 xpos 0 ypos 30
+        vbox xpos 250 ypos 760:
+            imagebutton idle Transform(match, zoom=0.2) hover Transform(match_selected, zoom=0.2) action [SetVariable("MatchChoice", "Light"),Return()] xalign 0.5
+            text("Try to light one of the matches") xalign 0.5
+        vbox xpos 1500 ypos 400:
+            imagebutton idle Transform(arrow, zoom=2) hover Transform(arrow_selected, zoom=2) action [SetVariable("MatchChoice", "Leave"),Return()] xalign 0.5
+            text("Go to the living room") xalign 0.5
 
     screen SmallFireChoiceScreen():
         modal True
@@ -449,13 +463,21 @@ label FireDisaster:
 
     screen SmallFireDealChoiceScreen():
         modal True
-        text("What should Juan do with the small fire?") size 60 xpos 0.25 ypos 30
+        
+        $ fan = Image("assets/Sprites/Items/fan.png")
+        $ towel = Image("assets/Sprites/Items/wettowel.png")
+        $ fan_selected = im.MatrixColor(fan,im.matrix.brightness(0.2))
+        $ towel_selected = im.MatrixColor(towel,im.matrix.brightness(0.2))
 
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Blow out the fire with the fan.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("DealChoices", "Fan"),Return()]
-            vbox:
-                textbutton (Text("Use the wet cloth.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("DealChoices", "Rug"),Return()]
+
+        vbox xalign 0.5:
+            text("What should Juan do with the small fire?") size 60 xpos 0 ypos 30
+        vbox xpos 250 ypos 560:
+            imagebutton idle Transform(fan, zoom=0.5) hover Transform(fan_selected, zoom=0.5) action [SetVariable("DealChoices", "Fan"),Return()] xalign 0.5
+            text("Blow out the fire with the fan") xalign 0.5
+        vbox xpos 1200 ypos 640:
+            imagebutton idle Transform(towel, zoom=0.1) hover Transform(towel_selected, zoom=0.1) action [SetVariable("DealChoices", "Rug"),Return()] xalign 0.5
+            text("Use the wet cloth") xalign 0.5
 
     screen FollowChoiceScreen():
         modal True
@@ -469,14 +491,22 @@ label FireDisaster:
 
     screen CoverChoiceScreen():
         modal True
-        text("Juan spots clean cloth by the table.") size 60 xpos 0.25 ypos 30
 
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Use cloths to help cover from the smoke.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("CoverChoices", "Cover"),Return()]
-            vbox:
-                textbutton (Text("Continue running outside.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("CoverChoices", "Run"),Return()]
-                
+        $ arrow = Image("assets/Sprites/Items/blueArrowFlipped.png")
+        $ towel = Image("assets/Sprites/Items/towel.png")
+        $ arrow_selected = im.MatrixColor(arrow,im.matrix.brightness(0.2))
+        $ towel_selected = im.MatrixColor(towel,im.matrix.brightness(0.2))
+
+
+        vbox xalign 0.5:
+            text("Juan spots clean cloth by the table.") size 60 xpos 0 ypos 30
+        vbox xpos 150 ypos 360:
+            imagebutton idle Transform(arrow, zoom=2) hover Transform(arrow_selected, zoom=2) action [SetVariable("CoverChoices", "Run"),Return()] xalign 0.5
+            text("Continue running outside") xalign 0.5
+        vbox xpos 970 ypos 640:
+            imagebutton idle Transform(towel, zoom=0.3) hover Transform(towel_selected, zoom=0.3) action [SetVariable("CoverChoices", "Cover"),Return()] xalign 0.5
+            text("Use cloths to help cover from the smoke") xalign 0.5
+
     screen HelpChoiceScreen():
         modal True
         text("Joseph is going to try to put out the fire, what does Juan do?") size 60 xpos 0.25 ypos 30

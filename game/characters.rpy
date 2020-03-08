@@ -50,6 +50,11 @@ image Juan tired:
     zoom 0.33
     ypos 1.2
 
+image Juan sad:
+    "assets/Sprites/Juan_Sad.png"
+    zoom 0.33
+    ypos 1.2
+
 image Juan smile1:
     "assets/Sprites/Juan_SmileEyesClosed.png"
     zoom 0.33
