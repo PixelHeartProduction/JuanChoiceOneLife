@@ -2,6 +2,7 @@
     image kitchen = "assets/Scenes/Kitchen.jpg"
     image kitchenBrownout = "assets/Scenes/KitchenBrownout.jpg"
     image kitchenFire = "assets/Scenes/KitchenFire.jpg"
+    image livingroomFire = "assets/Scenes/LivingroomFire.png"
     image hospital = "assets/Scenes/Hospital.jpg"
     image daytimeBedroom = "assets/Scenes/BedroomDaytime.jpg"
     image daytimeLivingroom = "assets/Scenes/livingroomdaytime.jpg"
