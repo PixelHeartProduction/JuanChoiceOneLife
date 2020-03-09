@@ -11,7 +11,6 @@ label FireDisaster:
     $ HelpChoices = "null"
     $ StayChoices = "null"
 
-
     stop music fadeout 2.0
     scene black with dissolve
     scene trans_house with dissolve
@@ -31,14 +30,23 @@ label FireDisaster:
     Mary_left "Are you feeling ok?"
 
     show mode confirm with dissolve
-    call screen LieChoiceScreen with dissolve
+
+    $ MainQuestion = "Should I tell I'm not feeling good?"
+    $ ChoiceText1="I'm not feeling good,\n mom."
+    $ ChoiceText2="Get up."
+    $ Icon1 = Image("assets/Sprites/Items/icon_sick.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_wakeup.png")
+    call screen DualOptionScreen(MainQuestion,"LieChoice",Icon1,ChoiceText1,"Lie",Icon2,ChoiceText2,"getUp") with dissolve
+
     hide mode confirm with dissolve
 
     if LieChoice == "Lie":
         Juan_right "I'm not feeling well, Mom. Can I not go to school?"
         Mary_left "Really? Okay then, rest well, Juan. I'll bring you food."
         scene black with dissolve
+        scene daytimeLivingroom with dissolve
         none "Juan, stayed in his room the whole day and played on his phone."
+        none "Halfway throughout the day the whole city experienced electrical shortage."
 
     
     if LieChoice == "getUp":
@@ -62,7 +70,14 @@ label FireDisaster:
         hide Cathy with dissolve
 
         show mode confirm with dissolve
-        call screen ListenChoiceScreen with dissolve
+
+        $ ListenChoiceQuestion = "Should Juan listen to the lesson or start chatting with Peter instead?"
+        $ ListenChoiceText1="Listen to the teacher"
+        $ ListenChoiceText2="Chat with Peter"
+        $ firemanRey = Image("assets/Sprites/Items/icon_firemanRey.png")
+        $ chatWithPeter = Image("assets/Sprites/Items/icon_talktopeter.png")
+        call screen DualOptionScreen(ListenChoiceQuestion,"ListenChoice",firemanRey,ListenChoiceText1,"Listen",chatWithPeter,ListenChoiceText2,"Chat") with dissolve
+
         hide mode confirm with dissolve
 
         if ListenChoice == "Listen":
@@ -96,7 +111,14 @@ label FireDisaster:
             Rey_center "If somehow our clothes catch on fire. What would be the best thing to do? Does anyone know?"
 
             show mode confirm with dissolve
-            call screen AnswerReyScreen with dissolve
+
+            $ testTitle = "Fire Disaster Prevention"
+            $ testQuestion = "What is the best thing to do\n if our clothes catched\n on fire?"
+            $ ans1 = "A.) Stop, Lie Down,\n Roll Over"
+            $ ans2 = "B.) Don't Answer."
+            $ ans3 = "C.) Cry"
+            call screen TriOptionTestpaperScreen(testTitle ,testQuestion,"AnswerReyChoices",ans1,ans2,ans3,"SLR","Pass","Cry") with dissolve
+            
             hide mode confirm with dissolve
 
             if AnswerReyChoices == "Pass":
@@ -104,16 +126,16 @@ label FireDisaster:
                 Rey_center "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll. This way we could prevent the fire from getting bigger or burning even hotter."
             if AnswerReyChoices == "Cry":
                 Juan_left "Cry?"
-                Rey_right "Crying won't help actually"
-                Rey_right "Anyone else?"
-                Rey_right "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll."
-                Rey_right "This way we could prevent the fire from getting bigger or burning even hotter."
+                Rey_center  "Crying won't help actually"
+                Rey_center  "Anyone else?"
+                Rey_center  "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll."
+                Rey_center  "This way we could prevent the fire from getting bigger or burning even hotter."
             if AnswerReyChoices == "SLR":
-                Juan_left "To Stop, Lie Down and Roll Over?"
-                Rey_right "Very good! Someone did their homework."
+                Rey_center  "To Stop, Lie Down and Roll Over?"
+                Rey_center"Very good! Someone did their homework."
                 Class_center "(Claps)"
-                Rey_right "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll."
-                Rey_right "This way we could prevent the fire from getting bigger or burning even hotter."
+                Rey_center  "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll."
+                Rey_center  "This way we could prevent the fire from getting bigger or burning even hotter."
 
             Rey_center "Just remember class when we encounter fire, we have to remain calm, because the more we panic the more we are in danger."
 
@@ -138,9 +160,9 @@ label FireDisaster:
         none "The Bautista Family waited until dusk."
 
     
-
+    scene afternoonBrownoutLivingRoom with dissolve
     none "When the sun started to set and it seemed like the electricity wasn't coming back anytime soon. They started lighting up candles."
-
+    scene  black with dissolve
     scene kitchenBrownout with dissolve
 
     show Joseph neutralright with dissolve
@@ -154,7 +176,6 @@ label FireDisaster:
     Joseph_right "Mary, do you have May with you? Let's just stay in the living room for now."
     
     hide Joseph neutral with moveoutright
-    #joseph leaves
 
     none "Juan looks at the box of matches on the kitchen counter."
 
@@ -179,81 +200,125 @@ label FireDisaster:
 
         none "The small rug caught on fire."
 
+        show fire_animation with dissolve
+
         show Juan nervous
         play music "assets/BGM/Plume.mp3"
         Juan_center "Oh no!"
 
         show mode confirm with dissolve
-        call screen SmallFireChoiceScreen with dissolve
+
+        $ ListenChoiceQuestion = "Juan saw the small fire fire getting bigger, what would he do?"
+        $ ListenChoiceText1="Fix it yourself"
+        $ ListenChoiceText2="Call dad"
+        $ Icon1 = Image("assets/Sprites/Items/icon_think.png")
+        $ Icon2 = Image("assets/Sprites/Items/icon_callDad.png")
+        call screen DualOptionScreen(ListenChoiceQuestion,"SmallFireChoice",Icon1,ListenChoiceText1,"Deal",Icon2,ListenChoiceText2,"CallDad") with dissolve
+        # call screen SmallFireChoiceScreen with dissolve
         hide mode confirm with dissolve
 
 
         if SmallFireChoice == "Deal":
-            Juan_left "What should I do?"
+            Juan_center "What should I do?"
 
             show mode confirm with dissolve
             call screen SmallFireDealChoiceScreen with dissolve
             hide mode confirm with dissolve
 
             if DealChoices == "Fan":
-                Juan_left "Ok, I will fan out the flames."
+                Juan_center "Ok, I will fan out the flames."
                 none "The fire escalates instead of getting blown out."
                 none "Juan starts to panic."
 
             if DealChoices == "Rug":
-                Juan_left "Ok, I will cover the fire with a wet rug."
+                Juan_center "Ok, I will cover the fire with a wet rug."
+                hide fire_animation with dissolve
                 none "The wet cloth put out the fire."
-                Juan_left "Whoo! That was close."
-
+                show Juan phew with dissolve
+                Juan_center "Whoo! That was close."
+                stop music
+                play music "assets/BGM/Ghost.mp3"
+                show Juan sad with dissolve
                 none "Joseph rushes into the room."
-                show Joseph seriousRight with dissolve
+                show Joseph neutralright with easeinright
+                show Joseph serious with dissolve
 
                 Joseph_right "What happened here?!"
-                
-                Juan_left "I'm sorry dad, I tried lighting a match and I got burned and the rug..."
+                show Juan crying with dissolve
+                Juan_center "I'm sorry dad, I tried lighting a match and I got burned and the rug..."
                 none "Juan starts to cry."
+                Joseph_right "It's okay, Juan."
 
         
         if SmallFireChoice == "CallDad":
             Juan_center "Dad!!!"
             #Joseph comes running!
             show Joseph neutralright with easeinright
+            show Joseph serious with dissolve
             show Juan panLeft
             show Juan nervous
             Joseph_right "Juan, come here!"
-            Juan_left "I'm sorry, dad!"
+            Juan_center "I'm sorry, dad!"
             none "Joseph tries hard to put out the fire with a wet cloth."
 
-            Juan_left "I'm sorry, dad."
+            stop music
+            play music "assets/BGM/Ghost.mp3"
+
 
         
     
-    if MatchChoice == "Leave": 
+        
+
+    if MatchChoice == "Light" and SmallFireChoice == "Deal" and DealChoices == "Fan":
+        scene black with dissolve
+        none "The fire Juan caused continues to escalate and Juan is crying in the corner."
+        scene kitchenFire with dissolve
+        show Juan nervous with dissolve
+        show Joseph neutralright with easeinright
+        Joseph_right "Oh no!"
+        show Joseph serious
+        Joseph_right "Mary, take May and Juan outside."
+
+    else:
+        scene black with dissolve
+        stop music
         none "Juan heads to the living room with his family."
         none "The night went on and the Bautista Family fell asleep beside each other in the living room."
         Juan_center "(What is that smell?)"
         none "Juan starts to toss and turn in his sleep"
         none "Smoke started billowing into the Bautista Household."
+        scene kitchenFire with dissolve
+        show Juan neutral with dissolve
         none "Juan wakes up and sees the smoke."
-
+        play music "assets/BGM/Plume.mp3"
+        show Juan nervous with dissolve
         Juan_center "Dad, wake up look! Dad!!"
-        Joseph_right "Oh no!"
-        Joseph_right "Mary, wake up, take May and Juan outside."
+        show Joseph neutralright with dissolve
+        Joseph_right "Oh no, what's happening?!"
+        show Joseph serious with dissolve
+        Joseph_right "Mary!, wake up, take May and Juan outside."
 
-    if MatchChoice == "Light" and SmallFireChoice == "Deal" and DealChoices == "Fan":
-        none "The fire Juan caused continues to escalate and Juan is crying in the corner."
-        Joseph_right "Oh no!"
-        Joseph_right "Mary, take May and Juan outside."
-
-    Mary_center "Juan, follow me!"
+    show Mary neutralLeft with easeinleft
+    show Mary surprised
+    Mary_left "Juan, follow me!"
 
     show mode confirm with dissolve
-    call screen FollowChoiceScreen with dissolve
+
+    $ ListenChoiceQuestion = "Juan follow me!"
+    $ ListenChoiceText1="Follow mom"
+    $ ListenChoiceText2="Freeze in place"
+    $ Icon1 = Image("assets/Sprites/Items/icon_followMary.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_scared.png")
+    call screen DualOptionScreen(ListenChoiceQuestion,"FollowChoices",Icon1,ListenChoiceText1,"Follow",Icon2,ListenChoiceText2,"Freeze") with dissolve
+    #call screen FollowChoiceScreen with dissolve
     hide mode confirm with dissolve
 
     if FollowChoices == "Follow":
+        hide Joseph with dissolve
+        scene black with dissolve
         none "Juan follows Mary."
         none "As they are going outside they stop."
+        scene livingroomFire with dissolve
 
         show mode confirm with dissolve
         call screen CoverChoiceScreen with dissolve
@@ -261,8 +326,10 @@ label FireDisaster:
 
         if CoverChoices == "Cover":
             none "Juan grabs the cloth."
-            Juan_left "Mom, use this! (Handing the cloth to Mary)"
-            Mary_right "Good job, Juan. Come on let's go."
+            show Mary neutralLeft with dissolve
+            show Juan neutralRight with dissolve
+            Juan_right "Mom, use this! (Handing the cloth to Mary)"
+            Mary_left "Good job, Juan. Come on let's go."
             
         none "The Bautista Family continued heading out the burning house."
 
@@ -274,27 +341,55 @@ label FireDisaster:
 
 
     if CoverChoices == "Run":
+        scene housefire with dissolve
         none "As the Bautista family got outside they had breathed in enough smoke to make them feel dizzy and start coughing."
+        scene housefire with dissolve
+        show Juan neutralLeft with dissolve
+        show Joseph serious
 
+    scene black with dissolve
+    scene housefire with dissolve
+    show Joseph neutralright with dissolve
+    show Juan neutralLeft with dissolve
     Joseph_right "I need to put out the fire. Save as much as we can!"
+    show Joseph serious
 
     show mode confirm with dissolve
-    call screen HelpChoiceScreen with dissolve
+
+    $ ListenChoiceQuestion = "Joseph is going to try to put out the fire, what does Juan do?"
+    $ ListenChoiceText1="Open the hose outside\n the house and help Dad"
+    $ ListenChoiceText2="Stay put"
+    $ Icon1 = Image("assets/Sprites/Items/icon_openHose.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_stand.png")
+    call screen DualOptionScreen(ListenChoiceQuestion,"HelpChoices",Icon1,ListenChoiceText1,"Help",Icon2,ListenChoiceText2,"Stay") with dissolve
+
+    #call screen HelpChoiceScreen with dissolve
     hide mode confirm with dissolve
 
     if HelpChoices == "Help":
         none "Juan runs to the hose at the front yard, far from the burning house."
         Juan_left "Dad, use the hose!"
         Joseph_right "Great thinking, son."
-        Juan_left "(I still need to help)"
+        hide Joseph with dissolve
+        show Juan panLCenter
+        Juan_center "(I still need to help)"
     
     if HelpChoices == "Stay":
         none "Juan stays put and lets his parent handle the situation as he looks after May."
+        hide Joseph with dissolve
+        show Juan panLCenter
         Juan_center "I need to help."
         none "Juan thinks."
 
     show mode confirm with dissolve
-    call screen StayChoiceScreen with dissolve
+
+    $ ListenChoiceQuestion = "What can Juan do to help?"
+    $ ListenChoiceText1="Get mom's phone and\n call the fire station"
+    $ ListenChoiceText2="Ask neighbors for help"
+    $ Icon1 = Image("assets/Sprites/Items/icon_callFireDept.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_callNeighbors.png")
+    call screen DualOptionScreen(ListenChoiceQuestion,"StayChoices",Icon1,ListenChoiceText1,"Call",Icon2,ListenChoiceText2,"Neighbors") with dissolve
+
     hide mode confirm with dissolve
 
     if StayChoices == "Call":
@@ -302,38 +397,50 @@ label FireDisaster:
         Juan_center "Where is the fire station's number?"
         Juan_center "Sir, there is a fire in my house. Please come help us. Please!!"
         none "Soon the fire fighters arrive and help put out the fire."
+        show Rey neutralleft with easeinleft
+        show Rey talking with dissolve
         Rey_left "Juan, it's a good choice to immediately call the Fire station."
         
 
     if StayChoices == "Neighbors":
         none "Juan grabs his sister May and goes to the neighbors and calls for help!"
+        scene nighttimeStreet1 with dissolve
+        show Juan nervous with dissolve
         Juan_center "Please help us. Our house is on fire. Please!"
         none "Juan shouts loud enough and wakes up the neighbors."
         
         
-        #Neighbor "OH no! We'll be right there!"
+        Neighbor_center "OH no! We'll be right there!"
         none "The neighbors helped the Bautista Family contain and have the fire under control."
         none "Soon the fire fighters arrive and help put out the fire."
+        show Rey neutralleft with easeinleft
+        show Rey talking with dissolve
         Rey_left "Juan, it's a good choice to ask the neighbors for help. You helped out your parents a lot."
 
     
-    
+    scene black with dissolve
+    stop music
     none "The night went on and soon enough the fire was completely put out."
+    scene nighttimeStreet1 with dissolve
+    show Joseph neutralright with dissolve
+    show Mary neutralleft with dissolve
+    play music "assets/BGM/SayIt.mp3"
     Joseph_right "Thank you so much for helping me and my family."
-    Mary_right "We are very sorry for the trouble my family caused the whole neighborhood."
-
+    show Joseph serious
+    show Mary surprised
+    Mary_left "We are very sorry for the trouble my family caused the whole neighborhood."
     none "And with that the Bautista family survived the housefire."
 
-    none "While the mbulance examined the health of the Baustista Family."
+    none "While the ambulance examined the health of the Baustista Family."
 
 
     if MatchChoice == "Light" and SmallFireChoice == "Deal" and DealChoices == "Fan":
         Joseph_right "Juan,"
         none "Juan flinches afraid of what is gonnna happen."
         Joseph_right "No one is angry at you, Juan. We know that you did not want what happened."
-        Juan_left "(Nods)"
+        Juan_center "(Nods)"
         Joseph_right "But because of what happened we expect that you learned from your mistakes. Never play with anything dangerous."
-        Juan_left "Yes, Dad. I'm really really sorry."
+        Juan_center "Yes, Dad. I'm really really sorry."
 
     if FollowChoices == "Follow":
         Joseph_right "It's very good that at times like that you remained calm and followed your mom."
@@ -346,110 +453,64 @@ label FireDisaster:
 
     if StayChoices == "Neighbors":
         Joseph_right "Great job on asking the neighbors for help, Juan. You really helped us out a lot."
-
-    #=====================Screens===========================
-
-
-    screen ListenChoiceScreen():
-        modal True
-        text("Should Juan listen to the lesson or start chatting with Peter instead?") size 60 xpos 0.25 ypos 30
-
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Listen to the teacher.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("ListenChoice", "Listen"),Return()]
-            vbox:
-                textbutton (Text("Chat with Peter.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("ListenChoice", "Chat"),Return()]
     
-    screen LieChoiceScreen():
-        modal True
-        text("Should I tell Mom I'm not feeling good??") size 60 xpos 0.25 ypos 30
+    scene black with dissolve
 
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("I'm not feeling good, mommy.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("LieChoice", "Lie"),Return()]
-            vbox:
-                textbutton (Text("Get up.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("LieChoice", "getUp"),Return()]
+    #=====================Custom Screens===========================
 
     screen MatchesChoiceScreen():
         modal True
-        text("What should Juan do?") size 60 xpos 0.25 ypos 30
 
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Try to light one of the matches.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("MatchChoice", "Light"),Return()]
-            vbox:
-                textbutton (Text("Go to the living room.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("MatchChoice", "Leave"),Return()]
+        $ match = Image("assets/Misc/matches.png")
+        $ arrow = Image("assets/Sprites/Items/blueArrow.png")
+        $ match_selected = im.MatrixColor(match,im.matrix.brightness(0.2))
+        $ arrow_selected = im.MatrixColor(arrow,im.matrix.brightness(0.2))
 
-    screen SmallFireChoiceScreen():
-        modal True
-        text("What should Juan do?") size 60 xpos 0.25 ypos 30
-
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Fix it yourself.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("SmallFireChoice", "Deal"),Return()]
-            vbox:
-                textbutton (Text("Call Dad.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("SmallFireChoice", "CallDad"),Return()]
+ 
+        vbox xalign 0.5:
+            text("Should Juan play with the matches?") size 60 xpos 0 ypos 30
+        vbox xpos 250 ypos 760:
+            imagebutton idle Transform(match, zoom=0.2) hover Transform(match_selected, zoom=0.2) action [SetVariable("MatchChoice", "Light"),Return()] xalign 0.5
+            text("Try to light one of the matches") xalign 0.5
+        vbox xpos 1500 ypos 400:
+            imagebutton idle Transform(arrow, zoom=2) hover Transform(arrow_selected, zoom=2) action [SetVariable("MatchChoice", "Leave"),Return()] xalign 0.5
+            text("Go to the living room") xalign 0.5
 
     screen SmallFireDealChoiceScreen():
         modal True
-        text("What should Juan do with the small fire?") size 60 xpos 0.25 ypos 30
+        
+        $ fan = Image("assets/Sprites/Items/fan.png")
+        $ towel = Image("assets/Sprites/Items/wettowel.png")
+        $ fan_selected = im.MatrixColor(fan,im.matrix.brightness(0.2))
+        $ towel_selected = im.MatrixColor(towel,im.matrix.brightness(0.2))
 
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Blow out the fire with the fan.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("DealChoices", "Fan"),Return()]
-            vbox:
-                textbutton (Text("Use the wet cloth.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("DealChoices", "Rug"),Return()]
-    
-    screen AnswerReyScreen():
-        modal True
-        text("What is the answer?") size 60 xpos 0.25 ypos 30
 
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Stop, Lie Down, Roll Over",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("AnswerReyChoices", "SLR"),Return()]
-            vbox:
-                textbutton (Text("Don't Answer.",size=50,bold=True)) ypos 500 xpos -40  action [SetVariable("AnswerReyChoices", "Pass"),Return()]
-            vbox:
-                textbutton (Text("Cry.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("AnswerReyChoices", "Cry"),Return()]
-
-    screen FollowChoiceScreen():
-        modal True
-        text("Juan follow me!") size 60 xpos 0.25 ypos 30
-
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Follow Mom.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("FollowChoices", "Follow"),Return()]
-            vbox:
-                textbutton (Text("Freeze in Place.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("FollowChoices", "Freeze"),Return()]
+        vbox xalign 0.5:
+            text("What should Juan do with the small fire?") size 60 xpos 0 ypos 30
+        vbox xpos 250 ypos 560:
+            imagebutton idle Transform(fan, zoom=0.5) hover Transform(fan_selected, zoom=0.5) action [SetVariable("DealChoices", "Fan"),Return()] xalign 0.5
+            text("Blow out the fire with the fan") xalign 0.5
+        vbox xpos 1200 ypos 640:
+            imagebutton idle Transform(towel, zoom=0.1) hover Transform(towel_selected, zoom=0.1) action [SetVariable("DealChoices", "Rug"),Return()] xalign 0.5
+            text("Use the wet cloth") xalign 0.5
 
     screen CoverChoiceScreen():
         modal True
-        text("Juan spots clean cloth by the table.") size 60 xpos 0.25 ypos 30
 
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Use cloths to help cover from the smoke.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("CoverChoices", "Cover"),Return()]
-            vbox:
-                textbutton (Text("Continue running outside.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("CoverChoices", "Run"),Return()]
-                
-    screen HelpChoiceScreen():
-        modal True
-        text("Joseph is going to try to put out the fire, what does Juan do?") size 60 xpos 0.25 ypos 30
+        $ arrow = Image("assets/Sprites/Items/blueArrowFlipped.png")
+        $ towel = Image("assets/Sprites/Items/towel.png")
+        $ arrow_selected = im.MatrixColor(arrow,im.matrix.brightness(0.2))
+        $ towel_selected = im.MatrixColor(towel,im.matrix.brightness(0.2))
 
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Open the hose outside the house and help Dad.",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("HelpChoices", "Help"),Return()]
-            vbox:
-                textbutton (Text("Stay put.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("HelpChoices", "Stay"),Return()]
-    
-    screen StayChoiceScreen():
-        modal True
-        text("What can Juan do to help?") size 60 xpos 0.25 ypos 30
 
-        hbox xalign 0.5 yalign 0 spacing 200:
-            vbox:
-                textbutton (Text("Get mom's phone and call the fire station",size=50,bold=True)) ypos 500 xpos 0  action [SetVariable("StayChoices", "Call"),Return()]
-            vbox:
-                textbutton (Text("Ask neighbors for help.",size=50,bold=True)) ypos 500 xpos -80  action [SetVariable("StayChoices", "Neighbors"),Return()]
+        vbox xalign 0.5:
+            text("Juan spots clean cloth by the table.") size 60 xpos 0 ypos 30
+        vbox xpos 150 ypos 360:
+            imagebutton idle Transform(arrow, zoom=2) hover Transform(arrow_selected, zoom=2) action [SetVariable("CoverChoices", "Run"),Return()] xalign 0.5
+            text("Continue running outside") xalign 0.5
+        vbox xpos 970 ypos 640:
+            imagebutton idle Transform(towel, zoom=0.3) hover Transform(towel_selected, zoom=0.3) action [SetVariable("CoverChoices", "Cover"),Return()] xalign 0.5
+            text("Use cloths to help cover from the smoke") xalign 0.5
+
 
 

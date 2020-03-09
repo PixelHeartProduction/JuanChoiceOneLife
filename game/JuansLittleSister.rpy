@@ -4,6 +4,15 @@ label JuansLittleSister:
 
     stop music
     scene black with dissolve
+    show text("{size=40}2 years later{/size}") with dissolve
+    with Pause(2)
+    hide text with dissolve
+    show text("{size=40}Joseph and Mary are really happy\n that their baby Juan is growing happy and strong.{/size}") with dissolve
+    with Pause(6)
+    hide text with dissolve
+    show text("{size=40}But sudden news broke-out in the family..{/size}") with dissolve
+    with Pause(2)
+    hide text with dissolve
     scene trans_hospital with dissolve
     show mode confirm with dissolve
     show text("{size=60}Juan's little sister{/size}") with dissolve
@@ -135,7 +144,7 @@ label JuansLittleSister:
 
         vbox xalign 0.5:
             text(Text("Mary and Joseph wants Juan to play with May.",size=50))
-            text(Text("(Select between {color=#ffa500}Toys{/color} or {color=#5DFF31}Video games{/color})",size=40, xpos=180,ypos=30))
+            text(Text("(Select between {color=#ffa500}Play toys with May{/color} or {color=#5DFF31}Play video games alone{/color})",size=40, xpos=-30,ypos=30))
         vbox xpos 0.1 ypos 430:
             imagebutton idle Transform(psp, zoom=0.8) action [SetVariable("played_with_may", False),Return()]
             text("Play alone") xpos 50 ypos -20 color "#5DFF31"
