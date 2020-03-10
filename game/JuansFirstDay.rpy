@@ -579,7 +579,7 @@ label JuansFirstDay:
     Mary_left "Not really."
     show Mary smile with dissolve
     Mary_left "We bought you an alarm clock you sleepyhead."
-    show Juan neutral
+    show Juan sad
     Juan_center "Really? I thought it was the new volume of the manga I really liked. Anyways... thanks."
     Mary_left "Rub that sour face off because dinner's ready!"
     show Joseph laugh

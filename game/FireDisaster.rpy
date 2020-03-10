@@ -25,8 +25,9 @@ label FireDisaster:
     Mary_left "Juan, wake up. It's time for school."
     scene daytimeBedroom with dissolve
     show Mary neutralleft with dissolve
-    show Juan neutralRight with dissolve
+    show Juan sadRight with dissolve
     Juan_right "(Groans)"
+    show Juan sad
     Mary_left "Are you feeling ok?"
 
     show mode confirm with dissolve
@@ -194,7 +195,7 @@ label FireDisaster:
         Juan_center "That's so cool!"
 
         none "Juan held on to the match until it was almost all burned."
-
+        show Juan sad
         Juan_center "Oww!"
         none "Juan drops the lit match."
 
@@ -326,8 +327,8 @@ label FireDisaster:
 
         if CoverChoices == "Cover":
             none "Juan grabs the cloth."
-            show Mary neutralLeft with dissolve
-            show Juan neutralRight with dissolve
+            show Mary surprisedLeft with dissolve
+            show Juan sadRight with dissolve
             Juan_right "Mom, use this! (Handing the cloth to Mary)"
             Mary_left "Good job, Juan. Come on let's go."
             
@@ -341,18 +342,15 @@ label FireDisaster:
 
 
     if CoverChoices == "Run":
-        scene housefire with dissolve
+        scene black with dissolve
         none "As the Bautista family got outside they had breathed in enough smoke to make them feel dizzy and start coughing."
-        scene housefire with dissolve
-        show Juan neutralLeft with dissolve
-        show Joseph serious
 
     scene black with dissolve
     scene housefire with dissolve
-    show Joseph neutralright with dissolve
-    show Juan neutralLeft with dissolve
+    show Joseph seriousright with dissolve
+    show Juan sadLeft with dissolve
+    show May cry with dissolve
     Joseph_right "I need to put out the fire. Save as much as we can!"
-    show Joseph serious
 
     show mode confirm with dissolve
 
@@ -365,19 +363,22 @@ label FireDisaster:
 
     #call screen HelpChoiceScreen with dissolve
     hide mode confirm with dissolve
-
     if HelpChoices == "Help":
         none "Juan runs to the hose at the front yard, far from the burning house."
         Juan_left "Dad, use the hose!"
         Joseph_right "Great thinking, son."
+        May_center "Take care papa."
         hide Joseph with dissolve
-        show Juan panLCenter
+        show May cryPanRight
+        show Juan sadpanLCenter
         Juan_center "(I still need to help)"
     
     if HelpChoices == "Stay":
         none "Juan stays put and lets his parent handle the situation as he looks after May."
+        May_center "Kuya Juan."
         hide Joseph with dissolve
-        show Juan panLCenter
+        show May cryPanRight
+        show Juan sadpanLCenter
         Juan_center "I need to help."
         none "Juan thinks."
 
@@ -399,14 +400,19 @@ label FireDisaster:
         none "Soon the fire fighters arrive and help put out the fire."
         show Rey neutralleft with easeinleft
         show Rey talking with dissolve
-        Rey_left "Juan, it's a good choice to immediately call the Fire station."
+        if LieChoice == "getUp":
+            Rey_left "Juan, it's a good choice to immediately call the Fire station."
+        else:
+            Fireman_left "Juan, it's a good choice to immediately call the Fire station."
         
 
     if StayChoices == "Neighbors":
         none "Juan grabs his sister May and goes to the neighbors and calls for help!"
         scene nighttimeStreet1 with dissolve
         show Juan nervous with dissolve
+        show May cryRight with dissolve
         Juan_center "Please help us. Our house is on fire. Please!"
+        May_right "P-Please help!"
         none "Juan shouts loud enough and wakes up the neighbors."
         
         
@@ -415,20 +421,24 @@ label FireDisaster:
         none "Soon the fire fighters arrive and help put out the fire."
         show Rey neutralleft with easeinleft
         show Rey talking with dissolve
-        Rey_left "Juan, it's a good choice to ask the neighbors for help. You helped out your parents a lot."
+        if LieChoice == "getUp":
+            Rey_left "Juan, it's a good choice to ask the neighbors for help. You helped out your parents a lot."
+        else:
+            Fireman_left "Juan, it's a good choice to ask the neighbors for help. You helped out your parents a lot."
 
     
     scene black with dissolve
     stop music
     none "The night went on and soon enough the fire was completely put out."
     scene nighttimeStreet1 with dissolve
-    show Joseph neutralright with dissolve
-    show Mary neutralleft with dissolve
+    show Joseph seriousright with dissolve
+    show Juan sad with dissolve
+    show Mary neutralLeft with dissolve
     play music "assets/BGM/SayIt.mp3"
     Joseph_right "Thank you so much for helping me and my family."
-    show Joseph serious
-    show Mary surprised
+    show Mary talking with dissolve
     Mary_left "We are very sorry for the trouble my family caused the whole neighborhood."
+    show Mary neutral with dissolve
     none "And with that the Bautista family survived the housefire."
 
     none "While the ambulance examined the health of the Baustista Family."
@@ -436,8 +446,10 @@ label FireDisaster:
 
     if MatchChoice == "Light" and SmallFireChoice == "Deal" and DealChoices == "Fan":
         Joseph_right "Juan,"
+        show Juan nervous with dissolve
         none "Juan flinches afraid of what is gonnna happen."
         Joseph_right "No one is angry at you, Juan. We know that you did not want what happened."
+        show Juan sad with dissolve
         Juan_center "(Nods)"
         Joseph_right "But because of what happened we expect that you learned from your mistakes. Never play with anything dangerous."
         Juan_center "Yes, Dad. I'm really really sorry."
@@ -446,12 +458,15 @@ label FireDisaster:
         Joseph_right "It's very good that at times like that you remained calm and followed your mom."
     
     if HelpChoices == "Help":
+        show Joseph talking with dissolve
         Joseph_right "It's also good that you tried your best in helping in putting out the fire."
     
     if StayChoices == "Call":
+        show Joseph talking with dissolve
         Joseph_right "Calling the Fire Station was very smart too. How did you know the number of the Fire Station?"
 
     if StayChoices == "Neighbors":
+        show Joseph talking with dissolve
         Joseph_right "Great job on asking the neighbors for help, Juan. You really helped us out a lot."
     
     scene black with dissolve
