@@ -223,7 +223,9 @@ label FireDisaster:
             Juan_center "What should I do?"
 
             show mode confirm with dissolve
+            show countdown at Position(xalign=.5, yalign=.1, zoom=20)
             call screen SmallFireDealChoiceScreen with dissolve
+            hide countdown with dissolve
             hide mode confirm with dissolve
 
             if DealChoices == "Fan":
@@ -322,7 +324,9 @@ label FireDisaster:
         scene livingroomFire with dissolve
 
         show mode confirm with dissolve
+        show countdown at Position(xalign=.5, yalign=.1, zoom=20)
         call screen CoverChoiceScreen with dissolve
+        hide countdown with dissolve
         hide mode confirm with dissolve
 
         if CoverChoices == "Cover":
@@ -498,7 +502,8 @@ label FireDisaster:
         $ towel = Image("assets/Sprites/Items/wettowel.png")
         $ fan_selected = im.MatrixColor(fan,im.matrix.brightness(0.2))
         $ towel_selected = im.MatrixColor(towel,im.matrix.brightness(0.2))
-
+        $ randomize = renpy.random.choice(["Fan","Rug"])
+        $ time = 10.0
 
         vbox xalign 0.5:
             text("What should Juan do with the small fire?") size 60 xpos 0 ypos 30
@@ -508,6 +513,8 @@ label FireDisaster:
         vbox xpos 1200 ypos 640:
             imagebutton idle Transform(towel, zoom=0.1) hover Transform(towel_selected, zoom=0.1) action [SetVariable("DealChoices", "Rug"),Return()] xalign 0.5
             text("Use the wet cloth") xalign 0.5
+        
+        timer time action [SetVariable("DealChoices", randomize),Return()]
 
     screen CoverChoiceScreen():
         modal True
@@ -516,7 +523,8 @@ label FireDisaster:
         $ towel = Image("assets/Sprites/Items/towel.png")
         $ arrow_selected = im.MatrixColor(arrow,im.matrix.brightness(0.2))
         $ towel_selected = im.MatrixColor(towel,im.matrix.brightness(0.2))
-
+        $ randomize = renpy.random.choice(["Run","Cover"])
+        $ time = 10.0
 
         vbox xalign 0.5:
             text("Juan spots clean cloth by the table.") size 60 xpos 0 ypos 30
@@ -527,5 +535,5 @@ label FireDisaster:
             imagebutton idle Transform(towel, zoom=0.3) hover Transform(towel_selected, zoom=0.3) action [SetVariable("CoverChoices", "Cover"),Return()] xalign 0.5
             text("Use cloths to help cover from the smoke") xalign 0.5
 
-
+        timer time action [SetVariable("CoverChoices", randomize),Return()]
 
