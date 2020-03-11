@@ -1,4 +1,4 @@
-label HighschoolDays:
+label AfterTheFire:
 
 
 none "After a few years...\n Juan Starts his high school life."
