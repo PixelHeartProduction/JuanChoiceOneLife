@@ -146,10 +146,10 @@ label JuansLittleSister:
             text(Text("Mary and Joseph wants Juan to play with May.",size=50))
             text(Text("(Select between {color=#ffa500}Play toys with May{/color} or {color=#5DFF31}Play video games alone{/color})",size=40, xpos=-30,ypos=30))
         vbox xpos 0.1 ypos 430:
-            imagebutton idle Transform(psp, zoom=0.8) action [SetVariable("played_with_may", False),Return()]
+            imagebutton idle Transform(psp, zoom=0.8) action [SetVariable("played_with_may", False),Return()] activate_sound sfx_click1
             text("Play alone") xpos 50 ypos -20 color "#5DFF31"
         vbox xpos 0.6 ypos 600:
-            imagebutton idle Transform(toy, zoom=0.5) action [SetVariable("played_with_may", True),Return()]
+            imagebutton idle Transform(toy, zoom=0.5) action [SetVariable("played_with_may", True),Return()] activate_sound sfx_click1
             text("Play with may") xpos 100 color "#ffa500"
 
 

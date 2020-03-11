@@ -1,9 +1,11 @@
-    screen DualOptionScreen(question,variable,icon1,text1,value1,icon2,text2,value2):
+    screen DualOptionScreen(question,variable,icon1,text1,value1,icon2,text2,value2,timed):
         modal True
         $ firstIcon = icon1
-        $ firstIcon_selected = im.MatrixColor(firstIcon,im.matrix.brightness(0.2))
+        $ firstIcon_selected = im.MatrixColor(firstIcon,im.matrix.brightness(0.2)) 
         $ secondIcon = icon2
         $ secondIcon_selected = im.MatrixColor(secondIcon,im.matrix.brightness(0.2))
+        $ randomize = renpy.random.choice([value1,value2])
+        $ time = 10
 
         hbox xalign 0.5:
             text(Text(question,size=50,ypos=30))
@@ -11,11 +13,13 @@
         
         hbox xalign 0.5 yalign 1 ypos 200 spacing 600:
             vbox xpos 0.3 yalign 1:
-                imagebutton idle Transform(firstIcon, zoom=.8) hover Transform(firstIcon_selected, zoom=.8) action [SetVariable(variable, value1),Return()] xalign 0.5
+                imagebutton idle Transform(firstIcon, zoom=.8) hover Transform(firstIcon_selected, zoom=.8) action [SetVariable(variable, value1),Return()] xalign 0.5 activate_sound sfx_click1
                 text(Text(text1,size=50)) xalign 0.5 
             vbox xpos -50 yalign 1:
-                imagebutton idle Transform(secondIcon, zoom=.8) hover Transform(secondIcon_selected, zoom=.8) action [SetVariable(variable, value2),Return()] xalign 0.5
+                imagebutton idle Transform(secondIcon, zoom=.8) hover Transform(secondIcon_selected, zoom=.8) action [SetVariable(variable, value2),Return()] xalign 0.5 activate_sound sfx_click1
                 text(Text(text2,size=50)) xalign 0.5 
+        if timed:
+            timer time action [SetVariable(variable, randomize),Return()]
 
 
     screen TriOptionTestpaperScreen(testTitle,testQuestion,variable,ans1,ans2,ans3,val1,val2,val3):
@@ -29,10 +33,10 @@
 
             vbox xalign 0 xpos 120 ypos 80 spacing 80:
                 vbox:
-                    textbutton (Text(ans1,size=50,color="#080808")) action [SetVariable(variable, val1),Return()]
+                    textbutton (Text(ans1,size=50,color="#080808")) action [SetVariable(variable, val1),Return()] activate_sound sfx_click1
                 vbox:
-                    textbutton (Text(ans2,size=50,color="#080808")) action [SetVariable(variable, val2),Return()]
+                    textbutton (Text(ans2,size=50,color="#080808")) action [SetVariable(variable, val2),Return()] activate_sound sfx_click1
                 vbox:
-                    textbutton (Text(ans3,size=50,color="#080808")) action [SetVariable(variable, val3),Return()]
+                    textbutton (Text(ans3,size=50,color="#080808")) action [SetVariable(variable, val3),Return()] activate_sound sfx_click1
     
     

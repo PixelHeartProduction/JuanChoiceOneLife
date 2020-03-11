@@ -131,8 +131,8 @@ label JuansFirstWord:
                 text("Tap to make choice") size 50 ypos -100
             image(arrows) xalign 0.5
      hbox xalign 0.5 yalign 0 spacing 600:
-        imagebutton idle Transform(mary, zoom=0.32) hover Transform(mary_highlighted, zoom=0.32) action [SetVariable("Choice_ch1", "mama"),Return()]
-        imagebutton idle Transform(joseph, zoom=0.17) hover Transform(joseph_highlighted, zoom=0.17) action [SetVariable("Choice_ch1", "papa"),Return()]
+        imagebutton idle Transform(mary, zoom=0.32) hover Transform(mary_highlighted, zoom=0.32) action [SetVariable("Choice_ch1", "mama"),Return()] activate_sound sfx_click1
+        imagebutton idle Transform(joseph, zoom=0.17) hover Transform(joseph_highlighted, zoom=0.17) action [SetVariable("Choice_ch1", "papa"),Return()] activate_sound sfx_click1
 
      hbox xalign 0.55 yalign 0 spacing 600:
         text("Mama") ypos 800 xpos -80 size 70 bold True
