@@ -40,8 +40,18 @@ image Juan phew:
     zoom 0.33
     ypos 1.2
 
+image Juan crying:
+    "assets/Sprites/Juan_Crying.png"
+    zoom 0.33
+    ypos 1.2
+
 image Juan tired:
     "assets/Sprites/Juan_Tired.png"
+    zoom 0.33
+    ypos 1.2
+
+image Juan sad:
+    "assets/Sprites/Juan_Sad.png"
     zoom 0.33
     ypos 1.2
 
@@ -69,6 +79,13 @@ image Juan panLCenter:
     xalign .25
     linear 0.5 xalign 0.5
 
+image Juan sadpanLCenter:
+    "assets/Sprites/Juan_Sad.png"
+    zoom 0.33
+    ypos 1.2
+    xalign .25
+    linear 0.5 xalign 0.5
+
 image Juan panRCenter:
     "assets/Sprites/Juan.png"
     zoom 0.33
@@ -84,6 +101,18 @@ image Juan neutralLeft:
 
 image Juan neutralRight:
     "assets/Sprites/Juan.png"
+    zoom 0.33
+    ypos 1.2
+    xpos 0.75
+
+image Juan sadLeft:
+    "assets/Sprites/Juan_Sad.png"
+    zoom 0.33
+    ypos 1.2
+    xpos 0.25
+
+image Juan sadRight:
+    "assets/Sprites/Juan_Sad.png"
     zoom 0.33
     ypos 1.2
     xpos 0.75
@@ -166,6 +195,12 @@ image Mary neutralLeft:
     ypos 1.2
     xpos .25
 
+image Mary surprisedLeft:
+    "assets/Sprites/Mary_Surprised.png"
+    zoom .32
+    ypos 1.2
+    xpos .25
+
 #=========================Joseph==============================
 define Joseph_left = Character ("Joseph", what_xalign=0.30, what_text_align=0.0, color="#adf569")
 define Joseph_center = Character("Joseph", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#adf569")
@@ -213,6 +248,12 @@ image Joseph serious:
     "assets/Sprites/Joseph_Serious.png"
     zoom .17
     ypos 1.25
+
+image Joseph seriousright:
+    "assets/Sprites/Joseph_Serious.png"
+    zoom .17
+    ypos 1.25
+    xpos .75
 
 image Joseph panLeft:
     "assets/Sprites/Joseph_Normal.png"
@@ -334,10 +375,29 @@ image May neutral:
     xalign .5
     yalign .54
 
-image May3 cryLeft:
+image May cry:
+    "assets/Sprites/May3_Cry.png"
+    zoom .13
+    xalign .5
+    yalign 1.4
+
+image May cryPanRight:
+    "assets/Sprites/May3_Cry.png"
+    zoom .13
+    yalign 1.4
+    xalign .5
+    linear 1 xalign 0.75
+
+image May cryLeft:
     "assets/Sprites/May3_Cry.png"
     zoom .13
     xalign .25
+    yalign 1.4
+
+image May cryRight:
+    "assets/Sprites/May3_Cry.png"
+    zoom .13
+    xalign .75
     yalign 1.4
 
 #=====================Dog===========================
@@ -346,6 +406,7 @@ define Dog_center = Character("Dog",what_xalign=0.5, what_text_align=0.5,who_xpo
 define Dog_right = Character("Dog",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#f5d769")
 
 #=====================Rey============================
+define Fireman_left = Character("Fireman",what_xalign=0.30, what_text_align=0.0, color="#FF3600")
 define Rey_left = Character("Rey",what_xalign=0.30, what_text_align=0.0, color="#FF3600")
 define Rey_center = Character("Rey",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#FF3600")
 define Rey_right = Character("Rey",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#FF3600")

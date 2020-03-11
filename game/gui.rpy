@@ -423,6 +423,17 @@ define gui.nvl_button_xalign = 0.0
 define gui.language = "unicode"
 
 
+##################################TIMER########################################
+init python:
+
+    def show_countdown(st, at):
+        if st > 10:
+            return Text("0"), None
+        else:
+            d = Text("{:.1f}".format(10 - st))
+            return d, 0
+
+image countdown = DynamicDisplayable(show_countdown)
 ################################################################################
 ## Mobile devices
 ################################################################################
