@@ -136,9 +136,9 @@ label JuansEatingHabit:
         text("{color=#ff0000}A{/color} {color=#ffa500}B{/color} {color=#ffff00}C{/color} {color=#008000}D{/color} {color=#0000ff}E{/color} {color=#ee82ee}F{/color} -?") size 90 xpos 0.32 ypos 30 bold True
         text("(Which Alphabet is next?)") size 40 xpos 0.35 ypos 140
         hbox xalign 0.5 yalign 0 spacing 200:
-            textbutton (A) ypos 300 action [SetVariable("alphabet_selected", "A"),Return()]
-            textbutton (G) ypos 300 action [SetVariable("alphabet_selected", "G"),Return()]
-            textbutton (P) ypos 300 action [SetVariable("alphabet_selected", "P"),Return()]
+            textbutton (A) ypos 300 action [SetVariable("alphabet_selected", "A"),Return()] activate_sound sfx_click1
+            textbutton (G) ypos 300 action [SetVariable("alphabet_selected", "G"),Return()] activate_sound sfx_click1
+            textbutton (P) ypos 300 action [SetVariable("alphabet_selected", "P"),Return()] activate_sound sfx_click1
 
 
 
@@ -159,15 +159,15 @@ label JuansEatingHabit:
                 text(Text("(Tap a food to eat.)",size=40,xpos=0.75,ypos=100))
         hbox xpos 650 ypos 250:
             if carrot_selected == False:
-                imagebutton idle Transform(carrot, zoom=0.6) action [SetVariable("carrot_selected", True),SetVariable("food_eaten", food_eaten + 1)]
+                imagebutton idle Transform(carrot, zoom=0.6) action [SetVariable("carrot_selected", True),SetVariable("food_eaten", food_eaten + 1)] activate_sound sfx_click1
                 text(Text("Carrots",size=40,xpos=-450, ypos=70))
         hbox xalign 0.5 ypos 450:
             if potato_selected == False:
-                imagebutton idle Transform(potato, zoom=0.6,xpos=120) action [SetVariable("potato_selected", True),SetVariable("food_eaten", food_eaten + 1)]
+                imagebutton idle Transform(potato, zoom=0.6,xpos=120) action [SetVariable("potato_selected", True),SetVariable("food_eaten", food_eaten + 1)] activate_sound sfx_click1
                 text(Text("Mashed potato",size=40,xpos=-170, ypos=240))
         hbox xpos 1000 ypos 250:
             if banana_selected == False:
-                imagebutton idle Transform(banana, zoom=0.6) action [SetVariable("banana_selected", True),SetVariable("food_eaten", food_eaten + 1)]
+                imagebutton idle Transform(banana, zoom=0.6) action [SetVariable("banana_selected", True),SetVariable("food_eaten", food_eaten + 1)] activate_sound sfx_click1
                 text(Text("Bananas",size=40,xpos=50,ypos=70))
 
         hbox:
