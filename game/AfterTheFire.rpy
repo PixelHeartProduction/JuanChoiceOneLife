@@ -98,10 +98,55 @@ label AfterTheFire:
             Juan_left "How do we make that?"
             Lisa_right "Well, we stew the pork in equal parts vinegar and soy sauce, garlic, and season it pepper corns \n and make sure we make the pork soft and tender so it's easier to eat."
             Juan_left "Ahhhh, that sounds difficult."
-            Lisa_right "It's really not, Juan. I'll show you. "
+            Lisa_right "It's really not, Juan. I'll show you."
+            none "Lisa starts preparing the meal showing Juan how to cook the dish. Juan looks at his aunt with awe. \n He nods along as his aunt tells him what to do next."
 
+            Lisa_right "And lastly we need to taste. Can you taste it for me?"
+            Juan_left "Sure, Aunty."
+            none "Lisa gets a spoonful of the dish and blows on it before coaxing Juan to try it."
 
+            Juan_left "Aunty, it tastes really good!"
+            #----- Lisa smiles. 
+            Lisa_right "Really you think so?"
+            Juan_left "Yes!"
 
+            #----- Show Mary fake angry
+            Mary_left "Is it better than my cooking? Have you replaced your mother with her own sister?"
+            none "Juan laughs."
+            Juan_center "Of course I love your cooking more, Mommy."
 
-        
+            Mary_left "Lisa, can I try it?"
+            Lisa_right "Sure, here."
+            none "Mary takes a bite."
+
+            Mary_left "Ewww! You call this food?"
+            Lisa_right "That's so mean!"
+            Mary_left "I'm just joking, Lisa. It's delicious."
+
+            none "Juan watches as his mom and his aunt laugh and have fun. It's been long since they have been together."
+            #---- Juan Smiles
+            Juan_center "(I guess nothing really beats family.)"
+            none "Juan is fond of seeing his mom and his aunt get along so well. He thought maybe he should be a good big brother as well."
+
+            Lisa_right "It's time to eat, Juan. Can you call your father, your uncle and your cousins for me please?"
+            Juan_center "Yes, Aunty."
+
+            #-----Show Dining area
+            none "They proceed to set up the dining table and Juan calls everyone in the house so they could have a nice breakfast together."
+            
+
     if WakeChoice == "Stay":
+        none "Juan falls back into sleep and doesn't wake up until he hears his mom."
+        #--- Show Mary
+        Mary_right "Juan, honey, Wake up. It's time for breakfast."
+        Juan_left "ok, Mommy."
+
+    #-----Show Dining area
+        none "They proceed to the dining are where everyone in the house is so they could have a nice breakfast together."
+        #----- Show Lisa
+        Lisa_right "How about a little prayer before we eat, Juan?"
+        #----- Remove Lisa
+        Juan_center "Dear papa Jesus, this is Juan. I would like to thank you for this wonderful and delicious meal in front of us. \n I want to thank you for the time and that we are all here today."
+        Juan_center "Papa Jesus, I would also like to thank you for the family you gave me. They are all such nice and loving people. \n Thank you for my Family."
+        Juan_center "I hope that we get to spend more time together, because I miss my aunty and uncle and my cousins. Thank you, Papa Jesus. Amen."
+        none "Juan's family says amen as well and they start eating."
