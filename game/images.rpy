@@ -82,3 +82,15 @@ image dialog:
         linear 1.2 rotate 10
         linear 1.2 rotate -10
         repeat
+    
+image fire_animation:
+    zoom 0.3
+    ypos 1200
+    xpos 0.25
+    "assets/Sprites/fire1.png"
+    0.2
+    "assets/Sprites/fire2.png"
+    0.2
+    "assets/Sprites/fire3.png"
+    0.2
+    repeat

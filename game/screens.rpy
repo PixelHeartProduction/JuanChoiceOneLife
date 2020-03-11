@@ -765,6 +765,12 @@ screen preferences():
                     textbutton _("After Choices") action Preference("after choices", "toggle") activate_sound sfx_click2
                     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle")) activate_sound sfx_click2
 
+                vbox:
+                    style_prefix "pref"
+                    label _("Language")
+                    textbutton "English" action Language(None)
+                    textbutton "Filipino" action Language("Filipino")
+
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
 

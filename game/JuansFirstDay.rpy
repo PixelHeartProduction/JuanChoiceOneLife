@@ -49,7 +49,15 @@ label JuansFirstDay:
     Mary_center "Juan, you'll be late for school! Hurry up, it's your first day."
 
     show mode confirm with dissolve
-    call screen wakeorsleep with dissolve
+
+    $ ListenChoiceQuestion = "Juan still sleepy but he needs to go to school."
+    $ Text1="Maybe later.."
+    $ Text2="Wake up"
+    $ Icon1 = Image("assets/Sprites/Items/icon_sleep.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_wakeup.png")
+    call screen DualOptionScreen(ListenChoiceQuestion,"WakeupChoice",Icon1,Text1,"later",Icon2,Text2,"wake") with dissolve
+    #call screen wakeorsleep with dissolve
+
     hide mode confirm with dissolve
 
     if WakeupChoice == "wake":
@@ -276,7 +284,14 @@ label JuansFirstDay:
     if Alice_unlock:
         Alice_center "(Hey Juan, I remember it's {color=#adf569}7107{/color})"
     show mode confirm with dissolve
-    call screen PuloScreen with dissolve
+    $ testTitle = "Quiz #1"
+    $ testQuestion = "1.) How many islands are there\nin the Philippines?"
+    $ ans1 = "A.) 7107"
+    $ ans2 = "B.) 7100"
+    $ ans3 = "C.) 7108"
+    call screen TriOptionTestpaperScreen(testTitle,testQuestion,"PuloChoice",ans1,ans2,ans3,"7107","7100","7108") with dissolve
+    #call screen PuloScreen with dissolve
+
     hide mode confirm with dissolve
     
     if PuloChoice == "7108":
@@ -296,7 +311,14 @@ label JuansFirstDay:
         Alice_center "(I think it's {color=#adf569}South East Asia{/color})"
 
     show mode confirm with dissolve
-    call screen LocationScreen with dissolve
+
+    $ testTitle = "Quiz #1"
+    $ testQuestion = "1.) Where is the Philippines\n located at?"
+    $ ans1 = "A.) South East Asia"
+    $ ans2 = "B.) North East Asia"
+    $ ans3 = "C.) Central Asia"
+    call screen TriOptionTestpaperScreen(testTitle,testQuestion,"LocationChoice",ans1,ans2,ans3,"South East Asia","North East Asia","Central Asia") with dissolve
+    #call screen LocationScreen with dissolve
     hide mode confirm with dissolve
     
     if LocationChoice == "South East Asia":
@@ -373,7 +395,15 @@ label JuansFirstDay:
     Juan_left "(What should I do?)"
 
     show mode confirm with dissolve
-    call screen FoodChoiceScreen with dissolve
+
+    $ ListenChoiceQuestion = "Peter's mom forgot his lunch, What should i do?"
+    $ Text1="Give him some of my\n pork chop"
+    $ Text2="Tell the teacher Peter\n doesn't have food"
+    $ Icon1 = Image("assets/Sprites/Items/icon_givelunch.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_tellteacher.png")
+    call screen DualOptionScreen(ListenChoiceQuestion,"WakeupChoice",Icon1,Text1,"later",Icon2,Text2,"wake") with dissolve
+
+    #call screen FoodChoiceScreen with dissolve
     hide mode confirm with dissolve
 
     if FoodChoice == "Give":
@@ -389,7 +419,12 @@ label JuansFirstDay:
     Juan_left "(as we greeted each other I noticed from his backpack a picture of my favorite game.)"
 
     show mode confirm with dissolve
-    call screen AskSwordStyleScreens with dissolve
+    $ ListenChoiceQuestion = "Juan knows the picture from the backpack but what would he do?"
+    $ Text1="Ask him about the picture"
+    $ Text2="Say nothing"
+    $ Icon1 = Image("assets/Sprites/Items/icon_pointbag.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_quiet.png")
+    call screen DualOptionScreen(ListenChoiceQuestion,"askOrNot",Icon1,Text1,"Ask",Icon2,Text2,"Say nothing") with dissolve
     hide mode confirm with dissolve
     show Juan neutral
     if askOrNot == "Ask":
@@ -472,7 +507,12 @@ label JuansFirstDay:
 
 
     show mode confirm with dissolve
-    call screen TextChoiceScreen with dissolve
+    $ ListenChoiceQuestion = "Should Juan answer his phone while walking?"
+    $ Text1="Answer now"
+    $ Text2="It could wait"
+    $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
+    $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
+    call screen DualOptionScreen(ListenChoiceQuestion,"TextChoice",Icon1,Text1,"Answer",Icon2,Text2,"Ignore") with dissolve
     hide mode confirm with dissolve
 
     if TextChoice == "Answer":
@@ -539,7 +579,7 @@ label JuansFirstDay:
     Mary_left "Not really."
     show Mary smile with dissolve
     Mary_left "We bought you an alarm clock you sleepyhead."
-    show Juan neutral
+    show Juan sad
     Juan_center "Really? I thought it was the new volume of the manga I really liked. Anyways... thanks."
     Mary_left "Rub that sour face off because dinner's ready!"
     show Joseph laugh
@@ -628,81 +668,7 @@ label JuansFirstDay:
 
 
 
-    #=====================Screens===========================
-    screen AskSwordStyleScreens():
-        modal True
-
-        $ point = Image("assets/Sprites/Items/icon_pointbag.png")
-        $ point_selected = im.MatrixColor(point,im.matrix.brightness(0.2))
-        $ silent = Image("assets/Sprites/Items/icon_quiet.png")
-        $ silent_selected = im.MatrixColor(silent,im.matrix.brightness(0.2))
-
-        hbox xalign 0.5:
-            text(Text("Juan knows the picture from the backpack but what would he do?",size=50,ypos=30))
-
-        
-        hbox xalign 0.5 yalign 0.3 spacing 600:
-            vbox xpos 0.3 ypos 70:
-                imagebutton idle Transform(point, zoom=.7) hover Transform(point_selected, zoom=.7) action [SetVariable("askOrNot", "Ask"),Return()]
-                text(Text("Ask him about the picture",size=40)) xpos -100
-            vbox xpos -50 ypos 100:
-                imagebutton idle Transform(silent, zoom=1) hover Transform(silent_selected, zoom=1) action [SetVariable("askOrNot", "Say nothing"),Return()]
-                text(Text("Say nothing",size=40)) xpos 0
-
-    screen FoodChoiceScreen():
-        modal True
-        $ givefood = Image("assets/Sprites/Items/icon_givelunch.png")
-        $ givefood_selected = im.MatrixColor(givefood,im.matrix.brightness(0.2))
-        $ report = Image("assets/Sprites/Items/icon_tellteacher.png")
-        $ report_selected = im.MatrixColor(report,im.matrix.brightness(0.2))
-
-        hbox xalign 0.5:
-            text(Text("Peter's mom forgot his lunch, What should i do?",size=50,ypos=30))
-            
-        hbox xalign 0.5 yalign 0.3 spacing 600:
-            vbox xpos 0.5 ypos 70:
-                imagebutton idle Transform(givefood, zoom=.7) hover Transform(givefood_selected, zoom=.7) action [SetVariable("FoodChoice", "Give"),Return()]
-                text(Text("Give him some of my pork chop",size=40)) xpos -100
-            vbox xpos -50:
-                imagebutton idle Transform(report, zoom=.7) hover Transform(report_selected, zoom=.7) action [SetVariable("FoodChoice", "Report"),Return()]
-                text(Text("Tell the teacher Peter doesn't have food",size=40)) xpos -100
-
-
-    screen PuloScreen():
-        modal True
-
-        image(Transform("assets/Misc/notebook.png",zoom=1.7)) xalign 0.5 yalign 0.5
-
-        vbox xalign 0.4 yalign 0.05 spacing 50:
-            text("Quiz #1") size 50 xpos 0.2 ypos 30 color "#080808"
-            text("1.) How many Islands are there \n in the Philippines?") size 50 xpos 0.2 ypos 30 color "#080808"
-
-            vbox xalign 0.3 ypos 80 spacing 80:
-                vbox:
-                    textbutton (Text("A.) 7107",size=50,color="#080808")) action [SetVariable("PuloChoice", "7107"),Return()]
-                vbox:
-                    textbutton (Text("B.) 7100",size=50,color="#080808")) action [SetVariable("PuloChoice", "7100"),Return()]
-                vbox:
-                    textbutton (Text("C.) 7108",size=50,color="#080808")) action [SetVariable("PuloChoice", "7108"),Return()]
-    
-    screen LocationScreen():
-        modal True
-    
-        image(Transform("assets/Misc/notebook.png",zoom=1.7)) xalign 0.5 yalign 0.5
-
-        vbox xalign 0.4 yalign 0.05 spacing 50:
-            text("Quiz #1") size 50 xpos 0.2 ypos 30 color "#080808"
-            text("2.) Where is the Philippines \n located at?") size 50 xpos 0.2 ypos 30 color "#080808"
-
-            vbox xalign 0.7 ypos 80 spacing 80:
-                vbox:
-                    textbutton (Text("A.) South East Asia",size=50,color="#080808")) action [SetVariable("LocationChoice", "South East Asia"),Return()]
-                vbox:
-                    textbutton (Text("B.) North East Asia",size=50,color="#080808")) action [SetVariable("LocationChoice", "North East Asia"),Return()]
-                vbox:
-                    textbutton (Text("C.) Central Asia",size=50,color="#080808")) action [SetVariable("LocationChoice", "Central Asia"),Return()]
-    
-
+    #=====================Custom Screens===========================
     screen NationalBird():
         modal True
 
@@ -746,41 +712,5 @@ label JuansFirstDay:
         vbox xpos 1500 ypos 800:
             imagebutton idle Transform(stone, zoom=0.08) hover Transform(stone_selected, zoom=0.08) action [SetVariable("help_girl", "stone"),Return()]
             text("Throw a rock") xpos -50
-
-    screen wakeorsleep():
-        modal True
-        $ sleep = Image("assets/Sprites/Items/icon_sleep.png")
-        $ sleep_selected = im.MatrixColor(sleep,im.matrix.brightness(0.2))
-        $ wake = Image("assets/Sprites/Items/icon_wakeup.png")
-        $ wake_selected = im.MatrixColor(wake,im.matrix.brightness(0.2))
-
-        hbox xalign 0.5:
-            text(Text("Juan still sleepy but he needs to go to school.",size=50))
-
-        hbox xalign 0.5 yalign 0.3 spacing 800:
-            vbox:
-                imagebutton idle Transform(sleep, zoom=1) hover Transform(sleep_selected, zoom=1) action [SetVariable("WakeupChoice", "later"),Return()]
-                text(Text("Maybe later..",size=50)) xpos 0.14
-            vbox:
-                imagebutton idle Transform(wake, zoom=1) hover Transform(wake_selected, zoom=1) action [SetVariable("WakeupChoice", "wake"),Return()]
-                text(Text("Wake up",size=50)) xpos 0.2
-
-    screen TextChoiceScreen():
-        modal True
-        $ answer = Image("assets/Sprites/Items/Phone_Answer.png")
-        $ answer_selected = im.MatrixColor(answer,im.matrix.brightness(0.2))
-        $ ignore = Image("assets/Sprites/Items/Phone_Ignore.png")
-        $ ignore_selected = im.MatrixColor(ignore,im.matrix.brightness(0.2))
-
-        hbox xalign 0.5:
-            text(Text("Should Juan answer his phone while walking?.",size=50))
-
-        hbox xalign 0.5 yalign 0.3 spacing 800:
-            vbox:
-                imagebutton idle Transform(answer, zoom=1) hover Transform(answer_selected, zoom=1) action [SetVariable("TextChoice", "Answer"),Return()]
-                text(Text("Answer now",size=50)) xpos 0
-            vbox:
-                imagebutton idle Transform(ignore, zoom=1) hover Transform(ignore_selected, zoom=1) action [SetVariable("TextChoice", "Ignore"),Return()]
-                text(Text("It could wait.",size=50)) xpos 0.1
 
     return
