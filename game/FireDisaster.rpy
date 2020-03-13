@@ -10,6 +10,7 @@ label FireDisaster:
     $ CoverChoices = "null"
     $ HelpChoices = "null"
     $ StayChoices = "null"
+    
 
     stop music fadeout 2.0
     scene black with dissolve
@@ -282,6 +283,7 @@ label FireDisaster:
         show Joseph serious
         Joseph_right "Mary, take May and Juan outside."
 
+
     else:
         scene black with dissolve
         stop music
@@ -457,6 +459,7 @@ label FireDisaster:
         Juan_center "(Nods)"
         Joseph_right "But because of what happened we expect that you learned from your mistakes. Never play with anything dangerous."
         Juan_center "Yes, Dad. I'm really really sorry."
+        FireCause = "Juan"
 
     if FollowChoices == "Follow":
         Joseph_right "It's very good that at times like that you remained calm and followed your mom."

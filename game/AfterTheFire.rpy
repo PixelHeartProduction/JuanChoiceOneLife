@@ -141,12 +141,29 @@ label AfterTheFire:
         Mary_right "Juan, honey, Wake up. It's time for breakfast."
         Juan_left "ok, Mommy."
 
-    #-----Show Dining area
+        #-----Show Dining area
         none "They proceed to the dining are where everyone in the house is so they could have a nice breakfast together."
-        #----- Show Lisa
-        Lisa_right "How about a little prayer before we eat, Juan?"
-        #----- Remove Lisa
-        Juan_center "Dear papa Jesus, this is Juan. I would like to thank you for this wonderful and delicious meal in front of us. \n I want to thank you for the time and that we are all here today."
-        Juan_center "Papa Jesus, I would also like to thank you for the family you gave me. They are all such nice and loving people. \n Thank you for my Family."
-        Juan_center "I hope that we get to spend more time together, because I miss my aunty and uncle and my cousins. Thank you, Papa Jesus. Amen."
-        none "Juan's family says amen as well and they start eating."
+    
+    #----- Show Lisa
+    Lisa_right "How about a little prayer before we eat, Juan?"
+    #----- Remove Lisa
+    Juan_center "Dear papa Jesus, this is Juan. I would like to thank you for this wonderful and delicious meal in front of us. \n I want to thank you for the time and that we are all here today."
+    Juan_center "Papa Jesus, I would also like to thank you for the family you gave me. They are all such nice and loving people. \n Thank you for my Family."
+    Juan_center "I hope that we get to spend more time together, because I miss my aunty and uncle and my cousins. Thank you, Papa Jesus. Amen."
+    none "Juan's family says amen as well and they start eating."
+
+    if FireCause == "ElecShort":
+        none "After eating their breakfast the families are having a lovely conversation. When..."
+        #----Sound FX-----
+        none "Knock! Knock! Knock!"
+
+        #---- Fireman Rey enters the Living room
+        Rey_left "Good morning, Mr. Bautista."
+        Joseph_right "Good morning."
+        Rey_left "I am here to report on the cause of fire, I hope I didn't come at a bad time."
+        Joseph_right "No, it's okay."
+
+        Rey_left "Well, we found some evidence that the cause of the fire is an electrical short circuit. \n We think that there was a open wire that was exposed to moisture and created a spark."
+        Rey_left "In the future we recommend that you do a regular check on your wirings \n and of course, make sure that all the wirings are far from combustible material or easily burned materials."
+        Joseph_right "We'll make sure to do that. My family really wants to say thank you to you and the people who helped us during the incident."
+
