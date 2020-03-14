@@ -94,8 +94,8 @@ label AfterTheFire:
             
             Lisa_right "Here, Juan. Can you wash the pork in the sink for me."
             Juan_left "Sure, Aunty. What are we making?"
-            Lisa_right "We are making Adobong Baboy or Pork Adobo."
-            Juan_left "How do we make that?"
+            Lisa_right "We are making Pork Adobo."
+            Juan_left "How do we make that, Aunty?"
             Lisa_right "Well, we stew the pork in equal parts vinegar and soy sauce, garlic, and season it pepper corns \n and make sure we make the pork soft and tender so it's easier to eat."
             Juan_left "Ahhhh, that sounds difficult."
             Lisa_right "It's really not, Juan. I'll show you."
@@ -151,6 +151,19 @@ label AfterTheFire:
     Juan_center "Papa Jesus, I would also like to thank you for the family you gave me. They are all such nice and loving people. \n Thank you for my Family."
     Juan_center "I hope that we get to spend more time together, because I miss my aunty and uncle and my cousins. Thank you, Papa Jesus. Amen."
     none "Juan's family says amen as well and they start eating."
+
+    none "After a while, Juan starts feeling a little full."
+    
+    show mode confirm with dissolve
+        $ WhereToChoiceQuestion = "Should Juan help Aunt Lisa?"
+        $ Text1= "Help Aunt Lisa in the Kitchen."
+        $ Text2= "Stay and watch TV"
+        $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
+        $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
+        call screen DualOptionScreen(ListenChoiceQuestion,"HelpLisaChoice",Icon1,Text1,"Help",Icon2,Text2,"TV") with dissolve
+        hide mode confirm with dissolve
+    #----- Show Mark
+    Mark_right "(Name), you should finish your food."
 
     if FireCause == "ElecShort":
         none "After eating their breakfast the families are having a lovely conversation. When..."
