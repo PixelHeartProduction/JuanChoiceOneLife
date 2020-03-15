@@ -10,6 +10,7 @@ label FireDisaster:
     $ CoverChoices = "null"
     $ HelpChoices = "null"
     $ StayChoices = "null"
+    
 
     stop music fadeout 2.0
     scene black with dissolve
@@ -284,6 +285,7 @@ label FireDisaster:
         show Joseph serious
         Joseph_right "Mary, take May and Juan outside."
 
+
     else:
         scene black with dissolve
         stop music
@@ -463,6 +465,7 @@ label FireDisaster:
         Juan_center "(Nods)"
         Joseph_right "But because of what happened we expect that you learned from your mistakes. Never play with anything dangerous."
         Juan_center "Yes, Dad. I'm really really sorry."
+        $ FireCause = "Juan"
 
     if FollowChoices == "Follow":
         Joseph_right "It's very good that at times like that you remained calm and followed your mom."
@@ -480,6 +483,13 @@ label FireDisaster:
         Joseph_right "Great job on asking the neighbors for help, Juan. You really helped us out a lot."
     
     scene black with dissolve
+
+    none "After the ambulance examined the health of Baustista Family."
+    none "The paramedics found that they are all perfectly healthy."
+    if CoverChoices == "Run":
+        none "Except for Juan's coughing a little bit due to excess inhalation of smoke."
+
+    jump AfterTheFire
 
     #=====================Custom Screens===========================
 
