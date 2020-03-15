@@ -15,6 +15,10 @@
     image nighttimeBedroom = "assets/Scenes/BedroomNighttime.jpg"
     image classroom = "assets/Scenes/classroom.png"
     image housefire = "assets/Scenes/housefire.jpg"
+    image relativesHouse = "assets/Scenes/RelativesHouse.png"
+    image relativesBedroom = "assets/Scenes/RelativesBedroom.png"
+    image relativesKitchen = "assets/Scenes/RelativesKitchen.png"
+    image relativesLivingroom = "assets/Scenes/RelativesLivingroom.png" 
 
 #=============custom=============================
 
@@ -32,3 +36,4 @@
     image trans_hospital = im.MatrixColor("assets/Scenes/Hospital.jpg",im.matrix.brightness(-0.2))
     image trans_school = im.MatrixColor("assets/Scenes/classroom.png",im.matrix.brightness(-0.2))
     image trans_house = im.MatrixColor("assets/Scenes/house.jpg",im.matrix.brightness(-0.2))
+    image trans_relativesHouse = im.MatrixColor("assets/Scenes/RelativesHouse.png",im.matrix.brightness(-0.2))
