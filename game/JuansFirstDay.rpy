@@ -55,7 +55,7 @@ label JuansFirstDay:
     $ Text2="Wake up"
     $ Icon1 = Image("assets/Sprites/Items/icon_sleep.png")
     $ Icon2 = Image("assets/Sprites/Items/icon_wakeup.png")
-    call screen DualOptionScreen(ListenChoiceQuestion,"WakeupChoice",Icon1,Text1,"later",Icon2,Text2,"wake") with dissolve
+    call screen DualOptionScreen(ListenChoiceQuestion,"WakeupChoice",Icon1,Text1,"later",Icon2,Text2,"wake",False) with dissolve
     #call screen wakeorsleep with dissolve
 
     hide mode confirm with dissolve
@@ -144,7 +144,9 @@ label JuansFirstDay:
     Juan_center "(That girl needs help quickly! What should I do?)"
 
     show mode confirm with dissolve
+    show countdown at Position(xalign=.5, yalign=.2, zoom=20)
     call screen stickorstone with dissolve
+    hide countdown with dissolve
     hide mode confirm with dissolve
 
     if help_girl == "stone":
@@ -401,7 +403,7 @@ label JuansFirstDay:
     $ Text2="Tell the teacher Peter\n doesn't have food"
     $ Icon1 = Image("assets/Sprites/Items/icon_givelunch.png")
     $ Icon2 = Image("assets/Sprites/Items/icon_tellteacher.png")
-    call screen DualOptionScreen(ListenChoiceQuestion,"WakeupChoice",Icon1,Text1,"later",Icon2,Text2,"wake") with dissolve
+    call screen DualOptionScreen(ListenChoiceQuestion,"WakeupChoice",Icon1,Text1,"later",Icon2,Text2,"wake",False) with dissolve
 
     #call screen FoodChoiceScreen with dissolve
     hide mode confirm with dissolve
@@ -424,7 +426,7 @@ label JuansFirstDay:
     $ Text2="Say nothing"
     $ Icon1 = Image("assets/Sprites/Items/icon_pointbag.png")
     $ Icon2 = Image("assets/Sprites/Items/icon_quiet.png")
-    call screen DualOptionScreen(ListenChoiceQuestion,"askOrNot",Icon1,Text1,"Ask",Icon2,Text2,"Say nothing") with dissolve
+    call screen DualOptionScreen(ListenChoiceQuestion,"askOrNot",Icon1,Text1,"Ask",Icon2,Text2,"Say nothing",False) with dissolve
     hide mode confirm with dissolve
     show Juan neutral
     if askOrNot == "Ask":
@@ -512,7 +514,7 @@ label JuansFirstDay:
     $ Text2="It could wait"
     $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
     $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
-    call screen DualOptionScreen(ListenChoiceQuestion,"TextChoice",Icon1,Text1,"Answer",Icon2,Text2,"Ignore") with dissolve
+    call screen DualOptionScreen(ListenChoiceQuestion,"TextChoice",Icon1,Text1,"Answer",Icon2,Text2,"Ignore",False) with dissolve
     hide mode confirm with dissolve
 
     if TextChoice == "Answer":
@@ -685,13 +687,13 @@ label JuansFirstDay:
             vbox xalign 0.3 ypos 20 spacing 80:
                 hbox:
                     textbutton (Text("A.)",size=50,color="#080808"))
-                    imagebutton idle Transform(maya,zoom=0.10) action [SetVariable("NationalBirdChoice", "maya"),Return()]
+                    imagebutton idle Transform(maya,zoom=0.10) action [SetVariable("NationalBirdChoice", "maya"),Return()] activate_sound sfx_click1
                 hbox:
                     textbutton (Text("B.)",size=50,color="#080808"))
-                    imagebutton idle Transform(eagle,zoom=0.45) action [SetVariable("NationalBirdChoice", "eagle"),Return()]
+                    imagebutton idle Transform(eagle,zoom=0.45) action [SetVariable("NationalBirdChoice", "eagle"),Return()] activate_sound sfx_click1
                 hbox:
                     textbutton (Text("C.)",size=50,color="#080808"))
-                    imagebutton idle Transform(manok,zoom=0.4) action [SetVariable("NationalBirdChoice", "manok"),Return()]
+                    imagebutton idle Transform(manok,zoom=0.4) action [SetVariable("NationalBirdChoice", "manok"),Return()] activate_sound sfx_click1
 
 
 
@@ -702,15 +704,18 @@ label JuansFirstDay:
         $ stone = Image("assets/Sprites/Items/stone.png")
         $ stick_selected = im.MatrixColor(stick,im.matrix.brightness(0.2))
         $ stone_selected = im.MatrixColor(stone,im.matrix.brightness(0.2))
+        $ randomize = renpy.random.choice(["stick","stone"])
+        $ time = 10.0
 
         vbox xalign 0.5:
             text("The girl needs help, What should I do?") size 60 xpos 0 ypos 30
             text("(I need something that will scare the dog away.)") size 40 xpos 80 ypos 50
         vbox xpos 250 ypos 785:
-            imagebutton idle Transform(stick, zoom=0.2) hover Transform(stick_selected, zoom=0.2) action [SetVariable("help_girl", "stick"),Return()]
+            imagebutton idle Transform(stick, zoom=0.2) hover Transform(stick_selected, zoom=0.2) action [SetVariable("help_girl", "stick"),Return()] activate_sound sfx_click1
             text("Use a stick")
         vbox xpos 1500 ypos 800:
-            imagebutton idle Transform(stone, zoom=0.08) hover Transform(stone_selected, zoom=0.08) action [SetVariable("help_girl", "stone"),Return()]
+            imagebutton idle Transform(stone, zoom=0.08) hover Transform(stone_selected, zoom=0.08) action [SetVariable("help_girl", "stone"),Return()] activate_sound sfx_click1
             text("Throw a rock") xpos -50
 
+        timer time action [SetVariable("help_girl", randomize),Return()]
     return

@@ -3,11 +3,58 @@ define Class_center = Character ("Class",what_xalign=0.5, what_text_align=0.5,wh
 define Neighbor_center = Character ("Neighbor",what_xalign=0.5, what_text_align=0.5,who_xpos=535,color="#a17c26")
 
 define none = Character(None,what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5)
+#=========================Mark=================================
+define Mark_left = Character("Mark",what_xalign=0.30, what_text_align=0.0, color="#006600")
+define Mark_center = Character("Mark", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#006600")
+define Mark_right = Character("Mark", what_xalign=0.60, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#006600")
 
-#--------Temporary
-define Lisa_left = Character("Lisa",what_xalign=0.30, what_text_align=0.0)
-define Lisa_center = Character("Lisa", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5)
-define Lisa_right = Character("Lisa", what_xalign=0.60, what_text_align=1.0,who_xpos=925,who_text_align=1.0)
+image Mark neutral:
+    "assets/Sprites/Mark_Normal.png"
+    zoom .18
+    ypos 1.18
+
+image Mark neutralRight:
+    "assets/Sprites/Mark_Normal.png"
+    zoom .18
+    ypos 1.18
+    xalign 0.75
+
+#=========================Lisa=================================
+define Lisa_left = Character("Lisa",what_xalign=0.30, what_text_align=0.0, color="#ffb3b3")
+define Lisa_center = Character("Lisa", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#ffb3b3")
+define Lisa_right = Character("Lisa", what_xalign=0.60, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#ffb3b3")
+
+image Lisa neutral:
+    "assets/Sprites/Lisa_Normal.png"
+    zoom .32
+    ypos 1.2
+
+image Lisa neutralRight:
+    "assets/Sprites/Lisa_Normal.png"
+    zoom .32
+    ypos 1.2
+    xalign 0.75
+
+image Lisa neutralLeft:
+    "assets/Sprites/Lisa_Normal.png"
+    zoom .32
+    ypos 1.2
+    xalign 0.25
+
+image Lisa laugh:
+    "assets/Sprites/Lisa_Laugh.png"
+    zoom .32
+    ypos 1.2
+
+image Lisa talking:
+    "assets/Sprites/Lisa_Talking.png"
+    zoom .32
+    ypos 1.2
+
+image Lisa sad:
+    "assets/Sprites/Lisa_Sad.png"
+    zoom .32
+    ypos 1.2
 
 #=========================Juan=================================
 define Juan_left = Character("Juan",what_xalign=0.30, what_text_align=0.0)

@@ -38,7 +38,7 @@ label FireDisaster:
     $ ChoiceText2="Get up."
     $ Icon1 = Image("assets/Sprites/Items/icon_sick.png")
     $ Icon2 = Image("assets/Sprites/Items/icon_wakeup.png")
-    call screen DualOptionScreen(MainQuestion,"LieChoice",Icon1,ChoiceText1,"Lie",Icon2,ChoiceText2,"getUp") with dissolve
+    call screen DualOptionScreen(MainQuestion,"LieChoice",Icon1,ChoiceText1,"Lie",Icon2,ChoiceText2,"getUp",False) with dissolve
 
     hide mode confirm with dissolve
 
@@ -78,7 +78,7 @@ label FireDisaster:
         $ ListenChoiceText2="Chat with Peter"
         $ firemanRey = Image("assets/Sprites/Items/icon_firemanRey.png")
         $ chatWithPeter = Image("assets/Sprites/Items/icon_talktopeter.png")
-        call screen DualOptionScreen(ListenChoiceQuestion,"ListenChoice",firemanRey,ListenChoiceText1,"Listen",chatWithPeter,ListenChoiceText2,"Chat") with dissolve
+        call screen DualOptionScreen(ListenChoiceQuestion,"ListenChoice",firemanRey,ListenChoiceText1,"Listen",chatWithPeter,ListenChoiceText2,"Chat",False) with dissolve
 
         hide mode confirm with dissolve
 
@@ -215,7 +215,9 @@ label FireDisaster:
         $ ListenChoiceText2="Call dad"
         $ Icon1 = Image("assets/Sprites/Items/icon_think.png")
         $ Icon2 = Image("assets/Sprites/Items/icon_callDad.png")
-        call screen DualOptionScreen(ListenChoiceQuestion,"SmallFireChoice",Icon1,ListenChoiceText1,"Deal",Icon2,ListenChoiceText2,"CallDad") with dissolve
+        show countdown at Position(xalign=.5, yalign=.1, zoom=20)
+        call screen DualOptionScreen(ListenChoiceQuestion,"SmallFireChoice",Icon1,ListenChoiceText1,"Deal",Icon2,ListenChoiceText2,"CallDad",True) with dissolve
+        hide countdown with dissolve
         # call screen SmallFireChoiceScreen with dissolve
         hide mode confirm with dissolve
 
@@ -314,7 +316,9 @@ label FireDisaster:
     $ ListenChoiceText2="Freeze in place"
     $ Icon1 = Image("assets/Sprites/Items/icon_followMary.png")
     $ Icon2 = Image("assets/Sprites/Items/icon_scared.png")
-    call screen DualOptionScreen(ListenChoiceQuestion,"FollowChoices",Icon1,ListenChoiceText1,"Follow",Icon2,ListenChoiceText2,"Freeze") with dissolve
+    show countdown at Position(xalign=.5, yalign=.1, zoom=20)
+    call screen DualOptionScreen(ListenChoiceQuestion,"FollowChoices",Icon1,ListenChoiceText1,"Follow",Icon2,ListenChoiceText2,"Freeze",True) with dissolve
+    hide countdown with dissolve
     #call screen FollowChoiceScreen with dissolve
     hide mode confirm with dissolve
 
@@ -365,8 +369,9 @@ label FireDisaster:
     $ ListenChoiceText2="Stay put"
     $ Icon1 = Image("assets/Sprites/Items/icon_openHose.png")
     $ Icon2 = Image("assets/Sprites/Items/icon_stand.png")
-    call screen DualOptionScreen(ListenChoiceQuestion,"HelpChoices",Icon1,ListenChoiceText1,"Help",Icon2,ListenChoiceText2,"Stay") with dissolve
-
+    show countdown at Position(xalign=.5, yalign=.1, zoom=20)
+    call screen DualOptionScreen(ListenChoiceQuestion,"HelpChoices",Icon1,ListenChoiceText1,"Help",Icon2,ListenChoiceText2,"Stay",True) with dissolve
+    hide countdown with dissolve
     #call screen HelpChoiceScreen with dissolve
     hide mode confirm with dissolve
     if HelpChoices == "Help":
@@ -395,8 +400,9 @@ label FireDisaster:
     $ ListenChoiceText2="Ask neighbors for help"
     $ Icon1 = Image("assets/Sprites/Items/icon_callFireDept.png")
     $ Icon2 = Image("assets/Sprites/Items/icon_callNeighbors.png")
-    call screen DualOptionScreen(ListenChoiceQuestion,"StayChoices",Icon1,ListenChoiceText1,"Call",Icon2,ListenChoiceText2,"Neighbors") with dissolve
-
+    show countdown at Position(xalign=.5, yalign=.1, zoom=20)
+    call screen DualOptionScreen(ListenChoiceQuestion,"StayChoices",Icon1,ListenChoiceText1,"Call",Icon2,ListenChoiceText2,"Neighbors",True) with dissolve
+    hide countdown with dissolve
     hide mode confirm with dissolve
 
     if StayChoices == "Call":
@@ -459,7 +465,7 @@ label FireDisaster:
         Juan_center "(Nods)"
         Joseph_right "But because of what happened we expect that you learned from your mistakes. Never play with anything dangerous."
         Juan_center "Yes, Dad. I'm really really sorry."
-        FireCause = "Juan"
+        $ FireCause = "Juan"
 
     if FollowChoices == "Follow":
         Joseph_right "It's very good that at times like that you remained calm and followed your mom."
@@ -477,6 +483,13 @@ label FireDisaster:
         Joseph_right "Great job on asking the neighbors for help, Juan. You really helped us out a lot."
     
     scene black with dissolve
+
+    none "After the ambulance examined the health of Baustista Family."
+    none "The paramedics found that they are all perfectly healthy."
+    if CoverChoices == "Run":
+        none "Except for Juan's coughing a little bit due to excess inhalation of smoke."
+
+    jump AfterTheFire
 
     #=====================Custom Screens===========================
 
@@ -511,10 +524,10 @@ label FireDisaster:
         vbox xalign 0.5:
             text("What should Juan do with the small fire?") size 60 xpos 0 ypos 30
         vbox xpos 250 ypos 560:
-            imagebutton idle Transform(fan, zoom=0.5) hover Transform(fan_selected, zoom=0.5) action [SetVariable("DealChoices", "Fan"),Return()] xalign 0.5
+            imagebutton idle Transform(fan, zoom=0.5) hover Transform(fan_selected, zoom=0.5) action [SetVariable("DealChoices", "Fan"),Return()] xalign 0.5 activate_sound sfx_click1
             text("Blow out the fire with the fan") xalign 0.5
         vbox xpos 1200 ypos 640:
-            imagebutton idle Transform(towel, zoom=0.1) hover Transform(towel_selected, zoom=0.1) action [SetVariable("DealChoices", "Rug"),Return()] xalign 0.5
+            imagebutton idle Transform(towel, zoom=0.1) hover Transform(towel_selected, zoom=0.1) action [SetVariable("DealChoices", "Rug"),Return()] xalign 0.5 activate_sound sfx_click1
             text("Use the wet cloth") xalign 0.5
         
         timer time action [SetVariable("DealChoices", randomize),Return()]
@@ -532,10 +545,10 @@ label FireDisaster:
         vbox xalign 0.5:
             text("Juan spots clean cloth by the table.") size 60 xpos 0 ypos 30
         vbox xpos 150 ypos 360:
-            imagebutton idle Transform(arrow, zoom=2) hover Transform(arrow_selected, zoom=2) action [SetVariable("CoverChoices", "Run"),Return()] xalign 0.5
+            imagebutton idle Transform(arrow, zoom=2) hover Transform(arrow_selected, zoom=2) action [SetVariable("CoverChoices", "Run"),Return()] xalign 0.5 activate_sound sfx_click1
             text("Continue running outside") xalign 0.5
         vbox xpos 970 ypos 640:
-            imagebutton idle Transform(towel, zoom=0.3) hover Transform(towel_selected, zoom=0.3) action [SetVariable("CoverChoices", "Cover"),Return()] xalign 0.5
+            imagebutton idle Transform(towel, zoom=0.3) hover Transform(towel_selected, zoom=0.3) action [SetVariable("CoverChoices", "Cover"),Return()] xalign 0.5 activate_sound sfx_click1
             text("Use cloths to help cover from the smoke") xalign 0.5
 
         timer time action [SetVariable("CoverChoices", randomize),Return()]
