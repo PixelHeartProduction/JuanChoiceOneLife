@@ -53,3 +53,9 @@ translate filipino strings:
 
     old "Return"
     new "Bumalik"
+
+    old "Auto"
+    new "i-Auto"
+
+    old "Prefs"
+    new "Mga Prefs"
