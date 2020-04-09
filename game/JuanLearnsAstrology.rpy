@@ -25,8 +25,10 @@ label JuanLearnsAstrology:
 
     if CrossChoice == "Wait":
         April_left "Ok Juan, we need to cross now."
+        #--- Show Stoplight
         April_left "So Juan, do you see that? \n That's a stop light it tells the drivers whether to stop their car or they're still allows to go."
         Juan_right "What's that one then?"
+        #--- Show walk or stop warning for pedestrians. AHHAHA di ko alam tawag 
         April_left "Ohh, that tells you when you can cross the road. \n When it flashes green you can cross, but when it's red you have to wait."
         
     if CrossChoice == "Cross":
@@ -38,5 +40,5 @@ label JuanLearnsAstrology:
         April_left "You should always listen to what your elders tell you."
         Juan_right "Yes, April, I'm sorry."
 
-        
+
         
