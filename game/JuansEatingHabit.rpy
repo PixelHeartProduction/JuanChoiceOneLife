@@ -8,7 +8,7 @@ label JuansEatingHabit:
     with Pause(2)
     hide text with dissolve
 
-    play music "assets/BGM/HelloHowAreYou.mp3"
+    play music "assets/FreeBGM/Survey.mp3"
 
     scene daytimeBedroom with dissolve
     show Joseph laugh

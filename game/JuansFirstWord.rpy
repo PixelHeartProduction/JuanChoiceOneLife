@@ -1,6 +1,5 @@
 label JuansFirstWord:
 
-    stop music
 
 
     scene black with dissolve
@@ -11,9 +10,8 @@ label JuansFirstWord:
     hide text with dissolve
     scene black with dissolve
 
-    play music "assets/BGM/HelloHowAreYou.mp3"
     none "..."
-
+    play music "assets/FreeBGM/TheEveningSky.mp3"
     Mary_left "Aww look at his cute little eyes!"
     Mary_left "He sure looks like you Joseph."
     Joseph_right "Haha!, He really looks like me. He's so cute and I'm so happy."
@@ -55,7 +53,6 @@ label JuansFirstWord:
     Juan_center "..."
     Juan_center "a.."
 
-    stop music
 
     show Joseph serious
     Joseph_right "Ma!"
@@ -64,7 +61,7 @@ label JuansFirstWord:
     Mary_left "Ohh, Really?! I'm really excited!"
     Mary_left "I've been waiting this for 10 months!"
     none "Mary and Joseph tries guiding Juan on his first words."
-
+    stop music
     Juan_center "a..a.."
 
     show mode confirm with dissolve
@@ -73,7 +70,7 @@ label JuansFirstWord:
 
     if Choice_ch1 == "mama":
         $ renpy.notify("Mama's boy perk unlocked!")
-        play music "assets/BGM/SayIt.mp3"
+        play music "assets/FreeBGM/Graduation.mp3"
         Mary_left "Can you believe that Joseph?! He said 'Mama'. "
         show Mary smile
         Mary_left "He said Mama!"
@@ -89,7 +86,7 @@ label JuansFirstWord:
 
     if Choice_ch1 == "papa":
         $ renpy.notify("Daddy's boy perk unlocked!")
-        play music "assets/BGM/SayIt.mp3"
+        play music "assets/FreeBGM/Graduation.mp3"
         show Joseph laugh
         Joseph_right "Ma!, he said Papa! Did you hear it? He said 'Papa' he called me."
         show Mary smile

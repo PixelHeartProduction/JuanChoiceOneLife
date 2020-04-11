@@ -1,9 +1,7 @@
 label WalkIndependently:
 
     $ cry_or_stand = "null"
-
     stop music
-    play music "assets/BGM/Ramune.mp3"
     scene black with dissolve
     scene trans_bedroom with dissolve
     show mode confirm with dissolve
@@ -11,6 +9,7 @@ label WalkIndependently:
     with Pause(2)
     hide text with dissolve
     scene black with dissolve
+    play music "assets/FreeBGM/SnowAndChildren.mp3"
     show text("{size=40}a month later.{/size}") with dissolve
     with Pause(2)
     hide text with dissolve

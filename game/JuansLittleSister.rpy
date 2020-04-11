@@ -15,6 +15,7 @@ label JuansLittleSister:
     hide text with dissolve
     scene trans_hospital with dissolve
     show mode confirm with dissolve
+    stop music
     show text("{size=60}Juan's little sister{/size}") with dissolve
     with Pause(2)
     hide text with dissolve
@@ -24,8 +25,7 @@ label JuansLittleSister:
     none "(Juan said as he happily play with his toys.)"
     show Mary neutralLeft with easeinright
     show Joseph neutralright with easeinright
-    play music "assets/BGM/SayIt.mp3"
-
+    play music "assets/FreeBGM/Graduation.mp3"
     Mary_left "Honey, I'm really nervous. How do you think he'll react?"
     Joseph_right "I'm sure he'll be happy to hear the news. I'll bet he will be jumping with joy once we tell him."
     Joseph_right "I know this might be a lot to take in but he's a big boy now. I'm sure he'll handle it well."

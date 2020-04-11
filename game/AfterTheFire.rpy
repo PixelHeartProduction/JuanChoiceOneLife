@@ -13,7 +13,7 @@ label AfterTheFire:
     show text("{size=60}After the fire{/size}") with dissolve
     with Pause(2)
     hide text with dissolve
-    play music "assets/BGM/Ramune.mp3"
+    play music "assets/FreeBGM/Survey.mp3"
     scene relativesHouse with dissolve
     #--------------- Rwlative's House Exterior------------#
 
@@ -104,6 +104,7 @@ label AfterTheFire:
             scene black with dissolve
             none "Juan stayed at the living room to watch morning cartoons and waited for breakfast."
             scene relativesKitchen with dissolve
+            play music "assets/FreeBGM/UnderTheCobblestones.mp3"
 
         if HelpLisaChoice == "Help":
             Juan_left "Sure, Aunty. Tell me what I can help with."
@@ -115,7 +116,7 @@ label AfterTheFire:
                 show Juan neutralLeft with dissolve
                 show Lisa neutralRight with dissolve
             
-            play music "assets/BGM/Ghost.mp3"
+            play music "assets/FreeBGM/UnderTheCobblestones.mp3"
             show Lisa talking with dissolve 
             Lisa_right "Here, Juan. Can you wash the pork in the sink for me."
             show Juan smile2
@@ -193,6 +194,7 @@ label AfterTheFire:
         #-----Show Dining area
         scene relativesKitchen with dissolve
         none "They proceed to the dining are where everyone in the house is so they could have a nice breakfast together."
+        play music "assets/FreeBGM/UnderTheCobblestones.mp3"
     
     #----- Show Lisa
     show Juan neutral with dissolve
