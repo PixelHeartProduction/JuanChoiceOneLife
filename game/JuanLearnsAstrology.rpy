@@ -39,6 +39,8 @@ label JuanLearnsAstrology:
         Juan_right "I'm really sorry. I thought I could do it alone."
         April_left "You should always listen to what your elders tell you."
         Juan_right "Yes, April, I'm sorry."
+        April_left "See that thing there. That tells you when you can cross the road. \n When it flashes green you can cross, but when it's red you have to wait."
+        
 
 
         
