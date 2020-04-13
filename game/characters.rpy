@@ -19,6 +19,21 @@ image Mark neutralRight:
     ypos 1.18
     xalign 0.75
 
+#========================April=================================
+define April_left = Character("April",what_xalign=0.30, what_text_align=0.0, color="#fe7e66")
+define April_center = Character("April", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#fe7e66")
+define April_right = Character("April", what_xalign=0.60, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#fe7e66")
+
+image April neutralLeft:
+    "assets/Sprites/April_Normal.png"
+    zoom .36
+    ypos 1.18
+    xalign 0.25
+
+image April talking:
+    "assets/Sprites/April_Talking.png"
+    zoom .36
+    ypos 1.18
 #=========================Lisa=================================
 define Lisa_left = Character("Lisa",what_xalign=0.30, what_text_align=0.0, color="#ffb3b3")
 define Lisa_center = Character("Lisa", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#ffb3b3")
