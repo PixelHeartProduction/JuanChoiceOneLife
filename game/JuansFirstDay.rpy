@@ -39,7 +39,7 @@ label JuansFirstDay:
     scene black with dissolve
 
     none "..."
-    play music "assets/BGM/ghost.mp3"
+    play music "assets/FreeBGM/TheEveningSky.mp3"
     none "'.....hey wake up you sleepy head.'"
     none "(it's the first sound I hear as I wake up in my bed.)"
 
@@ -130,7 +130,7 @@ label JuansFirstDay:
     stop music
     play sound "assets/SFX/Dog_Bark.mp3"
     none "Woof Woof!"
-    play music "assets/BGM/Lullaby.mp3"
+    play music "assets/FreeBGM/WitchGrandmotherTae.mp3"
     Juan_center "huh?."
     Juan_center "What's happening there?"
     none "(Juan hastily ran into the scene.)"
@@ -148,7 +148,6 @@ label JuansFirstDay:
     call screen stickorstone with dissolve
     hide countdown with dissolve
     hide mode confirm with dissolve
-
     if help_girl == "stone":
             none "(Juan quicky searches for something to throw at the dog and finds a piece of rock.)"
             scene daytimeStreet1 with dissolve
@@ -160,6 +159,7 @@ label JuansFirstDay:
             show Alice surprised
             none "(The dog got scared of the stone and ran away.)"
             show Juan phew with dissolve
+            play music "assets/FreeBGM/UnderTheCobblestones.mp3"
             Juan_left "Phew."
             show Juan neutral with dissolve
             Juan_left "Are you hurt?"
@@ -201,7 +201,7 @@ label JuansFirstDay:
             with Pause(1)
 
             none "(After a few minutes the dog finally gave up on me and walks away.)"
-
+            play music "assets/FreeBGM/UnderTheCobblestones.mp3"
             scene daytimeStreet2 with dissolve
 
             show Juan phew with dissolve
@@ -373,7 +373,7 @@ label JuansFirstDay:
     scene black with dissolve
     with Pause(1)
     scene classroom with dissolve
-    play music "assets/BGM/Deadman.mp3"
+    play music "assets/FreeBGM/SnowAndChildren.mp3"
 
     show Juan neutral with dissolve
     show Juan confident with dissolve
@@ -475,7 +475,7 @@ label JuansFirstDay:
     none "The school bell rings and Juan's exhausted face flipped into a smile."
 
     scene afternoonStreet1 with dissolve
-    play music "assets/BGM/Ramune.mp3"
+    play music "assets/FreeBGM/DreamOfChildrensRoom.mp3"
     Juan_center "(It's finally time to go home but that's not where the day ends)"
     Juan_center "(Unfortunately our teachers had left us a ton of homeworks)"
 
@@ -590,7 +590,7 @@ label JuansFirstDay:
     stop music
     scene black with dissolve
     with Pause(1)
-    play music "assets/BGM/SayIt.mp3"
+    play music "assets/FreeBGM/Graduation.mp3"
     scene nighttimeBedroom with dissolve
     with Pause(1)
 

@@ -575,7 +575,10 @@ screen about():
                 text " Assc. Producer, Writer, Scene Director\n"
 
                 label "Mark Lester Hermano"
-                text " Documents, Concepts\n\n"
+                text " Documents, Concepts\n"
+
+                label "Via Amor Capule"
+                text " Filipino Translator\n\n"
 
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only]")
 

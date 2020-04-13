@@ -19,7 +19,7 @@ label FireDisaster:
     show text("{size=60}Fire disaster{/size}") with dissolve
     with Pause(2)
     hide text with dissolve
-    play music "assets/BGM/Ramune.mp3"
+    play music "assets/FreeBGM/TheEveningSky.mp3"
 
     
     scene black with dissolve
@@ -47,8 +47,10 @@ label FireDisaster:
         Mary_left "Really? Okay then, rest well, Juan. I'll bring you food."
         scene black with dissolve
         scene daytimeLivingroom with dissolve
+        stop music
         none "Juan, stayed in his room the whole day and played on his phone."
         none "Halfway throughout the day the whole city experienced electrical shortage."
+        play music "assets/FreeBGM/DreamOfChildrensRoom.mp3"
 
     
     if LieChoice == "getUp":
@@ -146,8 +148,9 @@ label FireDisaster:
             none "The lesson finished and Juan does not know anything about it."
 
         scene black with dissolve
+        stop music
         none "The school day ends and Juan heads home."
-
+        play music "assets/FreeBGM/DreamOfChildrensRoom.mp3"
         scene afternoonStreet1 with dissolve
         none "As Juan heads home he sees his family outside."
 
@@ -205,8 +208,9 @@ label FireDisaster:
         show fire_animation with dissolve
 
         show Juan nervous
-        play music "assets/BGM/Plume.mp3"
+        stop music
         Juan_center "Oh no!"
+        play music "assets/FreeBGM/Intense.mp3"
 
         show mode confirm with dissolve
 
@@ -243,7 +247,7 @@ label FireDisaster:
                 show Juan phew with dissolve
                 Juan_center "Whoo! That was close."
                 stop music
-                play music "assets/BGM/Ghost.mp3"
+                play music "assets/FreeBGM/LateSummerCicada.mp3"
                 show Juan sad with dissolve
                 none "Joseph rushes into the room."
                 show Joseph neutralright with easeinright
@@ -268,7 +272,7 @@ label FireDisaster:
             none "Joseph tries hard to put out the fire with a wet cloth."
 
             stop music
-            play music "assets/BGM/Ghost.mp3"
+            play music "assets/FreeBGM/LateSummerCicada.mp3"
 
 
         
@@ -297,7 +301,7 @@ label FireDisaster:
         scene kitchenFire with dissolve
         show Juan neutral with dissolve
         none "Juan wakes up and sees the smoke."
-        play music "assets/BGM/Plume.mp3"
+        play music "assets/FreeBGM/Intense.mp3"
         show Juan nervous with dissolve
         Juan_center "Dad, wake up look! Dad!!"
         show Joseph neutralright with dissolve
@@ -446,7 +450,7 @@ label FireDisaster:
     show Joseph seriousright with dissolve
     show Juan sad with dissolve
     show Mary neutralLeft with dissolve
-    play music "assets/BGM/SayIt.mp3"
+    play music "assets/FreeBGM/Graduation.mp3"
     Joseph_right "Thank you so much for helping me and my family."
     show Mary talking with dissolve
     Mary_left "We are very sorry for the trouble my family caused the whole neighborhood."

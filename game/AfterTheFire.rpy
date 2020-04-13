@@ -13,7 +13,7 @@ label AfterTheFire:
     show text("{size=60}After the fire{/size}") with dissolve
     with Pause(2)
     hide text with dissolve
-    play music "assets/BGM/Ramune.mp3"
+    play music "assets/FreeBGM/Survey.mp3"
     scene relativesHouse with dissolve
     #--------------- Rwlative's House Exterior------------#
 
@@ -30,9 +30,9 @@ label AfterTheFire:
     $ WakeUpChoiceQuestion = "Should Juan wake up now?"
     $ Text1="Get up now"
     $ Text2="Stay in bed"
-    $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
-    $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
-    call screen DualOptionScreen(ListenChoiceQuestion,"WakeChoice",Icon1,Text1,"GetUp",Icon2,Text2,"Stay",False) with dissolve
+    $ Icon1 = Image("assets/Sprites/Items/icon_wakeup.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_sleep.png")
+    call screen DualOptionScreen(WakeUpChoiceQuestion,"WakeChoice",Icon1,Text1,"GetUp",Icon2,Text2,"Stay",False) with dissolve
     hide mode confirm with dissolve
 
     if WakeChoice == "GetUp":
@@ -44,12 +44,7 @@ label AfterTheFire:
 
         Juan_center "Where should I go?"
         show mode confirm with dissolve
-        $ WhereToChoiceQuestion = "Where should Juan go to"
-        $ Text1= "Kitchen"
-        $ Text2= "Living Room"
-        $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
-        $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
-        call screen DualOptionScreen(ListenChoiceQuestion,"WhereToChoice",Icon1,Text1,"Kitchen",Icon2,Text2,"Living",False) with dissolve
+        call screen WhereToGoScreen
         hide mode confirm with dissolve
 
         if WhereToChoice == "Kitchen":
@@ -57,6 +52,7 @@ label AfterTheFire:
             scene relativesKitchen with dissolve
             show Juan neutralLeft with dissolve
             show Lisa neutralRight with dissolve
+            pause(1)
 
         if WhereToChoice == "Living":
             none "Juan goes down to the living."
@@ -82,9 +78,9 @@ label AfterTheFire:
         $ Text2= "Stay and watch TV"
         if WhereToChoice == "Kitchen":
             $ Text2= "Watch TV"
-        $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
-        $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
-        call screen DualOptionScreen(ListenChoiceQuestion,"HelpLisaChoice",Icon1,Text1,"Help",Icon2,Text2,"TV",False) with dissolve
+        $ Icon1 = Image("assets/Sprites/Items/icon_helpAunt.png")
+        $ Icon2 = Image("assets/Sprites/Items/icon_watchTv.png")
+        call screen DualOptionScreen(WhereToChoiceQuestion,"HelpLisaChoice",Icon1,Text1,"Help",Icon2,Text2,"TV",False) with dissolve
         hide mode confirm with dissolve
 
         if HelpLisaChoice == "TV":
@@ -104,6 +100,7 @@ label AfterTheFire:
             scene black with dissolve
             none "Juan stayed at the living room to watch morning cartoons and waited for breakfast."
             scene relativesKitchen with dissolve
+            play music "assets/FreeBGM/UnderTheCobblestones.mp3"
 
         if HelpLisaChoice == "Help":
             Juan_left "Sure, Aunty. Tell me what I can help with."
@@ -115,7 +112,7 @@ label AfterTheFire:
                 show Juan neutralLeft with dissolve
                 show Lisa neutralRight with dissolve
             
-            play music "assets/BGM/Ghost.mp3"
+            play music "assets/FreeBGM/UnderTheCobblestones.mp3"
             show Lisa talking with dissolve 
             Lisa_right "Here, Juan. Can you wash the pork in the sink for me."
             show Juan smile2
@@ -193,6 +190,7 @@ label AfterTheFire:
         #-----Show Dining area
         scene relativesKitchen with dissolve
         none "They proceed to the dining are where everyone in the house is so they could have a nice breakfast together."
+        play music "assets/FreeBGM/UnderTheCobblestones.mp3"
     
     #----- Show Lisa
     show Juan neutral with dissolve
@@ -208,17 +206,23 @@ label AfterTheFire:
 
     none "After a while, Juan starts feeling a little full."
     
-    show mode confirm with dissolve
-    $ WhereToChoiceQuestion = "Should Juan help Aunt Lisa?"
-    $ Text1= "Help Aunt Lisa in the Kitchen."
-    $ Text2= "Stay and watch TV"
-    $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
-    $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
-    call screen DualOptionScreen(ListenChoiceQuestion,"HelpLisaChoice",Icon1,Text1,"Help",Icon2,Text2,"TV",False) with dissolve
-    hide mode confirm with dissolve
+    # show mode confirm with dissolve
+    # $ WhereToChoiceQuestion = "Should Juan help Aunt Lisa?"
+    # $ Text1= "Help Aunt Lisa in the Kitchen."
+    # $ Text2= "Stay and watch TV"
+    # $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
+    # $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
+    # call screen DualOptionScreen(ListenChoiceQuestion,"HelpLisaChoice",Icon1,Text1,"Help",Icon2,Text2,"TV",False) with dissolve
+    # hide mode confirm with dissolve
     #----- Show Mark
+    hide Juan with dissolve
     show Mark neutralRight with dissolve
+    show April neutralLeft with dissolve
+    pause(1)
     Mark_right "April, you should finish your food."
+    show April talking with dissolve
+    April_left "Hold on dad, my friend is texting me here."
+    Mark_right "Oh my, kids these days..."
 
     if FireCause == "ElecShort":
         scene black with dissolve
@@ -245,3 +249,21 @@ label AfterTheFire:
         show Joseph talking with dissolve
         Joseph_right "We'll make sure to do that. My family really wants to say thank you to you and the people who helped us during the incident."
 
+#=============================Custom Choices==========================
+    screen WhereToGoScreen():
+        modal True
+
+        $ toKitchen = Image("assets/Sprites/Items/blueArrowFlipped.png")
+        $ toLiving = Image("assets/Sprites/Items/blueArrow.png")
+        $ kitchen_selected = im.MatrixColor(toKitchen,im.matrix.brightness(0.2))
+        $ living_selected = im.MatrixColor(toLiving,im.matrix.brightness(0.2))
+
+
+        vbox xalign 0.5:
+            text("Where should Juan go?") size 60 xpos 0 ypos 30
+        vbox xpos 100 ypos 400:
+            imagebutton idle Transform(toKitchen, zoom=2) hover Transform(kitchen_selected, zoom=2) action [SetVariable("WhereToChoice", "Kitchen"),Return()] xalign 0.5
+            text("Go to the kitchen") xalign 0.5
+        vbox xpos 1500 ypos 400:
+            imagebutton idle Transform(toLiving, zoom=2) hover Transform(living_selected, zoom=2) action [SetVariable("WhereToChoice", "Living"),Return()] xalign 0.5
+            text("Go to the living room") xalign 0.5
