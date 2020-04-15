@@ -3,16 +3,14 @@ label JuanLearnsAstrology:
     $ CrossChoice = "null"
     $ AnswerChoice = "null"
     $ AnswerStep1Choice = "null"
-
+    
     #---Relative house Exterior
     #---Show Mary
     Mary_left "Juan, be careful on your way to school. April will be taking you there."
     Juan_right "Yes, mom."
-
     #---Mary leaves Show April
     April_left "Juan, ready to go?"
     Juan_right "Let's go"
-
     #--- Show Crossing 
     none "April and Juan reaches a busy intersection."
     April_left "Wait for me, Juan, We will cross together."
@@ -86,7 +84,22 @@ label JuanLearnsAstrology:
     Cathy_left "The next phase will be Condensation. \nIn this phase the water Vapor that went up in the air will turn into water again because of the coldness of the atmosphere."
     Cathy_left "When there is enough water in the clouds the third and final phase will happen, which is Precipitation."
     Cathy_left "In precipitation all the built up water in the clouds will be released."
-    
+    #--- Show Peter
+    Peter_right "Is that what we call rain??"
+    Cathy_left "Yes, that is actually one kind of precipitations. We have rain, snow, sleet, and hail. \nBut in the Philippines where we live we only experience rain because our weather is really hot."
+    #--- Peter Dissolve Show Juan
+    Juan_right "Ms. Cathy, what is the difference between rain and storm?"
+    Cathy_left "Good question, Juan. Rain is just condensed water in the clouds. Rain also happens when there is a storm."
+    Cathy_left "Storm have much stronger rain, they form over the warm ocean water of the tropics. \nStorms also causes flooding, especially in areas that don't have proper drainage systems."
+    Juan_right "So Ms. Cathy how do we prevent floods?"
+    #--- show pictures of the following
+    Cathy_left "We can prevent it by cleaning our surroundings. \nTrash and litter can clog our drainage and pathways of water."
+    Cathy_left "We can also prevent it by plating a lot of trees. Trees help absorb water from the storms."
+
+
+
+
+
      
 
 
