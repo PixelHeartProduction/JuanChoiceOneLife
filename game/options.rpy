@@ -64,7 +64,7 @@ define sfx_mode = "assets/SFX/mode.mp3"
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-define config.main_menu_music = "assets/BGM/Lullaby.mp3"
+define config.main_menu_music = "assets/FreeBGM/AlternateDreams.mp3"
 
 
 ## Transitions #################################################################

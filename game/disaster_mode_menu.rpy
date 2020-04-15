@@ -12,7 +12,7 @@ screen disasterMenu():
             vbox:
                 hbox:
                     vbox:
-                        imagebutton idle Transform(fireThumbnail, zoom=0.2) action Jump("DisasterModeFire")
+                        imagebutton idle Transform(fireThumbnail, zoom=0.2) action Start("DisasterModeFire")
                         text(Text("Fire Disaster",size=45)) xpos 0.2
                         image(stars[persistent.fireDisasterStars]) zoom 0.2 xpos 0.05
                 
