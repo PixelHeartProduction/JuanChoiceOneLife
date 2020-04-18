@@ -99,6 +99,11 @@ label WalkIndependently:
         Joseph_right "Really!? I cant believe it."
         Joseph_right "Sure is!, he's really growing so fast."
 
+        if not persistent.MamasBoy:
+            $ renpy.notify("Unlocked: Mama's Boy")
+            $ persistent.MamasBoy=True
+            $ persistent.totalAchievement+=1
+
     if Choice_ch1 == "papa":
         show Joseph laugh
         Joseph_center "There you go little Juan you can do it!"
@@ -162,6 +167,11 @@ label WalkIndependently:
         scene black with dissolve
         Joseph_center "Ma, can you believe it? Juan can walk on his own now."
         Mary_center "Really?, Our little boy is growing so fast"
+
+        if not persistent.DaddysBoy:
+            $ renpy.notify("Unlocked: Daddy's Boy")
+            $ persistent.DaddysBoy=True
+            $ persistent.totalAchievement+=1
 
     scene black with dissolve
     jump JuansEatingHabit

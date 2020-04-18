@@ -2,6 +2,10 @@ image splash1 = "assets/Misc/renpylogopng.jpg"
 image splash2 = "assets/Misc/pixelHeartVer1.jpg"
 
 label splashscreen:
+
+if persistent.totalAchievement is None:
+    $ persistent.totalAchievement = 0
+    
     scene black
     with Pause(1)
 

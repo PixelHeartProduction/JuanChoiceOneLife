@@ -171,7 +171,12 @@ label JuansFirstDay:
             Juan_left "Are from the same school as mine?"
             Girl_right "Yes!, I'm from the same school."
             Girl_right "My name is Alice!"
-            $ renpy.notify("New friend: Alice!")
+
+            if not persistent.NewFriendAlice:
+                $ renpy.notify("Unlocked: New friend Alice")
+                $ persistent.NewFriendAlice=True
+                $ persistent.totalAchievement +=1
+
             $ Alice_unlock = True
             show Juan smile1 with dissolve
             Juan_left "I'm Juan, nice to meet you!"
@@ -195,6 +200,12 @@ label JuansFirstDay:
             with Pause (1)
             hide image("assets/Sprites/Juan_Chased.png") with dissolve
             show image(Transform(im.Flip("assets/Sprites/Juan_Chased.png", horizontal=True) ,zoom=0.5,xpos=0.4,ypos=0.45)) with dissolve
+
+            if not persistent.IHateDogs:
+                $ renpy.notify("Unlocked: I hate dogs")
+                $ persistent.IHateDogs=True
+                $ persistent.totalAchievement +=1
+
             Dog_center "woof!"
             none "(I quickly ran away but somehow I got the dog away from her.)"
             scene black with dissolve
@@ -361,6 +372,11 @@ label JuansFirstDay:
     Cathy_center "Okay that's it!"
     Cathy_center "You got [correct] of 3 right!"
 
+    if correct == 3 and not persistent.PieceOfCake:
+        $ renpy.notify("Unlocked: Piece of cake")
+        $ persistent.PieceOfCake=True
+        $ persistent.totalAchievement +=1
+
     show Cathy neutral
     play sound "assets/SFX/School_Bell.mp3"
     none "(Bell Rings.)"
@@ -445,8 +461,13 @@ label JuansFirstDay:
 
         Juan_left "(Peter and I talked a lot about our favorite game troughout lunch time. I didn't know that we had a lot of things in common.)"
         Juan_left "(And before I even knew it.)"
+
+        if not persistent.NewFriendPeter:
+            $ renpy.notify("Unlocked: New friend Peter")
+            $ persistent.NewFriendPeter=True
+            $ persistent.totalAchievement +=1
+            
         $ Peter_unlock = True
-        $ renpy.notify("New friend: Peter!")
         Juan_left "(I made a friend.)"
 
         play sound "assets/SFX/School_Bell.mp3"

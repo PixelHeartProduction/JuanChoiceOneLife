@@ -301,7 +301,16 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load") selected_background bar activate_sound sfx_click1
 
+        if main_menu:
+            textbutton _("Achievements") action ShowMenu("achievements") selected_background bar activate_sound sfx_click1
+
         textbutton _("Settings") action ShowMenu("preferences") selected_background bar activate_sound sfx_click1
+    
+        if not main_menu:
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+
+                # Help isn't necessary or relevant to mobile devices.
+                textbutton _("Help") action ShowMenu("help") selected_background bar activate_sound sfx_click1
 
         if _in_replay:
 
@@ -314,10 +323,6 @@ screen navigation():
         if main_menu:
             textbutton _("About") action ShowMenu("about") selected_background bar activate_sound sfx_click1
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help") selected_background bar activate_sound sfx_click1
 
         if renpy.variant("pc"):
 
@@ -533,7 +538,6 @@ style return_button:
     xpos gui.navigation_xpos
     yalign 1.0
     yoffset -45
-
 
 ## About screen ################################################################
 ##

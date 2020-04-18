@@ -99,6 +99,9 @@ label AfterTheFire:
                 #---- Show Juan in the Living room
             scene black with dissolve
             none "Juan stayed at the living room to watch morning cartoons and waited for breakfast."
+            none "..."
+            none "Just in time after my favorite tv show has ended aunt Lisa called me for breakfast."
+            Lisa_center "Juan, It's time for breakfast!"
             scene relativesKitchen with dissolve
             play music "assets/FreeBGM/UnderTheCobblestones.mp3"
 
@@ -216,6 +219,17 @@ label AfterTheFire:
     # hide mode confirm with dissolve
     #----- Show Mark
     hide Juan with dissolve
+
+    if not persistent.ImTooShy and WakeChoice=="Stay":
+        $ renpy.notify("Unlocked: I'm too shy")
+        $ persistent.ImTooShy=True
+        $ persistent.totalAchievement +=1
+    
+    if not persistent.FamilyFirst and WakeChoice=="GetUp" and HelpLisaChoice=="Help":
+        $ renpy.notify("Unlocked: Family first")
+        $ persistent.FamilyFirst=True
+        $ persistent.totalAchievement +=1
+
     show Mark neutralRight with dissolve
     show April neutralLeft with dissolve
     pause(1)

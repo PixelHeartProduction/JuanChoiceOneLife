@@ -98,6 +98,12 @@ label JuansLittleSister:
         Joseph_right "Definitely! Our little Juan is very mature for his age don't you think?"
         Joseph_right "Ahh..our little Juan how getting big already he is."
         Mary_left "Hehe, Sure he is! I'm so happy seeing our little family like this."
+
+        if not persistent.ImGonnaBeSuperhero:
+            $ renpy.notify("Unlocked: I'm gonna be superhero")
+            $ persistent.ImGonnaBeSuperhero=True
+            $ persistent.totalAchievement +=1
+
         scene black with dissolve
     else:
         none "..."
