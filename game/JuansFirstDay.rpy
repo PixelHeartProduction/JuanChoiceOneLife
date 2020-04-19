@@ -83,7 +83,7 @@ label JuansFirstDay:
 
     scene kitchen with dissolve
 
-    Juan_center "(I feel really exited and happy today because it's my first day as a grade 1 student)"
+    Juan_center "(I feel really excited and happy today because it's my first day as a grade 1 student)"
     Juan_center "(I wonder who I'll meet? I'm really nervous. What if I do something embarrassing?)"
     Juan_center "(I hope everything goes well on my first day.)"
     show Juan neutral with dissolve
@@ -99,7 +99,7 @@ label JuansFirstDay:
     Mary_right "By the way your dad also liked it very much. He told me to tell you that he hopes you have a great day at school and that you make him proud."
     Mary_right "Must be tough being a Software Engineer, huh? Your dad left very early today"
     Mary_right "Anyway Juan you should keep up your grades if you want to be like your dad one day, okay?"
-    Mary_right "You dad's Job might be hard, But being a school drop-out will be even harder. So Juan, remember your education is the only wealth we could give you that cannot be taken away."
+    Mary_right "Your dad's Job might be hard, But being a school drop-out will be even harder. So Juan, remember your education is the only wealth we could give you that cannot be taken away."
     Mary_right "Always remember that you have to work hard now so in the future you could have it easier."
     Mary_right "There's this saying, 'if you don't walk today you'll have to run tomorrow.', so always work hard --"
 
@@ -123,7 +123,7 @@ label JuansFirstDay:
 
     show Juan neutral with dissolve
     Juan_center "Hmm... I wonder how's Glenn and James doing"
-    Juan_center "I have not heard of them since we moved."
+    Juan_center "I have not heard of them since they moved."
     Juan_center "I should contact them sometimes and catch up, I kinda miss them."
     none "....."
 
@@ -168,7 +168,7 @@ label JuansFirstDay:
             Girl_right "Thank you very much!"
             Juan_left "Thank goodness.."
             none "(As Juan is relieved that she is okay, Juan noticed that she wears the same uniform from his school.)"
-            Juan_left "Are from the same school as mine?"
+            Juan_left "Are you from the same school as mine?"
             Girl_right "Yes!, I'm from the same school."
             Girl_right "My name is Alice!"
 
@@ -188,12 +188,12 @@ label JuansFirstDay:
 
 
     if help_girl == "stick":
-            none "(Juan quicky pickup a stick and charges towards the dog to stop the girl from getting bitten)"
+            none "(Juan quickly pickup a stick and charges towards the dog to stop the girl from getting bitten)"
             play sound "assets/SFX/Dog_Bark.mp3"
             Dog_center "Woof! Woof!"
             Juan_center "Arrgghh!"
             Juan_center "STOP!"
-            none "(Juan charges but stops halfway and saw the dog preparing to charge back at me)"
+            none "(Juan charges but stops halfway and saw the dog preparing to charge back at him)"
             Juan_center "Uhhoh!"
             scene street1closer with dissolve
             show image("assets/Sprites/Juan_Chased.png") with dissolve
@@ -218,7 +218,7 @@ label JuansFirstDay:
             show Juan phew with dissolve
             Juan_center "Phew.. finally that dog's gone."
             show Juan tired with dissolve
-            none "(Juan says to myself as he catches his breath.)"
+            none "(Juan says to himself as he catches his breath.)"
             Juan_center "Oh no! I'm late for school better get there quickly!."
 
     scene black with dissolve
@@ -326,7 +326,7 @@ label JuansFirstDay:
     show mode confirm with dissolve
 
     $ testTitle = "Quiz #1"
-    $ testQuestion = "1.) Where is the Philippines\n located at?"
+    $ testQuestion = "2.) Where is the Philippines\n located at?"
     $ ans1 = "A.) South East Asia"
     $ ans2 = "B.) North East Asia"
     $ ans3 = "C.) Central Asia"
@@ -638,7 +638,7 @@ label JuansFirstDay:
         James_center "-James"
 
     if TextChoice == "Answer":
-        Juan_center "Ohh I remember Juan sent me a text I should really text back."
+        Juan_center "Ohh I remember James sent me a text I should really text back."
 
     Juan_center "James, I really miss hanging out with you and Glenn."
     Juan_center "I'm really excited for your upcoming visit here. I hope that you stay long so we could play games like we used to."

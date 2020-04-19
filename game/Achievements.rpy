@@ -85,7 +85,7 @@ screen achievements():
                         image(notComplete) zoom 0.25
                     vbox:
                         label "New friend Alice"
-                        text "Save Alice from the dog."
+                        text "Become friends with Alice."
             
             hbox spacing 180:
                 hbox spacing 20:
@@ -104,7 +104,7 @@ screen achievements():
                         image(notComplete) zoom 0.25
                     vbox:
                         label "New friend Peter"
-                        text "Become friends with peter."
+                        text "Become friends with Peter."
             
             hbox spacing 180:
                 hbox spacing 20:
