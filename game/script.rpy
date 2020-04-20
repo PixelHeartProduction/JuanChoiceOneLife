@@ -19,7 +19,7 @@ label start():
     $ potato_selected = False
     $ FireCause = "ElecShort"
     #================Disaster Mode=================
-    jump diffSelect
+    jump JuansFirstWord
 
 
     return

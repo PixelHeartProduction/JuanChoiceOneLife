@@ -66,7 +66,7 @@ label JuansLittleSister:
     scene black with dissolve
     scene daytimeBedroom with dissolve
 
-    none "(May entered Juan's room carrying a baby.)"
+    none "(Mary entered Juan's room carrying a baby.)"
     none "(Juan can't help himself but to curiously look at them)"
 
     show Joseph neutralright with dissolve
@@ -98,6 +98,12 @@ label JuansLittleSister:
         Joseph_right "Definitely! Our little Juan is very mature for his age don't you think?"
         Joseph_right "Ahh..our little Juan how getting big already he is."
         Mary_left "Hehe, Sure he is! I'm so happy seeing our little family like this."
+
+        if not persistent.ImGonnaBeSuperhero:
+            $ renpy.notify("Unlocked: I'm gonna be superhero")
+            $ persistent.ImGonnaBeSuperhero=True
+            $ persistent.totalAchievement +=1
+
         scene black with dissolve
     else:
         none "..."
@@ -107,7 +113,7 @@ label JuansLittleSister:
             show Mary surprised
             Joseph_right "You shouldn't make your sister cry!"
             Juan_center "..."
-            Mary_left "Listen, Juan"
+            Mary_left "Listen, Juan."
             Mary_left "You're a big brother now."
             Mary_left "You have to take care of your sister okay? You're the big brother, no matter what happens you are all May has."
             Mary_left "May, is going to rely on you because you're older ok? I thought you wanted to be just like Superman?"
@@ -121,7 +127,7 @@ label JuansLittleSister:
             show Joseph serious
             Mary_left "You should'nt make your sister cry!"
             Juan_center "..."
-            Joseph_right "listen Juan."
+            Joseph_right "Listen, Juan."
             Joseph_right "You're a big brother now."
             Joseph_right "You have to take care of your sister okay? You're the big brother, no matter what happens you are all May has."
             Joseph_right "May, is going to rely on you because you're older ok? I thought you wanted to be just like Superman?"
@@ -143,8 +149,8 @@ label JuansLittleSister:
         $ toy = Image("assets/Sprites/Items/toys.png")
 
         vbox xalign 0.5:
-            text(Text("Mary and Joseph wants Juan to play with May.",size=50))
-            text(Text("(Select between {color=#ffa500}Play toys with May{/color} or {color=#5DFF31}Play video games alone{/color})",size=40, xpos=-30,ypos=30))
+            text(Text("Mary and Joseph wants Juan to play with May.",size=50,xalign=0.5))
+            text(Text("(Select between {color=#ffa500}Play toys with May{/color} or {color=#5DFF31}Play video games alone{/color})",size=40, xalign=0.5,ypos=30))
         vbox xpos 0.1 ypos 430:
             imagebutton idle Transform(psp, zoom=0.8) action [SetVariable("played_with_may", False),Return()] activate_sound sfx_click1
             text("Play alone") xpos 50 ypos -20 color "#5DFF31"

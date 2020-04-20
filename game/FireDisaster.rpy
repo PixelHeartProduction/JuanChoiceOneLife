@@ -143,6 +143,11 @@ label FireDisaster:
 
             Rey_center "Just remember class when we encounter fire, we have to remain calm, because the more we panic the more we are in danger."
 
+            if not persistent.ImNowFireProof:
+                $ renpy.notify("Unlocked: I'm now fire proof!")
+                $ persistent.ImNowFireProof=True
+                $ persistent.totalAchievement +=1
+
         if ListenChoice == "Chat":
             none "The whole lesson with Ms. Cathy Passed by without Juan and Peter noticing."
             none "The lesson finished and Juan does not know anything about it."
@@ -282,6 +287,12 @@ label FireDisaster:
     if MatchChoice == "Light" and SmallFireChoice == "Deal" and DealChoices == "Fan":
         scene black with dissolve
         none "The fire Juan caused continues to escalate and Juan is crying in the corner."
+
+        if not persistent.CuriosityKillsTheCat:
+            $ renpy.notify("Unlocked: Curiosity kills the cat")
+            $ persistent.CuriosityKillsTheCat=True
+            $ persistent.totalAchievement +=1
+
         scene kitchenFire with dissolve
         show Juan nervous with dissolve
         show Joseph neutralright with easeinright
@@ -444,6 +455,12 @@ label FireDisaster:
 
     
     scene black with dissolve
+
+    if FollowChoices == "Follow" and HelpChoices == "Help" and not persistent.ImNotABurden:
+        $ renpy.notify("Unlocked: I'm not a burden")
+        $ persistent.ImNotABurden=True
+        $ persistent.totalAchievement +=1
+
     stop music
     none "The night went on and soon enough the fire was completely put out."
     scene nighttimeStreet1 with dissolve

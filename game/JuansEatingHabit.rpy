@@ -87,7 +87,6 @@ label JuansEatingHabit:
 
     if food_eaten < 3:
         $ Choice_ch3 = "picky"
-        $ renpy.notify("Picky kid perk unlocked!")
         none "(Juan ate some of the food and leave everything on the plate.)"
         Juan_center "Yummy!"
         show Mary smile
@@ -102,7 +101,12 @@ label JuansEatingHabit:
 
     else:
         $ Choice_ch3 = "healthy"
-        $ renpy.notify("Healthy kid perk unlocked!")
+
+        if not persistent.HealthyKid:
+            $ renpy.notify("Unlocked: Healthy Kid")
+            $ persistent.HealthyKid=True
+            $ persistent.totalAchievement +=1
+
         none "(Juan ate everything and left nothing on his plate.)"
         Juan_center "Yummy!"
         show Mary smile

@@ -59,3 +59,6 @@ translate filipino strings:
 
     old "Prefs"
     new "Mga Prefs"
+
+    old "Achievements"
+    new "Mga Achievements"

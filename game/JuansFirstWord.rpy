@@ -1,7 +1,7 @@
 label JuansFirstWord:
 
 
-
+    stop music
     scene black with dissolve
     scene trans_livingroom with dissolve
     show mode confirm with dissolve
@@ -9,6 +9,11 @@ label JuansFirstWord:
     with Pause(2)
     hide text with dissolve
     scene black with dissolve
+
+    if not persistent.WelcomeToMyLife:
+        $ renpy.notify("Unlocked: Welcome to my life!")
+        $ persistent.WelcomeToMyLife=True
+        $ persistent.totalAchievement += 1
 
     none "..."
     play music "assets/FreeBGM/TheEveningSky.mp3"
@@ -69,7 +74,12 @@ label JuansFirstWord:
     hide mode confirm with dissolve
 
     if Choice_ch1 == "mama":
-        $ renpy.notify("Mama's boy perk unlocked!")
+
+        if not persistent.FirstChoice:
+            $ renpy.notify("Unlocked: First choice")
+            $ persistent.FirstChoice=True
+            $ persistent.totalAchievement +=1
+
         play music "assets/FreeBGM/Graduation.mp3"
         Mary_left "Can you believe that Joseph?! He said 'Mama'. "
         show Mary smile
@@ -85,7 +95,12 @@ label JuansFirstWord:
         Juan_center "Mama! Mama!"
 
     if Choice_ch1 == "papa":
-        $ renpy.notify("Daddy's boy perk unlocked!")
+
+        if not persistent.FirstChoice:
+            $ renpy.notify("Unlocked: First choice")
+            $ persistent.FirstChoice=True
+            $ persistent.totalAchievement +=1
+
         play music "assets/FreeBGM/Graduation.mp3"
         show Joseph laugh
         Joseph_right "Ma!, he said Papa! Did you hear it? He said 'Papa' he called me."
