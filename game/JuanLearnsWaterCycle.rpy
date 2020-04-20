@@ -3,6 +3,7 @@ label JuanLearnsAstrology:
     $ CrossChoice = "null"
     $ AnswerChoice = "null"
     $ AnswerStep1Choice = "null"
+    $ CrossBackChoice = "null"
 
     #---Relative house Exterior
     #---Show Mary
@@ -16,12 +17,12 @@ label JuanLearnsAstrology:
     April_left "Wait for me, Juan, We will cross together."
 
     show mode confirm with dissolve
-    $ WakeUpChoiceQuestion = "Should Juan wait?"
+    $ WaitQuestion = "Should Juan wait?"
     $ Text1="Wait for April."
     $ Text2="Cross the road by yourself."
     $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
     $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
-    call screen DualOptionScreen(ListenChoiceQuestion,"CrossChoice",Icon1,Text1,"Wait",Icon2,Text2,"Cross",False) with dissolve
+    call screen DualOptionScreen(WaitQuestion,"CrossChoice",Icon1,Text1,"Wait",Icon2,Text2,"Cross",False) with dissolve
     hide mode confirm with dissolve
 
     if CrossChoice == "Wait":
@@ -61,24 +62,24 @@ label JuanLearnsAstrology:
     Cathy_center "Who here knows what the first step in the water cycle is?"
 
     show mode confirm with dissolve
-    $ WakeUpChoiceQuestion = "Should Juan answer?"
+    $ AnswerQuestion = "Should Juan answer?"
     $ Text1="Answer the question."
     $ Text2="Just listen"
     $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
     $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
-    call screen DualOptionScreen(ListenChoiceQuestion,"AnswerChoice",Icon1,Text1,"Answer",Icon2,Text2,"Listen",False) with dissolve
+    call screen DualOptionScreen(AnswerQuestion,"AnswerChoice",Icon1,Text1,"Answer",Icon2,Text2,"Listen",False) with dissolve
     hide mode confirm with dissolve
 
     if AnswerChoice == "Answer":
         Cathy_left "Yes Juan, what is the first step in the water Cycle?"
 
         show mode confirm with dissolve
-        $ WakeUpChoiceQuestion = "What is the first step in the water cycle?"
+        $ WaterCycleQuestion = "What is the first step in the water cycle?"
         $ Text1="Evaporation"
         $ Text2="Condensation"
         $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
         $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
-        call screen DualOptionScreen(ListenChoiceQuestion,"AnswerStep1Choice",Icon1,Text1,"Evaporation",Icon2,Text2,"Condensation",False) with dissolve
+        call screen DualOptionScreen(WaterCycleQuestion,"AnswerStep1Choice",Icon1,Text1,"Evaporation",Icon2,Text2,"Condensation",False) with dissolve
         hide mode confirm with dissolve
 
         if AnswerStep1Choice == "Evaporation":
@@ -107,9 +108,24 @@ label JuanLearnsAstrology:
     #--- Show pictures of people planting trees
     Cathy_left "We can also prevent it by plating a lot of trees. Trees help absorb water from the storms."
 
-    none "The day finished and the afternoon settled in. Juan notices as he "
+    none "The day finished and the afternoon settled in. Juan notices big dark clouds as he was going ot of class." 
+    none "The shining sun was nowhere to be seen at that time."
 
+    Juan_right "Are these the clouds that Ms. Cathy was talking about?"
 
+    none "Juan proceeded to go home."
+
+    none "Soon enough Juan encounters another busy intersection."
+    show mode confirm with dissolve
+    $ CrossChoiceQuestion = "How does Juan cross the intersection?"
+    $ Text1="Wait for the signal to go green."
+    $ Text2="Cross when the cars are still far away."
+    $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
+    $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
+    call screen DualOptionScreen(CrossChoiceQuestion,"CrossBackChoice",Icon1,Text1,"Wait",Icon2,Text2,"Jaywalk",False) with dissolve
+    hide mode confirm with dissolve
+
+    if CrossBackChoice == "":
 
 
 
