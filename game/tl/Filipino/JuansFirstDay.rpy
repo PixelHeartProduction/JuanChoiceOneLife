@@ -679,7 +679,7 @@ translate filipino strings:
     new "Sinubukan kong takutin yung aso para mapaalis ang aso sa kanya."
 
     old "But then I got scared as well and the dog chased me."
-    new "Ngunit pagkatapos ay natakot din ako at hinabol ako ng aso."
+    new "Ngunit pagkatapos ay natakot din ako at hinabol din ako ng aso."
 
     old "If I didn't,"
     new "At kung hindi."
