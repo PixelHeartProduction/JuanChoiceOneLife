@@ -125,7 +125,12 @@ label JuanLearnsAstrology:
     call screen DualOptionScreen(CrossChoiceQuestion,"CrossBackChoice",Icon1,Text1,"Wait",Icon2,Text2,"Jaywalk",False) with dissolve
     hide mode confirm with dissolve
 
-    if CrossBackChoice == "":
+    if CrossBackChoice == "Wait":
+        none "Juan waits for the signal to go green to cross the intersection. \nOn the way there he notices an old woman walking slowly to the other side of road"
+    if CrossBackChoice == "Jaywalk":
+        none "Juan crosses when he thought the incoming cars were far enough."
+        #---- SFX Car honking
+        none "As a result Juan was almost hit by the incoming car. He was "
 
 
 
