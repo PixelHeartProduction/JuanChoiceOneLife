@@ -1,4 +1,4 @@
-A Video Game made by PixelheartProduction
+##A Video Game made by PixelheartProduction
 
 ![](game/images/screenshot.png)
 
