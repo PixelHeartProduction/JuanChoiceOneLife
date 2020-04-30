@@ -130,7 +130,7 @@ label JuanLearnsAstrology:
     if CrossBackChoice == "Jaywalk":
         none "Juan crosses when he thought the incoming cars were far enough."
         #---- SFX Car honking
-        none "As a result Juan was almost hit by the incoming car. He was "
+        none "As a result Juan was almost hit by the incoming car. He was frozen in his place."
 
 
 
