@@ -231,20 +231,21 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
 
+    $ play_able = Image("gui/gameUI/Play_Able.png")
+    $ play_active = Image("gui/gameUI/Play_Active.png")
+    $ ff_active = Image("gui/gameUI/FF_Active.png")
+    $ ff_unable = Image("gui/gameUI/FF_Unable.png")
+    $ ff_able = Image("gui/gameUI/FF_Able.png")
+    $ gear = Image("gui/gameUI/gear.png")
+    $ save = Image("gui/gameUI/Save.png")
+
     if quick_menu:
 
-        hbox:
-            style_prefix "quick"
-
-            xalign 0.5
-            yalign 1.0
-
-            #textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history') activate_sound sfx_mode
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True) activate_sound sfx_mode
-            textbutton _("Auto") action Preference("auto-forward", "toggle") activate_sound sfx_mode
-            textbutton _("Save") action ShowMenu('save') activate_sound sfx_mode
-            textbutton _("Prefs") action ShowMenu('preferences') activate_sound sfx_mode
+        vbox xpos 0.93 ypos 10:
+            imagebutton idle Transform(gear, zoom=0.2) action ShowMenu('preferences') activate_sound sfx_mode
+            imagebutton idle Transform(play_able, zoom=0.2) selected_idle Transform(play_active, zoom=0.2) selected_hover Transform(play_active, zoom=0.2) action Preference("auto-forward", "toggle") activate_sound sfx_mode
+            imagebutton idle Transform(ff_able, zoom=0.15, xpos=12) selected_idle Transform(ff_active, zoom=0.15, xpos=12) selected_hover Transform(ff_active, zoom=0.15, xpos=12) insensitive Transform(ff_unable, zoom=0.15, xpos=12) action Skip() alternate Skip(fast=True, confirm=True) activate_sound sfx_mode
+            imagebutton idle Transform(save, zoom=0.25) action ShowMenu('save') activate_sound sfx_mode
 
 init python:
     config.overlay_screens.append("quick_menu")
@@ -383,6 +384,12 @@ screen main_menu():
         if renpy.variant("mobile"):
             add "dialog" ypos -400
 
+    if not persistent.updateNoticePreAlpha6_0:
+        $ exitText = Text("[Click here to close]", bold=True, color="#FF5631")
+        image("assets/Misc/updates.png") zoom 1.5 xalign 0.5 yalign 0.5
+        textbutton exitText action SetVariable("persistent.updateNoticePreAlpha6_0", True) xalign 0.5 ypos 860 activate_sound sfx_mode
+
+
 style main_menu_frame is empty
 style main_menu_vbox is vbox
 style main_menu_text is gui_text
@@ -482,7 +489,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
         action Return()
 
-    label title
+    label title 
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -557,7 +564,7 @@ screen about():
 
         style_prefix "about"
 
-        vbox:
+        vbox xpos:
 
             $ logo = Image("assets/Misc/JuanCHoiceLogo.png")
             #label "{size=60}[config.name!t]{/size}\n"
@@ -568,21 +575,21 @@ screen about():
             if gui.about:
                 text "By {a=https://www.pixelheartproduction.com/}Pixel Heart Production{/a}\n\n"
             
-            vbox:
+            vbox xalign:
                 label "Albert De Leon Jr."
-                text " Producer, Programmer, Graphic Designer\n"
+                text "Producer, Programmer, Graphic Designer\n"
 
                 label "Kim Farley Arellano"
-                text " Assc. Producer, Game Designer, Graphic Designer\n"
+                text "Assc. Producer, Game Designer, Graphic Designer\n"
 
                 label "Justine Allen Manuel"
-                text " Assc. Producer, Writer, Scene Director\n"
+                text "Assc. Producer, Writer, Scene Director\n"
 
                 label "Mark Lester Hermano"
-                text " Documents, Concepts\n"
+                text "Documents, Concepts\n"
 
                 label "Via Amor Capule"
-                text " Filipino Translator\n\n"
+                text "Filipino Translator\n\n"
 
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only]")
 
@@ -777,7 +784,6 @@ screen preferences():
                     label _("Language")
                     textbutton _("English") action Language(None)
                     textbutton _("Filipino") action Language("filipino")
-                    textbutton _("Piglatin") action Language("piglatin")
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
@@ -1458,20 +1464,24 @@ style pref_vbox:
 screen quick_menu():
     variant "touch"
 
+    $ play_able = Image("gui/gameUI/Play_Able.png")
+    $ play_active = Image("gui/gameUI/Play_Active.png")
+    $ ff_active = Image("gui/gameUI/FF_Active.png")
+    $ ff_unable = Image("gui/gameUI/FF_Unable.png")
+    $ ff_able = Image("gui/gameUI/FF_Able.png")
+    $ gear = Image("gui/gameUI/gear.png")
+    $ save = Image("gui/gameUI/Save.png")
+
     zorder 100
 
     if quick_menu:
 
-        hbox:
-            style_prefix "quick"
+        vbox xpos 0.93 ypos 10:
+            imagebutton idle Transform(gear, zoom=0.2) action ShowMenu('preferences') activate_sound sfx_mode
+            imagebutton idle Transform(play_able, zoom=0.2) selected_idle Transform(play_active, zoom=0.2) selected_hover Transform(play_active, zoom=0.2) action Preference("auto-forward", "toggle") activate_sound sfx_mode
+            imagebutton idle Transform(ff_able, zoom=0.15, xpos=12) selected_idle Transform(ff_active, zoom=0.15, xpos=12) selected_hover Transform(ff_active, zoom=0.15, xpos=12) insensitive Transform(ff_unable, zoom=0.15, xpos=12) action Skip() alternate Skip(fast=True, confirm=True) activate_sound sfx_mode
+            imagebutton idle Transform(save, zoom=0.25) action ShowMenu('save') activate_sound sfx_mode
 
-            xalign 0.5
-            yalign 1.0
-
-            #textbutton _("Back") action Rollback()
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Menu") action ShowMenu()
 
 
 style window:
