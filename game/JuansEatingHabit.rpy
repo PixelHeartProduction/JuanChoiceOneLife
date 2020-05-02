@@ -148,8 +148,8 @@ label JuansEatingHabit:
 
     screen FoodPlate():
         modal True
-        $ Done= Text("Done",size=100, bold=True, xpos=70, ypos=25 , color="#808080")
-        $ AllDone= Text("Done",size=100, bold=True,xpos=70,ypos=25 , color="#0066ff")
+        $ Done= Text("Done",size=100, bold=True, xpos=60, ypos=45 , color="#808080")
+        $ AllDone= Text("Done",size=100, bold=True,xpos=60,ypos=45 , color="#0066ff")
         $ potato = Image("assets/Sprites/Items/mashedpotato.png")
         $ banana = Image("assets/Sprites/Items/bananas.png")
         $ carrot = Image("assets/Sprites/Items/carrots.png")
@@ -176,9 +176,9 @@ label JuansEatingHabit:
 
         hbox:
             if food_eaten >= 3:
-                textbutton (AllDone) background Image("assets/Misc/paperbutton.png") xpos 1500 action Return()
+                textbutton (AllDone) xpos 1400 action Return()
             elif food_eaten >=1:
-                textbutton (Done) background Image("assets/Misc/paperbutton.png") xpos 1500 action Return()
+                textbutton (Done) xpos 1400 action Return()
 
 
     return

@@ -1,5 +1,4 @@
 *.txt
 /saves/
 /saves/persistent
-
-
+.DS_store

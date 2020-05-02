@@ -101,7 +101,7 @@ define gui.juan_dialogs = renpy.random.choice(["assets/Misc/Dialogbox/dialog1.pn
  "assets/Misc/Dialogbox/dialog6.png",
  "assets/Misc/Dialogbox/dialog7.png"])
 define gui.main_menu_background = renpy.random.choice(["assets/Scenes/Street1Daytime.jpg", "assets/Scenes/Street2Daytime.jpg", "assets/Scenes/classroom.png"])
-define gui.game_menu_background = "assets/Scenes/livingroomdaytime.jpg"
+define gui.game_menu_background = "gui/game_menu.png"
 
 ## Dialogue ####################################################################
 ##
