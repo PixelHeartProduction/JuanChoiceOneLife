@@ -74,6 +74,24 @@ image fire socket:
     ypos 650
     xpos 0.5
 
+image school solarsystem:
+    "assets/Misc/Solarsystem.jpg"
+    zoom 1.5
+    ypos 650
+    xpos 0.5
+
+image school planet1:
+    "assets/Misc/TerrestrialPlanets.jpg"
+    zoom 1
+    ypos 750
+    xpos 0.5
+
+image school planet2:
+    "assets/Misc/GasGiants.jpg"
+    zoom 0.8
+    ypos 650
+    xpos 0.5
+
 image dialog:
         gui.juan_dialogs
         zoom 1.1
