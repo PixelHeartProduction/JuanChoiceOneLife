@@ -4,6 +4,7 @@ label JuanLearnsAstrology:
     $ AnswerChoice = "null"
     $ AnswerStep1Choice = "null"
     $ CrossBackChoice = "null"
+    $ HelpLadyChoice = "null"
 
     #---Relative house Exterior
     #---Show Mary
@@ -127,10 +128,24 @@ label JuanLearnsAstrology:
 
     if CrossBackChoice == "Wait":
         none "Juan waits for the signal to go green to cross the intersection. \nOn the way there he notices an old woman walking slowly to the other side of road"
+        show mode confirm with dissolve
+        $ CrossChoiceQuestion = "Should Juan help the old lady?"
+        $ Text1="Help her cross."
+        $ Text2="Focus on crossing the street yourself."
+        $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
+        $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
+        call screen DualOptionScreen(CrossChoiceQuestion,"HelpLadyChoice",Icon1,Text1,"Help",Icon2,Text2,"Ignore",False) with dissolve
+        hide mode confirm with dissolve
+
+        if HelpLadyChoice == "Help":
+            none "Juan helps the old lady cross the street. "
+        if HelpLadyChoice == "Ignore":
+
     if CrossBackChoice == "Jaywalk":
         none "Juan crosses when he thought the incoming cars were far enough."
         #---- SFX Car honking
         none "As a result Juan was almost hit by the incoming car. He was frozen in his place."
+
 
 
 
