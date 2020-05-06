@@ -117,7 +117,7 @@ label AfterFlood:
     Mary_right "Actually Juan I forgot to tell you something."
     Juan_left "What is it mom?"
     Mary_right "I made a mistake this morning and burned your lunch for today."
-    Mary_right "I was to carried out with May while cooking your food and I just smelled something is burning."
+    Mary_right "I got to carried out with your little sister May while cooking your food and I just smelled something is burning."
     Juan_left "Really?!"
     Mary_right "Anyway, here's a 100 peso so you can buy your own food on your way to school."
     Mary_right "Just make sure you don't buy junk foods or anything okay?"
@@ -195,7 +195,7 @@ label AfterFlood:
     
     none "..."
     Alice_right "By the way Juan what are you carrying?"
-    Juan_left "Oh this? my Mom burned my lunch earlier this morning so she asked me to buy my lunch at the convenience store."
+    Juan_left "Oh this? my Mom burned my lunch earlier this morning so she asked me to buy my own lunch at the convenience store."
     show Alice surprised with dissolve
     Alice_right "Really?!"
     show Alice smile with dissolve
@@ -240,7 +240,7 @@ label AfterFlood:
     show school planet2 with dissolve
     Cathy_center "On the other hand, Jupiter, Saturn, Uranus and Neptune are called {color=#adf569}Gas Giants{/color}."
     Cathy_center "From it's name 'Gas Giants' they are usually made out of gas."
-    Cathy_center "These planets usually form farther from the sun due to it's size and density."
+    Cathy_center "These planets usually form farther from the sun due to it's size and lower density."
     Class_center "What about Pluto Teacher?"
     Cathy_center "Unfortunately Pluto is classified as a {color=#adf569}Dwarf planet{/color}."
     Cathy_center "Together with Ceres, Eris and Haumea."
@@ -349,6 +349,67 @@ label AfterFlood:
     show Cathy neutral
     Cathy_center "Okay class That's it for your quiz."
     Cathy_center "Juan you got [correct] of 4 right."
+    Cathy_center "Okay that's that for our quiz!"
+    Cathy_center "Oh yeah, class I forgot to tell you something."
+    Cathy_center "Recently there's been quite alot of minor earthquakes occurring, especially in the regions of Visayas and Mindanao."
+    
+    if ListenChoice == "Listen":
+        Cathy_center "I've been discussing with Mr. Ray of what is the best method of protecting ourselves in case of an earthquake."
+    else:
+        Cathy_center "I've been discussing with the local fire department of what is the best method of protecting ourselves in case of an earthquake."
+    show Cathy smile with dissolve
+    Cathy_center "And still to this day the best method of protecting ourselves during earthquake is the {color=#fe7e66}Drop, Cover, Hold{/color} method."
+    show Cathy panningRight with dissolve
+    with Pause(2)
+    show earthquake duck with dissolve
+    Cathy_right"{color=#fe7e66}Drop{/color} where you are, onto your hands and knees." 
+    Cathy_right "This position protects you from being knocked down and also allows you to stay low and crawl to shelter if nearby."
+    show earthquake cover with dissolve
+    Cathy_right "{color=#fe7e66}Cover{/color} your head and neck with one arm and hand."
+    Cathy_right "If a sturdy table or desk is nearby, crawl underneath it for shelter."
+    Cathy_right "If no shelter is nearby, crawl next to an interior wall away from windows."
+    Cathy_right"Stay on your knees; bend over to protect vital organs."
+    show earthquake hold with dissolve
+    Cathy_right "{color=#fe7e66}Hold{/color} on until shaking stops."
+    Cathy_right "Under shelter: hold on to it with one hand; be ready to move with your shelter if it shifts."
+    Cathy_right "No shelter: hold on to your head and neck with both arms and hands."
+    hide earthquake with dissolve
+    show Cathy panningBack
+    Cathy_center "If you are outdoors during an earthquake try to go in an open area and stay away from buildings."
+    Cathy_center "As this may protect you from any falling debris."
+    Cathy_center "Did you understand class?"
+    Class_center "Yes, Teacher!"
+    play sound "assets/SFX/School_Bell.mp3"
+    none "(Bell rings.)"
+    show Cathy smile with dissolve
+    Class_center "Ok that's it for our class this morning, have fun in your lunch!"
+    stop music
+
+    play music "assets/FreeBGM/DreamOfChildrensRoom.mp3"
+    scene black with dissolve
+    Juan_center "(After our class, Peter and I walked homed together and talked alot of stuffs.)"
+    scene afternoonStreet1 with dissolve
+    show Peter neutralRight with dissolve
+    show Juan neutralLeft with dissolve
+    Juan_left "Man! what a day."
+    Juan_left "Too bad our teachers once again gave us alot of homeworks."
+    Peter_right "Yeah.."
+    Peter_right "By the way Juan I heard that tommorow is your birthday?"
+    show Juan confident with dissolve
+    Juan_left "Yeah! I was actually gonna ask my Mom and Dad to buy me the latest release of Sword Style Online."
+    show Peter smile with dissolve
+    Peter_right "Oh! do you mean Sword Style Online 2?"
+    Peter_right "That's So cool!, It was just released last week but unfortunately it was too expensive so I need to save up to buy it."
+    show Peter neutral with dissolve
+    show Juan neutral with dissolve
+    Juan_left "Haha! I'm gonna be looking forward playing with you with SSO 2."
+    Peter_right "Sure!"
+    show Juan smile2 with dissolve
+    Juan_left "See you tommorow Peter!"
+
+    scene black with dissolve
+    none "Juan arrived in his home really exhausted after a long day of school."
+    none "But suddenly Juan noticed that their family have visitors for today."
 
     #======================Custom Scenes=======================================
 

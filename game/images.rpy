@@ -8,6 +8,21 @@ image school philippineEagle:
     zoom 1.2
     yalign .3
 
+image earthquake duck:
+    "assets/Misc/drop.png"
+    zoom 1
+    yalign .3
+
+image earthquake cover:
+    "assets/Misc/cover.png"
+    zoom 1
+    yalign .3
+
+image earthquake hold:
+    "assets/Misc/hold.png"
+    zoom 1
+    yalign .3
+
 image logo JuanChoice:
     "assets/Misc/JuanCHoiceLogo.png"
     zoom .7
