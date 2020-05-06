@@ -6,6 +6,7 @@ label AfterFlood:
     $ GasGiantsChoice = "null"
     $ AstronomyChoice = "null"
     $ DwarfPlanetChoice = "null"
+    $ PlayOrHomeworkChoice = "null"
 
     stop music fadeout 2.0
     show text("{size=40}1 week have passed since the flooding.{/size}") with dissolve
@@ -410,6 +411,106 @@ label AfterFlood:
     scene black with dissolve
     none "Juan arrived in his home really exhausted after a long day of school."
     none "But suddenly Juan noticed that their family have visitors for today."
+    scene nighttimeLivingRoom with dissolve
+    show Juan neutralLeft with dissolve
+    show Joseph neutralright with dissolve
+    Joseph_right "Oh hey Juan! you're back, how did you do in school?"
+    Juan_left "Hey dad! schools really fun."
+    show Joseph talking with dissolve
+    Joseph_right "Actually Juan somebodies are waiting for you."
+    show Joseph neutral with dissolve
+    Juan_left "What? Could it be!?"
+    hide Joseph with moveoutright
+    with Pause(2)
+    Joseph_right "James!, Glenn! Juan's back home!"
+
+    show James neutral with easeinright
+    show Glenn neutralRight with easeinright
+    show James laugh with dissolve
+    James_center "Hi Juan!"
+    show Glenn laugh with dissolve
+    Glenn_right "Hello Juan!"
+    show Juan smile1 with dissolve
+    Juan_left "Glenn! James!"
+    show Juan smile2 with dissolve
+    Juan_left "You guys said that you'll visit us this summer but I didn't expect to be near my birthday."
+    show James talking with dissolve
+    James_center "Hehe!, we'd tought that it's the best time to visit you here."
+    show Glenn talking with dissolve
+    Glenn_right "So we really tried to convince our Mom and Dad and let us stay here for 3 days."
+    James_center "Thank goodness our uncle still live here only a couple of blocks away."
+    Glenn_right "Anyways, we got invited by your parents to join for dinner tonight."
+    Juan_left "Haha! it's really been a while, I really missed playing with you guys."
+    Mary_right "Kids! dinner is ready better hurry up or it'll get cold."
+    show James neutral
+    show Glenn neutral
+    show Juan neutral
+    James_center "More on that later Juan, Let's go eat first hehe!"
+    Juan_left "Yeah I'm actually hungy now aswell."
+    Glenn_right "Let's eat!"
+
+    stop music
+    scene black with dissolve
+    none "Juan, Glenn and James went to the dining room and got surprised delicious foods that Juan's mother cooked."
+    none "..."
+    none "After dinner the three went directly to Juans room and started playing."
+    play music "assets/FreeBGM/LateSummerCicada.mp3"
+    scene nighttimeBedroom with dissolve 
+    show James neutral with dissolve    
+    show Glenn neutralRight with dissolve
+    show Juan neutralLeft with dissolve
+    Glenn_right "That was really delicious!"
+    Juan_left "Right?, My mom was the best cook in the town!"
+    show James talking with dissolve
+    James_center "By the way Juan, have you already got the Sword Style Online 2?"
+    Juan_left "Well not yet but I'll ask my Mom and Dad tommorrow about that."
+    show Glenn laugh with dissolve
+    Glenn_right "Hahaha! you should see us PKing high level players, It's really fun!"
+    show Glenn neutral
+    show Juan smile2 with dissolve
+    Juan_left "Woah really!? wow I'm too exited to play with you guys!"
+    show Glenn laugh with dissolve
+    Glenn_right "Hahahaha!"
+    show James laugh with dissolve
+    James_center "Hahahaha!"
+    show Juan smile2 with dissolve
+    Juan_left "Hahahaha!"
+    show Glenn neutral with dissolve
+    show James talking with dissolve
+    show Juan neutral with dissolve
+    James_center "Say Juan, how about we play some more video games till 9?"
+    Juan_left "(Hmm I still got homework to do but I really want to play with James and Glenn..)"
+
+    show mode confirm with dissolve
+    $ ListenChoiceQuestion = "Should Juan play with James and Glenn or Do his homework?"
+    $ Text1="I want to play."
+    $ Text2="Do my homework."
+    $ Icon1 = Image("assets/Sprites/Items/icon_sleep.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_wakeup.png")
+    call screen DualOptionScreen(ListenChoiceQuestion,"PlayOrHomeworkChoice",Icon1,Text1,"play",Icon2,Text2,"dontplay",False) with dissolve
+    hide mode confirm with dissolve
+
+    if PlayOrHomeworkChoice == "play":
+        show Juan smile2 with dissolve
+        Juan_left "Sure!! why not, Isn't that the point why you guys came here?"
+        show James laugh with dissolve
+        James_center "Alright! it's set, let's get ready playing!"
+        James_center "I wanna see you something cool we learned last week."
+        show Glenn laugh with dissolve
+        Glenn_right "Lets Go!"
+        scene black with dissolve
+        none "And so Juan, James, and Glenn played video games troughout the whole night."
+        none "All three had alot of fun for their first reunion in the last 4 years."
+    else:
+        Juan_left "Sorry guys but I have school works to do tonight."
+        Juan_left "Maybe tommorow? I mean I promise I would play with you after I got the new SSO 2."
+        James_center "Aww.. okay Juan we'll do it tommorow."
+        James_center "Alright Juan we'll see you tommorow."
+        show Juan smile2 with dissolve
+        Juan_left "Okay see you tommorow!"
+        scene black with dissolve
+        none "And so Glenn and James said goodbye to Juan and his parents and went straight to their uncle's place."
+        none "While Juan started to do his homework even though he badly wanted to play with Glenn and James since it's their first reunion for the last 4 years."
 
     #======================Custom Scenes=======================================
 
