@@ -5,6 +5,7 @@ label JuanLearnsAstrology:
     $ AnswerStep1Choice = "null"
     $ CrossBackChoice = "null"
     $ HelpLadyChoice = "null"
+    $ GoBackChoice = "null"
 
     #---Relative house Exterior
     #---Show Mary
@@ -138,13 +139,48 @@ label JuanLearnsAstrology:
         hide mode confirm with dissolve
 
         if HelpLadyChoice == "Help":
-            none "Juan helps the old lady cross the street. "
+            none "Juan helps the old lady cross the street."
+            none "The old lady thanks Juan."
         if HelpLadyChoice == "Ignore":
+            none "Juan, crosses the road successfully."
 
     if CrossBackChoice == "Jaywalk":
         none "Juan crosses when he thought the incoming cars were far enough."
         #---- SFX Car honking
         none "As a result Juan was almost hit by the incoming car. He was frozen in his place."
+
+        Rey_left "Juan, why are you crossing the road like that? Don't you know that's dangerous?"
+        Juan_right "Sorry,"
+        Rey_left "It's a good thing I saw you on my way to work."
+        Juan_right "I'm sorry, Mr. Rey, I won't do that again."
+        Rey_left "Good, now you better hurry home, Juan. It looks like it's going to rain."
+
+    none "Juan continued his journey home."
+    none "The skies seemed to get darker and the clouds gathered on top of the city."
+    #RAIN SFX
+    none "Before Juan could get home, the rain started pouring."
+    Juan_right "Oh no, how will I get home now?"
+
+
+    show mode confirm with dissolve
+    $ CrossChoiceQuestion = "How does Juan get home?"
+    $ Text1="Find shelter and wait for the rain to stop."
+    $ Text2="Keep going."
+    $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
+    $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
+    call screen DualOptionScreen(CrossChoiceQuestion,"GoBackChoice",Icon1,Text1,"Wait",Icon2,Text2,"Continue",False) with dissolve
+    hide mode confirm with dissolve
+
+    if GoBackChoice == "Wait":
+        none "Juan decided to find shelter."
+        Juan_right "I should stay under this shade until the rain stops."
+    if GoBackChoice == "Continue":
+        none "Juan keeps continues to go home even with the pouring rain."
+
+
+
+
+
 
 
 
