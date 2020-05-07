@@ -18,6 +18,13 @@ label start():
     $ carrot_selected = False
     $ potato_selected = False
     $ FireCause = "ElecShort"
+
+    $ bread_selected = False
+    $ chocolate_selected = False
+    $ juice_selected = False
+    $ soda_selected = False
+    $ water_selected = False
+    $ money = 100
     #================Disaster Mode=================
     jump JuansFirstWord
 

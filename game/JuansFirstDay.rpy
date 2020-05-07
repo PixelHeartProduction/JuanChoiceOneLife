@@ -223,18 +223,19 @@ label JuansFirstDay:
 
     scene black with dissolve
     with Pause(1)
-    scene classroom with dissolve
-    play sound "assets/SFX/Door.mp3"
 
     if Alice_unlock:
         none "Alice and Juan arrives at school. Both seems to be a little anxious since they missed their first flag ceremony. "
+        scene schoolbuilding with dissolve
         none "They rushes up to their classroom and thankfully the first class has not yet started."
     else:
         none "Juan arrives at school. He seems to be a little anxious since he missed his first flag ceremony. "
+        scene schoolbuilding with dissolve
         none "He rushes up to his classroom and thankfully the first class has not yet started."
 
     play sound "assets/SFX/School_Bell.mp3"
     none "(Bell Rings.)"
+    scene classroom with dissolve
     play sound "assets/SFX/Door.mp3"
 
     show Cathy neutral with easeinleft

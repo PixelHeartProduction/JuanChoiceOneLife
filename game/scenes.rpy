@@ -19,6 +19,8 @@
     image relativesBedroom = "assets/Scenes/RelativesBedroom.png"
     image relativesKitchen = "assets/Scenes/RelativesKitchen.png"
     image relativesLivingroom = "assets/Scenes/RelativesLivingroom.png" 
+    image groceryshelf = "assets/Scenes/emptyshelf.jpg" 
+    image schoolbuilding = "assets/Scenes/SchoolExterior.png" 
 
 #=============custom=============================
 

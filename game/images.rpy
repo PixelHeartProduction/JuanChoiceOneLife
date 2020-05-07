@@ -8,6 +8,21 @@ image school philippineEagle:
     zoom 1.2
     yalign .3
 
+image earthquake duck:
+    "assets/Misc/drop.png"
+    zoom 1
+    yalign .3
+
+image earthquake cover:
+    "assets/Misc/cover.png"
+    zoom 1
+    yalign .3
+
+image earthquake hold:
+    "assets/Misc/hold.png"
+    zoom 1
+    yalign .3
+
 image logo JuanChoice:
     "assets/Misc/JuanCHoiceLogo.png"
     zoom .7
@@ -74,6 +89,24 @@ image fire socket:
     ypos 650
     xpos 0.5
 
+image school solarsystem:
+    "assets/Misc/Solarsystem.jpg"
+    zoom 1.5
+    ypos 650
+    xpos 0.5
+
+image school planet1:
+    "assets/Misc/TerrestrialPlanets.jpg"
+    zoom 1
+    ypos 750
+    xpos 0.5
+
+image school planet2:
+    "assets/Misc/GasGiants.jpg"
+    zoom 0.8
+    ypos 650
+    xpos 0.5
+
 image dialog:
         gui.juan_dialogs
         zoom 1.1
@@ -94,3 +127,6 @@ image fire_animation:
     "assets/Sprites/fire3.png"
     0.2
     repeat
+
+image bautista family:
+    im.MatrixColor("assets/Misc/bautistafamily.png",im.matrix.brightness(-0.2))

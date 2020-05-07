@@ -1,6 +1,6 @@
-define James_center = Character ("James",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#fe7e66")
 define Class_center = Character ("Class",what_xalign=0.5, what_text_align=0.5,who_xpos=535,color="#a17c26")
 define Neighbor_center = Character ("Neighbor",what_xalign=0.5, what_text_align=0.5,who_xpos=535,color="#a17c26")
+define Man_right = Character ("Man", what_xalign=0.60, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#a17c26")
 
 define none = Character(None,what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5)
 #=========================Mark=================================
@@ -249,6 +249,13 @@ image Mary panRight:
     xalign .5
     linear 0.5 xalign 0.75
 
+image Mary panRCenter:
+    "assets/Sprites/Mary_Normal.png"
+    zoom 0.32
+    ypos 1.2
+    xalign .75
+    linear 0.5 xalign 0.5
+
 image Mary neutralright:
     "assets/Sprites/Mary_Normal.png"
     zoom .32
@@ -339,6 +346,12 @@ define Alice_right = Character ("Alice", what_xalign=0.6, what_text_align=1.0,wh
 
 image Alice cryingright:
     "assets/Sprites/Girl_Crying.png"
+    zoom .19
+    ypos 1.2
+    xpos 0.75
+
+image Alice neutralright:
+    "assets/Sprites/Girl_Smile.png"
     zoom .19
     ypos 1.2
     xpos 0.75
@@ -441,6 +454,12 @@ image May neutral:
     xalign .5
     yalign .54
 
+image May neutralright:
+    "assets/Sprites/May3_Smile.png"
+    zoom .12
+    xalign .75
+    yalign 1.2
+
 image May cry:
     "assets/Sprites/May3_Cry.png"
     zoom .13
@@ -512,3 +531,69 @@ image Rey panLCenter:
     ypos 1.16
     xpos 0.25
     linear 1 xalign 0.5
+
+#===============================James=============================================
+define James_left = Character ("James",what_xalign=0.30, what_text_align=0.0, color="#fe7e66")
+define James_center = Character ("James",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#fe7e66")
+define James_right = Character ("James",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#fe7e66")
+
+image James neutral:
+    "assets/Sprites/James_Normal.png"
+    zoom .35
+    ypos 1.18
+
+image James neutralLeft:
+    "assets/Sprites/James_Normal.png"
+    zoom .35
+    xpos 0.25
+    ypos 1.18
+
+
+image James neutralRight:
+    "assets/Sprites/James_Normal.png"
+    zoom .35
+    xpos 0.75
+    ypos 1.18
+
+image James laugh:
+    "assets/Sprites/James_Laugh.png"
+    zoom .35
+    ypos 1.18
+
+image James talking:
+    "assets/Sprites/James_talking.png"
+    zoom .35
+    ypos 1.18
+
+#==============================Glenn===================================================
+define Glenn_left = Character ("Glenn",what_xalign=0.30, what_text_align=0.0, color="#f5d769")
+define Glenn_center = Character ("Glenn",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#f5d769")
+define Glenn_right = Character ("Glenn",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#f5d769")
+
+image Glenn neutral:
+    "assets/Sprites/Glenn_Normal.png"
+    zoom .35
+    ypos 1.18
+
+image Glenn neutralLeft:
+    "assets/Sprites/Glenn_Normal.png"
+    zoom .35
+    xpos 0.25
+    ypos 1.18
+
+
+image Glenn neutralRight:
+    "assets/Sprites/Glenn_Normal.png"
+    zoom .35
+    xpos 0.75
+    ypos 1.18
+
+image Glenn laugh:
+    "assets/Sprites/Glenn_Laugh.png"
+    zoom .35
+    ypos 1.18
+
+image Glenn talking:
+    "assets/Sprites/Glenn_Talking.png"
+    zoom .35
+    ypos 1.18

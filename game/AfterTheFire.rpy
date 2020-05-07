@@ -245,23 +245,45 @@ label AfterTheFire:
         none "Knock! Knock! Knock!"
 
         #---- Fireman Rey enters the Living room
-        scene relativesLivingroom with dissolve
-        show Joseph neutralright with dissolve
-        play sound "assets/SFX/Door.mp3"
-        show Rey neutralleft with easeinleft
-        Rey_left "Good morning, Mr. Bautista."
-        Joseph_right "Good morning."
-        show Rey talking with dissolve
-        Rey_left "I am here to report on the cause of fire, I hope I didn't come at a bad time."
-        show Rey neutral with dissolve
-        show Joseph talking with dissolve
-        Joseph_right "No, it's okay."
-        show Joseph neutral with dissolve
-        show Rey talking with dissolve
-        Rey_left "Well, we found some evidence that the cause of the fire is an electrical short circuit. \n We think that there was a open wire that was exposed to moisture and created a spark."
-        Rey_left "In the future we recommend that you do a regular check on your wirings \n and of course, make sure that all the wirings are far from combustible material or easily burned materials."
-        show Joseph talking with dissolve
-        Joseph_right "We'll make sure to do that. My family really wants to say thank you to you and the people who helped us during the incident."
+        if ListenChoice == "Listen":
+            scene relativesLivingroom with dissolve
+            show Joseph neutralright with dissolve
+            play sound "assets/SFX/Door.mp3"
+            show Rey neutralleft with easeinleft
+            Rey_left "Good morning, Mr. Bautista."
+            Joseph_right "Good morning."
+            show Rey talking with dissolve
+            Rey_left "I am here to report on the cause of fire, I hope I didn't come at a bad time."
+            show Rey neutral with dissolve
+            show Joseph talking with dissolve
+            Joseph_right "No, it's okay."
+            show Joseph neutral with dissolve
+            show Rey talking with dissolve
+            Rey_left "Well, we found some evidence that the cause of the fire is an electrical short circuit. \n We think that there was a open wire that was exposed to moisture and created a spark."
+            Rey_left "In the future we recommend that you do a regular check on your wirings \n and of course, make sure that all the wirings are far from combustible material or easily burned materials."
+            show Joseph talking with dissolve
+            Joseph_right "We'll make sure to do that. My family really wants to say thank you to you and the people who helped us during the incident."
+            scene black with dissolve
+        else:
+            scene relativesLivingroom with dissolve
+            show Joseph neutralright with dissolve
+            play sound "assets/SFX/Door.mp3"
+            show Rey neutralleft with easeinleft
+            Fireman_left "Good morning, Mr. Bautista."
+            Joseph_right "Good morning."
+            show Rey talking with dissolve
+            Fireman_left "I am here to report on the cause of fire, I hope I didn't come at a bad time."
+            show Rey neutral with dissolve
+            show Joseph talking with dissolve
+            Joseph_right "No, it's okay."
+            show Joseph neutral with dissolve
+            show Rey talking with dissolve
+            Fireman_left "Well, we found some evidence that the cause of the fire is an electrical short circuit. \n We think that there was a open wire that was exposed to moisture and created a spark."
+            Fireman_left "In the future we recommend that you do a regular check on your wirings \n and of course, make sure that all the wirings are far from combustible material or easily burned materials."
+            show Joseph talking with dissolve
+            Joseph_right "We'll make sure to do that. My family really wants to say thank you to you and the people who helped us during the incident."
+            scene black with dissolve
+        jump AfterFlood
 
 #=============================Custom Choices==========================
     screen WhereToGoScreen():
