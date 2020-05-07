@@ -127,3 +127,6 @@ image fire_animation:
     "assets/Sprites/fire3.png"
     0.2
     repeat
+
+image bautista family:
+    im.MatrixColor("assets/Misc/bautistafamily.png",im.matrix.brightness(-0.2))

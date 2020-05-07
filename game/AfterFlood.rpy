@@ -12,6 +12,7 @@ label AfterFlood:
     show text("{size=40}1 week have passed since the flooding.{/size}") with dissolve
     with Pause (3)
     scene trans_relativesHouse with dissolve
+    show bautista family with dissolve
     show text("{size=40}It's been a month now since they\nstarted living in their relatives house.{/size}") with dissolve
     with Pause (5)
     show text("{size=40}The Bautista family is starting to get used now\nto their new way of living.{/size}") with dissolve
@@ -26,7 +27,7 @@ label AfterFlood:
     Joseph_left "Hello?"
     Man_right "Hello, Mr. Bautista."
     Man_right "Good news from your very own insurance company. One of our people who manage your house for fire damage repair"
-    Man_right "Have told us that your house is now fully repaired and once again ready to accomodate you family."
+    Man_right "Have told us that your house is now fully repaired and once again ready to accomodate your family."
     Joseph_left "Really? thank you very much!"
     Man_right "It's our pleasure helping you."
     none "..."
@@ -45,7 +46,7 @@ label AfterFlood:
     none "..."
     play music "assets/FreeBGM/TheEveningSky.mp3"
     Mary_center "'.....hey wake up you sleepy head.'"
-    none "(A familiar words breaks my sleep.)"
+    none "(A familiar words break my sleep.)"
 
     scene daytimeBedroom with dissolve
     show Mary neutral with dissolve
@@ -482,11 +483,11 @@ label AfterFlood:
     Juan_left "(Hmm I still got homework to do but I really want to play with James and Glenn..)"
 
     show mode confirm with dissolve
-    $ ListenChoiceQuestion = "Should Juan play with James and Glenn or Do his homework?"
-    $ Text1="I want to play."
-    $ Text2="Do my homework."
-    $ Icon1 = Image("assets/Sprites/Items/icon_sleep.png")
-    $ Icon2 = Image("assets/Sprites/Items/icon_wakeup.png")
+    $ ListenChoiceQuestion = "What should Juan tell James and Glenn?"
+    $ Text1="I want to play!"
+    $ Text2="I want to do my homework."
+    $ Icon1 = Image("assets/Sprites/Items/icon_play_games.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_do_homework.png")
     call screen DualOptionScreen(ListenChoiceQuestion,"PlayOrHomeworkChoice",Icon1,Text1,"play",Icon2,Text2,"dontplay",False) with dissolve
     hide mode confirm with dissolve
 
@@ -505,9 +506,9 @@ label AfterFlood:
         Juan_left "Sorry guys but I have school works to do tonight."
         Juan_left "Maybe tommorow? I mean I promise I would play with you after I got the new SSO 2."
         James_center "Aww.. okay Juan we'll do it tommorow."
-        James_center "Alright Juan we'll see you tommorow."
+        Glenn_right "Alright Juan we'll see you tommorow."
         show Juan smile2 with dissolve
-        Juan_left "Okay see you tommorow!"
+        James_center "See you tommorow!"
         scene black with dissolve
         none "And so Glenn and James said goodbye to Juan and his parents and went straight to their uncle's place."
         none "While Juan started to do his homework even though he badly wanted to play with Glenn and James since it's their first reunion for the last 4 years."
