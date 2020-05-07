@@ -455,7 +455,7 @@ label AfterFlood:
     none "Juan, Glenn and James went to the dining room and got surprised delicious foods that Juan's mother cooked."
     none "..."
     none "After dinner the three went directly to Juans room and started playing."
-    play music "assets/FreeBGM/LateSummerCicada.mp3"
+    play music "assets/FreeBGM/Survey.mp3"
     scene nighttimeBedroom with dissolve 
     show James neutral with dissolve    
     show Glenn neutralRight with dissolve
@@ -513,6 +513,7 @@ label AfterFlood:
         none "And so Glenn and James said goodbye to Juan and his parents and went straight to their uncle's place."
         none "While Juan started to do his homework even though he badly wanted to play with Glenn and James since it's their first reunion for the last 4 years."
 
+    jump EarthquakeDisaster
     #======================Custom Scenes=======================================
 
     screen Grocery():
