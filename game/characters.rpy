@@ -159,6 +159,13 @@ image Juan panRCenter:
     xalign .75
     linear 0.5 xalign 0.5
 
+image Juan stoicPanRight:
+    "assets/Sprites/Juan_normal.png"
+    zoom 0.33
+    ypos 1.2
+    xalign .5
+    linear 0.5 xalign 0.75
+
 image Juan neutralLeft:
     "assets/Sprites/Juan.png"
     zoom 0.33
@@ -190,6 +197,11 @@ image Juan confident:
 
 image Juan nervous:
     "assets/Sprites/Juan_Nervous.png"
+    zoom 0.33
+    ypos 1.2
+
+image Juan stoic:
+    "assets/Sprites/Juan_normal.png"
     zoom 0.33
     ypos 1.2
 
@@ -356,6 +368,12 @@ image Alice neutralright:
     ypos 1.2
     xpos 0.75
 
+image Alice neutralleft:
+    "assets/Sprites/Girl_Smile.png"
+    zoom .19
+    ypos 1.2
+    xpos 0.25
+
 image Alice crying:
     "assets/Sprites/Girl_Crying.png"
     zoom .19
@@ -402,6 +420,13 @@ image Peter neutralRight:
     zoom .19
     ypos 1.2
     xpos 0.75
+
+image Peter neutralLeft:
+    "assets/Sprites/Peter_Normal.png"
+    zoom .19
+    ypos 1.2
+    xpos 0.25
+
 
 #=========================Cathy=================================
 define Cathy_left = Character("Ms. Cathy",what_xalign=0.30, what_text_align=0.0,color="#fc5d6b")

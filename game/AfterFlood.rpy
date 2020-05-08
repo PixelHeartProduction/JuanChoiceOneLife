@@ -356,7 +356,7 @@ label AfterFlood:
     Cathy_center "Recently there's been quite alot of minor earthquakes occurring, especially in the regions of Visayas and Mindanao."
     
     if ListenChoice == "Listen":
-        Cathy_center "I've been discussing with Mr. Ray of what is the best method of protecting ourselves in case of an earthquake."
+        Cathy_center "I've been discussing with Mr. Rey of what is the best method of protecting ourselves in case of an earthquake."
     else:
         Cathy_center "I've been discussing with the local fire department of what is the best method of protecting ourselves in case of an earthquake."
     show Cathy smile with dissolve
@@ -401,10 +401,11 @@ label AfterFlood:
     Juan_left "Yeah! I was actually gonna ask my Mom and Dad to buy me the latest release of Sword Style Online."
     show Peter smile with dissolve
     Peter_right "Oh! do you mean Sword Style Online 2?"
-    Peter_right "That's So cool!, It was just released last week but unfortunately it was too expensive so I need to save up to buy it."
+    Peter_right "That's So cool!, It was just released last week but unfortunately it was too expensive so really I need to save up to buy it."
+    Peter_right "I don't even know if i could buy it."
     show Peter neutral with dissolve
     show Juan neutral with dissolve
-    Juan_left "Haha! I'm gonna be looking forward playing with you with SSO 2."
+    Juan_left "Haha! I'm always gonna be looking forward playing with you with SSO 2."
     Peter_right "Sure!"
     show Juan smile2 with dissolve
     Juan_left "See you tommorow Peter!"
@@ -450,12 +451,10 @@ label AfterFlood:
     Juan_left "Yeah I'm actually hungy now aswell."
     Glenn_right "Let's eat!"
 
-    stop music
     scene black with dissolve
-    none "Juan, Glenn and James went to the dining room and got surprised delicious foods that Juan's mother cooked."
+    none "Juan, Glenn and James went to the dining room and got surprised by delicious foods that Juan's mother cooked."
     none "..."
     none "After dinner the three went directly to Juans room and started playing."
-    play music "assets/FreeBGM/Survey.mp3"
     scene nighttimeBedroom with dissolve 
     show James neutral with dissolve    
     show Glenn neutralRight with dissolve

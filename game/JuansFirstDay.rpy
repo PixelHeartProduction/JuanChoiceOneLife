@@ -420,7 +420,7 @@ label JuansFirstDay:
     $ Text2="Tell the teacher Peter\n doesn't have food"
     $ Icon1 = Image("assets/Sprites/Items/icon_givelunch.png")
     $ Icon2 = Image("assets/Sprites/Items/icon_tellteacher.png")
-    call screen DualOptionScreen(ListenChoiceQuestion,"WakeupChoice",Icon1,Text1,"later",Icon2,Text2,"wake",False) with dissolve
+    call screen DualOptionScreen(ListenChoiceQuestion,"FoodChoice",Icon1,Text1,"Give",Icon2,Text2,"Report",False) with dissolve
 
     #call screen FoodChoiceScreen with dissolve
     hide mode confirm with dissolve
@@ -557,9 +557,11 @@ label JuansFirstDay:
         none "Just then Juan didn't notice the car passing by."
         play sound "assets/SFX/Carhorn.mp3"
         none "(Beep! Beep!)"
+        show Juan nervous with dissolve
         Juan_center "Oh no! I'm sorry."
 
         none "Juan then puts his phone away and continues to walk home."
+        show Juan neutral with dissolve
 
         
     if TextChoice == "Ignore":
@@ -621,7 +623,6 @@ label JuansFirstDay:
     Juan_center "Goodness this is not really 'That' hard."
     Juan_center "It's quite alright. A lot of new questions though. Maybe this is preparation for the future topics we will be discussing in class."
     none "..."
-    none "(After Juan finished his homework, he starts replying to James's message)"
 
     if TextChoice == "Ignore":
         "(Juan remembered someone sent him a text.)"
