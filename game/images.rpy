@@ -128,5 +128,11 @@ image fire_animation:
     0.2
     repeat
 
+image Juan running:
+    "assets/Sprites/Juan_Running.png"
+    zoom 0.15
+    xpos 1300
+    ypos 700
+
 image bautista family:
     im.MatrixColor("assets/Misc/bautistafamily.png",im.matrix.brightness(-0.2))

@@ -8,14 +8,19 @@
     image daytimeLivingroom = "assets/Scenes/livingroomdaytime.jpg"
     image daytimeStreet1 = "assets/Scenes/Street1Daytime.jpg"
     image daytimeStreet2 = "assets/Scenes/Street2Daytime.jpg"
+    image nighttimeStreet2 = "assets/Scenes/Street2Nighttime.png"
     image afternoonStreet1 = "assets/Scenes/Street1Afternoon.jpg"
     image nighttimeLivingRoom = "assets/Scenes/livingroomNighttime.jpg"
     image nighttimeStreet1 = "assets/Scenes/Street1Nighttime.jpg"
     image afternoonBrownoutLivingRoom = "assets/Scenes/livingroomAfternoonBrownout.jpg"
     image nighttimeBedroom = "assets/Scenes/BedroomNighttime.jpg"
     image classroom = "assets/Scenes/classroom.png"
-    image classroomAfternoon = "assets/Scenes/classroomAfternoon.png"
-    image classroomEarthquake = "assets/Scenes/classroomEarthquake.png"
+
+    image afternoon classroom:
+        "assets/Scenes/classroomAfternoon.png"
+    image afternoon classroomEarthquake: 
+        "assets/Scenes/classroomEarthquake.png"
+
     image schoolHallway = "assets/Scenes/school_hallway.png"
     image housefire = "assets/Scenes/housefire.jpg"
     image relativesHouse = "assets/Scenes/RelativesHouse.png"
@@ -32,6 +37,8 @@
     image livingroomangle2 = "assets/Scenes/livingroomangle2.jpg"
     image dogscene = "assets/Scenes/dogscene.jpg"
     image street1closer = "assets/Scenes/Street1DaytimeCloseup.png"
+    image undertable = "assets/Scenes/undertable.png"
+    image KitchenBirthday = "assets/Scenes/KitchenBirthday.png"
 
 
 #================Transitions======================
