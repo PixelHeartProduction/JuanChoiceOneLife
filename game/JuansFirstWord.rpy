@@ -106,9 +106,9 @@ label JuansFirstWord:
         Joseph_right "Ma!, he said Papa! Did you hear it? He said 'Papa' he called me."
         show Mary smile
         Mary_left "Wow! I can't believe it."
-        Joseph_right "He's really growing so fast! He even learned how to call you already."
+        Mary_left "He's really growing so fast! He even learned how to call you already."
         show Mary neutral
-        Mary_left "I'm really proud of him."
+        Joseph_right "I'm really proud of him."
         Juan_center "*Cries"
         show Mary surprised
         Mary_left "Oh! I forgot about his food."

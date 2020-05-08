@@ -8,12 +8,20 @@
     image daytimeLivingroom = "assets/Scenes/livingroomdaytime.jpg"
     image daytimeStreet1 = "assets/Scenes/Street1Daytime.jpg"
     image daytimeStreet2 = "assets/Scenes/Street2Daytime.jpg"
+    image nighttimeStreet2 = "assets/Scenes/Street2Nighttime.png"
     image afternoonStreet1 = "assets/Scenes/Street1Afternoon.jpg"
     image nighttimeLivingRoom = "assets/Scenes/livingroomNighttime.jpg"
     image nighttimeStreet1 = "assets/Scenes/Street1Nighttime.jpg"
     image afternoonBrownoutLivingRoom = "assets/Scenes/livingroomAfternoonBrownout.jpg"
     image nighttimeBedroom = "assets/Scenes/BedroomNighttime.jpg"
     image classroom = "assets/Scenes/classroom.png"
+
+    image afternoon classroom:
+        "assets/Scenes/classroomAfternoon.png"
+    image afternoon classroomEarthquake: 
+        "assets/Scenes/classroomEarthquake.png"
+
+    image schoolHallway = "assets/Scenes/school_hallway.png"
     image housefire = "assets/Scenes/housefire.jpg"
     image relativesHouse = "assets/Scenes/RelativesHouse.png"
     image relativesBedroom = "assets/Scenes/RelativesBedroom.png"
@@ -29,10 +37,13 @@
     image livingroomangle2 = "assets/Scenes/livingroomangle2.jpg"
     image dogscene = "assets/Scenes/dogscene.jpg"
     image street1closer = "assets/Scenes/Street1DaytimeCloseup.png"
+    image undertable = "assets/Scenes/undertable.png"
+    image KitchenBirthday = "assets/Scenes/KitchenBirthday.png"
 
 
 #================Transitions======================
     image trans_livingroom = im.MatrixColor("assets/Scenes/livingroomdaytime.jpg",im.matrix.brightness(-0.2))
+    image trans_kitchen = im.MatrixColor("assets/Scenes/Kitchen.jpg",im.matrix.brightness(-0.2))
     image trans_bedroom = im.MatrixColor("assets/Scenes/BedroomDaytime.jpg",im.matrix.brightness(-0.2))
     image trans_plate = im.MatrixColor("assets/Scenes/foodplate.jpg",im.matrix.brightness(-0.2))
     image trans_hospital = im.MatrixColor("assets/Scenes/Hospital.jpg",im.matrix.brightness(-0.2))

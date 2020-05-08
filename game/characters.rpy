@@ -159,6 +159,13 @@ image Juan panRCenter:
     xalign .75
     linear 0.5 xalign 0.5
 
+image Juan stoicPanRight:
+    "assets/Sprites/Juan_normal.png"
+    zoom 0.33
+    ypos 1.2
+    xalign .5
+    linear 0.5 xalign 0.75
+
 image Juan neutralLeft:
     "assets/Sprites/Juan.png"
     zoom 0.33
@@ -167,6 +174,18 @@ image Juan neutralLeft:
 
 image Juan neutralRight:
     "assets/Sprites/Juan.png"
+    zoom 0.33
+    ypos 1.2
+    xpos 0.75
+
+image Juan phewRight:
+    "assets/Sprites/Juan_Phew.png"
+    zoom 0.33
+    ypos 1.2
+    xpos 0.75
+
+image Juan nervousRight:
+    "assets/Sprites/Juan_Nervous.png"
     zoom 0.33
     ypos 1.2
     xpos 0.75
@@ -192,6 +211,12 @@ image Juan nervous:
     "assets/Sprites/Juan_Nervous.png"
     zoom 0.33
     ypos 1.2
+
+image Juan stoic:
+    "assets/Sprites/Juan_normal.png"
+    zoom 0.33
+    ypos 1.2
+
 
 #=========================Mary=================================
 define Mary_left = Character("Mary", what_xalign=0.30, what_text_align=0.0, color="#a669f5")
@@ -234,6 +259,12 @@ image Mary surprised:
     "assets/Sprites/Mary_Surprised.png"
     zoom .32
     ypos 1.2
+
+image Mary surprisedLeft:
+    "assets/Sprites/Mary_Surprised.png"
+    zoom .32
+    ypos 1.2
+    xpos 0.25
 
 image Mary panLeft:
     "assets/Sprites/Mary_Normal.png"
@@ -322,6 +353,12 @@ image Joseph serious:
     zoom .17
     ypos 1.25
 
+image Joseph seriousRight:
+    "assets/Sprites/Joseph_Serious.png"
+    zoom .17
+    ypos 1.25
+    xpos 0.75
+
 image Joseph seriousright:
     "assets/Sprites/Joseph_Serious.png"
     zoom .17
@@ -355,6 +392,12 @@ image Alice neutralright:
     zoom .19
     ypos 1.2
     xpos 0.75
+
+image Alice neutralleft:
+    "assets/Sprites/Girl_Smile.png"
+    zoom .19
+    ypos 1.2
+    xpos 0.25
 
 image Alice crying:
     "assets/Sprites/Girl_Crying.png"
@@ -403,6 +446,13 @@ image Peter neutralRight:
     ypos 1.2
     xpos 0.75
 
+image Peter neutralLeft:
+    "assets/Sprites/Peter_Normal.png"
+    zoom .19
+    ypos 1.2
+    xpos 0.25
+
+
 #=========================Cathy=================================
 define Cathy_left = Character("Ms. Cathy",what_xalign=0.30, what_text_align=0.0,color="#fc5d6b")
 define Cathy_center = Character("Ms. Cathy",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#fc5d6b")
@@ -441,6 +491,12 @@ image Cathy panningBack:
     ypos 1.2
     xalign .75
     linear 1 xalign 0.5
+
+image Cathy sadLeft:
+    "assets/Sprites/Cathy_Sad.png"
+    zoom .15
+    ypos 1.2
+    xpos 0.25
 
 #====================May===========================
 
@@ -492,6 +548,7 @@ define Dog_right = Character("Dog",what_xalign=0.6, what_text_align=1.0,who_xpos
 
 #=====================Rey============================
 define Fireman_left = Character("Fireman",what_xalign=0.30, what_text_align=0.0, color="#FF3600")
+define Fireman_center = Character("Fireman",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#FF3600")
 define Rey_left = Character("Rey",what_xalign=0.30, what_text_align=0.0, color="#FF3600")
 define Rey_center = Character("Rey",what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5, color="#FF3600")
 define Rey_right = Character("Rey",what_xalign=0.6, what_text_align=1.0,who_xpos=925,who_text_align=1.0, color="#FF3600")

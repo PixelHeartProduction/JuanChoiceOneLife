@@ -135,7 +135,7 @@ label FireDisaster:
                 Rey_center  "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll."
                 Rey_center  "This way we could prevent the fire from getting bigger or burning even hotter."
             if AnswerReyChoices == "SLR":
-                Rey_center  "To Stop, Lie Down and Roll Over?"
+                Juan_center  "To Stop, Lie Down and Roll Over?"
                 Rey_center"Very good! Someone did their homework."
                 Class_center "(Claps)"
                 Rey_center  "Okay. The best thing to do when caught on fire is to Stop, Drop and Roll."
