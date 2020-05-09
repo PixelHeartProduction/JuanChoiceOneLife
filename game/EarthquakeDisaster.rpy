@@ -145,8 +145,8 @@ label EarthquakeDisaster:
     $ ListenChoiceQuestion = "Who should I ask?"
     $ Text1="Ask Peter."
     $ Text2="Ask Alice."
-    $ Icon1 = Image("assets/Sprites/Items/icon_play_games.png")
-    $ Icon2 = Image("assets/Sprites/Items/icon_do_homework.png")
+    $ Icon1 = Image("assets/Sprites/Items/icon_talktopeter.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_askalice.png")
     call screen DualOptionScreen(ListenChoiceQuestion,"AskPeterOrAlice",Icon1,Text1,"Peter",Icon2,Text2,"Alice",False) with dissolve
     hide mode confirm with dissolve
 
@@ -300,7 +300,7 @@ label EarthquakeDisaster:
     show mode confirm with dissolve
     show countdown at Position(xalign=.5, yalign=.1, zoom=20)
     call screen CoverOrRunScreen
-    hide countdown with dissolve
+    hide countdown with dissolve 
     hide mode confirm with dissolve
 
     if CoverOrRunChoice == "Run":
@@ -335,8 +335,8 @@ label EarthquakeDisaster:
     $ ListenChoiceQuestion = "Earthquake seemed to stop what would Juan do?"
     $ ListenChoiceText1="Go outside"
     $ ListenChoiceText2="Stay put"
-    $ Icon1 = Image("assets/Sprites/Items/icon_openHose.png")
-    $ Icon2 = Image("assets/Sprites/Items/icon_stand.png")
+    $ Icon1 = Image("assets/Sprites/Items/icon_goout.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_undertable.png")
     show countdown at Position(xalign=.5, yalign=.1, zoom=20)
     call screen DualOptionScreen(ListenChoiceQuestion,"GoOrStayChoice",Icon1,ListenChoiceText1,"Go out",Icon2,ListenChoiceText2,"Stay",True) with dissolve
     hide countdown with dissolve
@@ -357,8 +357,8 @@ label EarthquakeDisaster:
         $ ListenChoiceQuestion = "What would Juan do?"
         $ ListenChoiceText1="Run to the exit."
         $ ListenChoiceText2="Drop, Cover, Hold"
-        $ Icon1 = Image("assets/Sprites/Items/icon_openHose.png")
-        $ Icon2 = Image("assets/Sprites/Items/icon_stand.png")
+        $ Icon1 = Image("assets/Sprites/Items/icon_stand.png")
+        $ Icon2 = Image("assets/Sprites/Items/icon_cover.png")
         show countdown at Position(xalign=.5, yalign=.1, zoom=20)
         call screen DualOptionScreen(ListenChoiceQuestion,"StopAndCoverOrRun",Icon1,ListenChoiceText1,"Run",Icon2,ListenChoiceText2,"Cover",True) with dissolve
         hide countdown with dissolve
@@ -411,8 +411,8 @@ label EarthquakeDisaster:
         $ ListenChoiceQuestion = "Quick! follow me."
         $ ListenChoiceText1="Follow Ms. Cathy"
         $ ListenChoiceText2="Stay"
-        $ Icon1 = Image("assets/Sprites/Items/icon_openHose.png")
-        $ Icon2 = Image("assets/Sprites/Items/icon_stand.png")
+        $ Icon1 = Image("assets/Sprites/Items/icon_followteacher.png")
+        $ Icon2 = Image("assets/Sprites/Items/icon_scared.png")
         show countdown at Position(xalign=.5, yalign=.1, zoom=20)
         call screen DualOptionScreen(ListenChoiceQuestion,"FollowOrPanicChoice",Icon1,ListenChoiceText1,"Follow",Icon2,ListenChoiceText2,"Stay",True) with dissolve
         hide countdown with dissolve
