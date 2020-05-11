@@ -9,6 +9,9 @@ label JuanLearnsAstrology:
 
     #---Relative house Exterior
     #---Show Mary
+    scene relativesHouse with dissolve
+    show Mary neutralleft with dissolve
+    show Juan neutralRight with dissolve
     Mary_left "Juan, be careful on your way to school. April will be taking you there."
     Juan_right "Yes, mom."
     #---Mary leaves Show April
@@ -176,6 +179,8 @@ label JuanLearnsAstrology:
         Juan_right "I should stay under this shade until the rain stops."
     if GoBackChoice == "Continue":
         none "Juan keeps continues to go home even with the pouring rain."
+
+    jump AfterFlood
 
 
 
