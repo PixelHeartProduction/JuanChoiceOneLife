@@ -24,6 +24,21 @@ define April_left = Character("April",what_xalign=0.30, what_text_align=0.0, col
 define April_center = Character("April", what_xalign=0.5, what_text_align=0.5,who_xpos=535,who_text_align=0.5,color="#fe7e66")
 define April_right = Character("April", what_xalign=0.60, what_text_align=1.0,who_xpos=925,who_text_align=1.0,color="#fe7e66")
 
+image April neutral:
+    "assets/Sprites/April_Normal.png"
+    zoom .36
+    ypos 1.18
+
+image April laugh:
+    "assets/Sprites/April_Laugh.png"
+    zoom .36
+    ypos 1.18
+
+image April sad:
+    "assets/Sprites/April_Sad.png"
+    zoom .36
+    ypos 1.18
+
 image April neutralLeft:
     "assets/Sprites/April_Normal.png"
     zoom .36
@@ -101,6 +116,12 @@ image Juan neutral:
     zoom 0.33
     ypos 1.2
 
+image Juan raincoat:
+    "assets/Sprites/Juan_raincoat.png"
+    zoom 0.33
+    ypos 1.2
+
+
 image Juan phew:
     "assets/Sprites/Juan_Phew.png"
     zoom 0.33
@@ -121,6 +142,11 @@ image Juan sad:
     zoom 0.33
     ypos 1.2
 
+image Juan wet:
+    "assets/Sprites/Juan_Wet.png"
+    zoom 0.33
+    ypos 1.2
+
 image Juan smile1:
     "assets/Sprites/Juan_SmileEyesClosed.png"
     zoom 0.33
@@ -137,6 +163,13 @@ image Juan panLeft:
     ypos 1.2
     xalign .5
     linear 0.5 xalign 0.25
+
+image Juan panRight:
+    "assets/Sprites/Juan.png"
+    zoom 0.33
+    ypos 1.2
+    xalign .5
+    linear 0.5 xalign 0.75
 
 image Juan panLCenter:
     "assets/Sprites/Juan.png"

@@ -15,6 +15,10 @@
     image afternoonBrownoutLivingRoom = "assets/Scenes/livingroomAfternoonBrownout.jpg"
     image nighttimeBedroom = "assets/Scenes/BedroomNighttime.jpg"
     image classroom = "assets/Scenes/classroom.png"
+    image crosswalk = "assets/Scenes/crosswalk.jpg"
+    image crosswalkAfternoon = "assets/Scenes/crosswalkAfternoon.png"
+    image crosswalkRaining = "assets/Scenes/crosswalkRaining.png"
+    image Street2Afternoon = "assets/Scenes/Street2Afternoon.png"
 
     image afternoon classroom:
         "assets/Scenes/classroomAfternoon.png"
@@ -39,6 +43,8 @@
     image street1closer = "assets/Scenes/Street1DaytimeCloseup.png"
     image undertable = "assets/Scenes/undertable.png"
     image KitchenBirthday = "assets/Scenes/KitchenBirthday.png"
+    image crosswalkClose = "assets/Scenes/crosswalkClose.png"
+    image crosswalkClose2 = "assets/Scenes/crosswalkClose2.png"
 
 
 #================Transitions======================
@@ -50,3 +56,4 @@
     image trans_school = im.MatrixColor("assets/Scenes/classroom.png",im.matrix.brightness(-0.2))
     image trans_house = im.MatrixColor("assets/Scenes/house.jpg",im.matrix.brightness(-0.2))
     image trans_relativesHouse = im.MatrixColor("assets/Scenes/RelativesHouse.png",im.matrix.brightness(-0.2))
+    image trans_crosswalk = im.MatrixColor("assets/Scenes/crosswalk.jpg",im.matrix.brightness(-0.2))

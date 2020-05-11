@@ -136,3 +136,34 @@ image Juan running:
 
 image bautista family:
     im.MatrixColor("assets/Misc/bautistafamily.png",im.matrix.brightness(-0.2))
+
+image water cycle:
+    "assets/Misc/cycle.png"
+    xpos 0.5
+    zoom 0.2
+
+image water evaporation:
+    "assets/Misc/evaporation.jpg"
+    xpos 0.5
+    zoom 1.5
+
+image water condensation:
+    "assets/Misc/condensation.jpg"
+    xpos 0.5
+    zoom 1.5
+
+image water precipitation:
+    "assets/Misc/precipitation.jpg"
+    xpos 0.5
+    zoom 1.5
+
+image water planting:
+    "assets/Misc/planting.png"
+    xpos 0.5
+    zoom 0.3
+
+image water matter:
+    "assets/Misc/Sci093.jpg"
+    zoom 0.09
+    xpos 0.5
+    ypos 0.6
