@@ -291,8 +291,8 @@ screen navigation():
 
             textbutton _("Start") action Start() selected_background bar activate_sound sfx_click1
 
-            if persistent.hardmode:
-                textbutton _("Disaster Mode") action ShowMenu("disasterMenu") selected_background Image(bar,xpos = -0.25, ypos = -0.2) activate_sound sfx_click1
+           # if persistent.hardmode:
+            #    textbutton _("Disaster Mode") action ShowMenu("disasterMenu") selected_background Image(bar,xpos = -0.25, ypos = -0.2) activate_sound sfx_click1
  
         else:
 

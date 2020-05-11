@@ -283,7 +283,7 @@ label AfterTheFire:
             show Joseph talking with dissolve
             Joseph_right "We'll make sure to do that. My family really wants to say thank you to you and the people who helped us during the incident."
             scene black with dissolve
-        jump AfterFlood
+        jump JuanLearnsAstrology
 
 #=============================Custom Choices==========================
     screen WhereToGoScreen():
