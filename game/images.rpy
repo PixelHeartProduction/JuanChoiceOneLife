@@ -167,3 +167,7 @@ image water matter:
     zoom 0.09
     xpos 0.5
     ypos 0.6
+
+image flash:
+    "assets/Misc/flash.png"
+    

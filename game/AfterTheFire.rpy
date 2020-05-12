@@ -171,7 +171,7 @@ label AfterTheFire:
             none "Juan is fond of seeing his mom and his aunt get along so well. He thought maybe he should be a good big brother as well."
             show Juan neutral
             show Lisa neutral
-            Lisa_right "It's time to eat, Juan. Can you call your father, your uncle and your cousins for me please?"
+            Lisa_right "It's time to eat, Juan. Can you call your father, your uncle and your cousin for me please?"
             show Lisa talking with dissolve
             Lisa_right "Also don't forget about May!."
             show Lisa neutral with dissolve
@@ -204,7 +204,7 @@ label AfterTheFire:
     none  "Everyone closed their eyes as the give prayers to their breakfast."
     Juan_center "Dear papa Jesus, this is Juan. I would like to thank you for this wonderful and delicious meal in front of us. \n I want to thank you for the time and that we are all here today."
     Juan_center "Papa Jesus, I would also like to thank you for the family you gave me. They are all such nice and loving people. \n Thank you for my Family."
-    Juan_center "I hope that we get to spend more time together, because I miss my aunty and uncle and my cousins. Thank you, Papa Jesus. Amen."
+    Juan_center "I hope that we get to spend more time together, because I miss my aunty and uncle and my cousin. Thank you, Papa Jesus. Amen."
     none "Juan's family says amen as well and they start eating."
 
     none "After a while, Juan starts feeling a little full."

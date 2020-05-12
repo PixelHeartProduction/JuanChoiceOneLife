@@ -402,7 +402,7 @@ label AfterFlood:
     show Peter smile with dissolve
     Peter_right "Oh! do you mean Sword Style Online 2?"
     Peter_right "That's So cool!, It was just released last week but unfortunately it was too expensive so really I need to save up to buy it."
-    Peter_right "I don't even know if i could buy it."
+    Peter_right "I don't even know if I could buy it."
     show Peter neutral with dissolve
     show Juan neutral with dissolve
     Juan_left "Haha! I'm always gonna be looking forward playing with you with SSO 2."
@@ -454,7 +454,7 @@ label AfterFlood:
     scene black with dissolve
     none "Juan, Glenn and James went to the dining room and got surprised by delicious foods that Juan's mother cooked."
     none "..."
-    none "After dinner the three went directly to Juans room and started playing."
+    none "After dinner the three went directly to Juan's room and started playing."
     scene nighttimeBedroom with dissolve 
     show James neutral with dissolve    
     show Glenn neutralRight with dissolve
