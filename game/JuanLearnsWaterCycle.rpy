@@ -1,10 +1,7 @@
 label JuanLearnsAstrology:
 
     $ CrossChoice = "null"
-    $ AnswerChoice = "null"
-    $ AnswerStep1Choice = "null"
     $ CrossBackChoice = "null"
-    $ HelpLadyChoice = "null"
     $ GoBackChoice = "null"
     $ correct = 0
     $ Question1choice = "null"
@@ -49,8 +46,8 @@ label JuanLearnsAstrology:
     $ WaitQuestion = "Should Juan wait?"
     $ Text1="Wait for April."
     $ Text2="Cross the road by yourself."
-    $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
-    $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
+    $ Icon1 = Image("assets/Sprites/Items/icon_juan_and_april.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_juan_crossing.png")
     call screen DualOptionScreen(WaitQuestion,"CrossChoice",Icon1,Text1,"Wait",Icon2,Text2,"Cross",False) with dissolve
     hide mode confirm with dissolve
 
@@ -253,8 +250,8 @@ label JuanLearnsAstrology:
     $ CrossChoiceQuestion = "How does Juan cross the intersection?"
     $ Text1="Wait for the signal\n to go green."
     $ Text2="Cross when the cars\n are still far away."
-    $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
-    $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
+    $ Icon1 = Image("assets/Sprites/Items/icon_juan_waiting.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_juan_crossing.png")
     call screen DualOptionScreen(CrossChoiceQuestion,"CrossBackChoice",Icon1,Text1,"Wait",Icon2,Text2,"Jaywalk",False) with dissolve
     hide mode confirm with dissolve
 
@@ -309,8 +306,8 @@ label JuanLearnsAstrology:
     $ CrossChoiceQuestion = "How does Juan get home?"
     $ Text1="Find shelter and wait\nfor the rain to stop."
     $ Text2="Keep going."
-    $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
-    $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
+    $ Icon1 = Image("assets/Sprites/Items/icon_juan_waitingshed.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_juan_running_rain.png")
     show countdown at Position(xalign=.5, yalign=.1, zoom=20)
     call screen DualOptionScreen(CrossChoiceQuestion,"GoBackChoice",Icon1,Text1,"Wait",Icon2,Text2,"Continue",True) with dissolve
     hide countdown with dissolve
