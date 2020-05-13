@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/FireDisaster.rpy", line 108: expected statement.
-    sene black with dissolve
-               ^
+File "game/JuansFirstDay.rpy", line 751: u'zorder' is not a keyword argument or valid child for the textbutton statement.
+    textbutton exitText action Return() ypos 500 zorder 10 activate_sound sfx_mode
+                                                       ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Feb 25 16:54:09 2020
+Wed May 13 13:16:38 2020

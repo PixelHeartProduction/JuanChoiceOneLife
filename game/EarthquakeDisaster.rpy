@@ -561,7 +561,7 @@ label EarthquakeDisaster:
 
     Juan_center "(Because it's my choice.)"
     # play credits
-    #$ renpy.movie_cutscene("assets/Misc/JuanChoiceAcousticFull.mpg")
+    $ renpy.movie_cutscene("assets/Misc/JuanChoiceAcousticFull.mpg")
 
     jump splashscreen
 
