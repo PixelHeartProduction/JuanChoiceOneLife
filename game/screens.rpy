@@ -384,12 +384,6 @@ screen main_menu():
         if renpy.variant("mobile"):
             add "dialog" ypos -400
 
-    if not persistent.updateNoticePreAlpha6_0:
-        $ exitText = Text("[Click here to close]", bold=True, color="#FF5631")
-        image("assets/Misc/updates.png") zoom 1.5 xalign 0.5 yalign 0.5
-        textbutton exitText action SetVariable("persistent.updateNoticePreAlpha6_0", True) xalign 0.5 ypos 860 activate_sound sfx_mode
-
-
 style main_menu_frame is empty
 style main_menu_vbox is vbox
 style main_menu_text is gui_text

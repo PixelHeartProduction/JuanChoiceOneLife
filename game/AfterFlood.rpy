@@ -158,6 +158,11 @@ label AfterFlood:
     call screen Grocery()
     hide mode confirm with dissolve
 
+    if not persistent.JuanExtravagant and money == 0:
+        $ renpy.notify("Unlocked: Juan extravagant")
+        $ persistent.JuanExtravagant=True
+        $ persistent.totalAchievement +=1
+
     Juan_center "Now I'm ready for lunch later!"
     scene daytimeStreet1 with dissolve
     show Juan neutral with dissolve
@@ -351,6 +356,12 @@ label AfterFlood:
     show Cathy neutral
     Cathy_center "Okay class That's it for your quiz."
     Cathy_center "Juan you got [correct] of 4 right."
+
+    if not persistent.LittleEinstein and correct == 4:
+        $ renpy.notify("Unlocked: Little Einstein")
+        $ persistent.LittleEinstein=True
+        $ persistent.totalAchievement +=1
+
     Cathy_center "Okay that's that for our quiz!"
     Cathy_center "Oh yeah, class I forgot to tell you something."
     Cathy_center "Recently there's been quite alot of minor earthquakes occurring, especially in the regions of Visayas and Mindanao."
@@ -402,7 +413,7 @@ label AfterFlood:
     show Peter smile with dissolve
     Peter_right "Oh! do you mean Sword Style Online 2?"
     Peter_right "That's So cool!, It was just released last week but unfortunately it was too expensive so really I need to save up to buy it."
-    Peter_right "I don't even know if i could buy it."
+    Peter_right "I don't even know if I could buy it."
     show Peter neutral with dissolve
     show Juan neutral with dissolve
     Juan_left "Haha! I'm always gonna be looking forward playing with you with SSO 2."
@@ -454,7 +465,7 @@ label AfterFlood:
     scene black with dissolve
     none "Juan, Glenn and James went to the dining room and got surprised by delicious foods that Juan's mother cooked."
     none "..."
-    none "After dinner the three went directly to Juans room and started playing."
+    none "After dinner the three went directly to Juan's room and started playing."
     scene nighttimeBedroom with dissolve 
     show James neutral with dissolve    
     show Glenn neutralRight with dissolve
@@ -492,6 +503,12 @@ label AfterFlood:
 
     if PlayOrHomeworkChoice == "play":
         show Juan smile2 with dissolve
+
+        if not persistent.LetsParty:
+            $ renpy.notify("Unlocked: Let's party!")
+            $ persistent.LetsParty=True
+            $ persistent.totalAchievement +=1
+
         Juan_left "Sure!! why not, Isn't that the point why you guys came here?"
         show James laugh with dissolve
         James_center "Alright! it's set, let's get ready playing!"

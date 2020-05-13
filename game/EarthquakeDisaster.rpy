@@ -203,6 +203,12 @@ label EarthquakeDisaster:
         hide Alice with moveoutleft
         play sound "assets/SFX/Door.mp3"
         show Juan panRCenter with dissolve
+
+        if not persistent.AliceStory:
+            $ renpy.notify("Unlocked: Alice' story")
+            $ persistent.AliceStory=True
+            $ persistent.totalAchievement +=1
+
         none "Alice leaves the room and head home."
         Juan_center "..."
         Juan_center "Alice is right."
@@ -276,6 +282,12 @@ label EarthquakeDisaster:
         hide Peter with moveoutleft
         play sound "assets/SFX/Door.mp3"
         show Juan panRCenter with dissolve
+
+        if not persistent.PetersStory:
+            $ renpy.notify("Unlocked: Peter's story")
+            $ persistent.PetersStory=True
+            $ persistent.totalAchievement +=1
+
         none "Peter leaves the room and head home."
         Juan_center "..."
         Juan_center "Peter's right."
@@ -541,9 +553,15 @@ label EarthquakeDisaster:
     Juan_center "(Earthquake, flood, or fire..)"
     Juan_center "(I'll always do my best in my part.)"
     stop music fadeout 2
+
+    if not persistent.MyChoiceMyLife:
+        $ renpy.notify("Unlocked: My Choice My Life")
+        $ persistent.MyChoiceMyLife=True
+        $ persistent.totalAchievement +=1
+
     Juan_center "(Because it's my choice.)"
     # play credits
-    #$ renpy.movie_cutscene("assets/Misc/JuanChoiceAcousticFull.mpg")
+    $ renpy.movie_cutscene("assets/Misc/JuanChoiceAcousticFull.mpg")
 
     jump splashscreen
 

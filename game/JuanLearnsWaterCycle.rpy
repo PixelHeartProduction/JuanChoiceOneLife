@@ -1,10 +1,7 @@
 label JuanLearnsAstrology:
 
     $ CrossChoice = "null"
-    $ AnswerChoice = "null"
-    $ AnswerStep1Choice = "null"
     $ CrossBackChoice = "null"
-    $ HelpLadyChoice = "null"
     $ GoBackChoice = "null"
     $ correct = 0
     $ Question1choice = "null"
@@ -42,15 +39,14 @@ label JuanLearnsAstrology:
     scene crosswalk with dissolve
     show Juan neutralRight with dissolve
     show April neutralLeft with dissolve
-    show April talking with dissolve
     April_left "Ok wait for me, Juan, We will cross together."
 
     show mode confirm with dissolve
     $ WaitQuestion = "Should Juan wait?"
     $ Text1="Wait for April."
     $ Text2="Cross the road by yourself."
-    $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
-    $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
+    $ Icon1 = Image("assets/Sprites/Items/icon_juan_and_april.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_juan_crossing.png")
     call screen DualOptionScreen(WaitQuestion,"CrossChoice",Icon1,Text1,"Wait",Icon2,Text2,"Cross",False) with dissolve
     hide mode confirm with dissolve
 
@@ -149,7 +145,7 @@ label JuanLearnsAstrology:
     if Question1choice == "Evaporation":
         $ correct +=1
         show Cathy smile with dissolve
-        Cathy_center "Excellent Juan that is correct!"
+        Cathy_center "Great Juan you're getting better at this."
     if Question1choice == "Condensation":
         show Cathy sad with dissolve
         Cathy_center "That is the not the first phase Juan."
@@ -195,7 +191,7 @@ label JuanLearnsAstrology:
     if Question3choice == "Matter":
         $ correct +=1
         show Cathy smile with dissolve
-        Cathy_center "Excellent Juan that is correct!"
+        Cathy_center "That's correct"
     if Question3choice == "Energy":
         show Cathy sad with dissolve
         Cathy_center "Juan your answer is wrong."
@@ -227,6 +223,12 @@ label JuanLearnsAstrology:
         Cathy_center "Wrong answer Juan."
 
     Cathy_center "Okay that's it for the quiz!"
+    
+    if not persistent.AsaMeshiMae and correct == 4:
+        $ renpy.notify("Unlocked: Asa meshi mae")
+        $ persistent.AsaMeshiMae=True
+        $ persistent.totalAchievement +=1
+
     Cathy_center "Juan you got [correct] of 4 right."
     
 
@@ -253,18 +255,30 @@ label JuanLearnsAstrology:
     $ CrossChoiceQuestion = "How does Juan cross the intersection?"
     $ Text1="Wait for the signal\n to go green."
     $ Text2="Cross when the cars\n are still far away."
-    $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
-    $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
+    $ Icon1 = Image("assets/Sprites/Items/icon_juan_waiting.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_juan_crossing.png")
     call screen DualOptionScreen(CrossChoiceQuestion,"CrossBackChoice",Icon1,Text1,"Wait",Icon2,Text2,"Jaywalk",False) with dissolve
     hide mode confirm with dissolve
 
     if CrossBackChoice == "Wait":
+
+        if not persistent.RogerThatApril and CrossChoice == "Wait" and CrossBackChoice == "Wait":
+            $ renpy.notify("Unlocked: Roger that April")
+            $ persistent.RogerThatApril=True
+            $ persistent.totalAchievement +=1
+            
         none "Juan waits for the signal to go green to cross the intersection."
         scene black with dissolve
         none "Juan, crosses the road successfully."
         none "While Juan is on his way back home."
 
     if CrossBackChoice == "Jaywalk":
+
+        if not persistent.YouNeverLearn and CrossChoice == "Cross" and CrossBackChoice == "Jaywalk":
+            $ renpy.notify("Unlocked: You never learn")
+            $ persistent.YouNeverLearn=True
+            $ persistent.totalAchievement +=1
+
         hide Juan with dissolve
         none "Juan crosses when he thought the incoming cars were far enough."
         none "As a result Juan was almost hit by the incoming car. He was frozen in his place."
@@ -272,9 +286,8 @@ label JuanLearnsAstrology:
         show Juan sad with dissolve
         Juan_center "Oops I'm really sorry!"
         none "While Juan almost got hit by the vehicles passing by. Juan caught someone's attention."
-
-        show Juan panRight with dissolve
         show Rey neutralleft with easeinleft
+        show Juan panRight with dissolve
 
         if ListenChoice == "Listen":
             show Rey talking with dissolve
@@ -309,8 +322,8 @@ label JuanLearnsAstrology:
     $ CrossChoiceQuestion = "How does Juan get home?"
     $ Text1="Find shelter and wait\nfor the rain to stop."
     $ Text2="Keep going."
-    $ Icon1 = Image("assets/Sprites/Items/Phone_Answer.png")
-    $ Icon2 = Image("assets/Sprites/Items/Phone_Ignore.png")
+    $ Icon1 = Image("assets/Sprites/Items/icon_juan_waitingshed.png")
+    $ Icon2 = Image("assets/Sprites/Items/icon_juan_running_rain.png")
     show countdown at Position(xalign=.5, yalign=.1, zoom=20)
     call screen DualOptionScreen(CrossChoiceQuestion,"GoBackChoice",Icon1,Text1,"Wait",Icon2,Text2,"Continue",True) with dissolve
     hide countdown with dissolve
@@ -325,6 +338,12 @@ label JuanLearnsAstrology:
         show Juan smile2 with dissolve
         Juan_center "Alright a raincoat!"
         show Juan raincoat with dissolve
+
+        if not persistent.Lv100Armor:
+            $ renpy.notify("Unlocked: Lv 100 Armor")
+            $ persistent.Lv100Armor=True
+            $ persistent.totalAchievement +=1
+
         Juan_center "Now I'm not gonna be wet!"
 
     if GoBackChoice == "Continue":
@@ -337,7 +356,7 @@ label JuanLearnsAstrology:
     none "Soon Juan arrived at his home but the raining shows no sign of stopping."
     stop sound
 
-    jump AfterFlood
+    jump TheFlood
 
 
 

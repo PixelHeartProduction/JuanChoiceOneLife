@@ -28,8 +28,15 @@
     image schoolHallway = "assets/Scenes/school_hallway.png"
     image housefire = "assets/Scenes/housefire.jpg"
     image relativesHouse = "assets/Scenes/RelativesHouse.png"
+    image relativesHouseFlood1 = "assets/Scenes/house2flood.png"
+    image relativesHouseFlood2 = "assets/Scenes/house2flood2.png"
+    image relativesHouseAfterFlood = "assets/Scenes/house2afterflood.png"
+    image relativesBedroomFlood = "assets/Scenes/bedroom2flood.png"
     image relativesBedroom = "assets/Scenes/RelativesBedroom.png"
+    image relativesKitchenFlood = "assets/Scenes/kitchen2flood.png"
     image relativesKitchen = "assets/Scenes/RelativesKitchen.png"
+    image relativesLivingroomFlood = "assets/Scenes/livingroom2flood.png"
+    image relativesLivingroomAfterFlood = "assets/Scenes/livingroom2Afterflood.png"
     image relativesLivingroom = "assets/Scenes/RelativesLivingroom.png" 
     image groceryshelf = "assets/Scenes/emptyshelf.jpg" 
     image schoolbuilding = "assets/Scenes/SchoolExterior.png" 
@@ -45,6 +52,7 @@
     image KitchenBirthday = "assets/Scenes/KitchenBirthday.png"
     image crosswalkClose = "assets/Scenes/crosswalkClose.png"
     image crosswalkClose2 = "assets/Scenes/crosswalkClose2.png"
+    image TV = "assets/Scenes/tv.png"
 
 
 #================Transitions======================
