@@ -148,6 +148,7 @@ label TheFlood:
         if CartoonOrNews == "News":
             scene black with dissolve
             none "Juan turns the TV on and watch the daily news."
+            scene TV with dissolve
             Reporter_center "Good morning from our news!"
             Reporter_center "The Central Luzon Region is currently at Public Storm Warning Signal No. 3."
             Reporter_center "However it's expected to rise up to Signal No. 4."
@@ -253,6 +254,7 @@ label TheFlood:
         if CartoonOrNews == "News":
             scene black with dissolve
             none "Juan turns the TV on and watch the daily news."
+            scene TV with dissolve
             Reporter_center "Good morning from our news!"
             Reporter_center "The Central Luzon Region is currently at Public Storm Warning Signal No. 3."
             Reporter_center "However it's expected to rise up to Signal No. 4."
@@ -296,7 +298,7 @@ label TheFlood:
     $ WakeUpChoiceQuestion = "Should Juan prepare the flashlights or play games?"
     $ Text1= "Play games"
     $ Text2= "Prepare flashlights"
-    $ Icon1 = Image("assets/Sprites/Items/icon_stand.png")
+    $ Icon1 = Image("assets/Sprites/Items/icon_playgames2.png")
     $ Icon2 = Image("assets/Sprites/Items/Juan_ReadyingFlashlight.png")
     call screen DualOptionScreen(WakeUpChoiceQuestion,"GamesOrReady",Icon1,Text1,"Games",Icon2,Text2,"Ready",False) with dissolve
     hide mode confirm with dissolve
@@ -326,7 +328,7 @@ label TheFlood:
         none "Couple minutes later, Juan is now done with the flashlights and started playing games with Peter."
 
     scene relativesHouseFlood1 with dissolve
-    none "While the whole family is preparing for the flood the storm got even stronger."
+    none "While the whole family is preparing for the flood, the storm got even stronger."
     show flash
     play sound "assets/SFX/thunder.mp3"
     hide flash with dissolve

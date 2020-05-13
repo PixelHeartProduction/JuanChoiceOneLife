@@ -52,6 +52,7 @@
     image KitchenBirthday = "assets/Scenes/KitchenBirthday.png"
     image crosswalkClose = "assets/Scenes/crosswalkClose.png"
     image crosswalkClose2 = "assets/Scenes/crosswalkClose2.png"
+    image TV = "assets/Scenes/tv.png"
 
 
 #================Transitions======================

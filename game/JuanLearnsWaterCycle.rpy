@@ -39,7 +39,6 @@ label JuanLearnsAstrology:
     scene crosswalk with dissolve
     show Juan neutralRight with dissolve
     show April neutralLeft with dissolve
-    show April talking with dissolve
     April_left "Ok wait for me, Juan, We will cross together."
 
     show mode confirm with dissolve
@@ -146,7 +145,7 @@ label JuanLearnsAstrology:
     if Question1choice == "Evaporation":
         $ correct +=1
         show Cathy smile with dissolve
-        Cathy_center "Excellent Juan that is correct!"
+        Cathy_center "Great Juan you're getting better at this."
     if Question1choice == "Condensation":
         show Cathy sad with dissolve
         Cathy_center "That is the not the first phase Juan."
@@ -192,7 +191,7 @@ label JuanLearnsAstrology:
     if Question3choice == "Matter":
         $ correct +=1
         show Cathy smile with dissolve
-        Cathy_center "Excellent Juan that is correct!"
+        Cathy_center "That's correct"
     if Question3choice == "Energy":
         show Cathy sad with dissolve
         Cathy_center "Juan your answer is wrong."
@@ -269,9 +268,8 @@ label JuanLearnsAstrology:
         show Juan sad with dissolve
         Juan_center "Oops I'm really sorry!"
         none "While Juan almost got hit by the vehicles passing by. Juan caught someone's attention."
-
-        show Juan panRight with dissolve
         show Rey neutralleft with easeinleft
+        show Juan panRight with dissolve
 
         if ListenChoice == "Listen":
             show Rey talking with dissolve

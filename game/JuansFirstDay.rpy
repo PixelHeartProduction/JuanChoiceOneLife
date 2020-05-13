@@ -144,6 +144,7 @@ label JuansFirstDay:
     Juan_center "(That girl needs help quickly! What should I do?)"
 
     show mode confirm with dissolve
+    call screen timertutorial with dissolve
     show countdown at Position(xalign=.5, yalign=.2, zoom=20)
     call screen stickorstone with dissolve
     hide countdown with dissolve
@@ -742,3 +743,11 @@ label JuansFirstDay:
 
         timer time action [SetVariable("help_girl", randomize),Return()]
     return
+
+    screen timertutorial():
+        modal True
+        if renpy.variant("pc"):
+            textbutton "[Click here to close]" xalign 0.5 ypos 800 action Return() activate_sound sfx_mode
+        else:
+            textbutton "[Tap here to close]" xalign 0.5 ypos 800 action Return() activate_sound sfx_mode
+        image("assets/Misc/timertutorial.png") xalign 0.5 yalign 0.5
