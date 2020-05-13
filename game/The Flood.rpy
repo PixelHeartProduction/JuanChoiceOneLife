@@ -155,6 +155,11 @@ label TheFlood:
             Reporter_center "Localized flooding have been reported in numerous towns within the region."
             Reporter_center "We're advising you to stay at home and stay connected with your local authorities for emergency evacuation."
             Reporter_center "That's it for our news right now, stay safe!"
+
+            if not persistent.IntoTheNews:
+                $ renpy.notify("Unlocked: Into the news")
+                $ persistent.IntoTheNews=True
+                $ persistent.totalAchievement +=1
         
         show flash
         play sound "assets/SFX/thunder.mp3"
@@ -261,6 +266,11 @@ label TheFlood:
             Reporter_center "Localized flooding have been reported in numerous towns within the region."
             Reporter_center "We're advising you to stay at home and stay connected with your local authorities for emergency evacuation."
             Reporter_center "That's it for our news right now, stay safe!"
+
+            if not persistent.IntoTheNews:
+                $ renpy.notify("Unlocked: Into the news")
+                $ persistent.IntoTheNews=True
+                $ persistent.totalAchievement +=1
         
         show flash
         play sound "assets/SFX/thunder.mp3"
@@ -385,6 +395,12 @@ label TheFlood:
         none "Juan started to pack his bag with clothes and foods in case of an emergency evacuation."
     
     scene relativesHouseFlood2 with dissolve
+
+    if not persistent.BestPrepared and PanicOrPrepare=="Prepare" and GamesOrReady == "Ready" and CartoonOrNews == "News" and StackOrSnacks == "Stack":
+        $ renpy.notify("Unlocked: Best prepared")
+        $ persistent.BestPrepared=True
+        $ persistent.totalAchievement +=1
+
     none "The family waited for hours and started praying for the storm to calm down."
     scene relativesHouseFlood1 with dissolve
     none "Halfway throughout the day the storm has started to dwindle down a little bit."

@@ -223,6 +223,12 @@ label JuanLearnsAstrology:
         Cathy_center "Wrong answer Juan."
 
     Cathy_center "Okay that's it for the quiz!"
+    
+    if not persistent.AsaMeshiMae and correct == 4:
+        $ renpy.notify("Unlocked: Asa meshi mae")
+        $ persistent.AsaMeshiMae=True
+        $ persistent.totalAchievement +=1
+
     Cathy_center "Juan you got [correct] of 4 right."
     
 
@@ -255,12 +261,24 @@ label JuanLearnsAstrology:
     hide mode confirm with dissolve
 
     if CrossBackChoice == "Wait":
+
+        if not persistent.RogerThatApril and CrossChoice == "Wait" and CrossBackChoice == "Wait":
+            $ renpy.notify("Unlocked: Roger that April")
+            $ persistent.RogerThatApril=True
+            $ persistent.totalAchievement +=1
+            
         none "Juan waits for the signal to go green to cross the intersection."
         scene black with dissolve
         none "Juan, crosses the road successfully."
         none "While Juan is on his way back home."
 
     if CrossBackChoice == "Jaywalk":
+
+        if not persistent.YouNeverLearn and CrossChoice == "Cross" and CrossBackChoice == "Jaywalk":
+            $ renpy.notify("Unlocked: You never learn")
+            $ persistent.YouNeverLearn=True
+            $ persistent.totalAchievement +=1
+
         hide Juan with dissolve
         none "Juan crosses when he thought the incoming cars were far enough."
         none "As a result Juan was almost hit by the incoming car. He was frozen in his place."
@@ -320,6 +338,12 @@ label JuanLearnsAstrology:
         show Juan smile2 with dissolve
         Juan_center "Alright a raincoat!"
         show Juan raincoat with dissolve
+
+        if not persistent.Lv100Armor:
+            $ renpy.notify("Unlocked: Lv 100 Armor")
+            $ persistent.Lv100Armor=True
+            $ persistent.totalAchievement +=1
+
         Juan_center "Now I'm not gonna be wet!"
 
     if GoBackChoice == "Continue":
