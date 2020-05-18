@@ -1,24 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/tl/Filipino/FireDisaster.rpy", line 282, in script
-    old "Joseph tries hard to put out the fire with a wet cloth."
-Exception: A translation for "Oh no!" already exists at game/tl/Filipino/FireDisaster.rpy:223.
+  File "game/tl/Filipino/WalkIndependently.rpy", line 57, in script
+    old "Yes!"
+Exception: A translation for "Yes!" already exists at game/tl/Filipino/AfterTheFire.rpy:151.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/tl/Filipino/FireDisaster.rpy", line 282, in script
-    old "Joseph tries hard to put out the fire with a wet cloth."
+  File "game/tl/Filipino/WalkIndependently.rpy", line 57, in script
+    old "Yes!"
   File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\ast.py", line 2397, in execute
     renpy.translation.add_string_translation(self.language, self.old, self.new, newloc)
   File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\translation\__init__.py", line 450, in add_string_translation
     stl.add(old, new, newloc)
   File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\translation\__init__.py", line 388, in add
     quote_unicode(old), fn, line))
-Exception: A translation for "Oh no!" already exists at game/tl/Filipino/FireDisaster.rpy:223.
+Exception: A translation for "Yes!" already exists at game/tl/Filipino/AfterTheFire.rpy:151.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Juan Choice One Life 8.2.5
-Mon May 18 21:25:45 2020
+Mon May 18 23:37:34 2020
