@@ -9,16 +9,16 @@ label AfterFlood:
     $ PlayOrHomeworkChoice = "null"
 
     stop music fadeout 2.0
-    show text("{size=40}1 week have passed since the flooding.{/size}") with dissolve
+    show text("{size=40}Isang linggo ang nakalipas simula noong pagbaha.{/size}") with dissolve
     with Pause (3)
     scene trans_relativesHouse with dissolve
     show bautista family with dissolve
-    show text("{size=40}It's been a month now since they\nstarted living in their relatives house.{/size}") with dissolve
+    show text("{size=40}Isang buwan na din sila\nnagsimula makitira sa kanilang kamag-anak.{/size}") with dissolve
     with Pause (5)
-    show text("{size=40}The Bautista family is starting to get used now\nto their new way of living.{/size}") with dissolve
+    show text("{size=40}Ang Pamilya Bautista ay nagsimula na ding masanay\nsa kanilang bagong pamumuhay.{/size}") with dissolve
     with Pause (5)
     scene black with dissolve
-    show text("{size=40}But then...{/size}") with dissolve
+    show text("{size=40}Ngunit...{/size}") with dissolve
     with Pause (3)
     hide text with dissolve
     none "..."
@@ -26,242 +26,247 @@ label AfterFlood:
     none "(Ring ring.)"
     Joseph_left "Hello?"
     Man_right "Hello, Mr. Bautista."
-    Man_right "Good news from your very own insurance company. One of our people who manage your house for fire damage repair"
-    Man_right "Have told us that your house is now fully repaired and once again ready to accomodate your family."
-    Joseph_left "Really? thank you very much!"
-    Man_right "It's our pleasure helping you."
+    Man_right "Good news po galing sa insurance company nyo po. Isa po sa mga tauhan namin na nag-aayos ng inyong bahay na nasunog."
+    Man_right "Sinabi sa amin na naayos na po ang inyong bahay at pwede na po ulit tirahan ng inyong pamilya."
+    Joseph_left "Talaga? Maraming salamat!"
+    Man_right "Wala pong anuman."
     none "..."
-    Joseph_left "Ma, We can go home now!"
-    Mary_center "Really?"
-    Juan_center "Yay!"
-    May_center "Yay!"
+    Joseph_left "Ma, Makakauwi na tayo!"
+    Mary_center "Talaga?"
+    Juan_center "Yehey!"
+    May_center "Yehey!"
 
     scene trans_house with dissolve
     show mode confirm with dissolve
-    show text("{size=60}The passing of storm{/size}") with dissolve
+    show text("{size=60}Ang paglisan ng bagyo{/size}") with dissolve
     with Pause(2)
     hide text with dissolve
     scene black with dissolve
 
     none "..."
     play music "assets/FreeBGM/TheEveningSky.mp3"
-    Mary_center "'.....hey wake up you sleepy head.'"
+    Mary_center "'.....Gising-gising na batang antukin.'"
     none "(A familiar words break my sleep.)"
 
     scene daytimeBedroom with dissolve
     show Mary neutral with dissolve
     
-    Mary_center "Juan you'll be late for school breakfast is ready!"
+    Mary_center "Juan maleleyt ka na sa school mo, handa na ang almusal!"
     Juan_left "Mmmm.."
 
     show mode confirm with dissolve
-    $ ListenChoiceQuestion = "Juan still sleepy but he needs to go to school."
-    $ Text1="Maybe later.."
-    $ Text2="Wake up"
+    $ ListenChoiceQuestion = "Inaantok pa si Juan ngunit kinakailangan na nyang pumasok sa paaralan."
+    $ Text1="Mamaya na lang.."
+    $ Text2="Bumangon"
     $ Icon1 = Image("assets/Sprites/Items/icon_sleep.png")
     $ Icon2 = Image("assets/Sprites/Items/icon_wakeup.png")
     call screen DualOptionScreen(ListenChoiceQuestion,"WakeupChoice",Icon1,Text1,"later",Icon2,Text2,"wake",False) with dissolve
     hide mode confirm with dissolve
 
     if WakeupChoice == "wake":
-        Juan_left "Good morning mom"
+        Juan_left "Good morning po mama"
         show Juan neutralLeft with dissolve
         show Mary panRight with dissolve
         Mary_right "Good morning, Juan!"
     if WakeupChoice == "later":
         show Juan neutralLeft with dissolve
         show Mary panRight with dissolve
-        Juan_left "..maybe..later. Five more minutes, Ma..."
+        Juan_left "..Mamaya..na lang. Five minutes pa, Ma..."
         show Mary surprised with dissolve
-        Mary_right "Come one now Juan you need to wake up now."
+        Mary_right "Tara na Juan kailangan mo na bumangon"
 
-    Mary_right "Did you forgot to set your alarm clock last night?"
+    Mary_right "Nakalimutan mo ba iset yung alarm clock mo kagabi?"
     show Mary talking with dissolve
-    Mary_right "I was waiting for you to go to the Kitchen."
-    Juan_left "Oops! sorry mom I think I did."
+    Mary_right "Inaantay kita sa kusina."
+    Juan_left "Ayy! sorry mama nakalimutan ko nga."
     show Mary smile with dissolve
-    none "*Mary laughs."
-    Mary_right "Anyways breakfast is ready in the kitchen hurry up or you'll be late for school!"
+    none "*Natawa si Mary."
+    Mary_right "O sya handa na yung almusal sa kusina kumain ka na at bilisan mo maleleyt ka na!"
     Juan_left "Okay."
 
     scene kitchen with dissolve 
     show Juan neutral with dissolve
-    Juan_center "(It's been a while now since I had breakfast in our house)"
+    Juan_center "(Matagal tagal na rin akong di nakakapagalmusal sa sarili naming bahay)"
     Juan_center "..."
     show Juan smile1
     Juan_center "Yummy!"
     show Joseph neutralright with easeinright
     show Juan panLeft with dissolve
     Joseph_right "Good morning Juan!"
-    Juan_left "Good morning Dad!"
+    Juan_left "Good morning po Papa!"
     show Joseph talking with dissolve
-    Joseph_right "How's your morning waking up back here again in our home?"
-    Joseph_right "Did you missed your old room?"
+    Joseph_right "Musta pagtulog mo mahimbing ba?"
+    Joseph_right "Namiss mo na ba yung kwarto mo?"
     show Joseph neutral with dissolve
     show Juan smile2 with dissolve
-    Juan_left "Yeah Dad!, I actually missed playing video games in my room."    
+    Juan_left "Opo papa!, Namiss ko din po yung paglalaro ko ng video games sa kwarto ko."    
     show Joseph laugh with dissolve
-    Joseph_right "Well I guess nothing beats our home sweet home hahaha!"
+    Joseph_right "Ala talagang tatalo kapag nasa sariling bahay ka hahaha!"
     show Joseph neutral with dissolve
     show Juan neutral with dissolve
-    Mary_center "Dad!, you should start preparing you backpack now."
-    Joseph_right "Oops! I forgot about that."
-    Joseph_right "Anyways see you later Juan."
-    Juan_left "See you later dad."
+    Mary_center "Pa!, Handa niyo na po yung mga dadalhin nyo."
+    Joseph_right "Ayy! Muntik ko na makalimutan."
+    Joseph_right "O sya mamaya na lang Juan."
+    Juan_left "Ingat ka po papa."
     hide Joseph with moveoutright
-    none "Juan is now done with his breakfast."    
+    none "Tapos na si Juan mag-almusal."    
     show Mary neutralright with easeinright
-    Mary_right "Juan are you done with your breakfast?"
+    Mary_right "Juan tapos ka na ba kumain?"
     show Juan smile2 with dissolve
-    Juan_left "Yeah mom it's really good!"
+    Juan_left "Opo mama ang sarap talaga ng luto nyo!"
     show Juan neutral with dissolve
     show Mary talking with dissolve
-    Mary_right "Actually Juan I forgot to tell you something."
-    Juan_left "What is it mom?"
-    Mary_right "I made a mistake this morning and burned your lunch for today."
-    Mary_right "I got to carried out with your little sister May while cooking your food and I just smelled something is burning."
-    Juan_left "Really?!"
-    Mary_right "Anyway, here's a 100 peso so you can buy your own food on your way to school."
-    Mary_right "Just make sure you don't buy junk foods or anything okay?"
+    Mary_right "Aa Juan may nakalimutan nga pala ko sabihin sayo."
+    Juan_left "Ano po yon mama?"
+    Mary_right "Nasunog ko kasi yung niluluto kong babaunin mo mamayang tanghali."
+    Mary_right "Inaasikaso ko kasi yung kapatid mo hindi ko na namalayan na may niluluto nga pala ako naamoy ko na lang na may nasusunog."
+    Juan_left "Ay ganun po ba?!"
+    Mary_right "O sya, Eto 100 pesos bili ka na lang ng makakain mo mamayang tanghali."
+    Mary_right "Siguraduhin mo lang hindi tsitsirya bibilhin mo ha?"
     show Mary neutral with dissolve
-    Juan_left "Okay mom."
+    Juan_left "Opo mama."
     show Mary smile with dissolve
-    Mary_right "Hehe I'm really sorry about that."
-    Mary_right "Have fun in school!"
+    Mary_right "Hehe sensya talaga anak."
+    Mary_right "Ingat ka ha!"
     show Mary panRCenter with dissolve
     show May neutralright with easeinright
-    May_right "Bye kuya Juan, See you later!"
+    May_right "Bye kuya Juan, Ingat ka!"
     show Juan smile1 with dissolve
-    Juan_left "Bye mom!, Bye May!"
+    Juan_left "Bye mama!, Bye May!"
 
     play sound "assets/SFX/Door.mp3"
     scene daytimeStreet1 with dissolve
     show Juan neutral with dissolve
     none "..."
-    Juan_center "Man. I really missed walking in these streets!"
-    Juan_center "It's really been a while since I've been here."
-    Juan_center "I hope the dog is not aroud here today."
-    none "(Just then Juan remembers something.)"
-    Juan_center "Oh! I almost forgot."
-    Juan_center "I need to go the convenience store to buy my lunch."
-    Juan_center "Better get there quick!"
+    Juan_center "Kakamiss na maglakad sa lugar nato!"
+    Juan_center "Matagal tagal na rin ako di napapadpad dito."
+    Juan_center "Sana wala ngayon yung aso."
+    none "(May naalala bigla si Juan.)"
+    Juan_center "Ay! Muntik ko na makalimutan."
+    Juan_center "Kailangan ko nga pala bumili ng makakakain ko para mamayang tanghali."
+    Juan_center "Kelangan ko na magmadali!"
     scene black with dissolve
 
 
     play music "assets/FreeBGM/UnderTheCobblestones.mp3"
-    none "Juan arrives at the convenience store."
+    none "Dumating si Juan sa isang Sari-Sari store."
     scene groceryshelf with dissolve
-    Juan_center "Hmm what should I buy?"
-    Juan_center "I only got 100 pesos here."
+    Juan_center "Hmm ano kaya bibilhin ko?"
+    Juan_center "Meron akong 100 pesos para pagkasyahin."
 
     show mode confirm with dissolve
     call screen Grocery()
     hide mode confirm with dissolve
 
-    Juan_center "Now I'm ready for lunch later!"
+    if not persistent.JuanExtravagant and money == 0:
+        $ renpy.notify("Unlocked: Juan extravagant")
+        $ persistent.JuanExtravagant=True
+        $ persistent.totalAchievement +=1
+
+    Juan_center "Ayos may pagkain na ko para mamaya!"
     scene daytimeStreet1 with dissolve
     show Juan neutral with dissolve
-    Juan_center "Time to go to school!"
+    Juan_center "Oras na para pumasok!"
 
-    none "Just when Juan starts to continue walking, He noticed someone familiar"
-    Juan_center "Huh, is that?"
+    none "Habang naglalakad si Juan, May napansin siyang pamilyar na tao"
+    Juan_center "Teka, siya ba yung?"
     show Alice neutralright with easeinright
     show Juan panLeft with dissolve
 
     if Alice_unlock == False:  
         Juan_left "Hello."
         show Alice surprised with dissolve
-        Girl_right "Oh!"
+        Girl_right "Ah!"
         show Alice smile with dissolve
-        Girl_right "You're the boy that saved me from the dog a while ago."
-        Girl_right "I noticed before that you wear the same uniform like mine, But I'm too shy to talk to you in school."
-        Girl_right "So..uhmm..."
-        Girl_right "Thank you very much!"
-        Juan_left "You're welcome!"
-        Juan_left "My name is Juan by the way"
-        Girl_right "Nice to meet you Juan, My name is Alice!"
+        Girl_right "Diba ikaw yung nagligtas saken sa aso noon."
+        Girl_right "Napansin ko din na pareho tayo ng uniform, kaso nahihiya ako kausapin ka sa school."
+        Girl_right "So..aaaaa..."
+        Girl_right "Maraming salamat!"
+        Juan_left "Wala yon hehe!"
+        Juan_left "Ako nga pala si Juan"
+        Girl_right "Nagagalak ako makilala ka Juan, Ako naman si Alice!"
         $ Alice_unlock == True 
     else:
         show Juan smile1 with dissolve
         Juan_left "Hi Alice!"
         show Juan neutral with dissolve
         show Alice surprised with dissolve
-        Alice_right "Oh!"
+        Alice_right "Ah!"
         show Alice smile with dissolve
         Alice_right "Good morning Juan!"
-        Alice_right "I heard that you and your family is now back living in your house after the fire incident?"
+        Alice_right "Nabalitaan ko pala na naayos na daw yung bahay nyo at doon na ulit kayo nakatira?"
         show Juan smile2 with dissolve
-        Juan_left "That's right! I can now play games again in my room."
+        Juan_left "Oo! Kaya nakakapaglaro na ulit ako sa sarili kong kwarto."
         show Juan neutral with dissolve
-        Alice_right "Good to hear."
+        Alice_right "Mabuti naman."
     
     none "..."
-    Alice_right "By the way Juan what are you carrying?"
-    Juan_left "Oh this? my Mom burned my lunch earlier this morning so she asked me to buy my own lunch at the convenience store."
+    Alice_right "Anu nga pala yang dala dala mo Juan??"
+    Juan_left "Ah eto? Nasunog kasi ni mama yung niluluto nya na baon ko kaya sabi nya saken bumili na lang muna ako ng pagkain ko para mamaya."
     show Alice surprised with dissolve
-    Alice_right "Really?!"
+    Alice_right "Ay ganun?!"
     show Alice smile with dissolve
-    Alice_right "Must be a tough job being a Mother."
-    Alice_right "Anyways it's almost 7am now we need to hurry!"
-    Juan_left "Oh yeah I almost forgot"
+    Alice_right "Mahirap sigurong maging nanay."
+    Alice_right "Malapit na pala mag 7 AM kaylangan na natin magmadali!"
+    Juan_left "Ay oo nga pala"
     show Juan smile2 with dissolve
-    Juan_left "Let's go!"
+    Juan_left "Tara!"
 
     scene black with dissolve
-    none "Juan and Alice quickly rushed to school to catch up with their 7am class"
+    none "Si Juan at Alice ay dali-daling pumunta sa Paaralan upang makaabot sila sa kanilang 7am class"
     scene schoolbuilding with dissolve
-    none "Somehow, Juan And Alice managed to get to their morning class in time."
+    none "Kahit papaano, Nakariting si Juan at Alice sa kanilang paaralan at nakaabot sa kanilang klase."
     play sound "assets/SFX/School_Bell.mp3"
     none "(Bell Rings.)"
     scene classroom with dissolve
 
     show Cathy neutral with easeinleft
 
-    Cathy_center "Good morning class, how's everyone doing?"
-    Class_center "Good morning, Teacher!"
-    Cathy_center "Did everyone managed to attend the flag ceremony this morning?"
-    Class_center "Yes, Teacher!"
+    Cathy_center "Good morning class, Kamusta kayo?"
+    Class_center "Good morning po, Teacher!"
+    Cathy_center "Lahat ba nakaattend sa ating flag ceremony?"
+    Class_center "Opo, Teacher!"
     show Cathy smile with dissolve
     Cathy_center "Very good!"
     show Cathy neutral with dissolve
-    Cathy_center "Anyways let's start our class for this morning."
-    Cathy_center "I know class some of you never heard of this but today we're gonna be talking about Astronomy!"
-    Cathy_center "Let's start!"
+    Cathy_center "So magsisimula na ko ng ating lesson para sa ngayung umaga."
+    Cathy_center "Alam kong marami sa inyo ang hindi pa naririnig o alam ang salitang Astronomy!"
+    Cathy_center "Okay let's begin!"
 
     play music "assets/BGM/FeudalNight.mp3"
     show Cathy panningRight
     show school solarsystem with dissolve
-    Cathy_center "{color=#adf569}Astronomy{/color} is a branch of science that studies celestial objects and phenomenas."
-    Cathy_center "Our solar system consists of 1 star and 8 planets"
+    Cathy_center "{color=#adf569}Astronomy{/color} ay isang sangay ng agham na nag-aaral tungkol sa mga celestial objects and phenomenas."
+    Cathy_center "Ang ating solar system ay binubuo ng 1 star at 8 planeta"
     show Cathy smile with dissolve
-    Cathy_center "Yes Class! our Sun is a star can you believe it?"
+    Cathy_center "Tama ang rinig nyo Class! Ang ating Araw ay isang star naniniwala ba kayo?"
     show Cathy neutral with dissolve
     show school planet1 with dissolve
-    Cathy_center "Our planet, Earth together with Mars, Venus and Mercury are called {color=#adf569}Terrestrial Planets{/color}."
-    Cathy_center "Which means most of their composition is made out of rocks and metals."
+    Cathy_center "Ang ating planeta, Earth kasama ang Mars, Venus at Mercury ay tinatawag na {color=#adf569}Terrestrial Planets{/color}."
+    Cathy_center "Ibig sabhin ay binubuo sila ng mga bato at iba't ibang uri ng metal."
     show school planet2 with dissolve
-    Cathy_center "On the other hand, Jupiter, Saturn, Uranus and Neptune are called {color=#adf569}Gas Giants{/color}."
-    Cathy_center "From it's name 'Gas Giants' they are usually made out of gas."
+    Cathy_center "Samantala, Ang Jupiter, Saturn, Uranus and Neptune ay tinatawag namang {color=#adf569}Gas Giants{/color}."
+    Cathy_center "Kaya sila tinawag na 'Gas Giants' ay dahil binubuo sila ng ibat'ibang uri ng gas."
     Cathy_center "These planets usually form farther from the sun due to it's size and lower density."
-    Class_center "What about Pluto Teacher?"
-    Cathy_center "Unfortunately Pluto is classified as a {color=#adf569}Dwarf planet{/color}."
-    Cathy_center "Together with Ceres, Eris and Haumea."
+    Class_center "Ano naman po ang Pluto Teacher?"
+    Cathy_center "Ang Pluto naman ay isang {color=#adf569}Dwarf planet{/color}."
+    Cathy_center "Tulad ng Ceres, Eris and Haumea dahil sa sobrang liit nila at di malinaw ang kanilang orbit o pag-ikot sa araw."
     show Cathy smile with dissolve
-    Cathy_center "You can think of them like a really big Asteroids that almost look like a planet!"
+    Cathy_center "Pwede nyo silang isipin na isang malaking Asteroid na halos mukhang planeta!"
     show Cathy neutral with dissolve
     hide school with dissolve
     show Cathy panningBack with dissolve
-    Cathy_center "Ok Class did you write down what I'd discussed?"
+    Cathy_center "Ok Class sinulat niyo ba ang mga tinalakay naten?"
     show Cathy smile with dissolve
     Cathy_center "Because it's Quiz time!"
     show Cathy neutral with dissolve
-    Cathy_center "Ok class let's begin, NO cheating okay?"
+    Cathy_center "Ok class let's begin, Walang cheating okay?"
 
-    Cathy_center "Question#1: What Earth and Venus are classified as?"
+    Cathy_center "Question#1: Ano ang tawag sa kinabibilangan ng Earth at Venus?"
 
     show mode confirm with dissolve
     $ testTitle = "Quiz #3"
-    $ testQuestion = "1.) What Earth and Venus\nare classified as?"
+    $ testQuestion = "1.) Ano ang tawag sa kinabibilangan \n ng Earth at Venus?"
     $ ans1 = "A.) Planets"
     $ ans2 = "B.) Moon"
     $ ans3 = "C.) Terrestrial Planets"
@@ -271,20 +276,20 @@ label AfterFlood:
     if TerrestrialPlanetChoice == "Terrestrial Planets":
         $ correct +=1
         show Cathy smile with dissolve
-        Cathy_center "Excellent Juan you're getting better!"
+        Cathy_center "Excellent Juan!"
     if TerrestrialPlanetChoice == "Planets":
         show Cathy sad with dissolve
-        Cathy_center "Technically Yes, But that is not the answer Juan."
+        Cathy_center "Yes, Pero hindi iyon ang tamang sagot Juan."
     if TerrestrialPlanetChoice == "Moon":
         show Cathy sad with dissolve
         Cathy_center "Wrong answer Juan."
 
     show Cathy neutral with dissolve
-    Cathy_center "Question#2: What Jupiter and Saturn are classified as?"
+    Cathy_center "Question#2: Ano naman ang tawag sa kinabibilangan ng Jupiter and Saturn?"
 
     show mode confirm with dissolve
     $ testTitle = "Quiz #3"
-    $ testQuestion = "2.) What Jupiter and Saturn\nare classified as?"
+    $ testQuestion = "2.) Ano naman ang tawag sa kinabibilangan\nng Jupiter and Saturn?"
     $ ans1 = "A.) Terrestrial Planets"
     $ ans2 = "B.) Gas Giants"
     $ ans3 = "C.) A Star"
@@ -297,17 +302,17 @@ label AfterFlood:
         Cathy_center "Very good Juan!"
     if GasGiantsChoice == "Terrestrial Planets":
         show Cathy sad with dissolve
-        Cathy_center "You got the opposite."
+        Cathy_center "Kabaligtaran ang iyong sagot Juan."
     if GasGiantsChoice == "A Star":
         show Cathy sad with dissolve
         Cathy_center "Wrong answer Juan."
 
     show Cathy neutral with dissolve
-    Cathy_center "Question#3: What is the study of celestial body and phenomenas?"
+    Cathy_center "Question#3: Ano ang isang sangay ng agham na nag-aaral tungkol sa mga celestial objects and phenomenas?"
 
     show mode confirm with dissolve
     $ testTitle = "Quiz #3"
-    $ testQuestion = "3.) What is the study of\ncelestial body and\nphenomenas?"
+    $ testQuestion = "3.) Ano ang isang sangay ng agham\nna nag-aaral tungkol sa\nmga celestial objects and phenomenas?"
     $ ans1 = "A.) Astronomy"
     $ ans2 = "B.) Gastroenterology"
     $ ans3 = "C.) Science"
@@ -320,17 +325,17 @@ label AfterFlood:
         Cathy_center "Correct!"
     if AstronomyChoice == "Gastroenterology":
         show Cathy sad with dissolve
-        Cathy_center "Your answer is way off Juan."
+        Cathy_center "Wrong answer Juan."
     if AstronomyChoice == "Science":
         show Cathy sad with dissolve
-        Cathy_center "Wrong answer Juan."
+        Cathy_center "Mali Juan, pero isa ito sa mga sangay ng Science."
 
     show Cathy neutral with dissolve
-    Cathy_center "Question#4: What Pluto is classified as?"
+    Cathy_center "Question#4: Ano ang tawag sa kinabibilangan ng Pluto?"
 
     show mode confirm with dissolve
     $ testTitle = "Quiz #3"
-    $ testQuestion = "4.) What Pluto is classified as?"
+    $ testQuestion = "4.) Ano ang tawag sa kinabibilangan ng pluto?"
     $ ans1 = "A.) Goblin"
     $ ans2 = "B.) Dwarf Planet"
     $ ans3 = "C.) Asteroid"
@@ -343,88 +348,94 @@ label AfterFlood:
         Cathy_center "Yes Juan that is correct!"
     if DwarfPlanetChoice == "Goblin":
         show Cathy sad with dissolve
-        Cathy_center "What? No Juan wrong."
+        Cathy_center "Ano? No Juan mali."
     if DwarfPlanetChoice == "Asteroid":
         show Cathy sad with dissolve
-        Cathy_center "Your Answer is close but that is not the right answer."
+        Cathy_center "Malapit na pero hindi iyon ang tamang sagot."
 
     show Cathy neutral
     Cathy_center "Okay class That's it for your quiz."
     Cathy_center "Juan you got [correct] of 4 right."
-    Cathy_center "Okay that's that for our quiz!"
-    Cathy_center "Oh yeah, class I forgot to tell you something."
-    Cathy_center "Recently there's been quite alot of minor earthquakes occurring, especially in the regions of Visayas and Mindanao."
+
+    if not persistent.LittleEinstein and correct == 4:
+        $ renpy.notify("Unlocked: Little Einstein")
+        $ persistent.LittleEinstein=True
+        $ persistent.totalAchievement +=1
+
+    Cathy_center "At dito nagtatapos ang ating quiz for today!"
+    Cathy_center "Oo nga pala class, Nakalimutan kong sabihin."
+    Cathy_center "Kung napapansin nyo dumadami ang mga minor earthquakes, especially sa mga lugar sa Visayas at Mindanao."
     
     if ListenChoice == "Listen":
-        Cathy_center "I've been discussing with Mr. Rey of what is the best method of protecting ourselves in case of an earthquake."
+        Cathy_center "Nakikipag usap ako kay Mr. Rey kung paano natin maproprotektahan ang ating mga sarili in case na magkaroon ng earthquake."
     else:
-        Cathy_center "I've been discussing with the local fire department of what is the best method of protecting ourselves in case of an earthquake."
+        Cathy_center "Nakikipag usap ako sa local fire department kung paano natin maproprotektahan ang ating mga sarili in case na magkaroon ng earthquake."
     show Cathy smile with dissolve
-    Cathy_center "And still to this day the best method of protecting ourselves during earthquake is the {color=#fe7e66}Drop, Cover, Hold{/color} method."
+    Cathy_center "At ang pinakamabisa paring paraan para maproktahan naten ang mga sarili kung sakaling lumindol earthquake ay ang {color=#fe7e66}Drop, Cover, Hold{/color} method."
     show Cathy panningRight with dissolve
     with Pause(2)
     show earthquake duck with dissolve
-    Cathy_right"{color=#fe7e66}Drop{/color} where you are, onto your hands and knees." 
-    Cathy_right "This position protects you from being knocked down and also allows you to stay low and crawl to shelter if nearby."
+    Cathy_right"{color=#fe7e66}Drop{/color} Kung saan ka nakatayo, dumapa ka." 
+    Cathy_right "Ang nagagawa nito ay upang maiwasan ang pagkabuwal at pagkabagok at makagapang sa mas ligtas na lugar."
     show earthquake cover with dissolve
-    Cathy_right "{color=#fe7e66}Cover{/color} your head and neck with one arm and hand."
-    Cathy_right "If a sturdy table or desk is nearby, crawl underneath it for shelter."
-    Cathy_right "If no shelter is nearby, crawl next to an interior wall away from windows."
-    Cathy_right"Stay on your knees; bend over to protect vital organs."
+    Cathy_right "{color=#fe7e66}Cover{/color} Ilagay ang kamay sa batok at ulo upang maproteksyunan ito."
+    Cathy_right "Kapag mayroong upuan o lamesa na malapit gumapang at pumunta sa ilalim nito upang maproteksyunan sa mga bagay bagay na bumabagsak."
+    Cathy_right "Kung walang masisilungan gumapang sa isang malapit na pader na malayo sa mga bintana."
+    Cathy_right "Manatiling nakabaluktot ang mga binti sa harap ng katawan upang maproteksyunan ang mga maseselang bahagi ng katawan."
     show earthquake hold with dissolve
-    Cathy_right "{color=#fe7e66}Hold{/color} on until shaking stops."
-    Cathy_right "Under shelter: hold on to it with one hand; be ready to move with your shelter if it shifts."
-    Cathy_right "No shelter: hold on to your head and neck with both arms and hands."
+    Cathy_right "{color=#fe7e66}Hold{/color} hanggang tumigil ang pag lindol."
+    Cathy_right "Kapag may nasisilungan: Hawakan ito ng isang kamay; at ihanda ang sarili."
+    Cathy_right "Kapag walang masisilungan: Hawakan at takpan ng mga kamay at braso ang Parte ng ulo at batok"
     hide earthquake with dissolve
     show Cathy panningBack
-    Cathy_center "If you are outdoors during an earthquake try to go in an open area and stay away from buildings."
-    Cathy_center "As this may protect you from any falling debris."
-    Cathy_center "Did you understand class?"
-    Class_center "Yes, Teacher!"
+    Cathy_center "Kapag ikaw naman ay nasa labas lumayo sa mga matataas na gusali at magpunta sa isang open area."
+    Cathy_center "Upang maproteksyonan ka sa mga bagay bagay na mahuhulog na pwede kang masaktan."
+    Cathy_center "Naiintindihan nyo ba class?"
+    Class_center "Yes po Teacher!"
     play sound "assets/SFX/School_Bell.mp3"
     none "(Bell rings.)"
     show Cathy smile with dissolve
-    Class_center "Ok that's it for our class this morning, have fun in your lunch!"
+    Class_center "So iyon lang para sa klase niyo ngayung umaga, Enjoy your lunch!"
     stop music
 
     play music "assets/FreeBGM/DreamOfChildrensRoom.mp3"
     scene black with dissolve
-    Juan_center "(After our class, Peter and I walked homed together and talked alot of stuffs.)"
+    Juan_center "(Pagtapos ng klase, Magkasama kami umuwi ni Peter at madami kaming napagkwentuhan.)"
     scene afternoonStreet1 with dissolve
     show Peter neutralRight with dissolve
     show Juan neutralLeft with dissolve
-    Juan_left "Man! what a day."
-    Juan_left "Too bad our teachers once again gave us alot of homeworks."
-    Peter_right "Yeah.."
-    Peter_right "By the way Juan I heard that tommorow is your birthday?"
+    Juan_left "Grabe! kapagod ngayung araw."
+    Juan_left "Madami na naman binigay mga teacher naten na homeworks."
+    Peter_right "Oo nga e.."
+    Peter_right "Sya nga pala Juan diba birthday mo bukas?"
     show Juan confident with dissolve
-    Juan_left "Yeah! I was actually gonna ask my Mom and Dad to buy me the latest release of Sword Style Online."
+    Juan_left "Oo! Sasabihin ko nga kila Mama at Papa na bilhan ako nung bagong Sword Style Online."
     show Peter smile with dissolve
-    Peter_right "Oh! do you mean Sword Style Online 2?"
-    Peter_right "That's So cool!, It was just released last week but unfortunately it was too expensive so really I need to save up to buy it."
-    Peter_right "I don't even know if i could buy it."
+    Peter_right "Oh! Yung Sword Style Online 2?"
+    Peter_right "Paka astig nun!, Kalalabas lang nun last week masyado kasing mahal kaya kaylangan ko pa mag-ipon para makabili."
+    Peter_right "Hindi ko pa nga din alam kung mabibili ko nga ba."
     show Peter neutral with dissolve
     show Juan neutral with dissolve
-    Juan_left "Haha! I'm always gonna be looking forward playing with you with SSO 2."
+    Juan_left "Haha! Aantayin kita makabili gusto kita makalaro sa SSO 2."
     Peter_right "Sure!"
     show Juan smile2 with dissolve
-    Juan_left "See you tommorow Peter!"
+    Juan_left "Bukas na lang ulit Peter!"
 
     scene black with dissolve
-    none "Juan arrived in his home really exhausted after a long day of school."
-    none "But suddenly Juan noticed that their family have visitors for today."
+    none "Nakauwi na si Juan matapos ang nakakapagod na gawain nya sa paaralan."
+    none "Napansin ni Juan na mayroon silang bisita."
     scene nighttimeLivingRoom with dissolve
     show Juan neutralLeft with dissolve
     show Joseph neutralright with dissolve
-    Joseph_right "Oh hey Juan! you're back, how did you do in school?"
-    Juan_left "Hey dad! schools really fun."
+    Joseph_right "Oh Juan! Nakauwi ka na pala, Kamusta sa school?"
+    Juan_left "Ok naman Papa! Masaya."
     show Joseph talking with dissolve
-    Joseph_right "Actually Juan somebodies are waiting for you."
+    Joseph_right "May mga nag-aantay nga pala sa iyo."
     show Joseph neutral with dissolve
-    Juan_left "What? Could it be!?"
+    Juan_left "Sino? Di kaya sila!?"
     hide Joseph with moveoutright
     with Pause(2)
-    Joseph_right "James!, Glenn! Juan's back home!"
+    Joseph_right "James!, Glenn! Nakauwi na si Juan!"
 
     show James neutral with easeinright
     show Glenn neutralRight with easeinright
@@ -435,40 +446,40 @@ label AfterFlood:
     show Juan smile1 with dissolve
     Juan_left "Glenn! James!"
     show Juan smile2 with dissolve
-    Juan_left "You guys said that you'll visit us this summer but I didn't expect to be near my birthday."
+    Juan_left "Ang sabi nyo mga bandang summer kayo bibista di ko inaakala na dadalawin nyo ko bago ako mag birthday."
     show James talking with dissolve
-    James_center "Hehe!, we'd tought that it's the best time to visit you here."
+    James_center "Hehe!, Syempre naisip namen na eto pinakamagandang araw na bisitahin ka."
     show Glenn talking with dissolve
-    Glenn_right "So we really tried to convince our Mom and Dad and let us stay here for 3 days."
-    James_center "Thank goodness our uncle still live here only a couple of blocks away."
-    Glenn_right "Anyways, we got invited by your parents to join for dinner tonight."
-    Juan_left "Haha! it's really been a while, I really missed playing with you guys."
-    Mary_right "Kids! dinner is ready better hurry up or it'll get cold."
+    Glenn_right "Pinilit pa nga namen sila Mama at Papa para dito muna kami ng 3 araw."
+    James_center "Buti na lang malapit si Tito nakatira dito mga ilang bahay lang pagitan."
+    Glenn_right "Inimbitahan nga din pala kami ng mga magulang mo na dito na maghapunan."
+    Juan_left "Haha! Matagal tagal na rin tayong hindi nagkakasama-sama, Namiss ko kayo!"
+    Mary_right "Mga bata! Handa na ang hapunan halika na kayo bago pa lumamig ang pagkain."
     show James neutral
     show Glenn neutral
     show Juan neutral
-    James_center "More on that later Juan, Let's go eat first hehe!"
-    Juan_left "Yeah I'm actually hungy now aswell."
-    Glenn_right "Let's eat!"
+    James_center "Maya na tayo magkwentuhan at maglaro, Tara kain muna tayo hehe!"
+    Juan_left "Oo nga gutom na gutom na ko eh."
+    Glenn_right "Tara!"
 
     scene black with dissolve
-    none "Juan, Glenn and James went to the dining room and got surprised by delicious foods that Juan's mother cooked."
+    none "Pumunta sila Juan, Glenn and James sa hapag kainan at nagulat sa sarap ng mga niluto na pagkain ng kanyang Ina na si Mary."
     none "..."
-    none "After dinner the three went directly to Juans room and started playing."
+    none "Matapos kumain agad bumalik ang tatlo sa kwarto ni Juan at nagsimulang maglaro."
     scene nighttimeBedroom with dissolve 
     show James neutral with dissolve    
     show Glenn neutralRight with dissolve
     show Juan neutralLeft with dissolve
-    Glenn_right "That was really delicious!"
-    Juan_left "Right?, My mom was the best cook in the town!"
+    Glenn_right "Napakasarap ng mga pagkain na niluto ng Mama mo Juan!"
+    Juan_left "Diba?, Mama ko ata ang pinakamagaling mag luto dito sa baryo!"
     show James talking with dissolve
-    James_center "By the way Juan, have you already got the Sword Style Online 2?"
-    Juan_left "Well not yet but I'll ask my Mom and Dad tommorrow about that."
+    James_center "Nga pala Juan, Meron ka na bang Sword Style Online 2?"
+    Juan_left "Wala pa eh, Pero kakausapin ko sila Mama at Papa bukas na bilhan ako."
     show Glenn laugh with dissolve
-    Glenn_right "Hahaha! you should see us PKing high level players, It's really fun!"
+    Glenn_right "Hahaha! tignan mo kami tumalo ng mga Malalakas na Players, Nakakatuwa!"
     show Glenn neutral
     show Juan smile2 with dissolve
-    Juan_left "Woah really!? wow I'm too exited to play with you guys!"
+    Juan_left "Woah Talaga!? Sabik na talaga ako makalaro kayo"
     show Glenn laugh with dissolve
     Glenn_right "Hahahaha!"
     show James laugh with dissolve
@@ -478,13 +489,13 @@ label AfterFlood:
     show Glenn neutral with dissolve
     show James talking with dissolve
     show Juan neutral with dissolve
-    James_center "Say Juan, how about we play some more video games till 9?"
-    Juan_left "(Hmm I still got homework to do but I really want to play with James and Glenn..)"
+    James_center "Ah Juan, kung maglaro kaya tayo hanggang 9?"
+    Juan_left "(Hmm meron pa akong mga homeworks pero gusto ko pa makipaglaro kila James at Glenn..)"
 
     show mode confirm with dissolve
-    $ ListenChoiceQuestion = "What should Juan tell James and Glenn?"
-    $ Text1="I want to play!"
-    $ Text2="I want to do my homework."
+    $ ListenChoiceQuestion = "Ano sasabihin ni Juan kila James at Glenn?"
+    $ Text1="Gusto ko pa maglaro!"
+    $ Text2="Gagawin ko na mga Homeworks ko."
     $ Icon1 = Image("assets/Sprites/Items/icon_play_games.png")
     $ Icon2 = Image("assets/Sprites/Items/icon_do_homework.png")
     call screen DualOptionScreen(ListenChoiceQuestion,"PlayOrHomeworkChoice",Icon1,Text1,"play",Icon2,Text2,"dontplay",False) with dissolve
@@ -492,25 +503,31 @@ label AfterFlood:
 
     if PlayOrHomeworkChoice == "play":
         show Juan smile2 with dissolve
-        Juan_left "Sure!! why not, Isn't that the point why you guys came here?"
+
+        if not persistent.LetsParty:
+            $ renpy.notify("Unlocked: Let's party!")
+            $ persistent.LetsParty=True
+            $ persistent.totalAchievement +=1
+
+        Juan_left "Sige ba!! bakit hindi, Kaya nga kayo nandito diba?"
         show James laugh with dissolve
-        James_center "Alright! it's set, let's get ready playing!"
-        James_center "I wanna see you something cool we learned last week."
+        James_center "Yown! Ok na, Ready na kayo maglaro!"
+        James_center "Gusto namin pakita sayo yung natutunan namen nung nakaraan."
         show Glenn laugh with dissolve
-        Glenn_right "Lets Go!"
+        Glenn_right "Tara!"
         scene black with dissolve
-        none "And so Juan, James, and Glenn played video games troughout the whole night."
-        none "All three had alot of fun for their first reunion in the last 4 years."
+        none "Magdamag na naglaro sila Juan, James, at Glenn."
+        none "Naging masaya silang tatlo ngayon dahil apat na taon na ang nakalipas bago sila ulit sila magkakasama."
     else:
-        Juan_left "Sorry guys but I have school works to do tonight."
-        Juan_left "Maybe tommorow? I mean I promise I would play with you after I got the new SSO 2."
-        James_center "Aww.. okay Juan we'll do it tommorow."
-        Glenn_right "Alright Juan we'll see you tommorow."
+        Juan_left "Sorry mga tol may mga gagawin pa kasi akong homework ngaung gabi."
+        Juan_left "Baka bukas? Pangako maglalaro tayo pag mayroon na kong SSO 2."
+        James_center "Aww.. okay Juan bukas na lang."
+        Glenn_right "Sige Juan kita kits na lang bukas."
         show Juan smile2 with dissolve
-        James_center "See you tommorow!"
+        James_center "Kita kits Bukas!"
         scene black with dissolve
-        none "And so Glenn and James said goodbye to Juan and his parents and went straight to their uncle's place."
-        none "While Juan started to do his homework even though he badly wanted to play with Glenn and James since it's their first reunion for the last 4 years."
+        none "At nagpaalam na sila Glenn at James kay Juan at sa kanyang mga magulang at umuwi patungo sa bahay ng kanilang tito."
+        none "Nagsimula na si Juan gawin ang kanyang mga homework kahit na gustong gusto pa nya makipag laro kila Glenn at James dahil apat na taon na ang nakalipas bago ulit sila magkakasama."
 
     jump EarthquakeDisaster
     #======================Custom Scenes=======================================
