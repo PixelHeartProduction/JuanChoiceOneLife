@@ -178,7 +178,7 @@ label AfterFlood:
         show Alice surprised with dissolve
         Girl_right "Oh!"
         show Alice smile with dissolve
-        Girl_right "You're the boy that saved me from the dog a while ago."
+        Girl_right "You're the boy that saved me from the dog back then."
         Girl_right "I noticed before that you wear the same uniform like mine, But I'm too shy to talk to you in school."
         Girl_right "So..uhmm..."
         Girl_right "Thank you very much!"
@@ -204,7 +204,7 @@ label AfterFlood:
     Alice_right "By the way Juan what are you carrying?"
     Juan_left "Oh this? my Mom burned my lunch earlier this morning so she asked me to buy my own lunch at the convenience store."
     show Alice surprised with dissolve
-    Alice_right "Really?!"
+    Alice_right "Really?!!"
     show Alice smile with dissolve
     Alice_right "Must be a tough job being a Mother."
     Alice_right "Anyways it's almost 7am now we need to hurry!"
