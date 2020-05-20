@@ -585,8 +585,9 @@ screen about():
                 label "Via Amor Capule"
                 text "Filipino Translator\n\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only]")
-
+            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only]\n")
+            text _("This software is under the MIT License\n")
+            text _("Copyright (c) 2020 Pixel Heart Production")
             #text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
@@ -744,7 +745,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Settings"), scroll="viewport"):
 
         vbox:
 

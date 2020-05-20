@@ -154,6 +154,11 @@ label TheFlood:
             Reporter_center "However it's expected to rise up to Signal No. 4."
             Reporter_center "Localized flooding have been reported in numerous towns within the region."
             Reporter_center "We're advising you to stay at home and stay connected with your local authorities for emergency evacuation."
+            Reporter_center "Now once your local authorities have told you to prepare for emergency evacuation."
+            Reporter_center "It's best advice to start packing up items immidiately so you won't cause them any delays."
+            Reporter_center "Now what to include in your evacuation pack is highly debatable."
+            Reporter_center "But we recommend you to include all of your basic necessities."
+            Reporter_center "Such as Food, Water, Clothes, Medicines, Cell phones, and Toiletries."
             Reporter_center "That's it for our news right now, stay safe!"
 
             if not persistent.IntoTheNews:
@@ -392,7 +397,36 @@ label TheFlood:
     if PanicOrPrepare == "Panic":
         none "Juan has started to get a little bit scared and confused of what he should do."
     else:
-        none "Juan started to pack his bag with clothes and foods in case of an emergency evacuation."
+        none "Juan starts to ready his backpack for emergency evacuation."
+        scene relativesBedroomFlood with dissolve
+        show Juan neutral with dissolve
+        Juan_center "Alright I should start packing quickly!"
+        Juan_center "I should start here in my bedroom."
+
+        hide Juan with dissolve
+        show mode confirm with dissolve
+        show countdown at Position(xalign=.5, yalign=.1, zoom=20)
+        call screen PackPart1 with dissolve
+        hide countdown with dissolve
+        hide mode confirm with dissolve
+        scene relativesLivingroomFlood with dissolve
+        show mode confirm with dissolve
+        show countdown at Position(xalign=.5, yalign=.1, zoom=20)
+        call screen PackPart2 with dissolve
+        hide countdown with dissolve
+        hide mode confirm with dissolve
+        scene relativesKitchenFlood with dissolve
+        show mode confirm with dissolve
+        show countdown at Position(xalign=.5, yalign=.1, zoom=20)
+        call screen PackPart3 with dissolve
+        hide countdown with dissolve
+        hide mode confirm with dissolve
+        show Juan confident with dissolve
+        Juan_center "Alright I'm all prepared!"
+        scene black with dissolve
+
+
+
     
     scene relativesHouseFlood2 with dissolve
 
@@ -453,6 +487,98 @@ label TheFlood:
         vbox xpos 1500 ypos 400:
             imagebutton idle Transform(toLiving, zoom=2) hover Transform(living_selected, zoom=2) action [SetVariable("GoToLiving", "Clear"),Return()] xalign 0.5
             text("Go to the living room") xalign 0.5
+
+    screen PackPart1():
+        modal True
+
+        $ time = 10.0
+        $ toothbrush = Image("assets/Sprites/Items/toothbrush.png")
+        $ clothes = Image("assets/Sprites/Items/towel.png")
+        $ psp = Image("assets/Sprites/Items/psp.png")
+        $ psp_error = im.MatrixColor(psp,im.matrix.saturation(0.5)*im.matrix.tint(3,1,1))
+
+        vbox xalign 0.5:
+            text("Take all the items you need.") size 60 xpos 0 ypos 30
+        
+        vbox xpos 1300 ypos 800:
+            if clothes_selected == False:
+                imagebutton idle Transform(clothes, zoom=0.4) action [SetVariable("clothes_selected", True)] activate_sound sfx_click1
+                text(Text("Clothes"))
+        
+        vbox xpos 600 ypos 650:
+            if toothbrush_selected == False:
+                imagebutton idle Transform(toothbrush, zoom=0.15) action [SetVariable("toothbrush_selected", True)] activate_sound sfx_click1
+                text(Text("Tooth brush"))
+            
+        vbox xpos 1000 ypos 550:
+            imagebutton idle Transform(psp_error, zoom=.55) activate_sound sfx_click1  xalign 0.5
+            text("Game console") xalign 0.5
+
+        timer time action Return()
+        
+    screen PackPart2():
+        modal True
+
+        $ time = 10.0
+        $ toiletpaper = Image("assets/Sprites/Items/TpRoll.png")
+        $ phone = Image("assets/Sprites/Items/phone.png")
+        $ fan = Image("assets/Sprites/Items/fan.png")
+        $ fan_error = im.MatrixColor(fan,im.matrix.saturation(0.5)*im.matrix.tint(3,1,1))
+
+        vbox xalign 0.5:
+            text("Take all the items you need.") size 60 xpos 0 ypos 30
+        
+        vbox xpos 900 ypos 900:
+            if toiletpaper_selected == False:
+                imagebutton idle Transform(toiletpaper, zoom=0.2) action [SetVariable("toiletpaper_selected", True)] activate_sound sfx_click1
+                text(Text("Toilet paper"))
+        
+        vbox xpos 600 ypos 640:
+            if phone_selected == False:
+                imagebutton idle Transform(phone, zoom=0.15) action [SetVariable("phone_selected", True)] activate_sound sfx_click1
+                text(Text("Phone"))
+            
+        vbox xpos 100 ypos 550:
+            imagebutton idle Transform(fan_error, zoom=.55) activate_sound sfx_click1  xalign 0.5
+            text("Fan") xalign 0.5
+        
+        timer time action Return()
+        
+    screen PackPart3():
+        modal True
+
+        $ water = Image("assets/Sprites/Items/waterbottle.png")
+        $ can = Image("assets/Sprites/Items/tinCan.png")
+        $ chocolate = Image("assets/Sprites/Items/chocolate.png")
+        $ soda = Image("assets/Sprites/Items/soda.png")
+        $ chocolate_error = im.MatrixColor(chocolate,im.matrix.saturation(0.5)*im.matrix.tint(3,1,1))
+        $ soda_error = im.MatrixColor(soda,im.matrix.saturation(0.5)*im.matrix.tint(3,1,1))
+        $ time = 10.0
+
+        vbox xalign 0.5:
+            text("Take all the items you need.") size 60 xpos 0 ypos 30
+        
+        vbox xpos 900 ypos 650:
+            if cannedfood_selected == False:
+                imagebutton idle Transform(can, zoom=0.1) action [SetVariable("cannedfood_selected", True)] activate_sound sfx_click1
+                text(Text("Canned food"))
+        
+        vbox xpos 600 ypos 550:
+            if waterbottle_selected == False:
+                imagebutton idle Transform(water, zoom=0.2) action [SetVariable("waterbottle_selected", True)] activate_sound sfx_click1
+                text(Text("Water"))
+            
+        vbox xpos 200 ypos 550:
+            imagebutton idle Transform(soda_error, zoom=.1) activate_sound sfx_click1  xalign 0.5
+            text("Soda") xalign 0.5
+        
+        vbox xpos 300 ypos 650:
+            imagebutton idle Transform(chocolate_error, zoom=.05) activate_sound sfx_click1  xalign 0.5
+            text("Chocolate") xalign 0.5
+
+        
+        timer time action Return()
+        
 
 
 

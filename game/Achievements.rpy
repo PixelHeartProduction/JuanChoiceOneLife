@@ -145,7 +145,7 @@ screen achievements():
                         label "I'm too shy"
                         text "Do nothing in your relative's house"
             
-            hbox spacing 160:
+            hbox spacing 155:
                 hbox spacing 20:
                     if persistent.FamilyFirst:
                         image(Complete) zoom 0.25
@@ -164,7 +164,7 @@ screen achievements():
                         label "You never learn"
                         text "Cross and do not wait for the green light twice"
             
-            hbox spacing 180:
+            hbox spacing 190:
                 hbox spacing 20:
                     if persistent.RogerThatApril:
                         image(Complete) zoom 0.25
@@ -183,7 +183,7 @@ screen achievements():
                         label "Asa meshi mae"
                         text "Get perfect score from Quiz#2"
             
-            hbox spacing 170:
+            hbox spacing 175:
                 hbox spacing 20:
                     if persistent.Lv100Armor:
                         image(Complete) zoom 0.25
@@ -202,7 +202,7 @@ screen achievements():
                         label "Into the news"
                         text "Watch the daily news about storm"
             
-            hbox spacing 150:
+            hbox spacing 170:
                 hbox spacing 20:
                     if persistent.BestPrepared:
                         image(Complete) zoom 0.25
@@ -221,7 +221,7 @@ screen achievements():
                         label "Juan extravagant"
                         text "Spend all the money Mary gave you"
             
-            hbox spacing 160:
+            hbox spacing 180:
                 hbox spacing 20:
                     if persistent.LittleEinstein:
                         image(Complete) zoom 0.25
@@ -240,7 +240,7 @@ screen achievements():
                         label "Lets party!"
                         text "Play games with Glenn and James"
                 
-            hbox spacing 150:
+            hbox spacing 190:
                 hbox spacing 20:
                     if persistent.PetersStory:
                         image(Complete) zoom 0.25

@@ -25,6 +25,13 @@ label start():
     $ soda_selected = False
     $ water_selected = False
     $ money = 100
+
+    $ toothbrush_selected = False
+    $ clothes_selected = False
+    $ toiletpaper_selected = False
+    $ phone_selected = False
+    $ cannedfood_selected = False
+    $ waterbottle_selected = False
     #================Disaster Mode=================
     jump JuansFirstWord
 
