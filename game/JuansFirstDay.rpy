@@ -427,7 +427,7 @@ label JuansFirstDay:
     hide mode confirm with dissolve
 
     if FoodChoice == "Give":
-        none "(Without hesitation i game him some of my pork chop)"
+        none "(Without hesitation I gave him some of my pork chop)"
     if FoodChoice == "Report":
         none "(Juan and Peter goes to Ms. Cathy to tell her about the situation.)"
 

@@ -70,7 +70,7 @@ label FireDisaster:
         Cathy_center "Greet warmly our Fireman Rey."
         show Cathy panningRight
         show Rey neutral with dissolve
-        none "Juan sees Peter not listening to Ms. Cathy."
+        none "Peter sees Juan is not listening to Ms. Cathy"
         hide Cathy with dissolve
 
         show mode confirm with dissolve
@@ -96,7 +96,7 @@ label FireDisaster:
             show fire stove with dissolve
             Rey_left  "Stoves"
             show fire lighter with dissolve
-            Cathy_center "lighters"
+            Rey_left "lighters"
             show fire socket with dissolve
             Rey_left "Electrical sockets or switches."
 
@@ -107,7 +107,7 @@ label FireDisaster:
 
             Rey_center "Now, what should we do in case of fire?"
             show Rey talking with dissolve
-            Rey_center "Firstly, we should remain calm. When we are afraid our brains don't work well and we don't know"
+            Rey_center "Firstly, we should remain calm. When we are afraid our brains don't work well and we don't know what to do"
             Rey_center "what we should do next."
             Rey_center "If we're inside our houses in case of fire. Always cover your mouth and nose with a cloth."
             Rey_center "If the cloth is wet then much better."

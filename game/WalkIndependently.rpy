@@ -41,8 +41,6 @@ label WalkIndependently:
             none "(Immidiately Juan stops crying and looked at Mary)"
             scene daytimeLivingroom with dissolve
             show Mary surprised with dissolve
-            none "(*Mary picks Juan up and kisses him on his forehead)"
-            none "(Immediately Juan stops crying and looks at Mary)"
 
             Mary_center "You're ok, baby. Did it hurt? Where is the ouchie?"
             none "Juan shows his palms."

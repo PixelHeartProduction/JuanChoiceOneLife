@@ -120,6 +120,9 @@ translate filipino strings:
     old "Go on Juan play with her, be careful with her ok?"
     new "Sige na Juan makipaglaro kana sa kanya, ingat ka sa kanya ok?"
 
+    old "(Juan is then alone with May.)"
+    new "(Naiwan si Juan kasama si May.)"
+
     old "*Laughs out loud."
     new "* Tumawa ng malakas."
 

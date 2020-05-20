@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/JuansFirstDay.rpy", line 751: u'zorder' is not a keyword argument or valid child for the textbutton statement.
-    textbutton exitText action Return() ypos 500 zorder 10 activate_sound sfx_mode
-                                                       ^
+File "game/tl/Filipino/FireDisaster.rpy", line 139: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        new "Mag Stop, Lie Down at Roll Over?""
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Wed May 13 13:16:38 2020
+Mon May 18 21:24:20 2020

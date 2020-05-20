@@ -24,10 +24,10 @@ translate filipino strings:
     old "OK don't cry now Juan."
     new "Ok wag kana umiyak Juan." 
 
-    old "(*Mary picks Juan up and kisses him on his forehead)"
+    old "(*Mary picks Juan up and kissed him on his forehead)"
     new "(*Binuhat ni Mary si Juan at hinalikan siya sa noo)" 
 
-    old "(Immediately Juan stops crying and looks at Mary)"
+    old "(Immidiately Juan stops crying and looked at Mary)"
     new  "(Agad na huminto si Juan sa pag-iyak at tumingin kay Mary)"
 
     old "You're ok, baby. Did it hurt? Where is the ouchie?"

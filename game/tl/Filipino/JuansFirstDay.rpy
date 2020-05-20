@@ -717,5 +717,11 @@ translate filipino strings:
     old "Throw a rock"
     new "Batuhin ng bato"
 
-    
+    old "[Click here to close]"
+    new "[I click para isara]"
 
+    old "[Tap here to close]"
+    new "[I tap para isara]"
+
+    old "(Without hesitation I gave him some of my pork chop)"
+    new "(Dalian ko siyang binigyan ng aking pork chop ng walang pag-aalinlangan)"

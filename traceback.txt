@@ -1,20 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-Exception: Sayer 'Juan' is not defined.
+  File "game/tl/Filipino/WalkIndependently.rpy", line 57, in script
+    old "Yes!"
+Exception: A translation for "Yes!" already exists at game/tl/Filipino/AfterTheFire.rpy:151.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/prologue.rpyc", line 297, in script
-    ���4�v;c��a���r,��r����J�>����M}�i�#Q�Q��3y�o~>!�mk*搣U��g�c&>Vi�o&>�{<�'X&�V�A�|�����Ꝝ;#�7�)VFr*d$ട�j$X���iٔ�t�-%9����,LI~�)������J>�+�c%?�ǹ���%�8_�
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\ast.py", line 678, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\ast.py", line 576, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
-Exception: Sayer 'Juan' is not defined.
+  File "game/tl/Filipino/WalkIndependently.rpy", line 57, in script
+    old "Yes!"
+  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\ast.py", line 2397, in execute
+    renpy.translation.add_string_translation(self.language, self.old, self.new, newloc)
+  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\translation\__init__.py", line 450, in add_string_translation
+    stl.add(old, new, newloc)
+  File "C:\Users\Albert Jr\Desktop\Work\renpy\renpy\translation\__init__.py", line 388, in add
+    quote_unicode(old), fn, line))
+Exception: A translation for "Yes!" already exists at game/tl/Filipino/AfterTheFire.rpy:151.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
-Juan Choice One Life 6.0
-Sat May 09 14:55:00 2020
+Juan Choice One Life 8.2.5
+Mon May 18 23:37:34 2020
