@@ -90,7 +90,7 @@ label TheFlood:
             show Lisa laugh
             Lisa_right "Very well Juan!, alright help me with these cans."
             scene black with dissolve
-            none "Juan helped Lisa stack some foods and supplied."
+            none "Juan helped Lisa stack some foods and supplies."
             scene relativesKitchenFlood with dissolve
             show Lisa neutralRight with dissolve
             show Juan neutralLeft with dissolve
