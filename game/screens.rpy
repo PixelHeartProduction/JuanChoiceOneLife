@@ -563,7 +563,7 @@ screen about():
             $ logo = Image("assets/Misc/JuanCHoiceLogo.png")
             #label "{size=60}[config.name!t]{/size}\n"
             image(logo) zoom 0.5
-            text _("Version Pre-Alpha [config.version!t]")
+            text _("Version Beta [config.version!t]")
 
             ## gui.about is usually set in options.rpy.
             if gui.about:

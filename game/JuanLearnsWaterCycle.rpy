@@ -237,7 +237,7 @@ label JuanLearnsAstrology:
     stop music
     play sound "assets/SFX/School_Bell.mp3"
     none "(Bell rings)"
-    none "The day finished and the afternoon settled in. Juan notices big dark clouds as he was going ot of class."
+    none "The day finished and the afternoon settled in. Juan notices big dark clouds as he was going out of class."
     scene Street2Afternoon with dissolve
     play music "assets/FreeBGM/UnderTheCobblestones.mp3"
     show Juan neutral with dissolve 
